@@ -1,0 +1,142 @@
+\chapter{Zweites Kapitel}
+\label{Kap2}
+
+\section{Bilder}
+
+Natürlich können auch Grafiken und Bilder eingebunden werden, siehe z.\,B. Abbildung~\ref{Kap2:NasaRover}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=6cm]{kapitel2/nasa_rover}
+  \caption{Ein Nasa Rover}
+  \label{Kap2:NasaRover}
+\end{figure}
+
+\blindtext[2]
+
+Man kann sich auch selber ein Makro für das Einfügen von Bildern schreiben:
+
+\bild{kapitel2/modell_point_to_point}{6cm}{Point to Point}
+
+\blindtext[2]
+
+\clearpage % Alle Bilder, die bisher kamen ausgeben
+
+\section{Tabellen}
+
+\blindtext[1]
+
+\begin{table}
+  \renewcommand{\arraystretch}{1.2}
+  \centering
+  \sffamily
+  \begin{footnotesize}
+    \begin{tabular}{l l l}
+    \toprule
+    \textbf{Form der Kopplung} & \textbf{enge Kopplung} & \textbf{lose Kopplung}\\
+    \midrule
+    Physikalische Verbindung	&	Punkt-zu-Punkt	& 	über Vermittler\\
+    Kommunikationsstil	&	synchron		&	asynchron\\
+    Datenmodell	&	komplexe gemeinsame Typen	&	nur einfache gemeinsame Typen\\
+    Bindung	&	statisch		&	dynamisch\\
+    \bottomrule
+    \end{tabular}
+  \end{footnotesize}
+  \rmfamily
+  \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
+  \label{Kap2:Kopplungsformen}
+\end{table}
+
+Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe Tabelle~\ref{Kap2:Kopplungsformen}.
+
+\blindtext[1]
+
+
+\section{Aufzählungen}
+
+Aufzählungen sind toll.
+
+\begin{itemize}
+  \item Ein wichtiger Punkt
+  \item Noch ein wichtiger Punkt
+  \item Ein Punkt mit Unterpunkten
+    \begin{itemize}
+      \item Unterpunkt 1
+      \item Unterpunkt 2      
+    \end{itemize}
+  \item Ein abschließender Punkt ohne Unterpunkte
+\end{itemize}
+
+
+Aufzählungen mit laufenden Nummern sind auch toll.
+
+\begin{enumerate}
+  \item Ein wichtiger Punkt
+  \item Noch ein wichtiger Punkt
+  \item Ein Punkt mit Unterpunkten
+    \begin{enumerate}
+      \item Unterpunkt 1
+      \item Unterpunkt 2      
+    \end{enumerate}
+  \item Ein abschließender Punkt ohne Unterpunkte
+\end{enumerate}
+
+\blindtext[1]
+
+
+\section{Formelsatz}
+
+Eine Formel gefällig? Mitten im Text $a_2 = \sqrt{x^3}$ oder als eigener Absatz (siehe Formel~\ref{Formel}):
+
+\begin{equation}
+\begin{bmatrix}         
+   1 &  4 &  2 \\
+   4 &  0 & -3 
+\end{bmatrix}        
+        \cdot
+\begin{bmatrix}                
+   1 &  1 &  0 \\
+  -2 &  3 &  5 \\
+   0 &  1 &  4 
+\end{bmatrix}        
+       {=} 
+\begin{bmatrix}               
+  -7 &  15 &  28 \\
+   4 &   1 & -12 
+\end{bmatrix}
+\label{Formel}
+\end{equation}
+
+
+\section{Sourcecode}
+
+Man kann mit Latex auch ganz Toll Sourcecode in den Text aufnehmen.
+
+\subsection{Aus einer Datei}
+
+\lstinputlisting[firstline=2,language=Java]{\srcloc/Crypter.java}
+
+
+\subsection{Inline}
+
+\begin{lstlisting}[language=Java]
+    /**
+     * Testet den Schlüssel auf Korrektheit: Er muss mindestens die Länge 1
+     * haben und darf nur Zeichen von A-Z enthalten.
+     *
+     * @param key zu testender Schlüssel
+     * @throws CrypterException wird geworfen, wenn der Schlüssel nicht OK ist.
+     */
+    protected void checkKey(Key key) throws CrypterException {
+
+        // Passt die Länge?
+        if (key.getKey().length == 0) {
+            throw new CrypterException("Der Schlüssel muss mindestens " +
+                    "ein Zeichen lang sein");
+        }
+
+        checkCharacters(key.getKey(), ALPHABET);
+    }
+\end{lstlisting}
+
+

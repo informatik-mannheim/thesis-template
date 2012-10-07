@@ -1,0 +1,56 @@
+\input{preambel}
+
+\begin{document}
+
+% Römische Ziffern für die "Front-Matter"
+\pagenumbering{roman}
+\changefont{ptm}{m}{n}  % Times New Roman für den Fließtext
+\renewcommand{\rmdefault}{ptm}
+
+\input{titelblatt}
+
+% Inhaltsverzeichnis erzeugen
+\tableofcontents
+
+% Arabische Zahlen für den Hauptteil
+\pagenumbering{arabic}
+
+% Hauptteil der Arbeit
+\input{kapitel1}
+
+\input{kapitel2}
+
+% Neue Seite
+\newpage
+
+% Römische Ziffern für die "Back-Matter"
+\pagenumbering{roman}
+
+% Abkürzungsverzeichnis
+\input{abkuerzungen}
+
+% Tabellenverzeichnis erzeugen
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\listoftables
+
+% Abbildungsverzeichnis erzeugen
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\listoffigures
+
+% Literaturverzeichnis erzeugen (nach DIN)
+\begin{flushleft}
+\bibliographystyle{dinat}
+\bibliography{literatur}   % BibTeX-Datei mit Literaturquellen
+\end{flushleft}
+
+% Index ausgeben
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}

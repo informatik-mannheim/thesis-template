@@ -1,0 +1,107 @@
+\thispagestyle{empty}
+
+\newlength{\bindekorrektur}
+\newlength{\seitenanfang}
+\newlength{\seitenbreite}
+
+% -------------------------------------------------------
+% Daten für das Titelblatt
+
+\newcommand{\hsmatitel}{Einsatz eines Flux-Kompensators für Zeitreisen mit einer maximalen Höchstgeschwindigkeit von WARP 7}
+
+\newcommand{\hsmaort}{Mannheim}
+\newcommand{\hsmaauthor}{Max Mustermann}
+\newcommand{\hsmadatum}{20.04.2012}
+\newcommand{\hsmafirma}{Paukenschlag GmbH, Mannheim}
+\newcommand{\hsmatyp}{Bachelor-Thesis}
+\newcommand{\hsmastudiengang}{Informatik}
+\newcommand{\hsmabetreuer}{Betreuer: Prof. Peter Mustermann}
+\newcommand{\hsmazweitkorrektor}{Zweitkorrektor: Erika Mustermann}
+
+% -------------------------------------------------------
+
+\setlength{\bindekorrektur}{-46mm}   % Korrektur der horizontalen Position
+\setlength{\seitenanfang}{0mm}       % Korrektur der vertikalen Position
+\setlength{\seitenbreite}{297mm}
+
+% -------------------------------------------------------
+% Ab hier sollten eigentlich keine Veränderungen mehr
+% notwendig sein.
+% -------------------------------------------------------
+
+% Titel der Arbeit
+\begin{textblock*}{128mm}(45mm,\seitenanfang + 62mm) % 4,5cm vom linken Rand und 6,0cm vom oberen Rand
+  \centering\huge\sf
+  \vspace{4mm} % Kleiner zusätzlicher Abstand oben für bessere Optik
+  \textbf{\hsmatitel}
+\end{textblock*}%
+
+%Name
+\begin{textblock*}{128mm}(45mm,\seitenanfang + 103mm)
+  \centering\Large\sf
+  \hsmaauthor
+\end{textblock*}
+
+% Thesis
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 130mm)
+  \centering\Large\sf
+  \hsmatyp\\
+  \vspace{2mm}
+  Studiengang \hsmastudiengang
+\end{textblock*}
+
+% Fakultät
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 155mm)
+  \centering\Large\sf
+  Fakultät für Informatik\\
+  \vspace{2mm}
+  Hochschule Mannheim
+\end{textblock*}
+
+% Datum
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 190mm)
+  \centering\Large 
+  \textsf{\hsmadatum}
+\end{textblock*}
+
+% Firma
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 215mm)
+  \centering\Large 
+  \textsf{Durchgeführt bei der Firma \hsmafirma}
+\end{textblock*}
+
+% Betreuer
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 240mm)
+  \centering\Large\sf
+  \hsmabetreuer\\
+  \vspace{2mm}
+  \hsmazweitkorrektor
+\end{textblock*}
+
+\null
+\newpage
+
+% Daten in die Standard Felder von KOMA-Script eintragen
+\titlehead{\hsmatyp im \hsmastudiengang}
+\subject{}
+\title{\hsmatitel}
+\author{\hsmaauthor}
+\date{\small{\hsmadatum}}
+
+% Daten für das fertige PDF-Dokument
+\hypersetup{
+  pdftitle={\hsmatitel},  % Titel des Dokuments
+  pdfauthor={\hsmaauthor},              % Author
+  pdfsubject={\hsmatyp im \hsmastudiengang},                % Thema
+  pdfkeywords={\hsmatitel}         % Schlüsselworte
+}
+
+\textsf{\large\textbf{Erklärung}}
+
+Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinngemäß aus veröffentlichten und nicht veröffentlichten Schriften entnommen wurden, sind als solche kenntlich gemacht. Die Arbeit ist in gleicher oder ähnlicher Form oder auszugsweise im Rahmen einer anderen Prüfung noch nicht vorgelegt worden.
+
+\vspace{1cm}
+\hsmaort, \hsmadatum \\
+
+\vspace{1.2cm}						                                      
+\hsmaauthor
