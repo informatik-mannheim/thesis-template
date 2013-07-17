@@ -18,7 +18,7 @@ Man kann sich auch selber ein Makro für das Einfügen von Bildern schreiben:
 
 \bild{kapitel2/modell_point_to_point}{6cm}{Point to Point}
 
-\blindtext[2]
+\blindtext[1]
 
 \clearpage % Alle Bilder, die bisher kamen ausgeben
 
@@ -26,7 +26,9 @@ Man kann sich auch selber ein Makro für das Einfügen von Bildern schreiben:
 
 \blindtext[1]
 
-\begin{table}
+\begin{table}[h]
+  \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
+  \label{Kap2:Kopplungsformen}
   \renewcommand{\arraystretch}{1.2}
   \centering
   \sffamily
@@ -43,8 +45,6 @@ Man kann sich auch selber ein Makro für das Einfügen von Bildern schreiben:
     \end{tabular}
   \end{footnotesize}
   \rmfamily
-  \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
-  \label{Kap2:Kopplungsformen}
 \end{table}
 
 Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe Tabelle~\ref{Kap2:Kopplungsformen}.
@@ -110,22 +110,26 @@ Eine Formel gefällig? Mitten im Text $a_2 = \sqrt{x^3}$ oder als eigener Absatz
 
 \section{Sourcecode}
 
-Man kann mit Latex auch ganz Toll Sourcecode in den Text aufnehmen.
+Man kann mit Latex auch ganz toll Sourcecode in den Text aufnehmen.
 
 \subsection{Aus einer Datei}
+
+\blindtext[1]
 
 \lstinputlisting[firstline=2,language=Java]{\srcloc/Crypter.java}
 
 
 \subsection{Inline}
 
-\begin{lstlisting}[language=Java]
+\blindtext[1]
+
+\begin{lstlisting}[language=Java,caption=Methode checkKey()]
     /**
      * Testet den Schlüssel auf Korrektheit: Er muss mindestens die Länge 1
      * haben und darf nur Zeichen von A-Z enthalten.
      *
      * @param key zu testender Schlüssel
-     * @throws CrypterException wird geworfen, wenn der Schlüssel nicht OK ist.
+     * @throws CrypterException wenn der Schlüssel nicht OK ist.
      */
     protected void checkKey(Key key) throws CrypterException {
 

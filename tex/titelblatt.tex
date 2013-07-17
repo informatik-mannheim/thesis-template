@@ -1,107 +1,184 @@
-\thispagestyle{empty}
-
-\newlength{\bindekorrektur}
-\newlength{\seitenanfang}
-\newlength{\seitenbreite}
-
 % -------------------------------------------------------
-% Daten für das Titelblatt
-
-\newcommand{\hsmatitel}{Einsatz eines Flux-Kompensators für Zeitreisen mit einer maximalen Höchstgeschwindigkeit von WARP 7}
-
-\newcommand{\hsmaort}{Mannheim}
-\newcommand{\hsmaauthor}{Max Mustermann}
-\newcommand{\hsmadatum}{20.04.2012}
-\newcommand{\hsmafirma}{Paukenschlag GmbH, Mannheim}
-\newcommand{\hsmatyp}{Bachelor-Thesis}
-\newcommand{\hsmastudiengang}{Informatik}
-\newcommand{\hsmabetreuer}{Betreuer: Prof. Peter Mustermann}
-\newcommand{\hsmazweitkorrektor}{Zweitkorrektor: Erika Mustermann}
-
-% -------------------------------------------------------
-
-\setlength{\bindekorrektur}{-46mm}   % Korrektur der horizontalen Position
-\setlength{\seitenanfang}{0mm}       % Korrektur der vertikalen Position
-\setlength{\seitenbreite}{297mm}
-
-% -------------------------------------------------------
-% Ab hier sollten eigentlich keine Veränderungen mehr
+% In dieser Datei sollten eigentlich keine Veränderungen mehr
 % notwendig sein.
 % -------------------------------------------------------
 
-% Titel der Arbeit
-\begin{textblock*}{128mm}(45mm,\seitenanfang + 62mm) % 4,5cm vom linken Rand und 6,0cm vom oberen Rand
-  \centering\huge\sf
-  \vspace{4mm} % Kleiner zusätzlicher Abstand oben für bessere Optik
-  \textbf{\hsmatitel}
-\end{textblock*}%
+\thispagestyle{empty}
 
-%Name
-\begin{textblock*}{128mm}(45mm,\seitenanfang + 103mm)
-  \centering\Large\sf
-  \hsmaauthor
-\end{textblock*}
+\ifthenelse{\equal{\hsmafakultaet}{I}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Informatik}%
+   \newcommand{\hsmafakultaetlangen}{Department of Computer Science}}{}
 
-% Thesis
-\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 130mm)
-  \centering\Large\sf
-  \hsmatyp\\
-  \vspace{2mm}
-  Studiengang \hsmastudiengang
-\end{textblock*}
+\ifthenelse{\equal{\hsmastudiengang}{IB}}%
+  {\newcommand{\hsmastudienganglangde}{Informatik}%
+  \newcommand{\hsmastudienganglangen}{Computer Science}%
+  \newcommand{\hsmatypde}{Bachelor-Thesis}%
+  \newcommand{\hsmatypen}{Bachelor Thesis}%
+  \newcommand{\hsmagrad}{\hsmabsc}}{}
 
-% Fakultät
-\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 155mm)
-  \centering\Large\sf
-  Fakultät für Informatik\\
-  \vspace{2mm}
-  Hochschule Mannheim
-\end{textblock*}
+\ifthenelse{\equal{\hsmastudiengang}{IMB}}%
+  {\newcommand{\hsmastudienganglangde}{Medizinische Informatik}%
+  \newcommand{\hsmastudienganglangen}{Medical Informatics}%
+  \newcommand{\hsmatypde}{Bachelor-Thesis}%
+  \newcommand{\hsmatypen}{Bachelor Thesis}%
+  \newcommand{\hsmagrad}{\hsmabsc}}{}
+  
+\ifthenelse{\equal{\hsmastudiengang}{UIB}}%
+  {\newcommand{\hsmastudienganglangde}{Unternehmens- und Wirtschaftsinformatik}%
+  \newcommand{\hsmastudienganglangen}{Enterprise Computing}%  
+  \newcommand{\hsmatypde}{Bachelor-Thesis}%
+  \newcommand{\hsmatypen}{Bachelor Thesis}%
+  \newcommand{\hsmagrad}{\hsmabsc}}{}
 
-% Datum
-\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 190mm)
-  \centering\Large 
-  \textsf{\hsmadatum}
-\end{textblock*}
+\ifthenelse{\equal{\hsmastudiengang}{IM}}%
+  {\newcommand{\hsmastudienganglangde}{Informatik}%
+   \newcommand{\hsmastudienganglangen}{Computer Science}%
+   \newcommand{\hsmatypde}{Master-Thesis}%
+   \newcommand{\hsmatypen}{Master Thesis}%
+   \newcommand{\hsmagrad}{\hsmamaster}}{}}{}
 
-% Firma
-\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 215mm)
-  \centering\Large 
-  \textsf{Durchgeführt bei der Firma \hsmafirma}
-\end{textblock*}
+\ifthenelse{\equal{\hsmastudiengang}{MTB}}%
+  {\newcommand{\hsmastudienganglangde}{Mechatronik}%
+   \newcommand{\hsmastudienganglangen}{Mechatronics}%
+   \newcommand{\hsmatypde}{Bachelor-Thesis}%
+   \newcommand{\hsmatypen}{Bachelor Thesis}%
+   \newcommand{\hsmagrad}{\hsmabsc}}{}}{}
 
-% Betreuer
-\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 240mm)
-  \centering\Large\sf
-  \hsmabetreuer\\
-  \vspace{2mm}
-  \hsmazweitkorrektor
-\end{textblock*}
+\newcommand{\hsmabsc}{Bachelor of Science (B.Sc.)}
+\newcommand{\hsmamaster}{Master of Science (M.Sc.)}
 
-\null
-\newpage
+\newcommand{\hsmakoerperschaftde}{Hochschule Mannheim}
+\newcommand{\hsmakoerperschaften}{University of Applied Sciences Mannheim}
+
+\newcommand{\hsmaautorbib}{\hsmaautornname, \hsmaautorvname} % Autor Nachname, Vorname
+\newcommand{\hsmaautor}{\hsmaautorvname \ \hsmaautornname} % Autor Vorname Nachname
+
+\ifthenelse{\equal{\hsmasprache}{de}}%
+  {\newcommand{\hsmatyp}{\hsmatypde}%
+   \newcommand{\hsmathesistype}{zur Erlangung des akademischen Grades \hsmagrad}
+   \newcommand{\hsmakoerperschaft}{\hsmakoerperschaftde}%
+   \newcommand{\hsmastudiengangname}{Studiengang \hsmastudienganglangde}%
+   \newcommand{\hsmastudienganglang}{\hsmastudienganglangde}%
+   \newcommand{\hsmatitel}{\hsmatitelde}
+   \newcommand{\hsmatutor}{Betreuer}
+   \selectlanguage{ngerman}}%
+  {\newcommand{\hsmatyp}{\hsmatypen}
+   \newcommand{\hsmathesistype}{for the acquisition of the academic degree \hsmagrad}
+   \newcommand{\hsmakoerperschaft}{\hsmakoerperschaften}%
+   \newcommand{\hsmastudiengangname}{Course of Studies: \hsmastudienganglang}%
+   \newcommand{\hsmastudienganglang}{\hsmastudienganglangen}%
+   \newcommand{\hsmatitel}{\hsmatitelen}
+   \newcommand{\hsmatutor}{Tutors}
+   \selectlanguage{english}}%
+
 
 % Daten in die Standard Felder von KOMA-Script eintragen
-\titlehead{\hsmatyp im \hsmastudiengang}
+\titlehead{\hsmatyp im \  \hsmastudienganglang}
 \subject{}
-\title{\hsmatitel}
+\title{\hsmabibtitel}
 \author{\hsmaauthor}
 \date{\small{\hsmadatum}}
 
 % Daten für das fertige PDF-Dokument
 \hypersetup{
-  pdftitle={\hsmatitel},  % Titel des Dokuments
-  pdfauthor={\hsmaauthor},              % Author
-  pdfsubject={\hsmatyp im \hsmastudiengang},                % Thema
-  pdfkeywords={\hsmatitel}         % Schlüsselworte
+  pdftitle={\hsmabibtitel},  % Titel des Dokuments
+  pdfauthor={\hsmaautor},              % Autor
+  pdfsubject={\hsmatyp im \ \hsmastudienganglang},                % Thema
+  pdfkeywords={\hsmabibtitel}         % Schlüsselworte
 }
 
+\newlength{\bindekorrektur}
+\newlength{\seitenanfang}
+\newlength{\seitenbreite}
+  
+\setlength{\bindekorrektur}{-46mm}   % Korrektur der horizontalen Position
+\setlength{\seitenanfang}{0mm}       % Korrektur der vertikalen Position
+\setlength{\seitenbreite}{297mm}
+
+\noindent\includegraphics[width=7cm]{hsma-logo.pdf}\\
+
+% Titel der Arbeit
+\begin{textblock*}{128mm}(45mm,\seitenanfang + 62mm) % 4,5cm vom linken Rand und 6,0cm vom oberen Rand
+  \centering\Large\sf
+  \vspace{4mm} % Kleiner zusätzlicher Abstand oben für bessere Optik
+  \textbf{\hsmatitel}
+\end{textblock*}%
+
+% Name
+\begin{textblock*}{128mm}(45mm,\seitenanfang + 103mm)
+  \centering\large\sf
+  \hsmaautor
+\end{textblock*}
+
+% Thesis
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 130mm)
+  \centering\large\sf
+  \hsmatyp\\
+  \begin{small}\hsmathesistype \end{small}\\
+  \vspace{2mm}
+  \hsmastudiengangname
+\end{textblock*}
+
+% Fakultät
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 165mm)
+  \centering\large\sf
+  \hsmafakultaetlang\\
+  \vspace{2mm}
+  \hsmakoerperschaft
+\end{textblock*}
+
+% Datum
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 190mm)
+  \centering\large 
+  \textsf{\hsmadatum}
+\end{textblock*}
+
+% Firma
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 215mm)
+  \centering\large 
+  %\textsf{Durchgeführt bei der Firma \hsmafirma}
+\end{textblock*}
+
+% Betreuer
+\begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 240mm)
+  \centering\large\sf
+  \hsmatutor \\
+  \vspace{2mm}
+  \hsmabetreuer\\
+  \vspace{2mm}
+  \hsmazweitkorrektor
+\end{textblock*}
+
+% Bibliographische Informationen
+\null\newpage
+\thispagestyle{empty}
+  
+\newcommand{\hsmabibde}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelde \ / \hsmaautor. \ -- \\ \hsmatyp, \hsmaort \ : \hsmakoerperschaftde, \hsmajahr. \pageref{lastpage} Seiten.\end{small}}
+
+\newcommand{\hsmabiben}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelen \ / \hsmaautor. \ -- \\ \hsmatyp, \hsmaort \ : \hsmakoerperschaften, \hsmajahr. \pageref{lastpage} pages. \end{small}}
+
+\ifthenelse{\equal{\hsmasprache}{de}}%
+  {\hsmabibde \\ \vspace{0.5cm} \\ \hsmabiben}
+  {\hsmabiben \\ \vspace{0.5cm} \\ \hsmabibde}
+
+
+% Erklärung
+\clearpage\setcounter{page}{1}
+\thispagestyle{empty}
 \textsf{\large\textbf{Erklärung}}
 
-Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinngemäß aus veröffentlichten und nicht veröffentlichten Schriften entnommen wurden, sind als solche kenntlich gemacht. Die Arbeit ist in gleicher oder ähnlicher Form oder auszugsweise im Rahmen einer anderen Prüfung noch nicht vorgelegt worden.
+Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
 
 \vspace{1cm}
 \hsmaort, \hsmadatum \\
 
 \vspace{1.2cm}						                                      
-\hsmaauthor
+\hsmaautor
+\cleardoublepageempty
+
+% Abstract
+\chapter*{Abstract}
+
+\ifthenelse{\equal{\hsmasprache}{de}}%
+  {\subsubsection*{\hsmatitelde}\hsmaabstractde\subsubsection*{\hsmatitelen}\hsmaabstracten}
+  {\subsubsection*{\hsmatitelen}\hsmaabstracten\subsubsection*{\hsmatitelde}\hsmaabstractde}
