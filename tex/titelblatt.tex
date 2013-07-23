@@ -35,14 +35,14 @@
    \newcommand{\hsmastudienganglangen}{Computer Science}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
-   \newcommand{\hsmagrad}{\hsmamaster}}{}}{}
+   \newcommand{\hsmagrad}{\hsmamaster}}{}
 
 \ifthenelse{\equal{\hsmastudiengang}{MTB}}%
   {\newcommand{\hsmastudienganglangde}{Mechatronik}%
    \newcommand{\hsmastudienganglangen}{Mechatronics}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
-   \newcommand{\hsmagrad}{\hsmabsc}}{}}{}
+   \newcommand{\hsmagrad}{\hsmabsc}}{}
 
 \newcommand{\hsmabsc}{Bachelor of Science (B.Sc.)}
 \newcommand{\hsmamaster}{Master of Science (M.Sc.)}
@@ -55,36 +55,38 @@
 
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {\newcommand{\hsmatyp}{\hsmatypde}%
-   \newcommand{\hsmathesistype}{zur Erlangung des akademischen Grades \hsmagrad}
+   \newcommand{\hsmathesistype}{zur Erlangung des akademischen Grades \hsmagrad}%
    \newcommand{\hsmakoerperschaft}{\hsmakoerperschaftde}%
    \newcommand{\hsmastudiengangname}{Studiengang \hsmastudienganglangde}%
    \newcommand{\hsmastudienganglang}{\hsmastudienganglangde}%
-   \newcommand{\hsmatitel}{\hsmatitelde}
-   \newcommand{\hsmatutor}{Betreuer}
+   \newcommand{\hsmatitel}{\hsmatitelde}%
+   \newcommand{\hsmatutor}{Betreuer}%
+   \newcommand{\hsmafakultaetlang}{\hsmafakultaetlangde}%
    \selectlanguage{ngerman}}%
-  {\newcommand{\hsmatyp}{\hsmatypen}
-   \newcommand{\hsmathesistype}{for the acquisition of the academic degree \hsmagrad}
+  {\newcommand{\hsmatyp}{\hsmatypen}%
+   \newcommand{\hsmathesistype}{for the acquisition of the academic degree \hsmagrad}%
    \newcommand{\hsmakoerperschaft}{\hsmakoerperschaften}%
    \newcommand{\hsmastudiengangname}{Course of Studies: \hsmastudienganglang}%
    \newcommand{\hsmastudienganglang}{\hsmastudienganglangen}%
-   \newcommand{\hsmatitel}{\hsmatitelen}
+   \newcommand{\hsmatitel}{\hsmatitelen}%
    \newcommand{\hsmatutor}{Tutors}
+   \newcommand{\hsmafakultaetlang}{\hsmafakultaetlangen}%
    \selectlanguage{english}}%
 
 
 % Daten in die Standard Felder von KOMA-Script eintragen
 \titlehead{\hsmatyp im \  \hsmastudienganglang}
 \subject{}
-\title{\hsmabibtitel}
+\title{\hsmatitel}
 \author{\hsmaauthor}
 \date{\small{\hsmadatum}}
 
 % Daten für das fertige PDF-Dokument
 \hypersetup{
-  pdftitle={\hsmabibtitel},  % Titel des Dokuments
+  pdftitle={\hsmatitel},  % Titel des Dokuments
   pdfauthor={\hsmaautor},              % Autor
   pdfsubject={\hsmatyp im \ \hsmastudienganglang},                % Thema
-  pdfkeywords={\hsmabibtitel}         % Schlüsselworte
+  pdfkeywords={\hsmatitel}         % Schlüsselworte
 }
 
 \newlength{\bindekorrektur}
@@ -174,7 +176,7 @@ Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst un
 
 \vspace{1.2cm}						                                      
 \hsmaautor
-\cleardoublepageempty
+\cleardoublepage
 
 % Abstract
 \chapter*{Abstract}

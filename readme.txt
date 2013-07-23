@@ -48,3 +48,16 @@ Neben den Dateien gibt es noch zwei Ordner
   * bilder - Ablageort für die verwendeten Bilder
   * src - Ablageort für die verwendeten Quelltexte
 
+
+## Latex-Projekt unter TexnicCenter einrichten
+
+Ab der Version 2 von TexnicCenter wird das UTF-8-Format richtig unterstützt.
+
+  * Öffnen Sie die Datei thesis.tex mit TexnicCenter
+  * Projekt / Erzeugen mit aktueller Datei als Hauptdatei
+  * "verwendet BibTex" ankreuzen
+  * "verwendet Makeindex" ankreuzen
+  * Sprachinformation für die Rechtschreibkorrektur setzen
+
+Sie können dann beispielsweise bequem auf die Dokumentstruktur, Dateien und
+Literaturreferenzen zugreifen.
