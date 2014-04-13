@@ -1,6 +1,6 @@
 #!/bin/sh
-RESULT_DIR="01_Thesis"
-OUTPUT_DIR="00_Output"
+RESULT_DIR="result"
+OUTPUT_DIR="../temp"
 FILE="thesis"
 cd tex
 rm -rf $OUTPUT_DIR
