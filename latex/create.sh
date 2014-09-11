@@ -1,15 +1,18 @@
 #!/bin/sh
-RESULT_DIR="result"
+RESULT_DIR="../result"
 OUTPUT_DIR="../temp"
 FILE="thesis"
-mkdir $RESULT_DIR
 cd tex
+mkdir $RESULT_DIR
 mkdir $OUTPUT_DIR
+cp literatur.bib $OUTPUT_DIR
 pdflatex -output-directory="$OUTPUT_DIR" -synctex=1 -interaction=nonstopmode ${FILE}.tex 
-bibtex $OUTPUT_DIR/${FILE}.aux
-makeindex $OUTPUT_DIR/${FILE}.idx
+cd $OUTPUT_DIR
+bibtex ${FILE}.aux
+makeindex ${FILE}.idx
+cd ../tex
 pdflatex -output-directory="$OUTPUT_DIR" -synctex=1 -interaction=nonstopmode ${FILE}.tex
 pdflatex -output-directory="$OUTPUT_DIR" -synctex=2 -interaction=nonstopmode ${FILE}.tex
-cat $OUTPUT_DIR/${FILE}.pdf > ../$RESULT_DIR/${FILE}.pdf
+cat $OUTPUT_DIR/${FILE}.pdf > $RESULT_DIR/${FILE}.pdf
 cd ..
 
