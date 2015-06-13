@@ -6,7 +6,6 @@
 \begin_preamble
 % Pakete einbinden, die benötigt werden
 \usepackage{graphicx}             % Bilder einbinden
-\usepackage[ngerman,english]{babel}       % Deutsch und Englisch unterstützen
 \usepackage{xcolor}               % Color support
 \usepackage{amsmath}              % Matheamtische Formeln
 \usepackage{amsfonts}             % Mathematische Zeichensätze
@@ -29,8 +28,6 @@
 \usepackage{setspace}             % Abstände korrigieren
 \usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
 \usepackage{scrhack}              % Get rid of tocbasic warnings
-\usepackage[pagebackref=false]{hyperref}  % Hyperlinks
-\usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
 
 % Farben definieren
 \definecolor{linkblue}{RGB}{0, 0, 100}
@@ -123,7 +120,7 @@ urlcolor	=linkblack    % URLs
 \newcommand{\srcloc}{src/}
 
 % Wo sind die Bilder?
-\graphicspath{{bilder/}}
+%\graphicspath{{bilder/}}
 
 % Makros für typographisch korrekte Abkürzungen
 \newcommand{\zb}[0]{z.\,B.\ }
@@ -156,7 +153,16 @@ logicalmkup
 \index_command default
 \paperfontsize 12
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -248,7 +254,17 @@ Elementare Angaben zur Abschlussarbeit im LaTex-Format.
 Wenn hier alles korrekt eingetragen wurde, wird das Titelblatt automatisch
  generiert.
  D.h.
- die Datei titelblatt.tex muss nicht mehr angepasst werden.
+ die Datei 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+util/titelblatt.tex
+\end_layout
+
+\end_inset
+
+ muss nicht mehr angepasst werden.
 \end_layout
 
 \end_inset
@@ -625,6 +641,19 @@ filename "kapitel1.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "kapitel2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Anhang
+\end_layout
 
 \end_inset
 
