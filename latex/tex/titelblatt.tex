@@ -9,11 +9,18 @@
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Informatik}%
    \newcommand{\hsmafakultaetlangen}{Department of Computer Science}}{}
 
-\ifthenelse{\equal{\hsmastudiengang}{IB}}%
+\ifthenelse{\equal{\hsmastudiengang}{IB} \AND \equal{\hsmastudienarbeit}{FALSE}}%
   {\newcommand{\hsmastudienganglangde}{Informatik}%
   \newcommand{\hsmastudienganglangen}{Computer Science}%
   \newcommand{\hsmatypde}{Bachelor-Thesis}%
   \newcommand{\hsmatypen}{Bachelor Thesis}%
+  \newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{IB} \AND \equal{\hsmastudienarbeit}{TRUE}}%
+  {\newcommand{\hsmastudienganglangde}{Informatik}%
+  \newcommand{\hsmastudienganglangen}{Computer Science}%
+  \newcommand{\hsmatypde}{Studienarbeit}%
+  \newcommand{\hsmatypen}{Study Work}%
   \newcommand{\hsmagrad}{\hsmabsc}}{}
 
 \ifthenelse{\equal{\hsmastudiengang}{IMB}}%
@@ -73,6 +80,9 @@
    \newcommand{\hsmafakultaetlang}{\hsmafakultaetlangen}%
    \selectlanguage{english}}%
 
+% Bei Studienarbeit keine Angabe des angestrebten Grades
+\ifthenelse{\equal{\hsmastudienarbeit}{TRUE} \AND \equal{\hsmastudiengang}{IB}}
+{\renewcommand{\hsmathesistype}{}}{}
 
 % Daten in die Standard Felder von KOMA-Script eintragen
 \titlehead{\hsmatyp im \  \hsmastudienganglang}
