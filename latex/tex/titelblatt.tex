@@ -171,11 +171,31 @@
 
 Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
 
+\ifthenelse{\boolean{hsmapublizieren} \and \not\boolean{hsmasperrvermerk}}%
+{
+\vspace{0.5cm}
+Ich bin damit einverstanden, dass meine Arbeit veröffentlicht wird, d.\,h. dass die Arbeit elektronisch gespeichert, in andere Formate konvertiert, auf den Servern der Hochschule Mannheim öffentlich zugänglich gemacht und über das Internet verbreitet werden darf. 
+}{}%
+
+
 \vspace{1cm}
 \hsmaort, \hsmadatum \\
 
 \vspace{1.2cm}						                                      
 \hsmaautor
+
+\ifthenelse{\boolean{hsmasperrvermerk}}%
+{%
+\vspace{11cm}
+\color{red}\textsf{\large\textbf{Sperrvermerk}}
+
+Diese Arbeit basiert auf internen und vertraulichen Daten des Unternehmens \hsmafirma.
+
+Diese Arbeit darf Dritten, mit Ausnahme der betreuenden Dozenten und befugten Mitglieder des Prüfungsausschusses, ohne ausdrückliche Zustimmung des Unternehmens und des Verfassers nicht zugänglich gemacht werden.
+
+Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Genehmigung -- auch in Auszügen -- ist nicht erlaubt.
+}{}
+
 \cleardoublepage
 
 % Abstract
