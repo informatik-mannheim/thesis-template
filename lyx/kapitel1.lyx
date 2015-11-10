@@ -1,0 +1,265 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrreprt
+\use_default_options true
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Einleitung 
+\end_layout
+
+\begin_layout Section
+Erster Abschnitt 
+\end_layout
+
+\begin_layout Standard
+Einleitung zur Arbeit.
+ 
+\end_layout
+
+\begin_layout Standard
+Möglicherweise noch einmal unterteilt in Unterabschnitte.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Textauszeichnungen"
+
+\end_inset
+
+Textauszeichnungen 
+\end_layout
+
+\begin_layout Standard
+Man kann Text auch kursiv oder fett setzen.
+ Es gibt Bindestrichte -, Gedankenstriche – und lange Striche —.
+ 
+\end_layout
+
+\begin_layout Subsection
+Anführungszeichen 
+\end_layout
+
+\begin_layout Standard
+Deutsche Anführungszeichen gehen so: „dieser Text steht in ‚Anführungszeichen‘;
+ alles klar?“.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Abkürzungen
+\end_layout
+
+\end_inset
+
+Abkürzungen
+\end_layout
+
+\begin_layout Standard
+Eine Abkürzung (ABK) wird bei der ersten Verwendung ausgeschrieben
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Ausschreiben bedeutet, dass man nicht die Abkürzung sondern die lange Form
+ verwendet.
+\end_layout
+
+\end_inset
+
+.
+ Danach nicht mehr: ABK.
+ Man kann allerdings die Langform
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ explizit anfordern: Abkürzungen oder die Kurzform ABK oder auch noch einmal
+ die Definition: Abkürzung (ABK).
+ 
+\end_layout
+
+\begin_layout Standard
+Mehr dazu findet sich im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Textauszeichnungen"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Noch ein Unterabschnitt
+\end_layout
+
+\begin_layout Paragraph
+Eine Absatzüberschrift
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Literaturarbeit 
+\end_layout
+
+\begin_layout Standard
+Wichtig ist das korrekte Zitieren von Quellen, wie es auch von 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kornmeier2011"
+
+\end_inset
+
+ dargelegt wird.
+ Interessant ist in diesem Zusammenhang auch der Artikel von 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vixie2007"
+
+\end_inset
+
+.
+ Häufig werden die Zitate auch in Klammern gesetzt, wie bei [?].
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "literatur"
+options "alpha"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

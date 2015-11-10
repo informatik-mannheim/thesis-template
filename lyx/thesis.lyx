@@ -1,0 +1,690 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrreprt
+\begin_preamble
+% Pakete einbinden, die benötigt werden
+\usepackage{graphicx}             % Bilder einbinden
+\usepackage{xcolor}               % Color support
+\usepackage{amsmath}              % Matheamtische Formeln
+\usepackage{amsfonts}             % Mathematische Zeichensätze
+\usepackage{amssymb}              % Mathematische Symbole
+\usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
+\usepackage{booktabs}             % Korrekter Tabellensatz
+\usepackage[printonlyused]{acronym}   % Abkürzungsverzeichnis [nur verwendete Abkürzugen]
+\usepackage{makeidx}              % Sachregister
+\usepackage{fancyhdr}             % Schönere Überschriften
+\usepackage{listings}             % Source Code listings
+\usepackage{listingsutf8}         % Listings in UTF8
+\usepackage[hang,font={sf,footnotesize},labelfont={footnotesize,bf}]{caption} % Beschriftungen
+\usepackage[scaled]{helvet}       % Schrift Helvetia laden
+\usepackage[sf,bf,small]{titlesec} % Einstellungen für Überschriften
+\usepackage[absolute]{textpos}	% Absolute Textpositionen (für Deckblatt)
+\usepackage{calc}                 % Berechnung von Positionen
+\usepackage{blindtext}            % Blindtexte
+\usepackage[bottom=40mm,left=35mm,right=35mm,top=30mm]{geometry} % Ränder ändern
+\usepackage[square]{natbib}       % Literaturverzeichnis nach DIN mit eckigen Klammern bei \citep
+\usepackage{setspace}             % Abstände korrigieren
+\usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
+\usepackage{scrhack}              % Get rid of tocbasic warnings
+
+% Farben definieren
+\definecolor{linkblue}{RGB}{0, 0, 100}
+\definecolor{linkblack}{RGB}{0, 0, 0}
+\definecolor{comment}{RGB}{63, 127, 95}
+\definecolor{darkgreen}{RGB}{14, 144, 102}
+\definecolor{darkblue}{RGB}{0,0,168}
+\definecolor{darkred}{RGB}{128,0,0}
+\definecolor{javadoccomment}{RGB}{0,0,240}
+
+% Einstellungen für das Hyperlink-Paket
+\hypersetup{
+    colorlinks=true,      % Farbige links verwenden       
+%    allcolors=linkblue,
+    linktoc=all,          % Links im Inhaltsverzeichnis
+    linkcolor=linkblack,  % Querverweise
+    citecolor=linkblack,  % Literaturangaben
+filecolor=linkblack,  % Dateilinks
+urlcolor	=linkblack    % URLs
+}
+
+% Einstellungen für Quelltexte
+\lstset{     
+      xleftmargin=0.2cm,     
+      basicstyle=\footnotesize\ttfamily,
+      keywordstyle=\color{darkgreen},
+      identifierstyle=\color{darkblue},
+      commentstyle=\color{comment}, 
+      stringstyle=\color{darkred}, 
+      tabsize=2,
+      lineskip={2pt},
+      columns=flexible,
+      inputencoding=utf8,
+      captionpos=b,
+      breakautoindent=true,
+  breakindent=2em,
+  breaklines=true,
+  prebreak=,
+  postbreak=,
+      numbers=none,
+      numberstyle=\tiny,
+      showspaces=false,      % Keine Leerzeichensymbole
+      showtabs=false,        % Keine Tabsymbole
+      showstringspaces=false,% Leerzeichen in Strings
+      morecomment=[s][\color{javadoccomment}]{/**}{*/},
+      literate={Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
+}
+
+\urlstyle{same}
+
+% Einstellungen für Überschriften
+\titlespacing{\paragraph}{0pt}{1ex}{2.0ex}
+\titlespacing{\subsubsection}{0pt}{3ex}{0.0ex}
+\titlespacing{\subsection}{0pt}{4ex}{0.2ex}
+\titlespacing{\section}{0pt}{7ex}{1ex}
+\titleformat*{\subsubsection}{\sffamily\itshape\bfseries\small}
+\titleformat*{\paragraph}{\sffamily\bfseries\small}
+
+% Einstellungen für Schriftarten
+\setkomafont{pagehead}{\normalfont\sffamily}
+\setkomafont{pagenumber}{\normalfont\sffamily}
+\addtokomafont{footnote}{\footnotesize}
+
+% Wichtige Abstände
+\setlength{\parskip}{0.2cm}  % 2mm Abstand zwischen zwei Absätzen
+\setlength{\parindent}{0mm}  % Absätze nicht einziehen
+\clubpenalty = 10000         % Keine "Schusterjungen"
+\widowpenalty = 10000        % Keine "Hurenkinder"
+\displaywidowpenalty = 10000 % Keine "Hurenkinder"
+\renewcommand{\footnotesize}{\fontsize{9}{10}\selectfont} % Größe der Fußnoten
+\setlength{\footnotesep}{8pt} % Abstand zwischen den Fußnoten
+
+% Index erzeugen
+\makeindex
+
+% Einfacher Font-Wechsel über dieses Makro
+\newcommand{\changefont}[3]{
+\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+% Eigenes Makro für Bilder
+\newcommand{\bild}[3]{
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=#2]{#1}
+  \caption{#3}
+  \label{#1}
+\end{figure}}
+
+% Wo liegt Sourcecode?
+\newcommand{\srcloc}{src/}
+
+% Wo sind die Bilder?
+%\graphicspath{{bilder/}}
+
+% Makros für typographisch korrekte Abkürzungen
+\newcommand{\zb}[0]{z.\,B.\ }
+\newcommand{\dahe}[0]{d.\,h.\ }
+\newcommand{\ua}[0]{u.\,a.\ }
+\end_preamble
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\branch Einführung
+\selected 1
+\filename_suffix 0
+\color #ffffff
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\size larger
+LyX-Vorlage für Abschlussarbeiten an der Hochschule Mannheim zur freien
+ Verfügung.
+\end_layout
+
+\begin_layout Plain Layout
+Erstellt für Lyx-Version 2.1.3.
+\end_layout
+
+\begin_layout Plain Layout
+Autoren
+\end_layout
+
+\begin_layout Itemize
+Markus Gumbel (m.gumbel@hs-mannheim.de): Lyx-Vorlage basierend auf LaTeX-Vorlage.
+\end_layout
+
+\begin_layout Itemize
+Thomas Smits (t.smits@hs-mannheim.de): Erstellung der LaTeX-Vorlage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Elementare Angaben zur Abschlussarbeit im LaTex-Format.
+\end_layout
+
+\begin_layout Plain Layout
+Wenn hier alles korrekt eingetragen wurde, wird das Titelblatt automatisch
+ generiert.
+ D.h.
+ die Datei 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+util/titelblatt.tex
+\end_layout
+
+\end_inset
+
+ muss nicht mehr angepasst werden.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmasprache}{de} % de oder en für Deutsch oder Englisch
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Titel der Arbeit auf Deutsch
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmatitelde}{Einsatz eines Flux-Kompensators für Zeitreisen mit einer maximalen
+ Höchstgeschwindigkeit von WARP~7}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Titel der Arbeit auf Englisch
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmatitelen}{Application of a flux compensator for timetravel with a maximum
+ velocity of warp~7}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Weitere Informationen zur Arbeit
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmaort}{Mannheim}    % Ort
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmaautorvname}{Max} % Vorname(n)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmaautornname}{Mustermann} % Nachname(n)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmadatum}{12.06.2015} % Datum der Abgabe
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmajahr}{2015} % Jahr der Abgabe
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmafirma}{Paukenschlag GmbH, Mannheim} % Firma bei der die Arbeit durchgeführt
+ wurde
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmabetreuer}{Prof.
+ Peter Mustermann, Hochschule Mannheim} % Betreuer an der Hochschule
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmazweitkorrektor}{Erika Mustermann, Paukenschlag GmbH} % Betreuer im Unternehm
+en oder Zweitkorrektor
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmafakultaet}{I} % I für Informatik
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hsmastudiengang}{IMB} % IB IMB UIB IM MTB
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Titelblatt und erste Seiten generieren und einfügen: 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{util/titelblatt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Abstract
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hsmatitelde
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Kurze (maximal halbseitige) Beschreibung, worum es in der Arbeit geht auf
+ Deutsch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jemand musste Josef K.
+\begin_inset space ~
+\end_inset
+
+verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines
+ Morgens verhaftet.
+ Wie ein Hund! sagte er, es war, als sollte die Scham ihn überleben.
+ Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er
+ sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt.
+ Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten,
+ als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen
+ Körper dehnte.
+ Es ist ein eigentümlicher Apparat, sagte der Offizier zu dem Forschungsreisende
+n und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch
+ wohlbekannten Apparat.
+ Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres,
+ geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von
+ dem Sprunge ab.
+ In den letzten Jahrzehnten ist das Interesse an Hungerkünstlern sehr zurückgega
+ngen.
+ Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht
+ fortrühren.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hsmatitelen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Kurze (maximal halbseitige) Beschreibung, worum es in der Arbeit geht auf
+ Englisch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The European languages are members of the same family.
+ Their separate existence is a myth.
+ For science, music, sport, etc, Europe uses the same vocabulary.
+ The languages only differ in their grammar, their pronunciation and their
+ most common words.
+ Everyone realizes why a new common language would be desirable: one could
+ refuse to pay expensive translators.
+ To achieve this, it would be necessary to have uniform grammar, pronunciation
+ and more common words.
+ If several languages coalesce, the grammar of the resulting language is
+ more simple and regular than that of the individual languages.
+ The new common language will be more simple and regular than the existing
+ European languages.
+ It will be as simple as Occidental; in fact, it will be Occidental.
+ To an English person, it will seem like simplified English, as a skeptical
+ Cambridge friend of mine told me what Occidental is.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Seitennummern ab hier mit 1 beginnen.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Römische Ziffern für die "Front-Matter"
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+changefont{ptm}{m}{n}  % Times New Roman für den Fließtext
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+rmdefault}{ptm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Jetzt folgen die Kapitel.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "kapitel1.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "kapitel2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Anhang
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "literatur"
+options "plainnat"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
