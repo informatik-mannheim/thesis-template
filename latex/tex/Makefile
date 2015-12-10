@@ -3,25 +3,34 @@ RESULT_DIR = ../result
 LATEX = pdflatex
 BIBTEX = bibtex
 MAKEINDEX = makeindex
-FILE = thesis
+
+INCLUDES = preambel.tex bilder/*.pdf
+
+define latex-it
+$(eval FILE = $(firstword $^))
+@echo "Building $(FILE)"
+@echo $(FILE)
+@$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE)
+@cd $(TEMP_DIR) ; $(BIBTEX) $(basename $(FILE)).aux 
+@cd $(TEMP_DIR) ; $(MAKEINDEX) $(basename $(FILE)).idx
+@$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE) > /dev/null
+@$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE) > /dev/null
+@$(LATEX) -output-directory=$(TEMP_DIR) $(FILE)
+endef
+
 
 all: $(TEMP_DIR) $(RESULT_DIR) \
-	$(RESULT_DIR)/$(FILE).pdf 
+	$(RESULT_DIR)/thesis.pdf 
 
 clean:
 	rm -rf $(TEMP_DIR)
 	rm -rf $(RESULT_DIR)
 
-$(TEMP_DIR)/$(FILE).pdf: $(FILE).tex *.tex
+$(TEMP_DIR)/thesis.pdf: thesis.tex $(INCLUDES) $(CHAPTERS)
 	cp literatur.bib $(TEMP_DIR)
-	@$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE).tex
-	@cd $(TEMP_DIR) ; $(BIBTEX) $(FILE).aux 
-	@cd $(TEMP_DIR) ; $(MAKEINDEX) $(FILE).idx
-	@$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE).tex > /dev/null
-	@$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE).tex > /dev/null
-	@$(LATEX) -output-directory=$(TEMP_DIR) $(FILE).tex
-	
-$(RESULT_DIR)/thesis.pdf: $(TEMP_DIR)/$(FILE).pdf
+	$(latex-it)
+
+$(RESULT_DIR)/thesis.pdf: $(TEMP_DIR)/thesis.pdf
 	@cat $< > $@
 
 $(TEMP_DIR):
