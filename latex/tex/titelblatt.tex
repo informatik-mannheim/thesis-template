@@ -5,9 +5,44 @@
 
 \thispagestyle{empty}
 
+% Fakultäten der HS-Mannheim
+% -------------------------------------------------------
 \ifthenelse{\equal{\hsmafakultaet}{I}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Informatik}%
    \newcommand{\hsmafakultaetlangen}{Department of Computer Science}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{E}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Elektrotechnik}%
+   \newcommand{\hsmafakultaetlangen}{Department of Electrical Engineering}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{S}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Sozialwesen}%
+   \newcommand{\hsmafakultaetlangen}{Department of Social Work}}{}
+   
+\ifthenelse{\equal{\hsmafakultaet}{B}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Biotechnologie}%
+   \newcommand{\hsmafakultaetlangen}{Department of Biotechnology}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{D}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Gestaltung}%
+   \newcommand{\hsmafakultaetlangen}{Department of Design}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{M}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Maschinenbau}%
+   \newcommand{\hsmafakultaetlangen}{Department of Mechanical Engineering}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{N}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Nachrichtentechnik}%
+   \newcommand{\hsmafakultaetlangen}{Department of Information Technology}}{}
+   
+\ifthenelse{\equal{\hsmafakultaet}{W}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Wirtschaftsingenieurwesen}%
+   \newcommand{\hsmafakultaetlangen}{Department of Engineering and Management}}{}
+   
+\ifthenelse{\equal{\hsmafakultaet}{C}}%
+  {\newcommand{\hsmafakultaetlangde}{Fakultät für Verfahrens- und Chemietechnik}%
+   \newcommand{\hsmafakultaetlangen}{Department of Chemical Process Engineering}}{}
+   
 
 \ifthenelse{\equal{\hsmastudiengang}{IB}}%
   {\newcommand{\hsmastudienganglangde}{Informatik}%
@@ -43,6 +78,23 @@
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
+   
+\ifthenelse{\equal{\hsmastudiengang}{ATB}}%
+  {\newcommand{\hsmastudienganglangde}{Automatisierungstechnik}%
+   \newcommand{\hsmastudienganglangen}{Automation Technology}%
+   \newcommand{\hsmatypde}{Bachelor-Thesis}%
+   \newcommand{\hsmatypen}{Bachelor Thesis}%
+   \newcommand{\hsmagrad}{\hsmabsc}}{}
+   
+\ifthenelse{\equal{\hsmastudiengang}{EIB}}%
+  {\newcommand{\hsmastudienganglangde}{Elektro- und Informationstechnik/Ingenieurpädagogik}%
+   \newcommand{\hsmastudienganglangen}{Elektro- und Informationstechnik/Ingenieurpädagogik}%
+   \newcommand{\hsmatypde}{Bachelor-Thesis}%
+   \newcommand{\hsmatypen}{Bachelor Thesis}%
+   \newcommand{\hsmagrad}{\hsmabsc}}{} 
+   
+
+
 
 \newcommand{\hsmabsc}{Bachelor of Science (B.Sc.)}
 \newcommand{\hsmamaster}{Master of Science (M.Sc.)}
