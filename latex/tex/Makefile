@@ -4,7 +4,7 @@ LATEX = pdflatex
 BIBTEX = bibtex
 MAKEINDEX = makeindex
 
-INCLUDES = preambel.tex bilder/*.pdf
+INCLUDES = docinfo.tex preambel.tex bilder/*.pdf
 
 define latex-it
 $(eval FILE = $(firstword $^))
