@@ -46,7 +46,9 @@ Normalerweise nicht verändern müssen Sie
   
   * `preambel.tex` - Einstellungen zum Dokument.
   * `titelblatt.tex` - Titelblatt der Arbeit
-  
+
+Die Vorlage ist für doppelseitigen Druck optimiert. Wenn Sie die Arbeit einseitig ausdrucken, sieht das Ergebnis seltsam aus, weil es unnötig viele leere Seiten enthält und die Seitenzahlen zwischen rechtem und linkem Rand springen. Für **einseitigen Druck** müssen sie die Datei `preambel.tex` ändern und `twoside=on` in `twoside=off` ändern.
+
 Neben den Dateien gibt es noch zwei Ordner
 
   * `/bilder` - Ablageort für die verwendeten Bilder
