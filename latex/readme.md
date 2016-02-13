@@ -8,7 +8,7 @@ Diese Vorlage wurde entwickelt von [Prof. Thomas Smits](http://www.smits-net.de)
 
 Zum Erzeugen der fertigen Arbeit dienen die Skripte `create` und `clean`. Die .cmd-Version ist für Windows, die .sh für Unix/Linux. 
 
-Zusätzlich liegt im Verzeichnis `/tex` noch ein Makefile mit dem man die Quellen mit Hilfe von `make` übersetzen kann.
+Zusätzlich liegt im Verzeichnis `/tex` noch ein Makefile mit dem man die Quellen mit Hilfe von `make` übersetzen kann. Der Vorteil hiervon ist, dass `make` erkennt, ob sich Inhalte geändert haben und nur dann die Arbeit neu übersetzt.
 
 Sie können auch eine integrierte Entwicklungsumgebung verwenden. Hierbei haben Sich folgende bewährt:
 
@@ -20,7 +20,7 @@ Ausserdem müssen sie LaTeX auf Ihrem Rechner installieren. Bei Linux erfolgt di
   * [MikTeX](http://miktex.org/) für Windows
   * [MacTeX](http://tug.org/mactex/) für MacOS
 
-Für die Verwaltung der Literaturliste wird das BibTeX-Format verwendet (Datei literatur.bib). Obwohl Sie diese Datei auch von Hand bearbeiten können, empfiehlt es sich, hierfür ein Werkzeug einzusetzen. Bewährt haben sich:
+Für die Verwaltung der Literaturliste wird das BibTeX-Format verwendet (Datei `literatur.bib`). Obwohl Sie diese Datei auch von Hand bearbeiten können, empfiehlt es sich, hierfür ein Werkzeug einzusetzen. Bewährt haben sich:
 
   * [JabRef](http://jabref.sourceforge.net/) für Windows, MacOS und Linux
   * [BibDesk](http://bibdesk.sourceforge.net/) für MacOS
@@ -50,7 +50,7 @@ Normalerweise nicht verändern müssen Sie
 Neben den Dateien gibt es noch zwei Ordner
 
   * `/bilder` - Ablageort für die verwendeten Bilder
-  * `/src` - Ablageort für die verwendeten Quelltexte
+  * `/src` - Ablageort für die verwendeten Quelltexte von Programmen, die in der Arbeit gezeigt werden sollen.
 
 
 ## Latex-Projekt unter TexnicCenter einrichten
