@@ -53,7 +53,7 @@ Neben den Dateien gibt es noch zwei Ordner
   * `/src` - Ablageort für die verwendeten Quelltexte von Programmen, die in der Arbeit gezeigt werden sollen.
 
 
-## Latex-Projekt unter TexnicCenter einrichten
+## LaTeX-Projekt unter TexnicCenter einrichten
 
 Ab der Version 2 von TexnicCenter wird das UTF-8-Format richtig unterstützt.
 
@@ -63,5 +63,4 @@ Ab der Version 2 von TexnicCenter wird das UTF-8-Format richtig unterstützt.
   * "verwendet Makeindex" ankreuzen
   * Sprachinformation für die Rechtschreibkorrektur setzen
 
-Sie können dann beispielsweise bequem auf die Dokumentstruktur, Dateien und
-Literaturreferenzen zugreifen.
+Sie können dann beispielsweise bequem auf die Dokumentstruktur, Dateien und Literaturreferenzen zugreifen.
