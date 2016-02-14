@@ -4,7 +4,9 @@ LATEX = pdflatex
 BIBTEX = bibtex
 MAKEINDEX = makeindex
 
-INCLUDES = docinfo.tex preambel.tex bilder/*.pdf
+INCLUDES = docinfo.tex preambel.tex titelblatt.tex literatur.bib bilder/*.pdf
+
+CHAPTERS = kapitel*.tex
 
 define latex-it
 $(eval FILE = $(firstword $^))
