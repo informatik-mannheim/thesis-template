@@ -1,30 +1,48 @@
-\chapter{Zweites Kapitel}
-\label{Kap2}
+\chapter{Schreibstil und Typographie}
 
-\section{Bilder}
 
-Natürlich können auch Grafiken und Bilder eingebunden werden, siehe z.\,B. Abbildung~\ref{Kap2:NasaRover}.
+\section{Hervorhebungen}
+\label{Einleitung:Textauszeichnungen}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=6cm]{kapitel2/nasa_rover}
-  \caption{Ein Nasa Rover}
-  \label{Kap2:NasaRover}
-\end{figure}
+Achten Sie bitte auf die grundlegenden Regeln der Typographie\index{Typographie}\footnote{Ein Ratgeber in allen Detailfragen ist \cite{Forssman2002}.}, wenn Sie Ihren Text schreiben. Hierzu gehören z.\,B. die Verwendung der richtigen "`Anführungszeichen"' und der Unterschied zwischen Binde- (-), Gedankenstrich (--) und langem Strich (---).
 
-\blindtext[2]
+Wenn Sie Text hervorheben wollen, dann setzten Sie ihn \textit{kursiv} (Italic) und nicht \textbf{fett} (Bold). Fettdruck ist Überschriften vorbehalten; im Fließtext stört er den Lesefluss. Das \underline{Unterstreichen} von Fließtext ist im gesamten Dokument tabu und kann maximal bei Pseudo-Code vorkommen.\index{Hervorhebungen}
 
-Man kann sich auch selber ein Makro für das Einfügen von Bildern schreiben:
 
-\bild{kapitel2/modell_point_to_point}{6cm}{Point to Point}
+\section{Anführungszeichen}
 
-\blindtext[1]
+Deutsche Anführungszeichen gehen so: "`dieser Text steht in \glq Anführungszeichen\grq; alles klar?"'. Englische Anführungszeichen werden anders benutzt: ``this is an `English' quotation.''
 
-\clearpage % Alle Bilder, die bisher kamen ausgeben
+
+\section{Abkürzungen}
+\index{Abkürzungen}
+\index{Abbreviation|see{Abkürzungen}}
+
+Eine \ac{ABK} wird bei der ersten Verwendung ausgeschrieben. Danach nicht mehr: \ac{ABK}. Man kann allerdings die Langform explizit anfordern: \acl{ABK} oder die Kurzform \acs{ABK} oder auch noch einmal die Definition: \acf{ABK}.
+
+Beachten Sie, dass bei Abkürzungen, die für zwei Wörter stehen, ein kleines Leerzeichen nach dem Punkt kommt: z.\,B. bzw. \zb, d.\,h. bzw. \dahe.
+
+
+\section{Querverweise}
+
+Querverweise auf eine Kapitelnummer macht man im Text mit \verb+\ref+ (Kapitel~\ref{Einleitung:Textauszeichnungen}) und auf eine bestimmte Seite mit \verb+\pageref+ (Seite~\pageref{Einleitung:Textauszeichnungen}).
+
+
+\section{Fußnoten}
+
+Fußnoten werden einfach mit in den Text geschrieben und zwar genau an die Stelle\footnote{An der die Fußnote auftauchen soll.}
+
+
+
+\section{Fremdsprachige Begriffe}
+
+Wenn Sie Ihre Arbeit auf Deutsch verfassen, gehen Sie sparsam mit englischen Ausdrücken um. Natürlich brauchen Sie etablierte englische Fachbegriffe, wie z.\,B. \textit{Interrupt}, nicht zu übersetzen. Sie sollten aber immer dann, wenn es einen gleichwertigen deutschen Begriff gibt, diesem den Vorrang geben. Den englischen Begriff (\textit{term}) können Sie dann in Klammern oder in einer Fußnote\footnote{Englisch: \textit{footnote}.} erwähnen. Absolut unakzeptabel sind deutsch gebeugte englische Wörter oder Kompositionen aus deutschen und englischen Wörtern wie z.\,B. downgeloadet, upgedated, Keydruck oder Beautyzentrum. 
+
+
 
 \section{Tabellen}
 
-\blindtext[1]
+Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalten werden durch einen entsprechenden Abstand voneinander getrennt.\footnote{Siehe \cite[S. 89]{Willberg1999}.} Zum Einsatz kommen ausschließlich horizontale Linien (siehe Tabelle~\ref{Kap2:Kopplungsformen}).
 
 \begin{table}[h]
   \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
@@ -48,8 +66,6 @@ Man kann sich auch selber ein Makro für das Einfügen von Bildern schreiben:
 \end{table}
 
 Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe Tabelle~\ref{Kap2:Kopplungsformen}.
-
-\blindtext[1]
 
 
 \section{Aufzählungen}
@@ -81,66 +97,38 @@ Aufzählungen mit laufenden Nummern sind auch toll.
   \item Ein abschließender Punkt ohne Unterpunkte
 \end{enumerate}
 
-\blindtext[1]
+
+\section{Zitate}
+
+\subsection{Zitate im Text}
+
+Wichtig ist das korrekte Zitieren von Quellen, wie es auch von \cite{Kornmeier2011} dargelegt wird. Interessant ist in diesem Zusammenhang auch der Artikel von \cite{Kramer2009}. Häufig werden die Zitate auch in Klammern gesetzt, wie bei \citep{Kornmeier2011} und mit Seitenzahlen versehen \citep[S. 22--24]{Kornmeier2011}.
 
 
-\section{Formelsatz}
+\subsection{Zitierstile}
 
-Eine Formel gefällig? Mitten im Text $a_2 = \sqrt{x^3}$ oder als eigener Absatz (siehe Formel~\ref{Formel}):
+Verwenden Sie eine einheitliche und im gesamten Dokument konsequent durchgehaltene Zitierweise\index{Zitierweise}. Es gibt eine ganze Reihe von unterschiedlichen Standards für das Zitieren und den Aufbau eines Literaturverzeichnisses. Sie können entweder mit Fußnoten oder Kurzbelegen im Text arbeiten. Welches Verfahren Sie einsetzen ist Ihnen überlassen, nur müssen Sie es konsequent durchhalten.
 
-\begin{equation}
-\begin{bmatrix}         
-   1 &  4 &  2 \\
-   4 &  0 & -3 
-\end{bmatrix}        
-        \cdot
-\begin{bmatrix}                
-   1 &  1 &  0 \\
-  -2 &  3 &  5 \\
-   0 &  1 &  4 
-\end{bmatrix}        
-       {=} 
-\begin{bmatrix}               
-  -7 &  15 &  28 \\
-   4 &   1 & -12 
-\end{bmatrix}
-\label{Formel}
-\end{equation}
+In der Informatik ist das Zitieren mit Kurzbelegen\index{Zitat!Kurzbeleg} im Text (Harvard-Zitierweise) weit verbreitet, wobei für das Literaturverzeichnis häufig die Regeln der \acs{ACM} oder \acs{IEEE} angewandt werden.\footnote{Einen Überblick über viele verschiedene Zitierweisen finden Sie in der \url{http://amath.colorado.edu/documentation/LaTeX/reference/faq/bibstyles.pdf}}
+
+Denken Sie daran, dass das Übernehmen einer fremden Textstelle ohne entsprechenden Hinweis auf die Herkunft in wissenschaftlichen Arbeiten nicht akzeptabel ist und dazu führen kann, dass die Arbeit nicht anerkannt wird. Plagiate\index{Plagiat!Bewertung} werden mit mangelhaft (5,0) bewertet und können weitere rechtliche Schritte nach sich ziehen.
 
 
-\section{Sourcecode}
+\subsection{Zitieren von Internetquellen}
 
-Man kann mit Latex auch ganz toll Sourcecode in den Text aufnehmen.
+Internetquellen\index{Zitat!Internetquellen} sind normalerweise \textit{nicht} zitierfähig. Zum einen, weil sie nicht dauerhaft zur Verfügung stehen und damit für den Leser möglicherweise nicht beschaffbar sind und zum anderen, weil häufig der wissenschaftliche Anspruch fehlt.\footnote{Eine lesenswerte Abhandlung zu diesem Thema findet sich (im Internet) bei \cite{Weber2006}}
 
-\subsection{Aus einer Datei}
+Wenn ausnahmsweise doch eine Internetquelle zitiert werden muss, z.\,B. weil für eine Arbeit dort Informationen zu einem beschriebenen Unternehmen abgerufen wurden, sind folgende Punkte zu beachten:
 
-\blindtext[1]
+\begin{itemize}
+\item Die Webseite ist auszudrucken und im Anhang der Arbeit beizufügen,
+\item das Datum des Abrufs und die URL sind anzugeben,
+\item verwenden Sie Internet-Seiten ausschließlich zu illustrativen Zwecken (z.\,B. um einen Sachverhalt noch etwas genauer zu erläutern), aber nicht zur Faktenvermittlung (z.\,B. um eine Ihrer Thesen zu belegen).
+\end{itemize}
 
-\lstinputlisting[firstline=2,language=Java,caption={Crypter-Interface},label=lst:CrypterInterface]{\srcloc/Crypter.java}
+Wenn Sie aufgrund der Natur Ihrer Arbeit sehr viele Internetquellen benötigen, dann können Sie diese statt sie auszudrucken auch in elektronischer Form abgeben (CD/DVD). Als Abgabeformat der elektronischen Quellen ist PDF/A\footnote{Bei PDF/A handelt es sich um ein besonders stabile Variante des \ac{PDF}, die von der  \ac{ISO} standardisiert wurde.} vorteilhaft, weil es von allen Formaten die größte Stabilität besitzt.
+Auf der CD/DVD geben Sie bitte auch eine HTML-Version des Literaturverzeichnisses ab, in der die Online-Quellen sowie die gespeicherten PDF-Dateien verlinkt sind.
 
-
-\subsection{Inline}
-
-\blindtext[1]
-
-\begin{lstlisting}[language=Java,caption=Methode checkKey()]
-    /**
-     * Testet den Schlüssel auf Korrektheit: Er muss mindestens die Länge 1
-     * haben und darf nur Zeichen von A-Z enthalten.
-     *
-     * @param key zu testender Schlüssel
-     * @throws CrypterException wenn der Schlüssel nicht OK ist.
-     */
-    protected void checkKey(Key key) throws CrypterException {
-
-        // Passt die Länge?
-        if (key.getKey().length == 0) {
-            throw new CrypterException("Der Schlüssel muss mindestens " +
-                    "ein Zeichen lang sein");
-        }
-
-        checkCharacters(key.getKey(), ALPHABET);
-    }
-\end{lstlisting}
+Wikipedia\index{Zitat!Wikipedia} stellt einen immensen Wissensfundus dar und enthält zu vielen Themen hervorragende Artikel. Sie müssen sich aber darüber im Klaren sein, dass die Artikel in Wikipedia einem ständigen Wandel unterworfen sind und nicht als Quelle für wissenschaftliche Fakten genutzt werden sollten. Es gelten die allgemeinen Regeln für das Zitieren von Internetquellen. Sollten Sie doch Wikipedia nutzen müssen, verwenden Sie bitte ausschließlich den Perma-Link\footnote{Sie erhalten den Permalink über die Historie der Seite und einen Klick auf das Datum.}\index{Permalink} zu der Version der Seite, die Sie aufgerufen haben.
 
 

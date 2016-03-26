@@ -1,40 +1,23 @@
-\chapter{Einleitung}
+% Die Arbeit besteht aus Kapiteln (chapter)
+\chapter{Gliederungsebenen}
 
-\section{Erster Abschnitt}
+% Jedes Kapitel besteht aus Unterkapiteln (section)
+\section{Zweite Ebene}
 
-Einleitung zur Arbeit.
+% Unterkapitel können noch einmal durch subsections untergliedert 
+% werden (jetzt auf der 3. Ebene)
+\subsection{Dritte Ebene}
 
-Möglicherweise noch einmal unterteilt in Unterabschnitte.
+% Mit Labels können Sie sich später im Text wieder auf diese Stelle beziehen
+\label{Gliederung:EbeneDrei}
 
-\subsection{Textauszeichnungen}
-\label{Einleitung:Textauszeichnungen}
-\index{Auszeichnungen!im Text}
+% Einträge für den Index anlegen. Ein Index wird normalerweise in einer Abschluss
+% Arbeit nicht benötigt.
+\index{Gliederung!Ebenen}
 
-Man kann Text auch \textit{kursiv} oder \textbf{fett} setzen. Es gibt Bindestrichte -, Gedankenstriche -- und lange Striche ---.
+% Auf der 4. Ebene liegen die subsubsections. In diesem Template bekommt die
+% 4. Ebene keinen Nummern mehr und erscheint auch nicht im Inhaltsverzeichnis
+\subsubsection{Vierte Ebene}
 
-
-\subsection{Anführungszeichen}
-
-Deutsche Anführungszeichen gehen so: "`dieser Text steht in \glq Anführungszeichen\grq; alles klar?"'.
-
-
-\subsection{Abkürzungen}
-\index{Abkürzungen}
-\index{Abbreviation|see{Abkürzungen}}
-
-Eine \ac{ABK} wird bei der ersten Verwendung ausgeschrieben\footnote{Ausschreiben bedeutet, dass man nicht die Abkürzung sondern die lange Form verwendet.}. Danach nicht mehr: \ac{ABK}. Man kann allerdings die Langform\footnote{\blindtext} explizit anfordern: \acl{ABK} oder die Kurzform \acs{ABK} oder auch noch einmal die Definition: \acf{ABK}.
-
-Mehr dazu findet sich im Kapitel~\ref{Einleitung:Textauszeichnungen} auf Seite~\pageref{Einleitung:Textauszeichnungen}.
-
-
-\subsubsection{Noch ein Unterabschnitt}
-
-\paragraph{Eine Absatzüberschrift}
-\blindtext[1]
-
-
-\subsection{Literaturarbeit}
-
-Wichtig ist das korrekte Zitieren von Quellen, wie es auch von \cite{Kornmeier2011} dargelegt wird. Interessant ist in diesem Zusammenhang auch der Artikel von \cite{Vixie2007}. Häufig werden die Zitate auch in Klammern gesetzt, wie bei \citep{Kornmeier2011}.
-
-\blindtext[4]
+% Auf der 5. Ebene werden einzelne Absätze mit Überschriften versehen.
+\paragraph{Fünfte Ebene} Anders als in diesem Beispiel, darf in Ihrer Arbeit kein Gliederungspunkt auf seiner Ebene alleine stehen. D.\,h. wenn es ein 1.1 gibt, muss es auch ein 1.2 geben.
