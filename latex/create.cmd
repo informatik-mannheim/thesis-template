@@ -12,8 +12,3 @@ pdflatex -output-directory=%OUTPUT_DIR% -synctex=1 %FILE%.tex
 pdflatex -output-directory=%OUTPUT_DIR% -synctex=2 %FILE%.tex
 copy %OUTPUT_DIR%\%FILE%.pdf ..\%RESULT_DIR%\%FILE%.pdf
 cd ..
-
-de %FILE%.tex
-copy %OUTPUT_DIR%\%FILE%.pdf ..\%RESULT_DIR%\%FILE%.pdf
-cd ..
-
