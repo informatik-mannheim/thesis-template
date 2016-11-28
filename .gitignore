@@ -12,5 +12,7 @@
 *.lol
 *.out
 *.toc
+*.bak
+*.lyx~
 *.synctex.gz
 */temp/*
