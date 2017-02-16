@@ -5,10 +5,10 @@
     12pt,                   % Schriftgöße
     headings=small,         % Kleine Überschriften
     headsepline=true,       % Trennlinie am Kopf der Seite
-    footsepline=false,      % Trennlinie am Fuß der Seite
+    footsepline=false,      % Keine Trennlinie am Fuß der Seite
     bibliography=totoc,     % Literaturverzeichnis in das Inhaltsverzeichnis aufnehmen
     twoside=on,             % Doppelseitiger Druck - auf off stellen für einseitig
-    DIV=7,
+    DIV=7,                  % Verhältnis der Ränder zum bedruckten Bereich
     chapterprefix=true,     % Kapitel x vor dem Kapitelnamen
     cleardoublepage=plain]{scrbook} 
 
@@ -24,7 +24,7 @@
 \usepackage{amssymb}              % Mathematische Symbole
 \usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
 \usepackage{booktabs}             % Korrekter Tabellensatz
-\usepackage[printonlyused]{acronym}   % Abkürzungsverzeichnis [nur verwendete Abkürzugen]
+\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzugen]
 \usepackage{makeidx}              % Sachregister
 \usepackage{listings}             % Source Code listings
 \usepackage{listingsutf8}         % Listings in UTF8
@@ -34,12 +34,25 @@
 \usepackage{calc}                 % Berechnung von Positionen
 \usepackage{blindtext}            % Blindtexte
 \usepackage[bottom=40mm,left=35mm,right=35mm,top=30mm]{geometry} % Ränder ändern
-\usepackage[square]{natbib}       % Literaturverzeichnis nach DIN mit eckigen Klammern bei \citep
 \usepackage{setspace}             % Abstände korrigieren
 \usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
 \usepackage{scrhack}              % Get rid of tocbasic warnings
 \usepackage[pagebackref=false]{hyperref}  % Hyperlinks
 \usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
+\usepackage[autostyle=true,german=quotes]{csquotes}   % Zitate
+\usepackage[backend=biber,
+  isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+  sortlocale=de_DE,               % Sortierung der Einträge für Deutsch
+  %sortlocale=en_US,              % Sortierung der Einträge für Englisch
+  autocite=inline,                % regelt Aussehen für \autocite (inline=\parancite)
+  hyperref=true,                  % Hyperlinks für Ziate
+  %style=ieee                     % Zitate als Zahlen [1]
+  %style=alphabetic               % Zitate als Kürzel und Jahr [Ein05]
+  style=authoryear                % Zitate Author und Jahr [Einstein (1905)]
+]{biblatex}  % Literaturverwaltung mit BibLaTeX
+
+\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
+\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
 
 % Farben definieren
 \definecolor{linkblue}{RGB}{0, 0, 100}
@@ -58,7 +71,7 @@
     linkcolor=linkblack,  % Querverweise
     citecolor=linkblack,  % Literaturangaben
 	filecolor=linkblack,  % Dateilinks
-	urlcolor	=linkblack    % URLs
+	urlcolor=linkblack    % URLs
 }
 
 % Einstellungen für Quelltexte

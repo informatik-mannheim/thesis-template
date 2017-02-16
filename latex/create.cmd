@@ -5,8 +5,8 @@ SET FILE=thesis
 cd tex
 mkdir %RESULT_DIR%
 mkdir %OUTPUT_DIR%
-pdflatex -output-directory=%OUTPUT_DIR% -synctex=1 %FILE%.tex 
-bibtex %OUTPUT_DIR%\%FILE%.aux
+pdflatex -output-directory=%OUTPUT_DIR% -synctex=1 %FILE%.tex
+biber %OUTPUT_DIR%\%FILE%
 makeindex %OUTPUT_DIR%\%FILE%.idx
 pdflatex -output-directory=%OUTPUT_DIR% -synctex=1 %FILE%.tex
 pdflatex -output-directory=%OUTPUT_DIR% -synctex=2 %FILE%.tex

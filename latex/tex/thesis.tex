@@ -4,6 +4,9 @@
 % Dokumenteninfos importieren
 \input{docinfo.tex}
 
+% Literatur-Datenbank
+\addbibresource{literatur.bib}   % BibLaTeX-Datei mit Literaturquellen einbinden
+
 \begin{document}
 \frontmatter
 
@@ -51,38 +54,37 @@
 \setcounter{page}{\value{frontmatterpage}}
 
 % Abkürzungsverzeichnis
+\chapter*{\hsmaabbreviations}
+\addcontentsline{toc}{chapter}{\hsmaabbreviations}
 \input{abkuerzungen}
 
 % Tabellenverzeichnis erzeugen
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\addcontentsline{toc}{chapter}{\hsmalistoftables}
 \listoftables
 
 % Abbildungsverzeichnis erzeugen
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\addcontentsline{toc}{chapter}{\hsmalistoffigures}
 \listoffigures
 
 % Listingverzeichnis erzeugen
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{chapter}{Quellcodeverzeichnis}
+\addcontentsline{toc}{chapter}{\hsmalistings}
 \lstlistoflistings
 
 % Literaturverzeichnis erzeugen (nach DIN)
 \begin{flushleft}
-\bibliographystyle{dinat} % Literatur nach DIN
-%\bibliographystyle{abbrv} % Zitate mit [1], [2] etc.
-%\bibliographystyle{alpha} % Zitate mit [Kor01], [Vix99] etc.
-\bibliography{literatur}   % BibTeX-Datei mit Literaturquellen einbinden
+\printbibliography
 \end{flushleft}
 
 % Index ausgeben
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{chapter}{Index}
+\addcontentsline{toc}{chapter}{\hsmaindex}
 \printindex
 
 \end{document}

@@ -1,7 +1,7 @@
 TEMP_DIR = ../temp
 RESULT_DIR = ../result
 LATEX = pdflatex
-BIBTEX = bibtex
+BIBTEX = biber
 MAKEINDEX = makeindex
 
 INCLUDES = abkuerzungen.tex docinfo.tex preambel.tex titelblatt.tex literatur.bib bilder/*.pdf
@@ -13,7 +13,7 @@ $(eval FILE = $(firstword $^))
 @echo "Building $(FILE)"
 @echo $(FILE)
 @$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE)
-@cd $(TEMP_DIR) ; $(BIBTEX) $(basename $(FILE)).aux 
+@cd $(TEMP_DIR) ; $(BIBTEX) $(basename $(FILE))
 @cd $(TEMP_DIR) ; $(MAKEINDEX) $(basename $(FILE)).idx
 @$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE) > /dev/null
 @$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE) > /dev/null
@@ -22,7 +22,7 @@ endef
 
 
 all: $(TEMP_DIR) $(RESULT_DIR) \
-	$(RESULT_DIR)/thesis.pdf 
+	$(RESULT_DIR)/thesis.pdf
 
 clean:
 	rm -rf $(TEMP_DIR)
@@ -42,4 +42,3 @@ $(RESULT_DIR):
 	mkdir $(RESULT_DIR)
 
 .PHONY: clean all
-
