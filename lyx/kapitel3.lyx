@@ -108,131 +108,71 @@ n/PDF-Eigenschaften)
 \end_layout
 
 \begin_layout Chapter
-Einleitung 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Zweites-Kapitel"
+
+\end_inset
+
+Drittes Kapitel 
 \end_layout
 
 \begin_layout Section
-Erster Abschnitt 
+Formelsatz
 \end_layout
 
 \begin_layout Standard
-Einleitung zur Arbeit.
- 
-\end_layout
-
-\begin_layout Standard
-Möglicherweise noch einmal unterteilt in Unterabschnitte.
- 
-\end_layout
-
-\begin_layout Subsection
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Textauszeichnungen"
-
+Eine Formel gefällig? Mitten im Text 
+\begin_inset Formula $a_{2}=\sqrt{x^{3}}$
 \end_inset
 
-Textauszeichnungen 
-\end_layout
-
-\begin_layout Standard
-Man kann Text auch kursiv oder fett setzen.
- Es gibt Bindestriche -, Gedankenstriche – und lange Striche —.
- 
-\end_layout
-
-\begin_layout Subsection
-Anführungszeichen 
-\end_layout
-
-\begin_layout Standard
-Deutsche Anführungszeichen gehen so: „dieser Text steht in ‚Anführungszeichen‘;
- alles klar?“.
-\end_layout
-
-\begin_layout Subsection
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Abkürzungen
-\end_layout
-
-\end_inset
-
-Abkürzungen
-\end_layout
-
-\begin_layout Standard
-Eine Abkürzung (ABK) wird bei der ersten Verwendung ausgeschrieben
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Ausschreiben bedeutet, dass man nicht die Abkürzung sondern die lange Form
- verwendet.
-\end_layout
-
-\end_inset
-
-.
- Danach nicht mehr: ABK.
- Man kann allerdings die Langform
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- explizit anfordern: Abkürzungen oder die Kurzform ABK oder auch noch einmal
- die Definition: Abkürzung (ABK).
- 
-\end_layout
-
-\begin_layout Standard
-Mehr dazu findet sich im Kapitel 
+ oder als eigener Absatz (siehe Formel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Textauszeichnungen"
+reference "eq:Formel"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Subsubsection*
-Noch ein Unterabschnitt
-\end_layout
-
-\begin_layout Paragraph
-Eine Absatzüberschrift
+):
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset Formula 
+\begin{equation}
+\left(\begin{array}{ccc}
+1 & 4 & 2\\
+4 & 0 & -3
+\end{array}\right)\cdot\left(\begin{array}{ccc}
+1 & 1 & 0\\
+-2 & 3 & 5\\
+0 & 1 & 4
+\end{array}\right)=\left(\begin{array}{ccc}
+-7 & 15 & 28\\
+4 & 1 & -12
+\end{array}\right)\label{eq:Formel}
+\end{equation}
 
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-blindtext
 \end_layout
+
+\begin_layout Section
+Sourcecode
+\end_layout
+
+\begin_layout Standard
+Man kann mit Latex auch ganz toll Sourcecode in den Text aufnehmen.
+\end_layout
+
+\begin_layout Subsection
+Aus einer Datei
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/Crypter.java"
 
 \end_inset
 
@@ -240,27 +180,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-Literaturarbeit 
-\end_layout
-
-\begin_layout Standard
-Wichtig ist das korrekte Zitieren von Quellen, wie es auch von 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kornmeier2011"
-
-\end_inset
-
- dargelegt wird.
- Interessant ist in diesem Zusammenhang auch der Artikel von 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Vixie2007"
-
-\end_inset
-
-.
- Häufig werden die Zitate auch in Klammern gesetzt, wie bei [?].
+Inline
 \end_layout
 
 \begin_layout Standard
@@ -280,18 +200,100 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "literatur"
-options "alpha"
-
-\end_inset
 
 
+\backslash
+begin{lstlisting}[language=Java,caption=Methode checkKey()]
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Testet den Schlüssel auf Korrektheit: Er muss mindestens die Länge 1
+\end_layout
+
+\begin_layout Plain Layout
+
+ * haben und darf nur Zeichen von A-Z enthalten.
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param key zu testender Schlüssel
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @throws CrypterException wenn der Schlüssel nicht OK ist.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+protected void checkKey(Key key) throws CrypterException {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  // Passt die Länge?
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (key.getKey().length == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    throw new CrypterException("Der Schlüssel muss mindestens " +
+\end_layout
+
+\begin_layout Plain Layout
+
+    "ein Zeichen lang sein");
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  checkCharacters(key.getKey(), ALPHABET);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
 \end_layout
 
 \end_inset
