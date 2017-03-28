@@ -76,15 +76,22 @@
 \addcontentsline{toc}{chapter}{\hsmalistings}
 \lstlistoflistings
 
-% Literaturverzeichnis erzeugen (nach DIN)
+% Literaturverzeichnis erzeugen
 \begin{flushleft}
 \printbibliography
 \end{flushleft}
 
-% Index ausgeben
+% Index ausgeben. Wenn Sie keinen Index haben, entfernen Sie einfach
+% diesen Teil.
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{\hsmaindex}
 \printindex
+
+% Anhang. Wenn Sie keinen Anhang haben, entfernen Sie einfach
+% diesen Teil.
+\appendix
+\input{anhang-a}
+\input{anhang-b}
 
 \end{document}

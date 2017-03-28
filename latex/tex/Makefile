@@ -6,7 +6,7 @@ MAKEINDEX = makeindex
 
 INCLUDES = abkuerzungen.tex docinfo.tex preambel.tex titelblatt.tex literatur.bib bilder/*.pdf
 
-CHAPTERS = kapitel*.tex
+CHAPTERS = kapitel*.tex anhang*.tex
 
 define latex-it
 $(eval FILE = $(firstword $^))
