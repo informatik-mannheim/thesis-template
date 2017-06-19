@@ -55,6 +55,11 @@
 \setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
 \setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
 
+% Trennung von URLs im Literaturverzeichnis (große Werte [> 10000] verhindern die Trennung)
+\defcounter{biburlnumpenalty}{10} % Strafe für Trennung in URL nach Zahl
+\defcounter{biburlucpenalty}{500}  % Strafe für Trennung in URL nach Großbuchstaben
+\defcounter{biburllcpenalty}{500}  % Strafe für Trennung in URL nach Kleinbuchstaben
+
 % Farben definieren
 \definecolor{linkblue}{RGB}{0, 0, 100}
 \definecolor{linkblack}{RGB}{0, 0, 0}
