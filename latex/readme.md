@@ -6,6 +6,8 @@ Diese Vorlage wurde entwickelt von [Prof. Thomas Smits](http://www.smits-net.de)
 
 ## Werkzeuge, Dateiformat
 
+### Lokale Entwicklungsumgebungen
+
 Zum Erzeugen der fertigen Arbeit dienen die Skripte `create` und `clean`. Die .cmd-Version ist für Windows, die .sh für Unix/Linux. 
 
 Zusätzlich liegt im Verzeichnis `/tex` noch ein Makefile mit dem man die Quellen mit Hilfe von `make` übersetzen kann. Der Vorteil hiervon ist, dass `make` erkennt, ob sich Inhalte geändert haben und nur dann die Arbeit neu übersetzt.
@@ -26,6 +28,13 @@ Für die Verwaltung der Literaturliste wird das BibTeX-Format verwendet (Datei `
   * [BibDesk](http://bibdesk.sourceforge.net/) für MacOS
   
 Achten Sie darauf, die Dokumente im UTF-8-Format abzulegen. Nur so ist eine plattformunabhängige Verwendung gewährleistet. Die Vorlagen hier sind ebenfalls im UTF-8-Format.
+
+### Cloud-Dienste
+
+Diese Vorlage wurde bereits von Studierenden erfolgreich bei Cloud-Diensten eingesezt, mit denen man LaTeX-Dokumente schreiben, kompilieren und verwalten kann. Positive Erfahrungsberichte liegen bisher vor von
+
+  * [Overleaf](https://www.overleaf.com)
+  * [ShareLaTeX](https://www.sharelatex.com)
 
 ## Aufbau der Vorlage
 
