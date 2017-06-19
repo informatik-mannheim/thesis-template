@@ -47,6 +47,8 @@ Anpassen müssen Sie die folgenden Dateien
   * `abkuerzungen.tex` - Liste der in der Arbeit verwendeten Abkürzungen
   * `kapitel1.tex` - Beispiel für ein Kapitel
   * `kapitel2.tex` - Weiteres Beispiel für ein Kapitel
+  * `anhang-a.tex` - Beispiel für einen Anhang
+  * `anhang-b.tex` - Beispiel für einen Anhang
   * `literatur.bib` - Literaturdatenbank im BibTeX-Format
 
 Weitere Kapitel können hinzugefügt werden und dann vom Hauptdokument thesis.tex inkludiert.
