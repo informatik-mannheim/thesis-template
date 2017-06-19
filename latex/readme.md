@@ -66,14 +66,19 @@ Neben den Dateien gibt es noch zwei Ordner
   * `/src` - Ablageort für die verwendeten Quelltexte von Programmen, die in der Arbeit gezeigt werden sollen.
 
 
-## LaTeX-Projekt unter TexnicCenter einrichten
+## LaTeX-Projekt unter TeXnicCenter einrichten
 
-Ab der Version 2 von TexnicCenter wird das UTF-8-Format richtig unterstützt.
+Ab der Version 2 von TeXnicCenter wird das UTF-8-Format richtig unterstützt.
 
-  * Öffnen Sie die Datei `thesis.tex` mit TexnicCenter
-  * Projekt / Erzeugen mit aktueller Datei als Hauptdatei
-  * "verwendet BibTex" ankreuzen
-  * "verwendet Makeindex" ankreuzen
-  * Sprachinformation für die Rechtschreibkorrektur setzen
+  * Öffnen Sie die Datei `thesis.tex` mit TeXnicCenter
+  * Wählen Sie in Projekt "Erzeugen mit aktueller Datei als Hauptdatei"
+    * "verwendet BibTex" ankreuzen
+    * "verwendet Makeindex" ankreuzen
+    * Sprachinformation für die Rechtschreibkorrektur setzen
+  * Unter "Ausgabe" den Punkt "Ausgabeprofil definieren" wählen
+    * LaTeX => PDF auswählen
+    * "Pfade des BibTeX-Compilers" von `...\bibtex.exe` auf `...\biber.exe` ändern
+  * Unter "Ausgabe" den Punkt "Aktive Ausgabeprofil wählen" anklicken
+    * LaTeX => PDF auswählen
 
-Sie können dann beispielsweise bequem auf die Dokumentstruktur, Dateien und Literaturreferenzen zugreifen.
+Damit alle Referenzen und Literaturangaben im Dokument korrekt sind, müssen Sie es bis zu drei Mal erzeugen.
