@@ -6,7 +6,7 @@
 \origin unavailable
 \textclass scrreprt
 \begin_preamble
-\include{util/preambel}
+\input{util/preambel}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
