@@ -10,7 +10,7 @@
     twoside=on,             % Doppelseitiger Druck - auf off stellen für einseitig
     DIV=7,                  % Verhältnis der Ränder zum bedruckten Bereich
     chapterprefix=true,     % Kapitel x vor dem Kapitelnamen
-    cleardoublepage=plain]{scrbook} 
+    cleardoublepage=plain]{scrbook}
 
 % Pakete einbinden, die benötigt werden
 \usepackage{scrpage2}
@@ -51,6 +51,7 @@
   style=authoryear                % Zitate Author und Jahr [Einstein (1905)]
 ]{biblatex}                       % Literaturverwaltung mit BibLaTeX
 \usepackage{rotating}             % Seiten drehen
+\usepackage{harveyballs}          % Harveyballs
 
 \setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
 \setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
@@ -71,7 +72,7 @@
 
 % Einstellungen für das Hyperlink-Paket
 \hypersetup{
-    colorlinks=true,      % Farbige links verwenden       
+    colorlinks=true,      % Farbige links verwenden
 %    allcolors=linkblue,
     linktoc=all,          % Links im Inhaltsverzeichnis
     linkcolor=linkblack,  % Querverweise
@@ -81,13 +82,13 @@
 }
 
 % Einstellungen für Quelltexte
-\lstset{     
-      xleftmargin=0.2cm,     
+\lstset{
+      xleftmargin=0.2cm,
       basicstyle=\footnotesize\ttfamily,
       keywordstyle=\color{darkgreen},
       identifierstyle=\color{darkblue},
-      commentstyle=\color{comment}, 
-      stringstyle=\color{darkred}, 
+      commentstyle=\color{comment},
+      stringstyle=\color{darkred},
       tabsize=2,
       lineskip={2pt},
       columns=flexible,
