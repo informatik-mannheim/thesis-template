@@ -25,7 +25,7 @@ Beachten Sie, dass bei Abkürzungen, die für zwei Wörter stehen, ein kleines L
 
 \section{Querverweise}
 
-Querverweise auf eine Kapitelnummer macht man im Text mit \verb+\ref+ (Kapitel~\ref{Einleitung:Textauszeichnungen}) und auf eine bestimmte Seite mit \verb+\pageref+ (Seite~\pageref{Einleitung:Textauszeichnungen}).
+Querverweise auf eine Kapitelnummer macht man im Text mit \verb+\ref+ (Kapitel~\ref{Einleitung:Textauszeichnungen}) und auf eine bestimmte Seite mit \verb+\pageref+ (Seite~\pageref{Einleitung:Textauszeichnungen}). Man kann auch den Befehl \verb+\autoref+ benutzen, der automatisch die Art des referenzierten Elements bestimmt (\zb \autoref{Einleitung:Textauszeichnungen} oder \autoref{Kap2:Kopplungsformen}).
 
 
 \section{Fußnoten}
@@ -36,7 +36,7 @@ Fußnoten werden einfach mit in den Text geschrieben und zwar genau an die Stell
 
 \section{Fremdsprachige Begriffe}
 
-Wenn Sie Ihre Arbeit auf Deutsch verfassen, gehen Sie sparsam mit englischen Ausdrücken um. Natürlich brauchen Sie etablierte englische Fachbegriffe, wie z.\,B. \textit{Interrupt}, nicht zu übersetzen. Sie sollten aber immer dann, wenn es einen gleichwertigen deutschen Begriff gibt, diesem den Vorrang geben. Den englischen Begriff (\textit{term}) können Sie dann in Klammern oder in einer Fußnote\footnote{Englisch: \textit{footnote}.} erwähnen. Absolut unakzeptabel sind deutsch gebeugte englische Wörter oder Kompositionen aus deutschen und englischen Wörtern wie z.\,B. downgeloadet, upgedated, Keydruck oder Beautyzentrum. 
+Wenn Sie Ihre Arbeit auf Deutsch verfassen, gehen Sie sparsam mit englischen Ausdrücken um. Natürlich brauchen Sie etablierte englische Fachbegriffe, wie z.\,B. \textit{Interrupt}, nicht zu übersetzen. Sie sollten aber immer dann, wenn es einen gleichwertigen deutschen Begriff gibt, diesem den Vorrang geben. Den englischen Begriff (\textit{term}) können Sie dann in Klammern oder in einer Fußnote\footnote{Englisch: \textit{footnote}.} erwähnen. Absolut unakzeptabel sind deutsch gebeugte englische Wörter oder Kompositionen aus deutschen und englischen Wörtern wie z.\,B. downgeloadet, upgedated, Keydruck oder Beautyzentrum.
 
 
 
@@ -68,6 +68,28 @@ Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalte
 Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe Tabelle~\ref{Kap2:Kopplungsformen}.
 
 
+\section{Harveyballs}
+
+\begin{quote}
+    Harvey Balls sind kreisförmige Ideogramme, die dazu dienen, qualitative Daten anschaulich zu machen. Sie werden in Vergleichstabellen verwendet, um anzuzeigen, inwieweit ein Untersuchungsobjekt sich mit definierten Vergleichskriterien deckt. \parencite{Wikipedia_HarveyBalls}
+\end{quote}
+
+\begin{table}[h]
+  \caption{Beispiel für Harvey Balls}
+  \label{tab:harveyexample}
+  \centering
+  \begin{tabular}{lccc}
+    \toprule
+    & Ansatz 1 & Ansatz 2 & Ansatz 3\\
+    \midrule
+    Eigenschaft 1	& \harveyBallNone & \harveyBallQuarter & \harveyBallHalf \\
+    Eigenschaft 2	& \harveyBallHalf & \harveyBallThreeQuarter & \harveyBallFull \\
+    Eigenschaft 3	& \harveyBallFull & \harveyBallThreeQuarter & \harveyBallQuarter\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
 \section{Aufzählungen}
 
 Aufzählungen sind toll.
@@ -78,7 +100,7 @@ Aufzählungen sind toll.
   \item Ein Punkt mit Unterpunkten
     \begin{itemize}
       \item Unterpunkt 1
-      \item Unterpunkt 2      
+      \item Unterpunkt 2
     \end{itemize}
   \item Ein abschließender Punkt ohne Unterpunkte
 \end{itemize}
@@ -92,7 +114,7 @@ Aufzählungen mit laufenden Nummern sind auch toll.
   \item Ein Punkt mit Unterpunkten
     \begin{enumerate}
       \item Unterpunkt 1
-      \item Unterpunkt 2      
+      \item Unterpunkt 2
     \end{enumerate}
   \item Ein abschließender Punkt ohne Unterpunkte
 \end{enumerate}
@@ -104,6 +126,7 @@ Aufzählungen mit laufenden Nummern sind auch toll.
 
 Wichtig ist das korrekte Zitieren von Quellen, wie es auch von \cite{Kornmeier2011} dargelegt wird. Interessant ist in diesem Zusammenhang auch der Artikel von \cite{Kramer2009}. Häufig werden die Zitate auch in Klammern gesetzt, wie bei \parencite{Kornmeier2011} und mit Seitenzahlen versehen \parencite[S. 22--24]{Kornmeier2011}.
 
+Bei Webseiten wird auch die URL und das Abrufdatum mit angegeben \parencite{Gao2017}. Wenn die URL nicht korrekt umgebrochen wird, lohnt es sich, an den Parametern \textit{biburl*penalty} in der \texttt{preambel.tex} zu drehen. Kleinere Werte erhöhen die Wahrscheinlichkeit, dass getrennt wird.
 
 \subsection{Zitierstile}
 
@@ -130,5 +153,3 @@ Wenn Sie aufgrund der Natur Ihrer Arbeit sehr viele Internetquellen benötigen, 
 Auf der CD/DVD geben Sie bitte auch eine HTML-Version des Literaturverzeichnisses ab, in der die Online-Quellen sowie die gespeicherten PDF-Dateien verlinkt sind.
 
 Wikipedia\index{Zitat!Wikipedia} stellt einen immensen Wissensfundus dar und enthält zu vielen Themen hervorragende Artikel. Sie müssen sich aber darüber im Klaren sein, dass die Artikel in Wikipedia einem ständigen Wandel unterworfen sind und nicht als Quelle für wissenschaftliche Fakten genutzt werden sollten. Es gelten die allgemeinen Regeln für das Zitieren von Internetquellen. Sollten Sie doch Wikipedia nutzen müssen, verwenden Sie bitte ausschließlich den Perma-Link\footnote{Sie erhalten den Permalink über die Historie der Seite und einen Klick auf das Datum.}\index{Permalink} zu der Version der Seite, die Sie aufgerufen haben.
-
-

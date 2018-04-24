@@ -36,9 +36,9 @@
 
 % ------------------------------------------------------------------
 % Hauptteil der Arbeit
-\input{kapitel1} % Externe Datei einbinden
-\input{kapitel2} % Externe Datei einbinden
-\input{kapitel3} % Externe Datei einbinden
+\input{kapitel/kapitel1} % Externe Datei einbinden
+\input{kapitel/kapitel2} % Externe Datei einbinden
+\input{kapitel/kapitel3} % Externe Datei einbinden
 % ------------------------------------------------------------------
 
 \label{lastpage}
@@ -54,9 +54,8 @@
 \setcounter{page}{\value{frontmatterpage}}
 
 % Abkürzungsverzeichnis
-\chapter*{\hsmaabbreviations}
-\addcontentsline{toc}{chapter}{\hsmaabbreviations}
-\input{abkuerzungen}
+\addchap{\hsmaabbreviations}
+\input{kapitel/abkuerzungen}
 
 % Tabellenverzeichnis erzeugen
 \cleardoublepage
@@ -76,15 +75,22 @@
 \addcontentsline{toc}{chapter}{\hsmalistings}
 \lstlistoflistings
 
-% Literaturverzeichnis erzeugen (nach DIN)
+% Literaturverzeichnis erzeugen
 \begin{flushleft}
 \printbibliography
 \end{flushleft}
 
-% Index ausgeben
+% Index ausgeben. Wenn Sie keinen Index haben, entfernen Sie einfach
+% diesen Teil.
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{\hsmaindex}
 \printindex
+
+% Anhang. Wenn Sie keinen Anhang haben, entfernen Sie einfach
+% diesen Teil.
+\appendix
+\input{kapitel/anhang-a}
+\input{kapitel/anhang-b}
 
 \end{document}
