@@ -76,9 +76,13 @@
 \lstlistoflistings
 
 % Literaturverzeichnis erzeugen
+\begingroup
+\cleardoublepage
 \begin{flushleft}
+\let\clearpage\relax % Fix für leere Seiten (isue #25)
 \printbibliography
 \end{flushleft}
+\endgroup
 
 % Index ausgeben. Wenn Sie keinen Index haben, entfernen Sie einfach
 % diesen Teil.
