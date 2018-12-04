@@ -43,12 +43,17 @@
 \usepackage[backend=biber,
   isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
   sortlocale=de_DE,               % Sortierung der Einträge für Deutsch
-  %sortlocale=en_US,              % Sortierung der Einträge für Englisch
-  autocite=inline,                % regelt Aussehen für \autocite (inline=\parancite)
+                                  %      de_DE: für Deutsch
+                                  %      en_US: für Englisch
+  autocite=inline,                % regelt Aussehen für \autocite
+                                  %      inline: Zitat in Klammern (\parancite)
+                                  %      footnote: Zitat in Fußnoten (\footcite)
+                                  %      plain: Zitat direkt ohne Klammern (\cite)
+  style=authoryear,               % Legt den Stil für die Zitate fest
+                                  %      ieee: Zitate als Zahlen [1]
+                                  %      alphabetic: Zitate als Kürzel und Jahr [Ein05]
+                                  %      authoryear: Zitate Author und Jahr [Einstein (1905)]
   hyperref=true,                  % Hyperlinks für Ziate
-  %style=ieee                     % Zitate als Zahlen [1]
-  %style=alphabetic               % Zitate als Kürzel und Jahr [Ein05]
-  style=authoryear                % Zitate Author und Jahr [Einstein (1905)]
 ]{biblatex}                       % Literaturverwaltung mit BibLaTeX
 \usepackage{rotating}             % Seiten drehen
 \usepackage{harveyballs}          % Harveyballs
