@@ -1,8 +1,7 @@
 % Document type and used packages
 \documentclass[open=right, % Kapitel darf nur auf rechten Seite beginnen
-    paper=A4,               % DIN-A4-Papier
-    a4paper,                % DIN-A4-Papier
-    12pt,                   % Schriftgöße
+    paper=a4,               % DIN-A4-Papier
+    fontsize=12pt,          % Schriftgöße
     headings=small,         % Kleine Überschriften
     headsepline=true,       % Trennlinie am Kopf der Seite
     footsepline=false,      % Keine Trennlinie am Fuß der Seite
@@ -13,18 +12,18 @@
     cleardoublepage=plain]{scrbook}
 
 % Pakete einbinden, die benötigt werden
-\usepackage{scrpage2}
+\usepackage{scrlayer-scrpage}
 \usepackage[utf8]{inputenc}       % Dateien in UTF-8 benutzen
 \usepackage[T1]{fontenc}          % Zeichenkodierung
 \usepackage{graphicx}             % Bilder einbinden
 \usepackage[main=ngerman, english]{babel}       % Deutsch und Englisch unterstützen
 \usepackage{xcolor}               % Color support
-\usepackage{amsmath}              % Matheamtische Formeln
+\usepackage{amsmath}              % Mathematische Formeln
 \usepackage{amsfonts}             % Mathematische Zeichensätze
 \usepackage{amssymb}              % Mathematische Symbole
 \usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
 \usepackage{booktabs}             % Korrekter Tabellensatz
-\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzugen]
+\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzungen]
 \usepackage{makeidx}              % Sachregister
 \usepackage{listings}             % Source Code listings
 \usepackage{listingsutf8}         % Listings in UTF8
