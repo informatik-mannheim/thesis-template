@@ -35,10 +35,7 @@ Achten Sie darauf, die Dokumente im UTF-8-Format abzulegen. Nur so ist eine plat
 
 ### Cloud-Dienste
 
-Diese Vorlage wurde bereits von Studierenden erfolgreich bei Cloud-Diensten eingesetzt, mit denen man LaTeX-Dokumente schreiben, kompilieren und verwalten kann. Positive Erfahrungsberichte liegen bisher vor von
-
-  * [Overleaf](https://www.overleaf.com)
-  * [ShareLaTeX](https://www.sharelatex.com)
+Diese Vorlage wurde bereits von Studierenden erfolgreich bei Cloud-Diensten eingesetzt, mit denen man LaTeX-Dokumente schreiben, kompilieren und verwalten kann. Positive Erfahrungsberichte liegen bisher mit [Overleaf](https://www.overleaf.com) vor. Eine Anleitung zu Overleaf finden Sie weiter unten.
 
 ## Aufbau der Vorlage
 
