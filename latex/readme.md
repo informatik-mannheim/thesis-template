@@ -2,6 +2,10 @@
 
 Diese Vorlage ist für Abschlussarbeiten mit LaTeX an der Hochschule Mannheim gedacht. Sie erhebt keinen Anspruch darauf, den Wünschen aller Professoren zu entsprechen. Klären Sie daher immer im Voraus mit Ihrem Betreuer (und auch Zweitkorrektor), ob die Vorlage seinen Vorstellungen entspricht.
 
+Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein {Issue](https://github.com/informatik-mannheim/thesis-template/issues). Lesen Sie aber vorher diese Anleitung bis zum Ende, denn vielleicht klärt sich Ihre Frage von selbst.
+
+Verbesserungen können Sie jederzeit als GitHub Pull-Request an uns senden.
+
 Diese Vorlage wurde entwickelt von [Prof. Thomas Smits](http://www.smits-net.de).
 
 ## Werkzeuge, Dateiformat
@@ -66,6 +70,19 @@ Es gibt drei Ordner
   * `/kapitel` - Ablageort für die einzelnen Kapitel
   * `/bilder` - Ablageort für die verwendeten Bilder
   * `/src` - Ablageort für die verwendeten Quelltexte von Programmen, die in der Arbeit gezeigt werden sollen.
+
+Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https://www.overleaf.com) - siehe nächstes Kapitel.
+
+## LaTeX-Projekt unter Overleaf einrichten
+
+ * Laden Sie die ZIP-Version des Projektes [hier](https://github.com/informatik-mannheim/thesis-template/raw/master/latex/thesis-overleaf.zip) herunter.
+ * Melden Sie sich bei [Overleaf](https://www.overleaf.com) an und loggen Sie sich ein.
+ * Gehen Sie auf "New Project" und wählen Sie "Upload Project"
+ * Laden Sie die ZIP-Datei hoch.
+ * Sie werden jetzt Kompile-Fehler bekommen, aber keine Panik, dies liegt daran, dass Overleaf nicht weiß, welches das Hauptdokument ist
+ * Wählen Sie das Overleaf Logo oben links, um das Einstellungsmenue aufzurufen und stellen Sie die Option "Main document" auf `thesis.tex`
+ * Wählen Sie nun in der Dateiliste ebenfalls `thesis.tex`
+ * Drücken Sie auf "Recompile" - das Projekt sollte jetzt bauen
 
 
 ## LaTeX-Projekt unter TeXnicCenter einrichten
