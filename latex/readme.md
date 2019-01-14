@@ -2,7 +2,7 @@
 
 Diese Vorlage ist für Abschlussarbeiten mit LaTeX an der Hochschule Mannheim gedacht. Sie erhebt keinen Anspruch darauf, den Wünschen aller Professoren zu entsprechen. Klären Sie daher immer im Voraus mit Ihrem Betreuer (und auch Zweitkorrektor), ob die Vorlage seinen Vorstellungen entspricht.
 
-Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein {Issue](https://github.com/informatik-mannheim/thesis-template/issues). Lesen Sie aber vorher diese Anleitung bis zum Ende, denn vielleicht klärt sich Ihre Frage von selbst.
+Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein [Issue](https://github.com/informatik-mannheim/thesis-template/issues). Lesen Sie aber vorher diese Anleitung bis zum Ende, denn vielleicht klärt sich Ihre Frage von selbst.
 
 Verbesserungen können Sie jederzeit als GitHub Pull-Request an uns senden.
 
