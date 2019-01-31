@@ -20,13 +20,17 @@ $(eval FILE = $(firstword $^))
 @$(LATEX) -output-directory=$(TEMP_DIR) $(FILE)
 endef
 
-
+.PHONY: all
 all: $(TEMP_DIR) $(RESULT_DIR) \
 	$(RESULT_DIR)/thesis.pdf
 
+.PHONY: clean
 clean:
 	rm -rf $(TEMP_DIR)
 	rm -rf $(RESULT_DIR)
+
+thesis-overleaf.zip: * ../result/*
+	@cd .. && zip -r thesis-overleaf.zip tex/*
 
 $(TEMP_DIR)/thesis.pdf: thesis.tex $(INCLUDES) $(CHAPTERS)
 	cp literatur.bib $(TEMP_DIR)
@@ -41,4 +45,3 @@ $(TEMP_DIR):
 $(RESULT_DIR):
 	mkdir $(RESULT_DIR)
 
-.PHONY: clean all
