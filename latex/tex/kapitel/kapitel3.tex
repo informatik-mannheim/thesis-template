@@ -86,7 +86,7 @@ Man kann mit Latex auch ganz toll Sourcecode in den Text aufnehmen.
 
 Anforderungen im Format des Volere-Templates (Snowcards) \autocite{Volere} können per Makro eingefügt werden.
 
-\snowcard % Snowcard einbinden (Anpassungen in preambel.tex)
+\snowcard % Snowcard einbinden (Anpassungen in titelblatt.tex)
    {F52} % Nummer des Requirements
    {F} % Art
    {Hoch} % Priorität
@@ -99,3 +99,16 @@ Anforderungen im Format des Volere-Templates (Snowcards) \autocite{Volere} könn
    Passwort über die Anmeldemaske anmelden und hat Zugriff auf die
    Funktionen des Systems} % Fit-Kriterium (Optional)
    {Benutzerhandbuch des Altsystems} % Material (Optional)
+
+Ebenso nicht-funktionale Anforderungen mit Hilfe von Quality Attribute Scenarios. Siehe hierzu \autocite{Barbacci2003}.
+
+\qas % Quality-Attribute Scenario einbinden (Anpassungen in titelblatt.tex)
+   {NF11} % Nummer des Requirements
+   {Hoch} % Priotität
+   {Performance des Jahresabschlusses} % Titel
+   {Endbenutzer} % Quelle
+   {Startet einen Jahresabschluss} % Stimulus
+   {Buchhaltungssystem} % Artefakt
+   {Das System befindet sich im normalen Betriebszustand} % Umgebung
+   {Jahresabschluss ist durchgeführt und kann als PDF abgerufen werden} % Antwort
+   {10 Minuten} % Antwort-Maß

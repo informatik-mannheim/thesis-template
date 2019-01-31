@@ -293,6 +293,7 @@
    \newcommand{\hsmalistoffigures}{Abbildungsverzeichnis}%
    \newcommand{\hsmalistings}{Quellcodeverzeichnis}%
    \newcommand{\hsmaindex}{Index}%
+   \newcommand{\hsmaabbreviations}{Abkürzungsverzeichnis}%
    \newcommand{\hsmasnowcardanforderung}{Anforderung}%
    \newcommand{\hsmasnowcardno}{Nr}%
    \newcommand{\hsmasnowcardart}{Art}%
@@ -303,7 +304,17 @@
    \newcommand{\hsmasnowcardbeschreibung}{Beschreibung}%
    \newcommand{\hsmasnowcardfitkriterium}{Fit-Kriterium}%
    \newcommand{\hsmasnowcardmaterial}{Weiteres Material}%
-   \newcommand{\hsmaabbreviations}{Abkürzungsverzeichnis}%   
+   \newcommand{\hsmaqasanforderung}{QAS}%
+   \newcommand{\hsmaqasno}{Nr}%
+   \newcommand{\hsmaqasart}{Art}%
+   \newcommand{\hsmaqasprio}{Prio}%
+   \newcommand{\hsmaqastitel}{Titel}%
+   \newcommand{\hsmaqasquelle}{Quelle}%
+   \newcommand{\hsmaqasstimulus}{Stimulus}%
+   \newcommand{\hsmaqasartefakt}{Artefakt}%
+   \newcommand{\hsmaqasumgebung}{Umgebung}%
+   \newcommand{\hsmaqasantwort}{Antwort}%
+   \newcommand{\hsmaqasmass}{Maß für Antwort}%
    \selectlanguage{ngerman}}%
   {\newcommand{\hsmatyp}{\hsmatypen}%
    \newcommand{\hsmathesistype}{for the acquisition of the academic degree \hsmagrad}%
@@ -317,6 +328,7 @@
    \newcommand{\hsmalistoffigures}{List of Figures}%
    \newcommand{\hsmalistings}{Listings}%
    \newcommand{\hsmaindex}{Index}%
+   \newcommand{\hsmaabbreviations}{List of Abbreviations}%
    \newcommand{\hsmasnowcardanforderung}{Requirement}%
    \newcommand{\hsmasnowcardno}{\#}%
    \newcommand{\hsmasnowcardart}{Type}%
@@ -327,9 +339,18 @@
    \newcommand{\hsmasnowcardbeschreibung}{Description}%
    \newcommand{\hsmasnowcardfitkriterium}{Fit Criterion}%
    \newcommand{\hsmasnowcardmaterial}{Supporting Material}%
-   \newcommand{\hsmaabbreviations}{List of Abbreviations}%
+   \newcommand{\hsmaqasanforderung}{QAS}%
+   \newcommand{\hsmaqasno}{\#}%
+   \newcommand{\hsmaqasart}{Type}%
+   \newcommand{\hsmaqasprio}{Prio}%
+   \newcommand{\hsmaqastitel}{Title}%
+   \newcommand{\hsmaqasquelle}{Source}%
+   \newcommand{\hsmaqasstimulus}{Stimulus}%
+   \newcommand{\hsmaqasartefakt}{Artifact}%
+   \newcommand{\hsmaqasumgebung}{Environment}%
+   \newcommand{\hsmaqasantwort}{Response}%
+   \newcommand{\hsmaqasmass}{Response Measure}%
    \selectlanguage{english}}%
-
 
 % Daten in die Standard-Felder von KOMA-Script eintragen
 \titlehead{\hsmatyp\ in\  \hsmastudienganglang}
@@ -500,6 +521,38 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
   \multicolumn{6}{X}{\textbf{\hsmasnowcardmaterial}} \\
   \multicolumn{6}{X}{#9} \\
 \fi
+\bottomrule
+\end{tabularx}
+\end{footnotesize}
+\end{table}
+}
+
+% Quality Attribute Scenario
+\newcommand{\qas}[9]{
+  \begin{table}[h!]
+\caption{\hsmaqasanforderung\ #1: #3}
+\renewcommand{\arraystretch}{1.2}
+\centering
+\sffamily
+  \begin{footnotesize}
+
+\begin{tabularx}{\linewidth}{sssssb}
+\toprule
+\textbf{\hsmaqasno} & #1 & \textbf{\hsmaqasart} & QAS & \textbf{\hsmaqasprio} & #2 \\
+\midrule
+\multicolumn{2}{l}{\textbf{\hsmaqastitel}} & \multicolumn{4}{X}{#3} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasquelle}} & \multicolumn{4}{l}{#4} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasstimulus}} & \multicolumn{4}{X}{#5} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasartefakt}} & \multicolumn{4}{X}{#6} \\
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmaqasumgebung}} \\
+\multicolumn{6}{X}{#7} \\
+\addlinespace
+\multicolumn{6}{X}{\textbf{\hsmaqasantwort}} \\
+\multicolumn{6}{X}{#8} \\
+\addlinespace
+\multicolumn{6}{X}{\textbf{\hsmaqasmass}} \\
+\multicolumn{6}{X}{#9} \\
 \bottomrule
 \end{tabularx}
 \end{footnotesize}
