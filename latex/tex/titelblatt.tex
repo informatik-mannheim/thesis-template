@@ -293,6 +293,16 @@
    \newcommand{\hsmalistoffigures}{Abbildungsverzeichnis}%
    \newcommand{\hsmalistings}{Quellcodeverzeichnis}%
    \newcommand{\hsmaindex}{Index}%
+   \newcommand{\hsmasnowcardanforderung}{Anforderung}%
+   \newcommand{\hsmasnowcardno}{Nr}%
+   \newcommand{\hsmasnowcardart}{Art}%
+   \newcommand{\hsmasnowcardprio}{Prio}%
+   \newcommand{\hsmasnowcardtitel}{Titel}%
+   \newcommand{\hsmasnowcardherkunft}{Herkunft}%
+   \newcommand{\hsmasnowcardkonflikt}{Konflikte}%
+   \newcommand{\hsmasnowcardbeschreibung}{Beschreibung}%
+   \newcommand{\hsmasnowcardfitkriterium}{Fit-Kriterium}%
+   \newcommand{\hsmasnowcardmaterial}{Weiteres Material}%
    \newcommand{\hsmaabbreviations}{Abkürzungsverzeichnis}%   
    \selectlanguage{ngerman}}%
   {\newcommand{\hsmatyp}{\hsmatypen}%
@@ -307,6 +317,16 @@
    \newcommand{\hsmalistoffigures}{List of Figures}%
    \newcommand{\hsmalistings}{Listings}%
    \newcommand{\hsmaindex}{Index}%
+   \newcommand{\hsmasnowcardanforderung}{Requirement}%
+   \newcommand{\hsmasnowcardno}{\#}%
+   \newcommand{\hsmasnowcardart}{Type}%
+   \newcommand{\hsmasnowcardprio}{Prio}%
+   \newcommand{\hsmasnowcardtitel}{Title}%
+   \newcommand{\hsmasnowcardherkunft}{Origin}%
+   \newcommand{\hsmasnowcardkonflikt}{Conflicts}%
+   \newcommand{\hsmasnowcardbeschreibung}{Description}%
+   \newcommand{\hsmasnowcardfitkriterium}{Fit Criterion}%
+   \newcommand{\hsmasnowcardmaterial}{Supporting Material}%
    \newcommand{\hsmaabbreviations}{List of Abbreviations}%
    \selectlanguage{english}}%
 
@@ -442,3 +462,47 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {\subsubsection*{\hsmatitelde}\hsmaabstractde\subsubsection*{\hsmatitelen}\hsmaabstracten}
   {\subsubsection*{\hsmatitelen}\hsmaabstracten\subsubsection*{\hsmatitelde}\hsmaabstractde}
+
+% Snowcard
+\newcommand{\snowcard}[9]{
+  \begin{table}[h!]
+\caption{\hsmasnowcardanforderung\ #1: #4}
+\renewcommand{\arraystretch}{1.2}
+\centering
+\sffamily
+  \begin{footnotesize}
+
+\begin{tabularx}{\linewidth}{sssssb}
+\toprule
+\textbf{\hsmasnowcardno} & #1 & \textbf{\hsmasnowcardart} & #2 & \textbf{\hsmasnowcardprio} & #3 \\
+\midrule
+\multicolumn{2}{l}{\textbf{\hsmasnowcardtitel}} & \multicolumn{4}{X}{#4} \\
+\ifx&#5&%
+\else
+\multicolumn{2}{l}{\textbf{\hsmasnowcardherkunft}} & \multicolumn{4}{X}{#5} \\
+\fi
+\ifx&#6&%
+\else
+\multicolumn{2}{l}{\textbf{\hsmasnowcardkonflikt}} & \multicolumn{4}{l}{#6} \\
+\fi
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmasnowcardbeschreibung}} \\
+\multicolumn{6}{X}{#7} \\
+\ifx&#8&%
+\else
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmasnowcardfitkriterium}} \\
+\multicolumn{6}{X}{#8} \\
+\fi
+\ifx&#9&%
+\else
+  \addlinespace
+  \multicolumn{6}{X}{\textbf{\hsmasnowcardmaterial}} \\
+  \multicolumn{6}{X}{#9} \\
+\fi
+\bottomrule
+\end{tabularx}
+\end{footnotesize}
+\end{table}
+}
+
