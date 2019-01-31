@@ -39,6 +39,7 @@
 \usepackage[pagebackref=false,german]{hyperref}  % Hyperlinks
 \usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
 \usepackage[autostyle=true,german=quotes]{csquotes}   % Zitate
+\usepackage{tabularx}             % Spezielle Tabellen
 \usepackage[backend=biber,
   isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
   sortlocale=de_DE,               % Sortierung der Einträge für Deutsch
@@ -188,3 +189,52 @@
 % Flags für Veröffentlichung und Sperrvermerk
 \newboolean{hsmapublizieren}
 \newboolean{hsmasperrvermerk}
+
+% Tabellenzellen mit mehereen Zeilen
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{b}{l}
+\newcolumntype{s}{>{\hsize=.3\hsize}l}
+
+% Requirements
+\newcommand{\snowcard}[9]{
+  \begin{table}[h!]
+\caption{Anforderung #1: #4}
+\renewcommand{\arraystretch}{1.2}
+\centering
+\sffamily
+  \begin{footnotesize}
+
+\begin{tabularx}{\linewidth}{sssssb}
+\toprule
+\textbf{Nr} & #1 & \textbf{Art} & #2 & \textbf{Prio} & #3 \\
+\midrule
+\multicolumn{2}{l}{\textbf{Titel}} & \multicolumn{4}{X}{#4} \\
+\ifx&#5&%
+\else
+\multicolumn{2}{l}{\textbf{Herkunft}} & \multicolumn{4}{X}{#5} \\
+\fi
+\ifx&#6&%
+\else
+\multicolumn{2}{l}{\textbf{Konflikte}} & \multicolumn{4}{l}{#6} \\
+\fi
+\addlinespace
+\multicolumn{6}{l}{\textbf{Beschreibung}} \\
+\multicolumn{6}{X}{#7} \\
+\ifx&#8&%
+\else
+\addlinespace
+\multicolumn{6}{l}{\textbf{Fit-Kriterium}} \\
+\multicolumn{6}{X}{#8} \\
+\fi
+\ifx&#9&%
+\else
+  \addlinespace
+  \multicolumn{6}{X}{\textbf{Material}} \\
+  \multicolumn{6}{X}{#9} \\
+\fi
+\bottomrule
+\end{tabularx}
+\end{footnotesize}
+\end{table}
+}
+
