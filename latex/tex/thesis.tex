@@ -1,3 +1,40 @@
+% *******************************************************************
+% STOP - Bitte zuerst lesen, bevor Sie weitermachen
+%
+% Einige Dinge müssen Sie an Ihre Bedürfnisse (und die Vorgaben Ihres
+% Betreuers anpassen).
+%
+% 1. Sprache
+% Das Template unterstützt Deutsch und Englisch, Standard ist Deutsch.
+% Wenn Sie Englisch verwenden wollen, ändern Sie bitte
+%   a) in docinfo.tex \hsmasprache auf en
+%   b) in preambel.tex \usepackage[main=english, ngerman]{babel},
+%      \usepackage[pagebackref=false,english]{hyperref},
+%      \usepackage[autostyle=true,english=quotes]{csquotes} und bei
+%      der Literatur die Sortierreihenfolge mit sortlocale=en_US.
+%
+% 2. Zitierstil
+% Abhängig von dem gewünschten Zitierstil passen Sie bitte in
+% preambel.tex die Einstellungen bei \usepackage[backend=biber...
+% an. Wie ist dort genau erklärt.
+%
+% 3. Doppelseitiger oder einseitiger Druck
+% Das Template ist für doppelseitigen Druck eingestellt. Wollen Sie
+% einseitig drucken, müssen Sie in preambel.tex die Einstellungen
+% für \documentclass ändern. Und zwar von twoside=on auf twoside=off.
+%
+% 4. Abkürzungen auf richtige Breite einstellen
+% In der Datei kapitel/abkuerzungen.tex müssen Sie die _längste_
+% Abkürzung in die eckigen Klammern von \begin{acronym} schreiben,
+% sonst werden die Abkürzungen nicht richtig ausgerichtet.
+% Also z.B. \begin{acronym}[DSGVO].
+%
+% 5. Unnötige Teile entfernen
+% Entfernen Sie die Teile, die Sie nicht brauchen, z.B. Anhänge,
+% Quelltextverzeichnis etc. Siehe unten
+% *******************************************************************
+
+
 % Preambel mit Einstellungen importieren
 \input{preambel}
 
@@ -69,7 +106,8 @@
 \addcontentsline{toc}{chapter}{\hsmalistoffigures}
 \listoffigures
 
-% Listingverzeichnis erzeugen
+% Listingverzeichnis erzeugen. Wenn Sie keine Listings haben,
+% entfernen Sie einfach diesen Teil.
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{\hsmalistings}
@@ -79,7 +117,7 @@
 \begingroup
 \cleardoublepage
 \begin{flushleft}
-\let\clearpage\relax % Fix für leere Seiten (isue #25)
+\let\clearpage\relax % Fix für leere Seiten (issue #25)
 \printbibliography
 \end{flushleft}
 \endgroup

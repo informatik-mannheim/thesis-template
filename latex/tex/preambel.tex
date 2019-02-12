@@ -1,5 +1,5 @@
-% Document type and used packages
-\documentclass[open=right, % Kapitel darf nur auf rechten Seite beginnen
+% Dokumententyp und benutzte Pakete
+\documentclass[open=right,  % Kapitel darf nur auf rechten Seite beginnen
     paper=a4,               % DIN-A4-Papier
     fontsize=12pt,          % Schriftgöße
     headings=small,         % Kleine Überschriften
@@ -17,7 +17,7 @@
 \usepackage[T1]{fontenc}          % Zeichenkodierung
 \usepackage{graphicx}             % Bilder einbinden
 \usepackage[main=ngerman, english]{babel}       % Deutsch und Englisch unterstützen
-\usepackage{xcolor}               % Color support
+\usepackage{xcolor}               % Unterstützung für Farben
 \usepackage{amsmath}              % Mathematische Formeln
 \usepackage{amsfonts}             % Mathematische Zeichensätze
 \usepackage{amssymb}              % Mathematische Symbole
@@ -25,17 +25,17 @@
 \usepackage{booktabs}             % Korrekter Tabellensatz
 \usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzungen]
 \usepackage{makeidx}              % Sachregister
-\usepackage{listings}             % Source Code listings
-\usepackage{listingsutf8}         % Listings in UTF8
+\usepackage{listings}             % Quelltexte
+\usepackage{listingsutf8}         % Quelltexte in UTF8
 \usepackage[hang,font={sf,footnotesize},labelfont={footnotesize,bf}]{caption} % Beschriftungen
 \usepackage[scaled]{helvet}       % Schrift Helvetia laden
-\usepackage[absolute]{textpos}	  % Absolute Textpositionen (für Deckblatt)
+\usepackage[absolute]{textpos}    % Absolute Textpositionen (für Deckblatt)
 \usepackage{calc}                 % Berechnung von Positionen
 \usepackage{blindtext}            % Blindtexte
 \usepackage[bottom=40mm,left=35mm,right=35mm,top=30mm]{geometry} % Ränder ändern
 \usepackage{setspace}             % Abstände korrigieren
 \usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
-\usepackage{scrhack}              % Get rid of tocbasic warnings
+\usepackage{scrhack}              % tocbasic Warnung entfernen
 \usepackage[pagebackref=false,german]{hyperref}  % Hyperlinks
 \usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
 \usepackage[autostyle=true,german=quotes]{csquotes}   % Zitate
@@ -53,18 +53,18 @@
                                   %      ieee: Zitate als Zahlen [1]
                                   %      alphabetic: Zitate als Kürzel und Jahr [Ein05]
                                   %      authoryear: Zitate Author und Jahr [Einstein (1905)]
-  hyperref=true,                  % Hyperlinks für Ziate
+  hyperref=true,                  % Hyperlinks für Zitate
 ]{biblatex}                       % Literaturverwaltung mit BibLaTeX
 \usepackage{rotating}             % Seiten drehen
 \usepackage{harveyballs}          % Harveyballs
 
-\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
-\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
+\setlength{\bibitemsep}{1em}      % Abstand zwischen den Literaturangaben
+\setlength{\bibhang}{2em}         % Einzug nach jeweils erster Zeile
 
 % Trennung von URLs im Literaturverzeichnis (große Werte [> 10000] verhindern die Trennung)
 \defcounter{biburlnumpenalty}{10} % Strafe für Trennung in URL nach Zahl
-\defcounter{biburlucpenalty}{500}  % Strafe für Trennung in URL nach Großbuchstaben
-\defcounter{biburllcpenalty}{500}  % Strafe für Trennung in URL nach Kleinbuchstaben
+\defcounter{biburlucpenalty}{500} % Strafe für Trennung in URL nach Großbuchstaben
+\defcounter{biburllcpenalty}{500} % Strafe für Trennung in URL nach Kleinbuchstaben
 
 % Farben definieren
 \definecolor{linkblue}{RGB}{0, 0, 100}
@@ -82,8 +82,8 @@
     linktoc=all,          % Links im Inhaltsverzeichnis
     linkcolor=linkblack,  % Querverweise
     citecolor=linkblack,  % Literaturangaben
-	filecolor=linkblack,  % Dateilinks
-	urlcolor=linkblack    % URLs
+    filecolor=linkblack,  % Dateilinks
+    urlcolor=linkblack    % URLs
 }
 
 % Einstellungen für Quelltexte
@@ -100,10 +100,10 @@
       inputencoding=utf8,
       captionpos=b,
       breakautoindent=true,
-	  breakindent=2em,
-	  breaklines=true,
-	  prebreak=,
-	  postbreak=,
+      breakindent=2em,
+      breaklines=true,
+      prebreak=,
+      postbreak=,
       numbers=none,
       numberstyle=\tiny,
       showspaces=false,      % Keine Leerzeichensymbole
@@ -190,7 +190,7 @@
 \newboolean{hsmapublizieren}
 \newboolean{hsmasperrvermerk}
 
-% Tabellenzellen mit mehereen Zeilen
+% Tabellenzellen mit mehreren Zeilen
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{b}{l}
 \newcolumntype{s}{>{\hsize=.3\hsize}l}

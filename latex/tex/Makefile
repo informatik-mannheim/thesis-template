@@ -29,7 +29,7 @@ clean:
 	rm -rf $(TEMP_DIR)
 	rm -rf $(RESULT_DIR)
 
-thesis-overleaf.zip: * ../result/*
+../thesis-overleaf.zip: * ../result/*
 	@cd .. && zip -r thesis-overleaf.zip tex/*
 
 $(TEMP_DIR)/thesis.pdf: thesis.tex $(INCLUDES) $(CHAPTERS)

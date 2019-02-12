@@ -1,6 +1,6 @@
 % -------------------------------------------------------
 % In dieser Datei sollten eigentlich keine Veränderungen mehr
-% notwendig sein.
+% notwendig sein. Alle Einstellungen erfolgen in docinfo.tex
 % -------------------------------------------------------
 
 \thispagestyle{empty}
@@ -39,11 +39,12 @@
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Wirtschaftsingenieurwesen}%
    \newcommand{\hsmafakultaetlangen}{Department of Engineering and Management}}{}
    
-\ifthenelse{\equal{\hsmafakultaet}{C}}%
+\ifthenelse{\equal{\hsmafakultaet}{V}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Verfahrens- und Chemietechnik}%
    \newcommand{\hsmafakultaetlangen}{Department of Chemical Process Engineering}}{}
    
-
+% Studiengänge der HS-Mannheim
+% -------------------------------------------------------
 \ifthenelse{\equal{\hsmastudiengang}{IB}}%
   {\newcommand{\hsmastudienganglangde}{Informatik}%
   \newcommand{\hsmastudienganglangen}{Computer Science}%
@@ -268,6 +269,8 @@
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
 
+% Abschlüsse
+% -------------------------------------------------------
 \newcommand{\hsmabsc}{Bachelor of Science (B.Sc.)}
 \newcommand{\hsmaba}{Bachelor of Arts (B.A.)}
 \newcommand{\hsmamaster}{Master of Science (M.Sc.)}
