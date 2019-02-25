@@ -1,114 +1,111 @@
-\chapter{Einbinden von Grafiken und Sourcecode}
-\label{Kap3}
+\chapter{Typographie}
 
-\section{Bilder}
+\section{Hervorhebungen}
+\label{Einleitung:Textauszeichnungen}
 
-Natürlich können auch Grafiken und Bilder eingebunden werden, siehe z.\,B. Abbildung~\ref{Kap2:NasaRover}.
+Achten Sie bitte auf die grundlegenden Regeln der Typographie\index{Typographie}\footnote{Ein Ratgeber in allen Detailfragen ist \cite{Forssman2002}.}, wenn Sie Ihren Text schreiben. Hierzu gehören z.\,B. die Verwendung der richtigen "`Anführungszeichen"' und der Unterschied zwischen Binde- (-), Gedankenstrich (--) und langem Strich (---).
 
-\begin{figure}[h]
+Wenn Sie Text hervorheben wollen, dann setzten Sie ihn \textit{kursiv} (Italic) und nicht \textbf{fett} (Bold). Fettdruck ist Überschriften vorbehalten; im Fließtext stört er den Lesefluss. Das \underline{Unterstreichen} von Fließtext ist im gesamten Dokument tabu und kann maximal bei Pseudo"=Code vorkommen.\index{Hervorhebungen}
+
+
+\section{Anführungszeichen}
+
+Deutsche Anführungszeichen gehen so: "`dieser Text steht in \glq Anführungszeichen\grq; alles klar?"'. Englische Anführungszeichen werden anders benutzt: ``this is an `English' quotation.''
+
+\section{Abkürzungen}
+\index{Abkürzungen}
+\index{Abbreviation|see{Abkürzungen}}
+
+Eine \ac{ABK} wird bei der ersten Verwendung ausgeschrieben. Danach nicht mehr: \ac{ABK}. Man kann allerdings die Langform explizit anfordern: \acl{ABK} oder die Kurzform \acs{ABK} oder auch noch einmal die Definition: \acf{ABK}.
+
+Beachten Sie, dass bei Abkürzungen, die für zwei Wörter stehen, ein kleines Leerzeichen nach dem Punkt kommt: z.\,B. bzw. \zb, d.\,h. bzw. \dahe
+
+
+\section{Querverweise}
+
+Querverweise auf eine Kapitelnummer macht man im Text mit \verb+\ref+ (Kapitel~\ref{Einleitung:Textauszeichnungen}) und auf eine bestimmte Seite mit \verb+\pageref+ (Seite~\pageref{Einleitung:Textauszeichnungen}). Man kann auch den Befehl \verb+\autoref+ benutzen, der automatisch die Art des referenzierten Elements bestimmt (\zb \ \autoref{Einleitung:Textauszeichnungen} oder \autoref{Kap2:Kopplungsformen}).
+
+
+\section{Fußnoten}
+
+Fußnoten werden einfach mit in den Text geschrieben und zwar genau an die Stelle\footnote{An der die Fußnote auftauchen soll.}
+
+
+\section{Tabellen}
+
+Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalten werden durch einen entsprechenden Abstand voneinander getrennt.\footnote{Siehe \cite[S. 89]{Willberg1999}.} Zum Einsatz kommen ausschließlich horizontale Linien (siehe Tabelle~\ref{Kap2:Kopplungsformen}).
+
+\begin{table}[h]
+  \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
+  \label{Kap2:Kopplungsformen}
+  \renewcommand{\arraystretch}{1.2}
   \centering
-  \includegraphics[width=6cm]{kapitel3/nasa_rover}
-  \caption{Ein Nasa Rover}
-  \label{Kap2:NasaRover}
-\end{figure}
+  \sffamily
+  \begin{footnotesize}
+    \begin{tabular}{l l l}
+    \toprule
+    \textbf{Form der Kopplung} & \textbf{enge Kopplung} & \textbf{lose Kopplung}\\
+    \midrule
+    Physikalische Verbindung	&	Punkt-zu-Punkt	& 	über Vermittler\\
+    Kommunikationsstil	&	synchron		&	asynchron\\
+    Datenmodell	&	komplexe gemeinsame Typen	&	nur einfache gemeinsame Typen\\
+    Bindung	&	statisch		&	dynamisch\\
+    \bottomrule
+    \end{tabular}
+  \end{footnotesize}
+  \rmfamily
+\end{table}
+
+Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe Tabelle~\ref{Kap2:Kopplungsformen}.
 
 
-Man kann sich auch selber ein Makro für das Einfügen von Bildern schreiben:
+\section{Harveyballs}
 
-\bild{kapitel3/modell_point_to_point}{6cm}{Point to Point}
+\begin{quote}
+    Harvey Balls sind kreisförmige Ideogramme, die dazu dienen, qualitative Daten anschaulich zu machen. Sie werden in Vergleichstabellen verwendet, um anzuzeigen, inwieweit ein Untersuchungsobjekt sich mit definierten Vergleichskriterien deckt. \parencite{Wikipedia_HarveyBalls}
+\end{quote}
 
-\begin{sidewaysfigure}
- \includegraphics[width=22cm]{kapitel3/ws-wsdl20-fehler}
-  \caption{Sehr große Grafiken kann man drehen, damit sie auf die Seite passen}
-  \label{Kap2:wsdl-fehler}
-\end{sidewaysfigure}
-
-
-\clearpage % Alle Bilder, die bisher kamen ausgeben
-
-\section{Formelsatz}
-
-Eine Formel gefällig? Mitten im Text $a_2 = \sqrt{x^3}$ oder als eigener Absatz (siehe Formel~\ref{Formel}):
-
-\begin{equation}
-\begin{bmatrix}         
-   1 &  4 &  2 \\
-   4 &  0 & -3 
-\end{bmatrix}        
-        \cdot
-\begin{bmatrix}                
-   1 &  1 &  0 \\
-  -2 &  3 &  5 \\
-   0 &  1 &  4 
-\end{bmatrix}        
-       {=} 
-\begin{bmatrix}               
-  -7 &  15 &  28 \\
-   4 &   1 & -12 
-\end{bmatrix}
-\label{Formel}
-\end{equation}
+\begin{table}[h]
+  \caption{Beispiel für Harvey Balls}
+  \label{tab:harveyexample}
+  \centering
+  \begin{tabular}{lccc}
+    \toprule
+    & Ansatz 1 & Ansatz 2 & Ansatz 3\\
+    \midrule
+    Eigenschaft 1	& \harveyBallNone & \harveyBallQuarter & \harveyBallHalf \\
+    Eigenschaft 2	& \harveyBallHalf & \harveyBallThreeQuarter & \harveyBallFull \\
+    Eigenschaft 3	& \harveyBallFull & \harveyBallThreeQuarter & \harveyBallQuarter\\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 
-\section{Sourcecode}
+\section{Aufzählungen}
 
-Man kann mit Latex auch ganz toll Sourcecode in den Text aufnehmen.
+Aufzählungen sind toll.
 
-\subsection{Aus einer Datei}
-
-\lstinputlisting[firstline=2,language=Java,caption={Crypter-Interface},label=lst:CrypterInterface]{\srcloc/Crypter.java}
-
-
-\subsection{Inline}
-
-\begin{lstlisting}[language=Java,caption=Methode checkKey()]
-    /**
-     * Testet den Schlüssel auf Korrektheit: Er muss mindestens die Länge 1
-     * haben und darf nur Zeichen von A-Z enthalten.
-     *
-     * @param key zu testender Schlüssel
-     * @throws CrypterException wenn der Schlüssel nicht OK ist.
-     */
-    protected void checkKey(Key key) throws CrypterException {
-
-        // Passt die Länge?
-        if (key.getKey().length == 0) {
-            throw new CrypterException("Der Schlüssel muss mindestens " +
-                    "ein Zeichen lang sein");
-        }
-
-        checkCharacters(key.getKey(), ALPHABET);
-    }
-\end{lstlisting}
+\begin{itemize}
+  \item Ein wichtiger Punkt
+  \item Noch ein wichtiger Punkt
+  \item Ein Punkt mit Unterpunkten
+    \begin{itemize}
+      \item Unterpunkt 1
+      \item Unterpunkt 2
+    \end{itemize}
+  \item Ein abschließender Punkt ohne Unterpunkte
+\end{itemize}
 
 
-\section{Anforderungen}
+Aufzählungen mit laufenden Nummern sind auch toll.
 
-Anforderungen im Format des Volere"=Templates (Snowcards) \autocite{Volere} können per Makro eingefügt werden.
-
-\snowcard % Snowcard einbinden (Anpassungen in titelblatt.tex)
-   {F52} % Nummer des Requirements
-   {F} % Art
-   {Hoch} % Priorität
-   {User Authentifizierung} % Titel
-   {Interview mit Abteilungsleiter} % Herkunft (Optional)
-   {F12} % Konflikte (Optional)
-   {Der Benutzer ist in der Lage sich über seinen
-    Benutzernamen und sein Passwort am System anzumelden} % Beschreibung
-   {Ein Benutzer kann sich mit seinem Firmenweiten Benutzernamen und
-   Passwort über die Anmeldemaske anmelden und hat Zugriff auf die
-   Funktionen des Systems} % Fit-Kriterium (Optional)
-   {Benutzerhandbuch des Altsystems} % Material (Optional)
-
-Ebenso nicht"=funktionale Anforderungen mit Hilfe von Quality Attribute Scenarios. Siehe hierzu \autocite{Barbacci2003}.
-
-\qas % Quality-Attribute Scenario einbinden (Anpassungen in titelblatt.tex)
-   {NF11} % Nummer des Requirements
-   {Hoch} % Priotität
-   {Performance des Jahresabschlusses} % Titel
-   {Endbenutzer} % Quelle
-   {Startet einen Jahresabschluss} % Stimulus
-   {Buchhaltungssystem} % Artefakt
-   {Das System befindet sich im normalen Betriebszustand} % Umgebung
-   {Jahresabschluss ist durchgeführt und kann als PDF abgerufen werden} % Antwort
-   {10 Minuten} % Antwort-Maß
+\begin{enumerate}
+  \item Ein wichtiger Punkt
+  \item Noch ein wichtiger Punkt
+  \item Ein Punkt mit Unterpunkten
+    \begin{enumerate}
+      \item Unterpunkt 1
+      \item Unterpunkt 2
+    \end{enumerate}
+  \item Ein abschließender Punkt ohne Unterpunkte
+\end{enumerate}
