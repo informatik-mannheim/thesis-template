@@ -8,6 +8,8 @@ Verbesserungen können Sie jederzeit als GitHub Pull-Request an uns senden.
 
 Diese Vorlage wurde entwickelt von [Prof. Thomas Smits](http://www.smits-net.de).
 
+Wenn Ihnen die Vorlage gefällt, können Sie diesem Repo einen Stern geben - dann wissen wir, wer sie benutzt.
+
 ## Werkzeuge, Dateiformat
 
 ### Lokale Entwicklungsumgebungen
