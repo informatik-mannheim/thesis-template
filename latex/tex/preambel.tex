@@ -12,11 +12,28 @@
     cleardoublepage=plain]{scrbook}
 
 % Pakete einbinden, die benötigt werden
+\usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
 \usepackage{scrlayer-scrpage}
 \usepackage[utf8]{inputenc}       % Dateien in UTF-8 benutzen
 \usepackage[T1]{fontenc}          % Zeichenkodierung
 \usepackage{graphicx}             % Bilder einbinden
-\usepackage[main=ngerman, english]{babel}       % Deutsch und Englisch unterstützen
+
+% Setzen von Optionen abhängig von der gewählten Sprache. Die Sprache wird
+% in thesis.tex gesetzt.
+\ifthenelse{\equal{\hsmasprache}{de}}%
+  {%
+   \usepackage[main=ngerman, english]{babel}  % Deutsche Sprachunterstützung
+   \usepackage[autostyle=true,german=quotes]{csquotes} % Deutsche Anführungszeichen
+   \usepackage[pagebackref=false,german]{hyperref} % Hyperlinks
+   \newcommand{\hsmasortlocale}{de_DE} % Sortierung der Literatur
+  }%
+  {%
+   \usepackage[main=english, ngerman]{babel} % Englische Sprachunterstützung
+   \usepackage[autostyle=true,english=american]{csquotes} % Englische Anführungszeichen
+   \usepackage[pagebackref=false,english]{hyperref}  % Hyperlinks
+   \newcommand{\hsmasortlocale}{en_US} % Sortierung der Literatur
+  }%
+
 \usepackage{xcolor}               % Unterstützung für Farben
 \usepackage{amsmath}              % Mathematische Formeln
 \usepackage{amsfonts}             % Mathematische Zeichensätze
@@ -34,15 +51,12 @@
 \usepackage{blindtext}            % Blindtexte
 \usepackage[bottom=40mm,left=35mm,right=35mm,top=30mm]{geometry} % Ränder ändern
 \usepackage{setspace}             % Abstände korrigieren
-\usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
 \usepackage{scrhack}              % tocbasic Warnung entfernen
-\usepackage[pagebackref=false,german]{hyperref}  % Hyperlinks
 \usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
-\usepackage[autostyle=true,german=quotes]{csquotes}   % Zitate
 \usepackage{tabularx}             % Spezielle Tabellen
 \usepackage[backend=biber,
   isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
-  sortlocale=de_DE,               % Sortierung der Einträge für Deutsch
+  sortlocale=\hsmasortlocale,     % Sortierung der Einträge für Deutsch
                                   %      de_DE: für Deutsch
                                   %      en_US: für Englisch
   autocite=inline,                % regelt Aussehen für \autocite

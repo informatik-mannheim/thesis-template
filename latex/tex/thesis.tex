@@ -6,12 +6,11 @@
 %
 % 1. Sprache
 % Das Template unterstützt Deutsch und Englisch, Standard ist Deutsch.
-% Wenn Sie Englisch verwenden wollen, ändern Sie bitte
-%   a) in docinfo.tex \hsmasprache auf en
-%   b) in preambel.tex \usepackage[main=english, ngerman]{babel},
-%      \usepackage[pagebackref=false,english]{hyperref},
-%      \usepackage[autostyle=true,english=american]{csquotes} und bei
-%      der Literatur die Sortierreihenfolge mit sortlocale=en_US.
+% Wenn Sie Englisch verwenden wollen, ändern Sie bitte direkt am Anfang
+% dieser Datei den Eintrag
+%    \newcommand{\hsmasprache}{de}
+% auf
+%    \newcommand{\hsmasprache}{en}
 %
 % 2. Zitierstil
 % Abhängig von dem gewünschten Zitierstil passen Sie bitte in
@@ -53,6 +52,8 @@
 % und kommentieren den Befehl \counterwithout{footnote}{chapter} ein.
 % *******************************************************************
 
+% Sprache für das Dokument festlegen
+\newcommand{\hsmasprache}{de} % de oder en für Deutsch oder Englisch
 
 % Preambel mit Einstellungen importieren
 \input{preambel}
