@@ -1,12 +1,13 @@
-% -------------------------------------------------------
-% In dieser Datei sollten eigentlich keine Veränderungen mehr
-% notwendig sein. Alle Einstellungen erfolgen in docinfo.tex
-% -------------------------------------------------------
+% *******************************************************************
+% In dieser Datei sollten eigentlich keine Veränderungen
+% notwendig sein. Alle Einstellungen erfolgen in docinfo.tex und
+% der thesis.tex.
+% *******************************************************************
 
 \thispagestyle{empty}
 
 % Fakultäten der HS-Mannheim
-% -------------------------------------------------------
+% *******************************************************************
 \ifthenelse{\equal{\hsmafakultaet}{I}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Informatik}%
    \newcommand{\hsmafakultaetlangen}{Department of Computer Science}}{}
@@ -44,7 +45,7 @@
    \newcommand{\hsmafakultaetlangen}{Department of Chemical Process Engineering}}{}
 
 % Studiengänge der HS-Mannheim
-% -------------------------------------------------------
+% *******************************************************************
 \ifthenelse{\equal{\hsmastudiengang}{IB}}%
   {\newcommand{\hsmastudienganglangde}{Informatik}%
   \newcommand{\hsmastudienganglangen}{Computer Science}%
@@ -270,7 +271,7 @@
    \newcommand{\hsmagrad}{\hsmamaster}}{}
 
 % Abschlüsse
-% -------------------------------------------------------
+% *******************************************************************
 \newcommand{\hsmabsc}{Bachelor of Science (B.Sc.)}
 \newcommand{\hsmaba}{Bachelor of Arts (B.A.)}
 \newcommand{\hsmamaster}{Master of Science (M.Sc.)}
@@ -561,4 +562,3 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
 \end{footnotesize}
 \end{table}
 }
-
