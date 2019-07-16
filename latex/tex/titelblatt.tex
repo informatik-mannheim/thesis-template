@@ -372,10 +372,10 @@
 
 % Daten für das fertige PDF-Dokument
 \hypersetup{
-  pdftitle={\hsmatitel},  % Titel des Dokuments
-  pdfauthor={\hsmaautor},              % Autor
-  pdfsubject={\hsmatyp\ in\ \hsmastudienganglang},                % Thema
-  pdfkeywords={\hsmatitel}         % Schlüsselworte
+  pdftitle={\hsmatitel},                           % Titel des Dokuments
+  pdfauthor={\hsmaautor},                          % Autor
+  pdfsubject={\hsmatyp\ in\ \hsmastudienganglang}, % Thema
+  pdfkeywords={\hsmatitel}                         % Schlüsselworte
 }
 
 \newlength{\bindekorrektur}
@@ -384,7 +384,7 @@
 
 \setlength{\bindekorrektur}{-46mm}   % Korrektur der horizontalen Position
 \setlength{\seitenanfang}{0mm}       % Korrektur der vertikalen Position
-\setlength{\seitenbreite}{297mm}
+\setlength{\seitenbreite}{297mm}     % Breite der Seite
 
 \noindent\includegraphics[width=7cm]{hsma-logo.pdf}\\
 
@@ -448,12 +448,12 @@
 
 \newcommand{\hsmabiben}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelen \ / \hsmaautor. \ -- \\ \hsmatypen, \hsmaort : \hsmakoerperschaften, \hsmajahr. \pageref{lastpage} pages. \end{small}}
 
+% Reihenfolge hängt von der Sprache ab
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {\hsmabibde \\ \vspace{0.5cm} \\ \hsmabiben}
   {\hsmabiben \\ \vspace{0.5cm} \\ \hsmabibde}
 
-
-% Erklärung
+% Erklärung zur Eigenhändigkeit
 \clearpage\setcounter{page}{1}
 \thispagestyle{empty}
 \textsf{\large\textbf{Erklärung}}
@@ -466,13 +466,13 @@ Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst un
 Ich bin damit einverstanden, dass meine Arbeit veröffentlicht wird, d.\,h. dass die Arbeit elektronisch gespeichert, in andere Formate konvertiert, auf den Servern der Hochschule Mannheim öffentlich zugänglich gemacht und über das Internet verbreitet werden darf.
 }{}%
 
-
 \vspace{1cm}
 \hsmaort, \hsmadatum \\
 
 \vspace{1.2cm}
 \hsmaautor
 
+% Sperrvermerk
 \ifthenelse{\boolean{hsmasperrvermerk}}%
 {%
 \vspace{11cm}
@@ -491,6 +491,7 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
 % Abstract
 \chapter*{Abstract}
 
+% Reihenfolge hängt von der Sprache ab
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {\subsubsection*{\hsmatitelde}\hsmaabstractde\subsubsection*{\hsmatitelen}\hsmaabstracten}
   {\subsubsection*{\hsmatitelen}\hsmaabstracten\subsubsection*{\hsmatitelde}\hsmaabstractde}
