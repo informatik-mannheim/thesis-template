@@ -17,6 +17,7 @@
 \usepackage[utf8]{inputenc}       % Dateien in UTF-8 benutzen
 \usepackage[T1]{fontenc}          % Zeichenkodierung
 \usepackage{graphicx}             % Bilder einbinden
+\usepackage{enumitem}             % Eigene Listen definieren können
 
 % Setzen von Optionen abhängig von der gewählten Sprache. Die Sprache wird
 % in thesis.tex gesetzt.
@@ -217,3 +218,7 @@
 \newcolumntype{b}{l}
 \newcolumntype{s}{>{\hsize=.3\hsize}l}
 \newcolumntype{F}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X}
+
+% Checklisten mit zwei Ebenen
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=$\square$}
