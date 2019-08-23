@@ -31,7 +31,7 @@ clean:
 
 ../thesis-overleaf.zip: * ../result/*
 	latexmk -c
-	rm *.bbl *.lol thesis.pdf thesis.run.xml thesis.synctex.gz
+	-rm *.bbl *.lol thesis.pdf thesis.run.xml thesis.synctex.gz
 	@cd .. && zip -r thesis-overleaf.zip tex/*
 
 $(TEMP_DIR)/thesis.pdf: thesis.tex $(INCLUDES) $(CHAPTERS)
