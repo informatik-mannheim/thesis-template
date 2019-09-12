@@ -18,12 +18,12 @@ Zum Erzeugen der fertigen Arbeit dienen die Skripte `create` und `clean`. Die .c
 
 Zusätzlich liegt im Verzeichnis `/tex` noch ein Makefile mit dem man die Quellen mit Hilfe von `make` übersetzen kann. Der Vorteil hiervon ist, dass `make` erkennt, ob sich Inhalte geändert haben und nur dann die Arbeit neu übersetzt.
 
-Sie können auch eine integrierte Entwicklungsumgebung verwenden. Hierbei haben Sich folgende bewährt:
+Sie können auch eine integrierte Entwicklungsumgebung verwenden. Hierbei haben sich folgende bewährt:
 
   * [TeXnicenter](http://www.texniccenter.org/) für Windows (siehe unten)
   * [Texmaker](http://www.xm1math.net/texmaker/) für Windows, MacOS und Linux
 
-Ausserdem müssen sie LaTeX auf Ihrem Rechner installieren. Bei Linux erfolgt dies einfach über den Paketmanager der verwendeten Distribution. Für Windows und MacOS empfehlen sich:
+Ausserdem müssen sie LaTeX auf Ihrem Rechner installieren. Bei Linux erfolgt dies einfach über den Paketmanager der verwendeten Distribution, z.B. `sudo apt install texlive-full` für Ubuntu. Für Windows und MacOS empfehlen sich:
 
   * [MikTeX](http://miktex.org/) für Windows
   * [MacTeX](http://tug.org/mactex/) für MacOS
