@@ -72,7 +72,7 @@
 ]{biblatex}                       % Literaturverwaltung mit BibLaTeX
 \usepackage{rotating}             % Seiten drehen
 \usepackage{harveyballs}          % Harveyballs
-\usepackage{chngcntr}
+\usepackage{chngcntr}             % Counter (Zähler) ändern können - für Fußnotennummern
 
 % Einstellungen zu den Fußnoten
 \renewcommand{\footnotesize}{\fontsize{9}{10}\selectfont} % Größe der Fußnoten
@@ -150,6 +150,7 @@
 \renewcommand{\chapterheadstartvskip}{\vspace*{2.6cm}}
 \renewcommand{\chapterheadendvskip}{\vspace*{1.5cm}}
 
+% Vertikale Abstände für die Überschriften etwas verkleinern
 \RedeclareSectionCommand[
   beforeskip=-1.8\baselineskip,
   afterskip=0.25\baselineskip]{section}
@@ -189,7 +190,8 @@
 \newcommand{\changefont}[3]{
 \fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
 
-% Eigenes Makro für Bilder
+% Eigenes Makro für Bilder. Das label (für \ref) ist dann einfach
+% der Name der Bilddatei
 \newcommand{\bild}[3]{
 \begin{figure}[ht]
   \centering
