@@ -16,8 +16,8 @@ $(eval FILE = $(firstword $^))
 @cd $(TEMP_DIR) ; $(BIBTEX) $(basename $(FILE))
 @cd $(TEMP_DIR) ; $(MAKEINDEX) $(basename $(FILE)).idx
 @$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE) > /dev/null
-@$(LATEX) -draftmode -output-directory=$(TEMP_DIR) $(FILE) > /dev/null
-@$(LATEX) -output-directory=$(TEMP_DIR) $(FILE)
+@$(LATEX) -draftmode -interaction batchmode -output-directory=$(TEMP_DIR) $(FILE) > /dev/null
+@$(LATEX) -interaction batchmode -output-directory=$(TEMP_DIR) $(FILE)
 endef
 
 .PHONY: all
