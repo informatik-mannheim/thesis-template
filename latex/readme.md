@@ -1,6 +1,6 @@
 # Vorlage für Abschlussarbeiten mit LaTeX
 
-Diese Vorlage ist für Abschlussarbeiten mit LaTeX an der Hochschule Mannheim gedacht. Sie erhebt keinen Anspruch darauf, den Wünschen aller Professoren zu entsprechen. Klären Sie daher immer im Voraus mit Ihrem Betreuer (und auch Zweitkorrektor), ob die Vorlage seinen Vorstellungen entspricht.
+Diese Vorlage ist für Abschlussarbeiten mit LaTeX an der Hochschule Mannheim gedacht. Sie erhebt keinen Anspruch darauf, den Wünschen aller Professorinnen und Professoren zu entsprechen. Klären Sie daher immer im Voraus mit Ihrer Betreuerin bzw. Ihrem Betreuer (und auch Zweitkorrektor), ob die Vorlage ihren bzw. seinen Vorstellungen entspricht.
 
 Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein [Issue](https://github.com/informatik-mannheim/thesis-template/issues). Lesen Sie aber vorher diese Anleitung und die [Erklärungen in der Hauptdatei](https://github.com/informatik-mannheim/thesis-template/blob/master/latex/tex/thesis.tex#L1) bis zum Ende, denn vielleicht klärt sich Ihre Frage dann von selbst.
 
