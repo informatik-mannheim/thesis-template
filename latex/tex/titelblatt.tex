@@ -493,8 +493,22 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
 
 % Reihenfolge hängt von der Sprache ab
 \ifthenelse{\equal{\hsmasprache}{de}}%
-  {\subsubsection*{\hsmatitelde}\hsmaabstractde\subsubsection*{\hsmatitelen}\hsmaabstracten}
-  {\subsubsection*{\hsmatitelen}\hsmaabstracten\subsubsection*{\hsmatitelde}\hsmaabstractde}
+{
+  \subsubsection*{\hsmatitelde}
+  \hsmaabstractde
+  \begin{otherlanguage}{english}
+    \subsubsection*{\hsmatitelen}
+    \hsmaabstracten
+  \end{otherlanguage}
+}
+{
+  \subsubsection*{\hsmatitelen}
+  \hsmaabstracten
+  \begin{otherlanguage}{ngerman}
+    \subsubsection*{\hsmatitelde}
+    \hsmaabstractde
+  \end{otherlanguage}
+}
 
 % Snowcard
 \newcommand{\snowcard}[9]{
