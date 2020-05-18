@@ -73,6 +73,7 @@ Es gibt drei Ordner
 
 Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https://www.overleaf.com) - siehe nächstes Kapitel.
 
+
 ## LaTeX-Projekt unter Overleaf einrichten
 
  * Laden Sie die ZIP-Version des Projektes [hier](https://github.com/informatik-mannheim/thesis-template/raw/master/latex/thesis-overleaf.zip) herunter.
@@ -83,6 +84,19 @@ Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https:/
  * Wählen Sie das Overleaf Logo oben links, um das Einstellungsmenue aufzurufen und stellen Sie die Option "Main document" auf `thesis.tex`
  * Wählen Sie nun in der Dateiliste ebenfalls `thesis.tex`
  * Drücken Sie auf "Recompile" - das Projekt sollte jetzt bauen
+
+## LaTeX-Projekt unter Texmaker einrichten
+
+[Texmaker](https://www.xm1math.net/texmaker/) unterstützt alle Betriebssysteme.
+
+  * Öffnen Sie die Datei `thesis.tex` mit Texmaker
+  * Gehen Sie auf "Options" -> "Define current document as 'Master Document'"
+  * Gehen Sie auf "Options" -> "Configure Texmaker"
+    * Tragen Sie unter "Commands" -> "Bib(la)tex" als Kommando `biber %` ein<br><img src="images/biber.png" width="400">
+    * Wählen Sie unter "Quick Build" die Option "PdfLaTeX + Bib(la)tex + BdfLaTeX (x2) + View Pdf<br><img src="images/quick_build.png" width="400">
+  * Wählen Sie in der Menuezeile "Quick Build" aus<br><img src="images/run.png" width="150">
+  * Klicken Sie auf den Pfeil links von "Quick Build"
+  * Das Dokument sollte gebaut werden und rechts im Bildschirm erscheinen
 
 ## LaTeX-Projekt unter TeXnicCenter einrichten
 
