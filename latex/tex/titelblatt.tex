@@ -244,14 +244,35 @@
 
 \ifthenelse{\equal{\hsmastudiengang}{WB}}%
   {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
-   \newcommand{\hsmastudienganglangen}{Business Administration and Engineering}%
+   \newcommand{\hsmastudienganglangen}{Engineering Management}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
 
 \ifthenelse{\equal{\hsmastudiengang}{WM}}%
   {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
-   \newcommand{\hsmastudienganglangen}{Business Administration and Engineering}%
+   \newcommand{\hsmastudienganglangen}{Engineering Management}%
+   \newcommand{\hsmatypde}{Master-Thesis}%
+   \newcommand{\hsmatypen}{Master Thesis}%
+   \newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMI}}%
+  {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
+   \newcommand{\hsmastudienganglangen}{Engineering Management}%
+   \newcommand{\hsmatypde}{Master-Thesis}%
+   \newcommand{\hsmatypen}{Master Thesis}%
+   \newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMB}}%
+  {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen mit den\\ ingenieurwissenschaftlichen Fachrichtungen Maschinenbau und Elektrotechnik}%
+   \newcommand{\hsmastudienganglangen}{Engineering Management\\ with focus on Mechanical and Electrical Engineering}%
+   \newcommand{\hsmatypde}{Master-Thesis}%
+   \newcommand{\hsmatypen}{Master Thesis}%
+   \newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMW}}%
+  {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen mit\\ ingenieurwissenschaftlicher Vertiefung des Maschinenbaus}%
+   \newcommand{\hsmastudienganglangen}{Engineering Management\\ deepening the engineering aspects of Mechanical Engineering}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
