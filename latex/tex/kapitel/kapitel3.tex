@@ -48,6 +48,47 @@ Eine Formel gefällig? Mitten im Text $a_2 = \sqrt{x^3}$ oder als eigener Absatz
 \label{Formel}
 \end{equation}
 
+Wenn Ihre Formel zu breit für eine Zeile wird, können Sie sie mithilfe der \texttt{split}-Umgebung und einem doppeltem Backslash (\verb+\\+) umbrechen.
+
+\begin{equation}
+\label{eq:4}
+\begin{split}
+\mathbf{F}_{{eigen}}=\sqrt[3]{\coprod_{i=1}^{3} \lambda_{i}},
+\frac{\lambda_{1}-\lambda_{3}}{\lambda_{1}},
+\frac{\lambda_{2}-\lambda_{3}}{\lambda_{1}},
+\frac{\lambda_{3}}{\lambda_{1}} \\-
+\sum_{i=1}^{3} \lambda_{i} \log \left(\lambda_{i}\right),
+\frac{\lambda_{1}-\lambda_{2}}{\lambda_{1}}
+\end{split}
+\end{equation}
+
+Sie können Formelelemente auch am Gleichheitszeichen ausrichten, hierzu dient die \texttt{align}-Umgebung:
+
+\begin{align}
+2x - 5y &=  8 \\
+3x + 92y &=  -12
+\end{align}
+
+Wollen Sie keine Nummerierung der Formeln, ergänzen Sie einfach einen \texttt{*} bei den Namen der Umgebungen, d.h. Sie verwenden \texttt{equation*} oder \texttt{align*}.
+
+\begin{equation*}
+\begin{bmatrix}
+   1 &  4 &  2 \\
+   4 &  0 & -3
+\end{bmatrix}
+        \cdot
+\begin{bmatrix}
+   1 &  1 &  0 \\
+  -2 &  3 &  5 \\
+   0 &  1 &  4
+\end{bmatrix}
+       {=}
+\begin{bmatrix}
+  -7 &  15 &  28 \\
+   4 &   1 & -12
+\end{bmatrix}
+\end{equation*}
+
 
 \section{Sourcecode}
 
