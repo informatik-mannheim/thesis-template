@@ -96,7 +96,21 @@ Man kann mit Latex auch ganz toll Sourcecode in den Text aufnehmen.
 
 \subsection{Aus einer Datei}
 
-\lstinputlisting[firstline=2,language=Java,caption={Crypter-Interface},label=lst:CrypterInterface]{\srcloc/Crypter.java}
+\lstinputlisting[firstline=2,                 % Erste anzuzeigende Zeile aus der Datei
+                 language=Java,               % Programmmiersprache (für Highlighting)
+                 caption={Crypter-Interface}, % Beschriftung
+                 label=lst:CrypterInterface]  % Label (für Referenzen)
+                 {\srcloc/Crypter.java}       % Pfad zur Datei, die angezeigt wird
+
+Mit Zeilennummern
+
+\lstinputlisting[numbers=left,                % Mit Zeilennummern auf der linken Seite
+                 firstline=10,                % Erste anzuzeigende Zeile aus der Datei
+                 lastline=15,                 % Letzte anzuzeigende Zeile aus der Datei
+                 language=Java,               % Programmmiersprache (für Highlighting)
+                 caption={Crypter},           % Beschriftung
+                 label=lst:CrypterInterface2] % Label (für Referenzen)
+                 {\srcloc/Crypter.java}       % Pfad zur Datei, die angezeigt wird
 
 
 \subsection{Inline}
