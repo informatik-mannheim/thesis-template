@@ -1,3 +1,92 @@
-\chapter{Erster Anhang}
+\chapter{Erster Anhang: Lange Tabelle}
+\label{AnhangA}
 
 Hier ein Beispiel für einen Anhang. Der Anhang kann genauso in Kapitel und Unterkapitel unterteilt werden, wie die anderen Teile der Arbeit auch.
+
+\sffamily
+\begin{footnotesize}
+  \begin{longtable}[c]{ p{.5\textwidth} p{.1\textwidth} p{.1\textwidth} p{.1\textwidth}}
+    \caption[Tabelle mit ISO-Ländercodes]                       % Caption für das Tabellenverzeichnis
+        {Lange Tabelle mit ISO-Ländercodes\label{laendercodes}} % Caption für die Tabelle selbst
+        \\
+    \toprule
+    \textbf{Country} & \textbf{A 2} & \textbf{A 3} & \textbf{Number} \\
+    \midrule
+    AFGHANISTAN                                    & AF & AFG & 004 \\
+    ALBANIA                                        & AL & ALB & 008 \\
+    ALGERIA                                        & DZ & DZA & 012 \\
+    AMERICAN SAMOA                                 & AS & ASM & 016 \\
+    ANDORRA                                        & AD & AND & 020 \\
+    ANGOLA                                         & AO & AGO & 024 \\
+    ANGUILLA                                       & AI & AIA & 660 \\
+    ANTARCTICA                                     & AQ & ATA & 010 \\
+    ANTIGUA AND BARBUDA                            & AG & ATG & 028 \\
+    ARGENTINA                                      & AR & ARG & 032 \\
+    ARMENIA                                        & AM & ARM & 051 \\
+    ARUBA                                          & AW & ABW & 533 \\
+    AUSTRALIA                                      & AU & AUS & 036 \\
+    AUSTRIA                                        & AT & AUT & 040 \\
+    AZERBAIJAN                                     & AZ & AZE & 031 \\
+    BAHAMAS                                        & BS & BHS & 044 \\
+    BAHRAIN                                        & BH & BHR & 048 \\
+    BANGLADESH                                     & BD & BGD & 050 \\
+    BARBADOS                                       & BB & BRB & 052 \\
+    BELARUS                                        & BY & BLR & 112 \\
+    BELGIUM                                        & BE & BEL & 056 \\
+    BELIZE                                         & BZ & BLZ & 084 \\
+    BENIN                                          & BJ & BEN & 204 \\
+    BERMUDA                                        & BM & BMU & 060 \\
+    BHUTAN                                         & BT & BTN & 064 \\
+    BOLIVIA                                        & BO & BOL & 068 \\
+    BOSNIA AND HERZEGOWINA                         & BA & BIH & 070 \\
+    BOTSWANA                                       & BW & BWA & 072 \\
+    BOUVET ISLAND                                  & BV & BVT & 074 \\
+    BRAZIL                                         & BR & BRA & 076 \\
+    BRITISH INDIAN OCEAN TERRITORY                 & IO & IOT & 086 \\
+    BRUNEI DARUSSALAM                              & BN & BRN & 096 \\
+    BULGARIA                                       & BG & BGR & 100 \\
+    BURKINA FASO                                   & BF & BFA & 854 \\
+    BURUNDI                                        & BI & BDI & 108 \\
+    CAMBODIA                                       & KH & KHM & 116 \\
+    CAMEROON                                       & CM & CMR & 120 \\
+    CANADA                                         & CA & CAN & 124 \\
+    CAPE VERDE                                     & CV & CPV & 132 \\
+    CAYMAN ISLANDS                                 & KY & CYM & 136 \\
+    CENTRAL AFRICAN REPUBLIC                       & CF & CAF & 140 \\
+    CHAD                                           & TD & TCD & 148 \\
+    CHILE                                          & CL & CHL & 152 \\
+    CHINA                                          & CN & CHN & 156 \\
+    CHRISTMAS ISLAND                               & CX & CXR & 162 \\
+    COCOS (KEELING) ISLANDS                        & CC & CCK & 166 \\
+    COLOMBIA                                       & CO & COL & 170 \\
+    COMOROS                                        & KM & COM & 174 \\
+    CONGO                                          & CG & COG & 178 \\
+    COOK ISLANDS                                   & CK & COK & 184 \\
+    COSTA RICA                                     & CR & CRI & 188 \\
+    COTE D'IVOIRE                                  & CI & CIV & 384 \\
+    CROATIA (local name: Hrvatska)                 & HR & HRV & 191 \\
+    CUBA                                           & CU & CUB & 192 \\
+    CYPRUS                                         & CY & CYP & 196 \\
+    CZECH REPUBLIC                                 & CZ & CZE & 203 \\
+    DENMARK                                        & DK & DNK & 208 \\
+    DJIBOUTI                                       & DJ & DJI & 262 \\
+    DOMINICA                                       & DM & DMA & 212 \\
+    DOMINICAN REPUBLIC                             & DO & DOM & 214 \\
+    EAST TIMOR                                     & TP & TMP & 626 \\
+    ECUADOR                                        & EC & ECU & 218 \\
+    EGYPT                                          & EG & EGY & 818 \\
+    EL SALVADOR                                    & SV & SLV & 222 \\
+    EQUATORIAL GUINEA                              & GQ & GNQ & 226 \\
+    ERITREA                                        & ER & ERI & 232 \\
+    ESTONIA                                        & EE & EST & 233 \\
+    ETHIOPIA                                       & ET & ETH & 210 \\
+    FALKLAND ISLANDS (MALVINAS)                    & FK & FLK & 238 \\
+    FAROE ISLANDS                                  & FO & FRO & 234 \\
+    FIJI                                           & FJ & FJI & 242 \\
+    \bottomrule
+  \end{longtable}
+\end{footnotesize}
+\rmfamily
+
+
+\textit{Beachten Sie, dass die Tabelle manchmal erst nach dreimaligem Lauf durch \LaTeX richtig angezeigt wird.}
