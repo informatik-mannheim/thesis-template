@@ -6,7 +6,6 @@
     headsepline=true,       % Trennlinie am Kopf der Seite
     footsepline=false,      % Keine Trennlinie am Fuß der Seite
     bibliography=totoc,     % Literaturverzeichnis in das Inhaltsverzeichnis aufnehmen
-    twoside=on,             % Doppelseitiger Druck - auf off stellen für einseitig
     DIV=7,                  % Verhältnis der Ränder zum bedruckten Bereich
     chapterprefix=true,     % Kapitel x vor dem Kapitelnamen
     cleardoublepage=plain]{scrbook}
@@ -24,16 +23,28 @@
 % in thesis.tex gesetzt.
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {%
-   \usepackage[main=ngerman, english]{babel}  % Deutsche Sprachunterstützung
-   \usepackage[autostyle=true,german=quotes]{csquotes} % Deutsche Anführungszeichen
-   \usepackage[pagebackref=false,german]{hyperref} % Hyperlinks
-   \newcommand{\hsmasortlocale}{de_DE} % Sortierung der Literatur
+   \usepackage[main=ngerman, english]{babel}              % Deutsche Sprachunterstützung
+   \usepackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
+   \usepackage[pagebackref=false,german]{hyperref}        % Hyperlinks
+   \newcommand{\hsmasortlocale}{de_DE}                    % Sortierung der Literatur
   }%
   {%
-   \usepackage[main=english, ngerman]{babel} % Englische Sprachunterstützung
+   \usepackage[main=english, ngerman]{babel}              % Englische Sprachunterstützung
    \usepackage[autostyle=true,english=american]{csquotes} % Englische Anführungszeichen
-   \usepackage[pagebackref=false,english]{hyperref}  % Hyperlinks
-   \newcommand{\hsmasortlocale}{en_US} % Sortierung der Literatur
+   \usepackage[pagebackref=false,english]{hyperref}       % Hyperlinks
+   \newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
+  }%
+
+% Setzen von Optionen abhängig von der Abgabeform. Die Abgabeform wird
+% in thesis.tex gesetzt.
+\ifthenelse{\equal{\hsmaabgabe}{papier}}%
+  {%
+    \KOMAoptions{twoside=true}
+    \newcommand{\hsmafenster}{45mm}
+  }%
+  {%
+    \KOMAoptions{twoside=false}
+    \newcommand{\hsmafenster}{38.5mm}
   }%
 
 \usepackage{xcolor}               % Unterstützung für Farben

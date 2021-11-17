@@ -12,7 +12,15 @@
 % auf
 %    \newcommand{\hsmasprache}{en}
 %
-% 2. Zitierstil
+% 2. Form der Abgabe
+% Das Template unterstützt sowohl eine digitale Abgabe, als auch eine Abgabe
+% auf Papier. Bei einer Papierabgabe wird ein doppelseitiger Druck vorbereitet
+% und der Titel wird so platziert, dass er in das Fenster des offiziellen
+% Umschlages der Hochschule passt.
+% Bei einer digitalen Abgabe (als PDF) wird der Titel zentriert und als
+% Format wird einseitig gewählt.
+%
+% 3. Zitierstil
 % Abhängig von dem gewünschten Zitierstil passen Sie bitte in
 % preambel.tex die Einstellungen bei \usepackage[backend=biber...
 % an. Wie ist dort genau erklärt.
@@ -25,12 +33,16 @@
 %          Sinnvollerweise verzichten Sie auf Fußnoten an diesen
 %          Stellen und fügen Quellen einfach per \parancite ein.
 %
-% 3. Doppelseitiger oder einseitiger Druck
-% Das Template ist für doppelseitigen Druck eingestellt. Wollen Sie
-% einseitig drucken, müssen Sie in preambel.tex die Einstellungen
-% für \documentclass ändern. Und zwar von twoside=on auf twoside=off.
+% 4. Doppelseitiger oder einseitiger Druck
+% Das Template bestimmt, ob einseitig oder doppelseitig gedruckt wird
+% anhand der Abgabeform (papier / digital). Wollen sie dies übersteuern,
+% müssen Sie in der Datei preambel.tex folgende Zeile
+% \KOMAoptions{twoside=true} für doppelsetigen Druck
+% \KOMAoptions{twoside=false} für einsetigen Druck
+% direkt vor \usepackage{xcolor} einsetzen. Prinzipiell sollten Sie aber
+% das vorgeschlagene Format einfach so lassen.
 %
-% 4. Abkürzungen auf richtige Breite einstellen und sortieren
+% 5. Abkürzungen auf richtige Breite einstellen und sortieren
 % In der Datei kapitel/abkuerzungen.tex müssen Sie die _längste_
 % Abkürzung in die eckigen Klammern von \begin{acronym} schreiben,
 % sonst werden die Abkürzungen nicht richtig ausgerichtet.
@@ -39,11 +51,11 @@
 % da dies nicht automatisch passiert. Am einfachsten verwenden Sie
 % hierzu die Sortierfunktion Ihres Texteditors.
 %
-% 5. Unnötige Teile entfernen
+% 6. Unnötige Teile entfernen
 % Entfernen Sie die Teile, die Sie nicht brauchen, z.B. Anhänge,
 % Quelltextverzeichnis etc. Siehe unten
 %
-% 6. Silbentrennung
+% 7. Silbentrennung
 % LaTeX führt eine automatische Silbentrennung durch. Allerdings
 % werden Wörter, die bereits einen Bindestrich enthalten nicht
 % getrennt, z.B. Datenschutz-Grundverordnung. Wenn Sie Ihren Text auf
@@ -56,7 +68,7 @@
 % Trennstellen angeben. Dies geschieht durch "- als Zeichen, z.B.
 % Staats"-vertrag.
 %
-% 7. Nummerierung der Fußnoten
+% 8. Nummerierung der Fußnoten
 % LaTeX beginnt die Nummerierung der Fußnoten in jedem Kapitel wieder
 % bei 1. Manche Dozenten wollen aber eine durchlaufende Nummerierung
 % über die gesamte Arbeit. In diesem Fall gehen Sie in die preambel.tex
@@ -64,7 +76,12 @@
 % *******************************************************************
 
 % Sprache für das Dokument festlegen
-\newcommand{\hsmasprache}{de} % de oder en für Deutsch oder Englisch
+\newcommand{\hsmasprache}{de}     % de oder en für Deutsch oder Englisch
+
+% Abgabeform festlegen
+% Bei einer digitalen Abgabe, wird das Dokument einseitig erzeugt und der Titel wird
+% zentriert.
+\newcommand{\hsmaabgabe}{papier} % Wie erfolgt die Abgabe: "papier" oder "digital"?
 
 % Preambel mit Einstellungen importieren
 \input{preambel}
