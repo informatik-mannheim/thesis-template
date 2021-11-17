@@ -57,6 +57,7 @@ Anpassen müssen Sie die folgenden Dateien
   * `kapitel/anhang-a.tex` - Beispiel für einen Anhang
   * `kapitel/anhang-b.tex` - Beispiel für einen Anhang
   * `literatur.bib` - Literaturdatenbank im BibTeX-Format
+  * `unterschrift.png` - Gescannte Unterschrift für die digitale Abgabe
 
 Weitere Kapitel können hinzugefügt werden und dann vom Hauptdokument `thesis.tex` inkludiert.
 
