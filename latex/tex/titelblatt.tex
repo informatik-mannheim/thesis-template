@@ -490,7 +490,16 @@ Ich bin damit einverstanden, dass meine Arbeit veröffentlicht wird, d.\,h. dass
 \vspace{1cm}
 \hsmaort, \hsmadatum \\
 
-\vspace{1.2cm}
+\ifthenelse{\equal{\hsmaabgabe}{papier}}%
+  {%
+    % Papier - space
+    \vspace{1.2cm}
+  }%
+  {%
+    % Digital - Unterschrift
+    \includegraphics[width=6cm]{unterschrift.png}
+  }%
+
 \hsmaautor
 
 % Sperrvermerk
