@@ -3,7 +3,7 @@
 
 \section{Bilder}
 
-Natürlich können auch Grafiken und Bilder eingebunden werden, siehe z.\,B. \autoref{Kap2:NasaRover}.
+Natürlich können auch Grafiken und Bilder eingebunden werden, siehe z.\,B. \autoref{Kap2:NasaRover}. Hierbei ist zu beachten, dass \LaTeX{} die Bilder automatisch positioniert, sie also nicht zwingend an der Stelle erscheinen, an der sie im Quelltext vorkommen (man spricht hier von \enquote{floats}). Das ist vollkommen in Ordnung und im Sinne einer ausgeglichenen Typografie auch sinnvoll.
 
 \begin{figure}[ht]
   \centering
@@ -21,6 +21,8 @@ Man kann sich auch selbst ein Makro für das Einfügen von Bildern schreiben:
   \caption{Sehr große Grafiken kann man drehen, damit sie auf die Seite passen}
   \label{Kap2:wsdl-fehler}
 \end{sidewaysfigure}
+
+Möchte man verhindern, dass Bilder in ein anderes Kapitel rutschen, steht der Befehl \verb+\clearpage+ zur Verfügung, der \LaTeX{} zwingt, alle bis dahin definierten \textit{floats} (Bilder, Tabellen, Formeln etc.) auszugeben.
 
 \clearpage % Alle Bilder, die bisher kamen ausgeben
 
