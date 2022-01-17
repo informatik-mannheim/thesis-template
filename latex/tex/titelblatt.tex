@@ -553,29 +553,29 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
 \toprule
 \textbf{\hsmasnowcardno} & #1 & \textbf{\hsmasnowcardart} & #2 & \textbf{\hsmasnowcardprio} & #3 \\
 \midrule
-\multicolumn{2}{l}{\textbf{\hsmasnowcardtitel}} & \multicolumn{4}{X}{#4} \\
+\multicolumn{2}{l}{\textbf{\hsmasnowcardtitel}} & \multicolumn{4}{>{\hsize=6\hsize}X}{#4} \\
 \ifx&#5&%
 \else
-\multicolumn{2}{l}{\textbf{\hsmasnowcardherkunft}} & \multicolumn{4}{X}{#5} \\
+\multicolumn{2}{l}{\textbf{\hsmasnowcardherkunft}} & \multicolumn{4}{>{\hsize=6\hsize}X}{#5} \\
 \fi
 \ifx&#6&%
 \else
-\multicolumn{2}{l}{\textbf{\hsmasnowcardkonflikt}} & \multicolumn{4}{l}{#6} \\
+\multicolumn{2}{l}{\textbf{\hsmasnowcardkonflikt}} & \multicolumn{4}{>{\hsize=6\hsize}X}{#6} \\
 \fi
 \addlinespace
-\multicolumn{6}{l}{\textbf{\hsmasnowcardbeschreibung}} \\
-\multicolumn{6}{F}{#7} \\
+\multicolumn{6}{>{\hsize=6\hsize}X}{\textbf{\hsmasnowcardbeschreibung}} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{#7} \\
 \ifx&#8&%
 \else
 \addlinespace
-\multicolumn{6}{l}{\textbf{\hsmasnowcardfitkriterium}} \\
-\multicolumn{6}{F}{#8} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{\textbf{\hsmasnowcardfitkriterium}} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{#8} \\
 \fi
 \ifx&#9&%
 \else
   \addlinespace
-  \multicolumn{6}{X}{\textbf{\hsmasnowcardmaterial}} \\
-  \multicolumn{6}{F}{#9} \\
+  \multicolumn{6}{>{\hsize=7\hsize}X}{\textbf{\hsmasnowcardmaterial}} \\
+  \multicolumn{6}{>{\hsize=7\hsize}X}{#9} \\
 \fi
 \bottomrule
 \end{tabularx}
@@ -596,19 +596,19 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
 \toprule
 \textbf{\hsmaqasno} & #1 & \textbf{\hsmaqasart} & QAS & \textbf{\hsmaqasprio} & #2 \\
 \midrule
-\multicolumn{2}{l}{\textbf{\hsmaqastitel}} & \multicolumn{4}{X}{#3} \\
-\multicolumn{2}{l}{\textbf{\hsmaqasquelle}} & \multicolumn{4}{l}{#4} \\
-\multicolumn{2}{l}{\textbf{\hsmaqasstimulus}} & \multicolumn{4}{X}{#5} \\
-\multicolumn{2}{l}{\textbf{\hsmaqasartefakt}} & \multicolumn{4}{X}{#6} \\
+\multicolumn{2}{l}{\textbf{\hsmaqastitel}} & \multicolumn{4}{>{\hsize=6\hsize}X}{#3} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasquelle}} & \multicolumn{4}{>{\hsize=6\hsize}X}{#4} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasstimulus}} & \multicolumn{4}{>{\hsize=6\hsize}X}{#5} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasartefakt}} & \multicolumn{4}{>{\hsize=6\hsize}X}{#6} \\
 \addlinespace
-\multicolumn{6}{l}{\textbf{\hsmaqasumgebung}} \\
-\multicolumn{6}{F}{#7} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{\textbf{\hsmaqasumgebung}} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{#7} \\
 \addlinespace
-\multicolumn{6}{X}{\textbf{\hsmaqasantwort}} \\
-\multicolumn{6}{F}{#8} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{\textbf{\hsmaqasantwort}} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{#8} \\
 \addlinespace
-\multicolumn{6}{X}{\textbf{\hsmaqasmass}} \\
-\multicolumn{6}{F}{#9} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{\textbf{\hsmaqasmass}} \\
+\multicolumn{6}{>{\hsize=7\hsize}X}{#9} \\
 \bottomrule
 \end{tabularx}
 \end{footnotesize}
