@@ -2,7 +2,7 @@
 
 Diese Vorlage ist für Abschlussarbeiten mit LaTeX an der Hochschule Mannheim gedacht. Sie erhebt keinen Anspruch darauf, den Wünschen aller Professorinnen und Professoren zu entsprechen. Klären Sie daher immer im Voraus mit Ihrer Betreuerin bzw. Ihrem Betreuer (und auch Zweitkorrektor), ob die Vorlage ihren bzw. seinen Vorstellungen entspricht.
 
-**Der Titel auf der ersten Seite ist absichtlich nicht zentriert! Er ist so platziert, dass er bei dem [offiziellen Papierumschlag](https://www.tbl.hs-mannheim.de/fileadmin/user_upload/einrichtungen/tbl/1-Dokumente/Deckblatt_Einband_HS_Mannheim.pdf) der Hochschule korrekt in dem Fenster erscheint.** Wenn Sie die Arbeit rein digital abgeben, können Sie durch Setzen der entsprechenden Option in der Datei `theis.tex` eine digitale Abgabe konfigurieren; dann ist auch der Titel zentriert.
+**Der Titel auf der ersten Seite ist absichtlich nicht zentriert! Er ist so platziert, dass er bei dem [offiziellen Papierumschlag](https://www.tbl.hs-mannheim.de/fileadmin/user_upload/einrichtungen/tbl/1-Dokumente/Deckblatt_Einband_HS_Mannheim.pdf) der Hochschule korrekt in dem Fenster erscheint.** Wenn Sie die Arbeit rein digital abgeben, können Sie durch Setzen der entsprechenden Option in der Datei `thesis.tex` eine digitale Abgabe konfigurieren; dann ist auch der Titel zentriert.
 
 Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein [Issue](https://github.com/informatik-mannheim/thesis-template/issues). Lesen Sie aber vorher diese Anleitung und die [Erklärungen in der Hauptdatei](https://github.com/informatik-mannheim/thesis-template/blob/master/latex/tex/thesis.tex#L1) bis zum Ende, denn vielleicht klärt sich Ihre Frage dann von selbst.
 
