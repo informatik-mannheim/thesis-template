@@ -8,7 +8,9 @@
     bibliography=totoc,     % Literaturverzeichnis in das Inhaltsverzeichnis aufnehmen
     DIV=7,                  % Verhältnis der Ränder zum bedruckten Bereich
     chapterprefix=true,     % Kapitel x vor dem Kapitelnamen
-    cleardoublepage=plain]{scrbook}
+    cleardoublepage=plain,
+    numbers=noenddot 		% Keine Endpunkte bei der Überschriftennummerierung
+    ]{scrbook}
 
 % Pakete einbinden, die benötigt werden
 \usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
@@ -16,7 +18,7 @@
 \usepackage[utf8]{inputenc}       % Dateien in UTF-8 benutzen
 \usepackage[T1]{fontenc}          % Zeichenkodierung
 \usepackage{graphicx}             % Bilder einbinden
-\usepackage{enumitem}             % Eigene Listen definieren können
+\usepackage[inline]{enumitem}     % Eigene Listen definieren können und diese auch innerhalb des Textes nutzen können
 \usepackage{setspace}             % Abstände korrigieren
 
 % Setzen von Optionen abhängig von der gewählten Sprache. Die Sprache wird
@@ -75,7 +77,7 @@
                                   %      inline: Zitat in Klammern (\parancite)
                                   %      footnote: Zitat in Fußnoten (\footcite)
                                   %      plain: Zitat direkt ohne Klammern (\cite)
-  style=authoryear,               % Legt den Stil für die Zitate fest
+  style=ieee,         		      % Legt den Stil für die Zitate fest
                                   %      ieee: Zitate als Zahlen [1]
                                   %      alphabetic: Zitate als Kürzel und Jahr [Ein05]
                                   %      authoryear: Zitate Author und Jahr [Einstein (1905)]
