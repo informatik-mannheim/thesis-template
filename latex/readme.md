@@ -50,6 +50,8 @@ Anpassen müssen Sie die folgenden Dateien
   * `thesis.tex` - Hauptdokument. Hier müssen Sie weitere Kapitel aus dem Ordner `kapitel` inkludieren.
   * `docinfo.tex` - Bibliografische Informationen zur Arbeit, müssen Sie mit Ihren Daten füllen
   * `kapitel/abkuerzungen.tex` - Liste der in der Arbeit verwendeten Abkürzungen
+  * `kapitel/glossar.tex` - Einträge für ein Glossar
+  * `kapitel/symbole.tex` - Einträge für ein Symbol und Einheitenverzeichnis
   * `kapitel/kapitel1.tex` - Beispiel für ein Kapitel
   * `kapitel/kapitel2.tex` - Weiteres Beispiel für ein Kapitel
   * `kapitel/kapitel3.tex` - Weiteres Beispiel für ein Kapitel
@@ -83,7 +85,7 @@ Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https:/
  * Melden Sie sich bei [Overleaf](https://www.overleaf.com) an und loggen Sie sich ein.
  * Gehen Sie auf "New Project" und wählen Sie "Upload Project"
  * Laden Sie die ZIP-Datei hoch.
- * Sie werden jetzt Kompile-Fehler bekommen, aber keine Panik, dies liegt daran, dass Overleaf nicht weiß, welches das Hauptdokument ist
+ * Sie werden jetzt Compile-Fehler bekommen, aber keine Panik, dies liegt daran, dass Overleaf nicht weiß, welches das Hauptdokument ist
  * Wählen Sie das Overleaf Logo oben links, um das Einstellungsmenue aufzurufen und stellen Sie die Option "Main document" auf `thesis.tex`
  * Wählen Sie nun in der Dateiliste ebenfalls `thesis.tex`
  * Drücken Sie auf "Recompile" - das Projekt sollte jetzt bauen

@@ -49,18 +49,15 @@
     \newcommand{\hsmafenster}{38.5mm}
   }%
 
-\usepackage{morewrites}			  % Verhindert Fehlermeldung: No more writes
-
-\usepackage[svgnames,dvipsnames]{xcolor}               % Unterstützung für Farben
-\usepackage{amsmath}              % Mathematische Formeln
-\usepackage{amsfonts}             % Mathematische Zeichensätze
-\usepackage{amssymb}              % Mathematische Symbole
-\usepackage{siunitx}			  % Darstellung von Einheiten
-\usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
-\usepackage{booktabs}             % Korrekter Tabellensatz
-%\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzungen]
-
-\usepackage[acronym,symbols, toc]{glossaries}
+\usepackage{morewrites}			                  % Verhindert Fehlermeldung: No more writes
+\usepackage[svgnames,dvipsnames]{xcolor}      % Unterstützung für Farben
+\usepackage{amsmath}                          % Mathematische Formeln
+\usepackage{amsfonts}                         % Mathematische Zeichensätze
+\usepackage{amssymb}                          % Mathematische Symbole
+\usepackage{siunitx}			                    % Darstellung von Einheiten
+\usepackage{float}                            % Fließende Objekte (Tabellen, Grafiken etc.)
+\usepackage{booktabs}                         % Korrekter Tabellensatz
+\usepackage[acronym,symbols, toc]{glossaries} % Glossar und Abkürzungsverzeichnis
 \renewcommand*{\glspostdescription}{}
 
 \renewcommand{\glsnamefont}[1]{\textbf{#1}} % Fette Schrift für Abkürzungen
@@ -70,7 +67,6 @@
 
 \newglossary[slg]{symbolslist}{syi}{syg}{Symbolslist} % Erstellen  Symbolverzeichnis
 \glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
-
 
 \newglossarystyle{symbunitlong}{%
 	\setglossarystyle{long3col}% base this style on the list style
@@ -88,11 +84,6 @@
 		& \glsunit{##1}  \tabularnewline
 	}
 }
-
-
-
-\makeglossaries
-
 
 \usepackage{makeidx}              % Sachregister
 \usepackage{listings}             % Quelltexte
@@ -115,7 +106,7 @@
                                   %      inline: Zitat in Klammern (\parancite)
                                   %      footnote: Zitat in Fußnoten (\footcite)
                                   %      plain: Zitat direkt ohne Klammern (\cite)
-  style=ieee,         		      % Legt den Stil für die Zitate fest
+  style=ieee,         		        % Legt den Stil für die Zitate fest
                                   %      ieee: Zitate als Zahlen [1]
                                   %      alphabetic: Zitate als Kürzel und Jahr [Ein05]
                                   %      authoryear: Zitate Author und Jahr [Einstein (1905)]
@@ -278,3 +269,6 @@
 % Checklisten mit zwei Ebenen
 \newlist{checklist}{itemize}{2}
 \setlist[checklist]{label=$\square$}
+
+% Glossar etc erzeugen
+\makeglossaries
