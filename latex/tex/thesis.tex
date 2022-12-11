@@ -106,6 +106,12 @@
 
 % Anfang des Dokuments
 \begin{document}
+	
+%Laden der Abkürzungen, Glossar, Symbole
+\input{kapitel/abkuerzungen}
+\input{kapitel/glossar}		
+\input{kapitel/symbole}		
+	
 \frontmatter
 
 % Römische Ziffern für die "Front-Matter"
@@ -152,9 +158,15 @@
 \pagenumbering{roman}
 \setcounter{page}{\value{frontmatterpage}}
 
-% Abkürzungsverzeichnis
-\addchap{\hsmaabbreviations}
-\input{kapitel/abkuerzungen}
+% Abkürzungsverzeichnis ausgeben
+\printglossary[type=\acronymtype, nonumberlist, title=\hsmaabbreviations,style=long]
+
+% Glossar ausgeben
+\printglossary[style=altlist, nonumberlist, title=Glossar]
+
+% Symbolverzeichnis ausgeben
+\printglossary[type=symbolslist,style=symbunitlong,title=\hsmalistofsymbols]
+
 
 % Tabellenverzeichnis erzeugen
 \cleardoublepage

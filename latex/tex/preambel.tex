@@ -49,13 +49,51 @@
     \newcommand{\hsmafenster}{38.5mm}
   }%
 
-\usepackage{xcolor}               % Unterstützung für Farben
+\usepackage{morewrites}			  % Verhindert Fehlermeldung: No more writes
+
+\usepackage[svgnames,dvipsnames]{xcolor}               % Unterstützung für Farben
 \usepackage{amsmath}              % Mathematische Formeln
 \usepackage{amsfonts}             % Mathematische Zeichensätze
 \usepackage{amssymb}              % Mathematische Symbole
+\usepackage{siunitx}			  % Darstellung von Einheiten
 \usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
 \usepackage{booktabs}             % Korrekter Tabellensatz
-\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzungen]
+%\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzungen]
+
+\usepackage[acronym,symbols, toc]{glossaries}
+\renewcommand*{\glspostdescription}{}
+
+\renewcommand{\glsnamefont}[1]{\textbf{#1}} % Fette Schrift für Abkürzungen
+\setlength\LTleft{0pt} 						%Linksbündige Formatierung
+\setlength\LTright{0pt}
+\setlength\glsdescwidth{0.8\hsize}
+
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolslist} % Erstellen  Symbolverzeichnis
+\glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
+
+
+\newglossarystyle{symbunitlong}{%
+	\setglossarystyle{long3col}% base this style on the list style
+	\renewenvironment{theglossary}{% Change the table type --> 3 columns
+		\begin{longtable}{lp{0.6\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
+		{\end{longtable}}%
+	%
+	\renewcommand*{\glossaryheader}{%  Change the table header
+		\bfseries \hsmasymbsign & \bfseries \hsmasymbdescription & \bfseries \hsmasymbunit \\
+		\hline
+		\endhead}
+	\renewcommand*{\glossentry}[2]{%  Change the displayed items
+		\glstarget{##1}{\glossentryname{##1}} %
+		& \glossentrydesc{##1}% Description
+		& \glsunit{##1}  \tabularnewline
+	}
+}
+
+
+
+\makeglossaries
+
+
 \usepackage{makeidx}              % Sachregister
 \usepackage{listings}             % Quelltexte
 \usepackage{listingsutf8}         % Quelltexte in UTF8
@@ -82,9 +120,6 @@
                                   %      alphabetic: Zitate als Kürzel und Jahr [Ein05]
                                   %      authoryear: Zitate Author und Jahr [Einstein (1905)]
   hyperref=true,                  % Hyperlinks für Zitate
-  firstinits=false                % Vornamen abkürzen (Maier, M. anstatt Maier, Markus)?
-                                  %      true: abkürzen
-                                  %      false: nicht abkürzen
 ]{biblatex}                       % Literaturverwaltung mit BibLaTeX
 \usepackage{rotating}             % Seiten drehen
 \usepackage{harveyballs}          % Harveyballs

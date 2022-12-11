@@ -91,6 +91,31 @@ Wollen Sie keine Nummerierung der Formeln, ergänzen Sie einfach einen \texttt{*
 \end{bmatrix}
 \end{equation*}
 
+\section{Zahlendarstellung und Angabe von Einheiten}
+Zahlen und Einheiten können wie folgt angegeben werden: 
+
+\begin{tabular}{|l|l|}
+	\hline
+	\textbf{Befehl} & \textbf{Ausgabe}  \\\hline
+	\verb*|\num{123}| & \num{123} \\
+	\verb*|\num{1234}| &	\num{1234} \\
+	\verb*|\num{12345}| &	\num{12345} \\
+	\verb*|\num{0.123}| &	\num{0.123} \\
+	\verb*|\num{0,12345}| &	\num{0,1234} \\
+	\verb*|\num{.12345}| &	\num{.12345} \\
+	\verb*|\num{3.45d-4}| &	\num{3.45d-4} \\
+	\verb*|\num{-e10}| &	\num{-e10} \\
+	\verb*|\qty[per-mode=symbol]{2.8}{\giga\byte\per\second}| & \qty[per-mode = symbol]{2.8}{\giga\byte\per\second}\\
+	\verb*|\qty[per-mode=fraction]{2.8}{\giga\byte\per\second}| & \qty[per-mode = fraction]{2.8}{\giga\byte\per\second}\\
+	\verb*|\qty[mode=text]{2.8}{\giga\byte\per\second}| & \qty[mode = text]{2.8}{\giga\byte\per\second}\\\hline
+\end{tabular}
+
+\vspace*{0.75cm}
+
+Listen können ebenfalls mit Einheiten versehen werden:\\ \verb*|\qtylist{10;30;45}{\giga\byte\per\second}| liefert die Ausgabe: \qtylist{10;30;45}{\giga\byte\per\second}. 
+
+Bereiche können mit dem Befehl \verb*|\qtyrange{10}{30}{\giga\byte\per\second}| ausgegeben werden. \qtyrange{10}{30}{\giga\byte\per\second}
+
 
 \section{Sourcecode}
 
