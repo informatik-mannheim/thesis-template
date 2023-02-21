@@ -9,7 +9,7 @@ INCLUDES = kapitel/abkuerzungen.tex kapitel/glossar.tex kapitel/symbole.tex doci
 
 CHAPTERS = kapitel/kapitel*.tex kapitel/anhang*.tex
 
-TEMP_FILES = *.slg *.sls *.glg *.gls *.acr *.alg  *.bbl *.lol *.fdb_latexmk *.log *.synctex.gz *.fls *.idx *.lof *.lol *.lot *.toc *.acn *.glo *.run.xml *.slo *.syg *.bcf *.mw *.out *.aux *.glsdefs *.ist *.bbl *.blg *.ilg *.ind  thesis.pdf thesis.run.xml thesis.synctex.gz
+TEMP_FILES = *.slg *.sls *.glg *.gls *.acr *.alg  *.bbl *.lol *.fdb_latexmk *.log *.synctex.gz *.fls *.idx *.lof *.lol *.lot *.toc *.acn *.glo *.run.xml *.slo *.syg *.bcf *.mw *.out *.aux *.glsdefs *.ist *.bbl *.blg *.ilg *.ind *.syi thesis.pdf thesis.run.xml thesis.synctex.gz
 
 define latex-it
 $(eval FILE = $(firstword $^))
