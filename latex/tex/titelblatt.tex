@@ -489,9 +489,20 @@
 % Erklärung zur Eigenhändigkeit
 \clearpage\setcounter{page}{1}
 \thispagestyle{empty}
-\textsf{\large\textbf{Erklärung}}
+\ifthenelse{\equal{\hsmasprache}{de}}
+{
+  \textsf{\large\textbf{Erklärung}}
 
-Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+  Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+}
+{
+  \textsf{\large\textbf{Erklärung / \textit{Declaration}}}
+
+  Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+  \\ \\
+  \textit{
+    I confirm that the submitted thesis is original work and was written by me without further assistance. Appropriate credit has been given where reference has been made to the work of others.}
+}
 
 \ifthenelse{\boolean{hsmapublizieren} \and \not\boolean{hsmasperrvermerk}}%
 {
