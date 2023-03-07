@@ -78,6 +78,65 @@ Es gibt drei Ordner
 
 Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https://www.overleaf.com) - siehe nächstes Kapitel.
 
+## LaTeX-Projekt mit VSCode benutzen
+
+Wenn Sie dieses Projekt in [Visual Studio Code](https://code.visualstudio.com/) zusammen mit [LaTeX-Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) einsetzen wollen, müssen Sie ein paar Einstellungen machen. Fehlen diese, wird das Abkürzungsverzeichnis nicht korrekt gebaut.
+
+### Einstellungen anpassen
+
+  1. Installieren Sie LaTeX-Workshop
+  2. Öffnen Sie die Liste der Erweiterungen <img src="images/latex_1.png" style="width: 1em">
+  3. Suchen Sie nach "LaTex-Workshop" und klicken Sie auf das Zahnrad<br><img src="images/latex_2.png" style="width: 15em">
+  4. Wählen Sie in dem Menue "Extension Settings"
+  5. Scrollen Sie runter bis zum Eintrag "LaTeX: Recepies" und klicken Sie auf "Edit settings.json"<br><img src="images/latex_3.png" style="width: 50em">
+  6. Fügen Sie hinter `"latex-workshop.latex.recipes": [` ein neues Rezept ein:
+
+```json
+{
+  "name": "pdflatex -> biber -> makegloassaries -> pdflatex * 2",
+  "tools": [
+      "pdflatex",
+      "biber",
+      "makeglossaries",
+      "pdflatex",
+      "pdflatex"
+  ],
+},
+```
+
+Vor der letzten schließenden Klammer fügen Sie noch folgendes ein:
+
+```json
+"latex-workshop.latex.tools":[
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+              "%DOCFILE%"
+            ]
+          }
+    ]
+  ```
+
+Den vollständigen Abschnitt der Datei finden Sie hier: [settings.json](images/settings.json).
+
+### Änderungen testen
+
+  1. Schließen Sie VSCode und öffnen Sie es neu.
+  2. Öffnen Sie das LaTeX-Dokument und klicken Sie auf das Icon von LaTeX-Worksho <img src="images/latex_5.png" style="width: 2em">
+  3. Wenn Sie den Punkt "Build LaTeX projekt" aufklappen, sollte ein neuer Menueeintrag vorhanden sein.<br><img src="images/latex_6.png" style="width: 12em">
+  4. Durch Klicken auf diesen Punkt können Sie die Arbeit vollständig und korrekt bauen. Da er der erste Punkt ist, sollte er auch standardmäßig bei Änderungen am Projekt ausgeführt werden.
+
 
 ## LaTeX-Projekt unter Overleaf einrichten
 
