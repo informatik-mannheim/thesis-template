@@ -149,6 +149,8 @@ Den vollständigen Abschnitt der Datei finden Sie hier: [settings.json](images/s
  * Wählen Sie nun in der Dateiliste ebenfalls `thesis.tex`
  * Drücken Sie auf "Recompile" - das Projekt sollte jetzt bauen
 
+Overleaf Premium ermöglicht es mit den Funktionen ["Git-Bridge" und "GitHub Synchronization"](https://de.overleaf.com/learn/how-to/Using_Git_and_GitHub) Änderungen mit einem lokalen Repository oder einem Repository auf GitHub zu synchronisieren. Es ist aus technischen Gründen sinnvoll, das Overleaf-Projekt in einem eigenen Repository zu verwalten, das dann als [*Git Submodul*](https://git-scm.com/book/de/v2/Git-Tools-Submodule) zu einem anderen Repository hinzugefügt werden kann, welches zum Beispiel den Quellcode der Arbeit enthält.
+
 ## LaTeX-Projekt unter Texmaker einrichten
 
 [Texmaker](https://www.xm1math.net/texmaker/) unterstützt alle Betriebssysteme.
