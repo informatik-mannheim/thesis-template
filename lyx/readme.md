@@ -7,7 +7,7 @@ Hinweise: Um diese Vorlage zu verwenden, benötigen Sie [LyX](http://www.lyx.org
 Hinweise von Student Karl-Frieder Saadi Hus-Hus (1212117@stud.hs-mannheim.de):
 - Überarbeitet und die neuste HS-Mannheim LaTeX Vorlage von Github (2023) verwendet.
 - Installation:
-  !! zuerst Miktex installieren, dann LyX, da sonst wichtige Pakete fehlen! "Fehlermeldung von LyX: "scrreprt.cls fehlt" 
+  !! zuerst Miktex installieren, dann erst LyX, da sonst wichtige Pakete fehlen! "Sonst z.B. Fehlermeldung von LyX: "scrreprt.cls fehlt" 
 
 Nun das Hauptdokument "thesis.lyx" öffnen, und nach belieben bearbeiten.
 
