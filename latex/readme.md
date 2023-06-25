@@ -159,8 +159,9 @@ Overleaf Premium ermöglicht es mit den Funktionen ["Git-Bridge" und "GitHub Syn
   * Gehen Sie auf "Options" -> "Define current document as 'Master Document'"
   * Gehen Sie auf "Options" -> "Configure Texmaker"
     * Tragen Sie unter "Commands" -> "Bib(la)tex" als Kommando `biber %` ein<br><img src="images/biber.png" width="400">
-    * Wählen Sie unter "Quick Build" die Option "PdfLaTeX + Bib(la)tex + BdfLaTeX (x2) + View Pdf<br><img src="images/quick_build.png" width="400">
-  * Wählen Sie in der Menuezeile "Quick Build" aus<br><img src="images/run.png" width="150">
+    * Tragen Sie unter "Commands" -> "Makeindex" als Kommando `makeindex -s %.ist -t %.alg -o %.acr %.acn` ein<br><img src="images/makeindex.png" width="400">
+    * Wählen Sie unter "Quick Build" die Option "User"<br><img src="images/user_settings.png" width="400"><br>Und tragen Sie den folgenden String dort ein:<br>`pdflatex -interaction=nonstopmode %.tex|biber %|makeindex -s %.ist -t %.alg -o %.acr %.acn|pdflatex -interaction=nonstopmode %.tex|pdflatex -interaction=nonstopmode %.tex`
+  * Wählen Sie in der Menuezeile "Quick Build" aus<br><img src="images/run.png" width="200">
   * Klicken Sie auf den Pfeil links von "Quick Build"
   * Das Dokument sollte gebaut werden und rechts im Bildschirm erscheinen
 
