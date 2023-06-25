@@ -163,7 +163,7 @@ Overleaf Premium ermöglicht es mit den Funktionen ["Git-Bridge" und "GitHub Syn
     * Wählen Sie unter "Quick Build" die Option "User"<br><img src="images/user_settings.png" width="400"><br>Und tragen Sie den folgenden String dort ein:<br>`pdflatex -interaction=nonstopmode %.tex|biber %|makeindex -s %.ist -t %.alg -o %.acr %.acn|pdflatex -interaction=nonstopmode %.tex|pdflatex -interaction=nonstopmode %.tex`
   * Wählen Sie in der Menuezeile "Quick Build" aus<br><img src="images/run.png" width="200">
   * Klicken Sie auf den Pfeil links von "Quick Build"
-  * Das Dokument sollte gebaut werden und rechts im Bildschirm erscheinen
+  * Um die aktuelle Version des Dokuments anzuzeigen, klicken Sie auf den Pfeil links von "View PDF".
 
 ## LaTeX-Projekt unter TeXnicCenter einrichten
 
