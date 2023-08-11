@@ -43,14 +43,9 @@
 % direkt vor \usepackage{xcolor} einsetzen. Prinzipiell sollten Sie aber
 % das vorgeschlagene Format einfach so lassen.
 %
-% 5. Abkürzungen auf richtige Breite einstellen und sortieren
-% In der Datei kapitel/abkuerzungen.tex müssen Sie die _längste_
-% Abkürzung in die eckigen Klammern von \begin{acronym} schreiben,
-% sonst werden die Abkürzungen nicht richtig ausgerichtet.
-% Also z.B. \begin{acronym}[DSGVO].
-% Außerdem müssen Sie die Abkürzungen selbst (manuell) sortieren,
-% da dies nicht automatisch passiert. Am einfachsten verwenden Sie
-% hierzu die Sortierfunktion Ihres Texteditors.
+% 5. Abkürzungen können in der Datei kapitel/abkuerzungen.tex angelegt werden 
+% und werden automatisch sortiert. Sie müssen jedoch das Dokument gesondert 
+% für die Abkürzungen kompilieren.
 %
 % 6. Unnötige Teile entfernen
 % Entfernen Sie die Teile, die Sie nicht brauchen, z.B. Anhänge,
@@ -88,7 +83,7 @@
 % Abgabeform festlegen
 % Bei einer digitalen Abgabe, wird das Dokument einseitig erzeugt und der Titel wird
 % zentriert.
-\newcommand{\hsmaabgabe}{papier} % Wie erfolgt die Abgabe: "papier" oder "digital"?
+\newcommand{\hsmaabgabe}{digital} % Abgabe erfolgt für Fakultät I digital. Optionen hier sind für anderen Fakultäten: "papier" oder "digital"?
 
 % Preambel mit Einstellungen importieren
 \input{preambel}

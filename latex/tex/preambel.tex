@@ -1,16 +1,6 @@
 % Dokumententyp und benutzte Pakete
-\documentclass[open=right,  % Kapitel darf nur auf rechten Seite beginnen
-    paper=a4,               % DIN-A4-Papier
-    fontsize=12pt,          % Schriftgöße
-    headings=small,         % Kleine Überschriften
-    headsepline=true,       % Trennlinie am Kopf der Seite
-    footsepline=false,      % Keine Trennlinie am Fuß der Seite
-    bibliography=totoc,     % Literaturverzeichnis in das Inhaltsverzeichnis aufnehmen
-    DIV=7,                  % Verhältnis der Ränder zum bedruckten Bereich
-    chapterprefix=true,     % Kapitel x vor dem Kapitelnamen
-    cleardoublepage=plain,
-    numbers=noenddot 		% Keine Endpunkte bei der Überschriftennummerierung
-    ]{scrbook}
+\documentclass{HMA}
+
 
 % Pakete einbinden, die benötigt werden
 \usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
@@ -27,29 +17,32 @@
   {%
    \usepackage[main=ngerman, english]{babel}              % Deutsche Sprachunterstützung
    \usepackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
-   \usepackage[pagebackref=false,german]{hyperref}        % Hyperlinks
+   \usepackage[pagebackref=false,german, breaklinks=true]{hyperref}        % Hyperlinks
    \newcommand{\hsmasortlocale}{de_DE}                    % Sortierung der Literatur
   }%
   {%
    \usepackage[main=english, ngerman]{babel}              % Englische Sprachunterstützung
    \usepackage[autostyle=true,english=american]{csquotes} % Englische Anführungszeichen
-   \usepackage[pagebackref=false,english]{hyperref}       % Hyperlinks
+   \usepackage[pagebackref=false,english,breaklinks=true]{hyperref}       % Hyperlinks
    \newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
   }%
+  
+%Abgabeform ist nur noch digital daher Option gleichgesetzt und später entfernt.  
 
 % Setzen von Optionen abhängig von der Abgabeform. Die Abgabeform wird
 % in thesis.tex gesetzt.
 \ifthenelse{\equal{\hsmaabgabe}{papier}}%
   {%
     \KOMAoptions{twoside=true}
-    \newcommand{\hsmafenster}{45mm}
+    \newcommand{\hsmafenster}{38.5mm} %ursprünglich 
   }%
   {%
-    \KOMAoptions{twoside=false}
+    \KOMAoptions{twoside=true}
     \newcommand{\hsmafenster}{38.5mm}
   }%
 
 \usepackage{morewrites}			  % Verhindert Fehlermeldung: No more writes
+\usepackage[useregional=numeric]{datetime2}
 
 \usepackage[svgnames,dvipsnames]{xcolor}               % Unterstützung für Farben
 \usepackage{amsmath}              % Mathematische Formeln
@@ -58,7 +51,6 @@
 \usepackage{siunitx}			  % Darstellung von Einheiten
 \usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
 \usepackage{booktabs}             % Korrekter Tabellensatz
-%\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzungen]
 
 \usepackage[acronym,symbols, toc]{glossaries}
 \renewcommand*{\glspostdescription}{}
@@ -102,25 +94,45 @@
 \usepackage[absolute]{textpos}    % Absolute Textpositionen (für Deckblatt)
 \usepackage{calc}                 % Berechnung von Positionen
 \usepackage{blindtext}            % Blindtexte
-\usepackage[bottom=40mm,left=35mm,right=35mm,top=30mm]{geometry} % Ränder ändern
+
+
+\usepackage[bottom=40mm,left=30mm,right=30mm,top=30mm]{geometry} % Ränder ändern
 \usepackage{scrhack}              % tocbasic Warnung entfernen
+
+
 \usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
 \usepackage{tabularx}             % Spezielle Tabellen
+
+\usepackage{url}
+\usepackage{breakurl}
+
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+	\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+	\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+	\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+	\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+	\do\Y\do\Z\do\/\do-}
+
+
 \usepackage[backend=biber,
-  isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
-  sortlocale=\hsmasortlocale,     % Sortierung der Einträge für Deutsch
-                                  %      de_DE: für Deutsch
-                                  %      en_US: für Englisch
-  autocite=inline,                % regelt Aussehen für \autocite
-                                  %      inline: Zitat in Klammern (\parancite)
-                                  %      footnote: Zitat in Fußnoten (\footcite)
-                                  %      plain: Zitat direkt ohne Klammern (\cite)
-  style=ieee,         		      % Legt den Stil für die Zitate fest
-                                  %      ieee: Zitate als Zahlen [1]
-                                  %      alphabetic: Zitate als Kürzel und Jahr [Ein05]
-                                  %      authoryear: Zitate Author und Jahr [Einstein (1905)]
-  hyperref=true,                  % Hyperlinks für Zitate
-]{biblatex}                       % Literaturverwaltung mit BibLaTeX
+isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+sorting = none,  
+sortlocale=\hsmasortlocale,     % Sortierung der Einträge für Deutsch
+%      de_DE: für Deutsch
+%      en_US: für Englisch
+autocite=inline,                % regelt Aussehen für \autocite
+%      inline: Zitat in Klammern (\parancite)
+%      footnote: Zitat in Fußnoten (\footcite)
+%      plain: Zitat direkt ohne Klammern (\cite)
+style=numeric,         		        % Legt den Stil für die Zitate fest
+%      ieee: Zitate als Zahlen [1]
+%      alphabetic: Zitate als Kürzel und Jahr [Ein05]
+%      authoryear: Zitate Author und Jahr [Einstein (1905)]
+citestyle=numeric-comp,
+hyperref=true,                  % Hyperlinks für Zitate
+maxbibnames=999, maxcitenames=2, mincitenames=1
+]{biblatex}      % Literaturverwaltung mit BibLaTeX
 \usepackage{rotating}             % Seiten drehen
 \usepackage{harveyballs}          % Harveyballs
 \usepackage{chngcntr}             % Counter (Zähler) ändern können - für Fußnotennummern
@@ -134,7 +146,7 @@
 % Kommentieren Sie diese Zeile ein, wenn Sie eine "durchlaufende" Nummerierung bei den
 % Fußnoten wünschen, d.h. wenn die Fußnoten nicht bei jedem Kapitel wieder bei 1
 % beginnen sollen.
-%\counterwithout{footnote}{chapter}
+\counterwithout{footnote}{chapter}
 
 \setlength{\bibitemsep}{1em}      % Abstand zwischen den Literaturangaben
 \setlength{\bibhang}{2em}         % Einzug nach jeweils erster Zeile
@@ -158,10 +170,15 @@
     colorlinks=true,      % Farbige links verwenden
 %    allcolors=linkblue,
     linktoc=all,          % Links im Inhaltsverzeichnis
-    linkcolor=linkblack,  % Querverweise
-    citecolor=linkblack,  % Literaturangaben
-    filecolor=linkblack,  % Dateilinks
-    urlcolor=linkblack    % URLs
+%    linkcolor=linkblack,  % Querverweise
+%    citecolor=linkblack,  % Literaturangaben
+%    filecolor=linkblack,  % Dateilinks
+%    urlcolor=linkblack    % URLs
+    %Highlight Links in Dokument
+    linkcolor=linkblue,  % Querverweise
+    citecolor=linkblue,  % Literaturangaben
+    filecolor=linkblue,  % Dateilinks
+    urlcolor=linkblue    % URLs   
 }
 
 % Einstellungen für Quelltexte
@@ -278,3 +295,7 @@
 % Checklisten mit zwei Ebenen
 \newlist{checklist}{itemize}{2}
 \setlist[checklist]{label=$\square$}
+
+
+
+
