@@ -1,12 +1,13 @@
-% -------------------------------------------------------
-% In dieser Datei sollten eigentlich keine Veränderungen mehr
-% notwendig sein.
-% -------------------------------------------------------
+% *******************************************************************
+% In dieser Datei sollten eigentlich keine Veränderungen
+% notwendig sein. Alle Einstellungen erfolgen in docinfo.tex und
+% der thesis.tex.
+% *******************************************************************
 
 \thispagestyle{empty}
 
 % Fakultäten der HS-Mannheim
-% -------------------------------------------------------
+% *******************************************************************
 \ifthenelse{\equal{\hsmafakultaet}{I}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Informatik}%
    \newcommand{\hsmafakultaetlangen}{Department of Computer Science}}{}
@@ -18,7 +19,7 @@
 \ifthenelse{\equal{\hsmafakultaet}{S}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Sozialwesen}%
    \newcommand{\hsmafakultaetlangen}{Department of Social Work}}{}
-   
+
 \ifthenelse{\equal{\hsmafakultaet}{B}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Biotechnologie}%
    \newcommand{\hsmafakultaetlangen}{Department of Biotechnology}}{}
@@ -34,16 +35,17 @@
 \ifthenelse{\equal{\hsmafakultaet}{N}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Informationstechnik}%
    \newcommand{\hsmafakultaetlangen}{Department of Information Technology}}{}
-   
+
 \ifthenelse{\equal{\hsmafakultaet}{W}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Wirtschaftsingenieurwesen}%
    \newcommand{\hsmafakultaetlangen}{Department of Engineering and Management}}{}
-   
-\ifthenelse{\equal{\hsmafakultaet}{C}}%
+
+\ifthenelse{\equal{\hsmafakultaet}{V}}%
   {\newcommand{\hsmafakultaetlangde}{Fakultät für Verfahrens- und Chemietechnik}%
    \newcommand{\hsmafakultaetlangen}{Department of Chemical Process Engineering}}{}
-   
 
+% Studiengänge der HS-Mannheim
+% *******************************************************************
 \ifthenelse{\equal{\hsmastudiengang}{IB}}%
   {\newcommand{\hsmastudienganglangde}{Informatik}%
   \newcommand{\hsmastudienganglangen}{Computer Science}%
@@ -57,10 +59,17 @@
   \newcommand{\hsmatypde}{Bachelor-Thesis}%
   \newcommand{\hsmatypen}{Bachelor Thesis}%
   \newcommand{\hsmagrad}{\hsmabsc}}{}
-  
+
 \ifthenelse{\equal{\hsmastudiengang}{UIB}}%
   {\newcommand{\hsmastudienganglangde}{Unternehmens- und Wirtschaftsinformatik}%
-  \newcommand{\hsmastudienganglangen}{Enterprise Computing}%  
+  \newcommand{\hsmastudienganglangen}{Enterprise Computing}%
+  \newcommand{\hsmatypde}{Bachelor-Thesis}%
+  \newcommand{\hsmatypen}{Bachelor Thesis}%
+  \newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{CSB}}%
+  {\newcommand{\hsmastudienganglangde}{Cyber Security}%
+  \newcommand{\hsmastudienganglangen}{Cyber Security}%
   \newcommand{\hsmatypde}{Bachelor-Thesis}%
   \newcommand{\hsmatypen}{Bachelor Thesis}%
   \newcommand{\hsmagrad}{\hsmabsc}}{}
@@ -78,21 +87,21 @@
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{UB}}%
   {\newcommand{\hsmastudienganglangde}{Automatisierungstechnik}%
    \newcommand{\hsmastudienganglangen}{Automation Technology}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{ELB}}%
   {\newcommand{\hsmastudienganglangde}{Elektro- und Informationstechnik/Ingenieurpädagogik}%
    \newcommand{\hsmastudienganglangen}{Elektro- und Informationstechnik/Ingenieurpädagogik}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
-   \newcommand{\hsmagrad}{\hsmabsc}}{} 
-   
+   \newcommand{\hsmagrad}{\hsmabsc}}{}
+
 \ifthenelse{\equal{\hsmastudiengang}{EBE}}%
   {\newcommand{\hsmastudienganglangde}{Energietechnik und erneuerbare Energien}%
    \newcommand{\hsmastudienganglangen}{Power Engineering ans Renewable Energies}%
@@ -106,161 +115,182 @@
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-  
+
 \ifthenelse{\equal{\hsmastudiengang}{EM}}%
   {\newcommand{\hsmastudienganglangde}{Automatisierungs- und Energiesysteme}%
    \newcommand{\hsmastudienganglangen}{Automation and Energy Systems}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{ELM}}%
   {\newcommand{\hsmastudienganglangde}{Lehramt Ingenieurpädagogik}%
    \newcommand{\hsmastudienganglangen}{Lectureship Educational Engineering}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{SAB}}%
   {\newcommand{\hsmastudienganglangde}{Soziale Arbeit}%
    \newcommand{\hsmastudienganglangen}{Social Labour}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmaba}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{SAM}}%
   {\newcommand{\hsmastudienganglangde}{Soziale Arbeit}%
    \newcommand{\hsmastudienganglangen}{Social Labour}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamastera}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{BB}}%
   {\newcommand{\hsmastudienganglangde}{Biotechnology}%
    \newcommand{\hsmastudienganglangen}{Biotechnology}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{BCB}}%
   {\newcommand{\hsmastudienganglangde}{Biologische Chemie}%
    \newcommand{\hsmastudienganglangen}{Biological Chemics}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{BMEBST}}%
   {\newcommand{\hsmastudienganglangde}{Biotechnology - Biomedical Science and Technology}%
    \newcommand{\hsmastudienganglangen}{Biotechnology - Biomedical Science and Technology}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{BMEBPD}}%
   {\newcommand{\hsmastudienganglangde}{Biotechnology - Bioprocess Development}%
    \newcommand{\hsmastudienganglangen}{Biotechnology - Bioprocess Development}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{BLSM}}%
   {\newcommand{\hsmastudienganglangde}{Life Science Management}%
    \newcommand{\hsmastudienganglangen}{Life Science Management}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{KDB}}%
   {\newcommand{\hsmastudienganglangde}{Kommunikationsdesign}%
    \newcommand{\hsmastudienganglangen}{Communication Design}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmaba}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{KDM}}%
   {\newcommand{\hsmastudienganglangde}{Kommunikationsdesign}%
    \newcommand{\hsmastudienganglangen}{Communication Design}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamastera}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{MB}}%
   {\newcommand{\hsmastudienganglangde}{Maschinenbau}%
    \newcommand{\hsmastudienganglangen}{Mechanical Engineering}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{MM}}%
   {\newcommand{\hsmastudienganglangde}{Maschinenbau}%
    \newcommand{\hsmastudienganglangen}{Mechanical Engineering}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{NEB}}%
   {\newcommand{\hsmastudienganglangde}{Elektronik}%
    \newcommand{\hsmastudienganglangen}{Electronics}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{TIB}}%
   {\newcommand{\hsmastudienganglangde}{Technische Informatik}%
    \newcommand{\hsmastudienganglangen}{Technical Information Technology}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{MTB}}%
   {\newcommand{\hsmastudienganglangde}{Medizintechnik}%
    \newcommand{\hsmastudienganglangen}{Medical Technology}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{MTM}}%
   {\newcommand{\hsmastudienganglangde}{Medizintechnik}%
    \newcommand{\hsmastudienganglangen}{Medical Technology}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{NM}}%
   {\newcommand{\hsmastudienganglangde}{Informationstechnik}%
    \newcommand{\hsmastudienganglangen}{Informationstechnik}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{WB}}%
   {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
-   \newcommand{\hsmastudienganglangen}{Business Administration and Engineering}%
+   \newcommand{\hsmastudienganglangen}{Engineering and Management}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{WM}}%
   {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
-   \newcommand{\hsmastudienganglangen}{Business Administration and Engineering}%
+   \newcommand{\hsmastudienganglangen}{Engineering and Management}%
    \newcommand{\hsmatypde}{Master-Thesis}%
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
-   
+
+\ifthenelse{\equal{\hsmastudiengang}{WMI}}%
+  {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
+   \newcommand{\hsmastudienganglangen}{Engineering and Management}%
+   \newcommand{\hsmatypde}{Master-Thesis}%
+   \newcommand{\hsmatypen}{Master Thesis}%
+   \newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMB}}%
+  {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen mit den\\ ingenieurwissenschaftlichen Fachrichtungen Maschinenbau und Elektrotechnik}%
+   \newcommand{\hsmastudienganglangen}{Engineering and Management\\ with focus on Mechanical and Electrical Engineering}%
+   \newcommand{\hsmatypde}{Master-Thesis}%
+   \newcommand{\hsmatypen}{Master Thesis}%
+   \newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMW}}%
+  {\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen mit\\ ingenieurwissenschaftlicher Vertiefung des Maschinenbaus}%
+   \newcommand{\hsmastudienganglangen}{Engineering and Management\\ deepening the engineering aspects of Mechanical Engineering}%
+   \newcommand{\hsmatypde}{Master-Thesis}%
+   \newcommand{\hsmatypen}{Master Thesis}%
+   \newcommand{\hsmagrad}{\hsmamaster}}{}
+
 \ifthenelse{\equal{\hsmastudiengang}{VB}}%
   {\newcommand{\hsmastudienganglangde}{Verfahrenstechnik}%
    \newcommand{\hsmastudienganglangen}{Process Engineering}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{CB}}%
   {\newcommand{\hsmastudienganglangde}{Chemische Technik}%
    \newcommand{\hsmastudienganglangen}{Chemical Engineering}%
    \newcommand{\hsmatypde}{Bachelor-Thesis}%
    \newcommand{\hsmatypen}{Bachelor Thesis}%
    \newcommand{\hsmagrad}{\hsmabsc}}{}
-   
+
 \ifthenelse{\equal{\hsmastudiengang}{CM}}%
   {\newcommand{\hsmastudienganglangde}{Chemieingenieurwesen}%
    \newcommand{\hsmastudienganglangen}{Chemical Engineering}%
@@ -268,6 +298,8 @@
    \newcommand{\hsmatypen}{Master Thesis}%
    \newcommand{\hsmagrad}{\hsmamaster}}{}
 
+% Abschlüsse
+% *******************************************************************
 \newcommand{\hsmabsc}{Bachelor of Science (B.Sc.)}
 \newcommand{\hsmaba}{Bachelor of Arts (B.A.)}
 \newcommand{\hsmamaster}{Master of Science (M.Sc.)}
@@ -292,8 +324,35 @@
    \newcommand{\hsmalistoftables}{Tabellenverzeichnis}%
    \newcommand{\hsmalistoffigures}{Abbildungsverzeichnis}%
    \newcommand{\hsmalistings}{Quellcodeverzeichnis}%
+   \newcommand{\hsmalistofsymbols}{Symbolverzeichnis}
+   \newcommand{\hsmaglossary}{Glossar}
+   \newcommand{\hsmalistingcaption}{Listing}% oder Quellcode?
+   \newcommand{\hsmasymbsign}{Symbol}
+   \newcommand{\hsmasymbdescription}{Beschreibung}
+   \newcommand{\hsmasymbunit}{Einheit}
    \newcommand{\hsmaindex}{Index}%
-   \newcommand{\hsmaabbreviations}{Abkürzungsverzeichnis}%   
+   \newcommand{\hsmaabbreviations}{Abkürzungsverzeichnis}%
+   \newcommand{\hsmasnowcardanforderung}{Anforderung}%
+   \newcommand{\hsmasnowcardno}{Nr}%
+   \newcommand{\hsmasnowcardart}{Art}%
+   \newcommand{\hsmasnowcardprio}{Prio}%
+   \newcommand{\hsmasnowcardtitel}{Titel}%
+   \newcommand{\hsmasnowcardherkunft}{Herkunft}%
+   \newcommand{\hsmasnowcardkonflikt}{Konflikte}%
+   \newcommand{\hsmasnowcardbeschreibung}{Beschreibung}%
+   \newcommand{\hsmasnowcardfitkriterium}{Fit-Kriterium}%
+   \newcommand{\hsmasnowcardmaterial}{Weiteres Material}%
+   \newcommand{\hsmaqasanforderung}{QAS}%
+   \newcommand{\hsmaqasno}{Nr}%
+   \newcommand{\hsmaqasart}{Art}%
+   \newcommand{\hsmaqasprio}{Prio}%
+   \newcommand{\hsmaqastitel}{Titel}%
+   \newcommand{\hsmaqasquelle}{Quelle}%
+   \newcommand{\hsmaqasstimulus}{Stimulus}%
+   \newcommand{\hsmaqasartefakt}{Artefakt}%
+   \newcommand{\hsmaqasumgebung}{Umgebung}%
+   \newcommand{\hsmaqasantwort}{Antwort}%
+   \newcommand{\hsmaqasmass}{Maß für Antwort}%
    \selectlanguage{ngerman}}%
   {\newcommand{\hsmatyp}{\hsmatypen}%
    \newcommand{\hsmathesistype}{for the acquisition of the academic degree \hsmagrad}%
@@ -306,10 +365,36 @@
    \newcommand{\hsmalistoftables}{List of Tables}%
    \newcommand{\hsmalistoffigures}{List of Figures}%
    \newcommand{\hsmalistings}{Listings}%
+   \newcommand{\hsmalistingcaption}{Listing}% or Source Code?
    \newcommand{\hsmaindex}{Index}%
+   \newcommand{\hsmasymbsign}{Sign}
+   \newcommand{\hsmasymbdescription}{Description}
+   \newcommand{\hsmasymbunit}{Unit}
    \newcommand{\hsmaabbreviations}{List of Abbreviations}%
+   \newcommand{\hsmalistofsymbols}{List of Symbols}
+   \newcommand{\hsmaglossary}{Glossary}
+   \newcommand{\hsmasnowcardanforderung}{Requirement}%
+   \newcommand{\hsmasnowcardno}{\#}%
+   \newcommand{\hsmasnowcardart}{Type}%
+   \newcommand{\hsmasnowcardprio}{Prio}%
+   \newcommand{\hsmasnowcardtitel}{Title}%
+   \newcommand{\hsmasnowcardherkunft}{Origin}%
+   \newcommand{\hsmasnowcardkonflikt}{Conflicts}%
+   \newcommand{\hsmasnowcardbeschreibung}{Description}%
+   \newcommand{\hsmasnowcardfitkriterium}{Fit Criterion}%
+   \newcommand{\hsmasnowcardmaterial}{Supporting Material}%
+   \newcommand{\hsmaqasanforderung}{QAS}%
+   \newcommand{\hsmaqasno}{\#}%
+   \newcommand{\hsmaqasart}{Type}%
+   \newcommand{\hsmaqasprio}{Prio}%
+   \newcommand{\hsmaqastitel}{Title}%
+   \newcommand{\hsmaqasquelle}{Source}%
+   \newcommand{\hsmaqasstimulus}{Stimulus}%
+   \newcommand{\hsmaqasartefakt}{Artifact}%
+   \newcommand{\hsmaqasumgebung}{Environment}%
+   \newcommand{\hsmaqasantwort}{Response}%
+   \newcommand{\hsmaqasmass}{Response Measure}%
    \selectlanguage{english}}%
-
 
 % Daten in die Standard-Felder von KOMA-Script eintragen
 \titlehead{\hsmatyp\ in\  \hsmastudienganglang}
@@ -320,31 +405,31 @@
 
 % Daten für das fertige PDF-Dokument
 \hypersetup{
-  pdftitle={\hsmatitel},  % Titel des Dokuments
-  pdfauthor={\hsmaautor},              % Autor
-  pdfsubject={\hsmatyp\ in\ \hsmastudienganglang},                % Thema
-  pdfkeywords={\hsmatitel}         % Schlüsselworte
+  pdftitle={\hsmatitel},                           % Titel des Dokuments
+  pdfauthor={\hsmaautor},                          % Autor
+  pdfsubject={\hsmatyp\ in\ \hsmastudienganglang}, % Thema
+  pdfkeywords={\hsmatitel}                         % Schlüsselworte
 }
 
 \newlength{\bindekorrektur}
 \newlength{\seitenanfang}
 \newlength{\seitenbreite}
-  
+
 \setlength{\bindekorrektur}{-46mm}   % Korrektur der horizontalen Position
 \setlength{\seitenanfang}{0mm}       % Korrektur der vertikalen Position
-\setlength{\seitenbreite}{297mm}
+\setlength{\seitenbreite}{297mm}     % Breite der Seite
 
-\noindent\includegraphics[width=7cm]{bilder/hsma-logo.pdf}\\
+\noindent\includegraphics[width=7cm]{hsma-logo.pdf}\\
 
 % Titel der Arbeit
-\begin{textblock*}{128mm}(45mm,\seitenanfang + 62mm) % 4,5cm vom linken Rand und 6,0cm vom oberen Rand
+\begin{textblock*}{128mm}(\hsmafenster,\seitenanfang + 62mm) % 4,5cm vom linken Rand und 6,0cm vom oberen Rand
   \centering\Large\sffamily
   \vspace{4mm} % Kleiner zusätzlicher Abstand oben für bessere Optik
   \textbf{\hsmatitel}
 \end{textblock*}%
 
 % Name
-\begin{textblock*}{128mm}(45mm,\seitenanfang + 103mm)
+\begin{textblock*}{128mm}(\hsmafenster,\seitenanfang + 103mm)
   \centering\large\sffamily
   \hsmaautor
 \end{textblock*}
@@ -368,13 +453,13 @@
 
 % Datum
 \begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 190mm)
-  \centering\large 
+  \centering\large
   \textsf{\hsmadatum}
 \end{textblock*}
 
 % Firma
 \begin{textblock*}{\seitenbreite}(\bindekorrektur,\seitenanfang + 215mm)
-  \centering\large 
+  \centering\large
   %\textsf{Durchgeführt bei der Firma \hsmafirma}
 \end{textblock*}
 
@@ -391,36 +476,58 @@
 % Bibliographische Informationen
 \null\newpage
 \thispagestyle{empty}
-  
-\newcommand{\hsmabibde}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelde \ / \hsmaautor. \ -- \\ \hsmatypde, \hsmaort : \hsmakoerperschaftde, \hsmajahr. \pageref{LastPage} Seiten.\end{small}}
 
-\newcommand{\hsmabiben}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelen \ / \hsmaautor. \ -- \\ \hsmatypen, \hsmaort : \hsmakoerperschaften, \hsmajahr. \pageref{LastPage} pages. \end{small}}
+\newcommand{\hsmabibde}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelde \ / \hsmaautor. \ -- \\ \hsmatypde, \hsmaort : \hsmakoerperschaftde, \hsmajahr. \pageref{lastpage} Seiten.\end{small}}
 
+\newcommand{\hsmabiben}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelen \ / \hsmaautor. \ -- \\ \hsmatypen, \hsmaort : \hsmakoerperschaften, \hsmajahr. \pageref{lastpage} pages. \end{small}}
+
+% Reihenfolge hängt von der Sprache ab
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {\hsmabibde \\ \vspace{0.5cm} \\ \hsmabiben}
   {\hsmabiben \\ \vspace{0.5cm} \\ \hsmabibde}
 
-
-% Erklärung
+% Erklärung zur Eigenhändigkeit
 \clearpage\setcounter{page}{1}
 \thispagestyle{empty}
-\textsf{\large\textbf{Erklärung}}
+\ifthenelse{\equal{\hsmasprache}{de}}
+{
+  \textsf{\large\textbf{Erklärung}}
 
-Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+  Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+}
+{
+  \textsf{\large\textbf{Erklärung / \textit{Declaration}}}
+
+  Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+  \\ \\
+  \textit{
+    I confirm that the submitted thesis is original work and was written by me without further assistance. Appropriate credit has been given where reference has been made to the work of others.}
+}
 
 \ifthenelse{\boolean{hsmapublizieren} \and \not\boolean{hsmasperrvermerk}}%
 {
-\vspace{0.5cm}
-Ich bin damit einverstanden, dass meine Arbeit veröffentlicht wird, d.\,h. dass die Arbeit elektronisch gespeichert, in andere Formate konvertiert, auf den Servern der Hochschule Mannheim öffentlich zugänglich gemacht und über das Internet verbreitet werden darf. 
+	\ifthenelse{\equal{\hsmacc}{}}{
+  \vspace{0.5cm}
+  Ich bin damit einverstanden, dass meine Arbeit veröffentlicht wird, d.\,h. dass die Arbeit elektronisch gespeichert, in andere Formate konvertiert, auf den Servern der Hochschule Mannheim öffentlich zugänglich gemacht und über das Internet verbreitet werden darf.
+  }{\doclicenseThis}
 }{}%
-
 
 \vspace{1cm}
 \hsmaort, \hsmadatum \\
 
-\vspace{1.2cm}						                                      
+\ifthenelse{\equal{\hsmaabgabe}{papier}}%
+  {%
+    % Papier - space
+    \vspace{1.2cm}
+  }%
+  {%
+    % Digital - Unterschrift
+    \includegraphics[width=6cm]{unterschrift.png}
+  }%
+
 \hsmaautor
 
+% Sperrvermerk
 \ifthenelse{\boolean{hsmasperrvermerk}}%
 {%
 \vspace{11cm}
@@ -436,4 +543,100 @@ Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Gene
 
 \cleardoublepage
 
-% Abstract entfernt
+% % Abstract
+% \chapter*{Abstract}
+
+% % Reihenfolge hängt von der Sprache ab
+% \ifthenelse{\equal{\hsmasprache}{de}}%
+% {
+  % \subsubsection*{\hsmatitelde}
+  % \hsmaabstractde
+  % \begin{otherlanguage}{english}
+    % \subsubsection*{\hsmatitelen}
+    % \hsmaabstracten
+  % \end{otherlanguage}
+% }
+% {
+  % \subsubsection*{\hsmatitelen}
+  % \hsmaabstracten
+  % \begin{otherlanguage}{ngerman}
+    % \subsubsection*{\hsmatitelde}
+    % \hsmaabstractde
+  % \end{otherlanguage}
+% }
+
+% Snowcard
+\newcommand{\snowcard}[9]{
+  \begin{table}[ht!]
+\caption{\hsmasnowcardanforderung\ #1 -- #4}\label{#1}
+\renewcommand{\arraystretch}{1.2}
+\centering
+\sffamily
+  \begin{footnotesize}
+
+\begin{tabularx}{\linewidth}{sssssb}
+\toprule
+\textbf{\hsmasnowcardno} & #1 & \textbf{\hsmasnowcardart} & #2 & \textbf{\hsmasnowcardprio} & #3 \\
+\midrule
+\multicolumn{2}{l}{\textbf{\hsmasnowcardtitel}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#4}} \\
+\ifx&#5&%
+\else
+\multicolumn{2}{l}{\textbf{\hsmasnowcardherkunft}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#5}} \\
+\fi
+\ifx&#6&%
+\else
+\multicolumn{2}{l}{\textbf{\hsmasnowcardkonflikt}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#6}} \\
+\fi
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmasnowcardbeschreibung}} \\
+\multicolumn{6}{l}{\parbox[t]{13.5cm}{#7}} \\
+\ifx&#8&%
+\else
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmasnowcardfitkriterium}} \\
+\multicolumn{6}{l}{\parbox{13.5cm}{#8}} \\
+\fi
+\ifx&#9&%
+
+\else
+  \addlinespace
+  \multicolumn{6}{l}{\textbf{\hsmasnowcardmaterial}} \\
+  \multicolumn{6}{l}{\parbox{13.5cm}{#9}} \\
+\fi
+\bottomrule
+\end{tabularx}
+\end{footnotesize}
+\end{table}
+}
+
+% Quality Attribute Scenario
+\newcommand{\qas}[9]{
+  \begin{table}[ht!]
+\caption{\hsmaqasanforderung\ #1 -- #3}\label{#1}
+\renewcommand{\arraystretch}{1.2}
+\centering
+\sffamily
+  \begin{footnotesize}
+
+\begin{tabularx}{\linewidth}{sssssb}
+\toprule
+\textbf{\hsmaqasno} & #1 & \textbf{\hsmaqasart} & QAS & \textbf{\hsmaqasprio} & #2 \\
+\midrule
+\multicolumn{2}{l}{\textbf{\hsmaqastitel}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#3}} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasquelle}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#4}} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasstimulus}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#5}} \\
+\multicolumn{2}{l}{\textbf{\hsmaqasartefakt}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#6}} \\
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmaqasumgebung}} \\
+\multicolumn{6}{l}{\parbox{13.5cm}{#7}} \\
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmaqasantwort}} \\
+\multicolumn{6}{l}{\parbox{13.5cm}{#8}} \\
+\addlinespace
+\multicolumn{6}{l}{\textbf{\hsmaqasmass}} \\
+\multicolumn{6}{l}{\parbox{13.5cm}{#9}} \\
+\bottomrule
+\end{tabularx}
+\end{footnotesize}
+\end{table}
+}
