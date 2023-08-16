@@ -2,7 +2,7 @@
 
 \LoadClass[open=right,  % Kapitel darf nur auf rechten Seite beginnen
 paper=a4,               % DIN-A4-Papier
-fontsize=11pt,          % Schriftgöße
+fontsize=12pt,          % Schriftgöße
 headings=small,         % Kleine Überschriften
 headsepline=true,       % Trennlinie am Kopf der Seite
 footsepline=false,      % Keine Trennlinie am Fuß der Seite
