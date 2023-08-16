@@ -5,7 +5,7 @@ BIBTEX = biber
 MAKEINDEX = makeindex
 MAKEGLOSSARY = makeglossaries
 
-INCLUDES = kapitel/abkuerzungen.tex kapitel/glossar.tex kapitel/symbole.tex docinfo.tex preambel.tex titelblatt.tex literatur.bib bilder/*.pdf
+INCLUDES = kapitel/abkuerzungen.tex kapitel/glossar.tex kapitel/symbole.tex docinfo.tex preambel.tex titelblatt.tex literatur.bib bilder/*.pdf hma.cls
 
 CHAPTERS = kapitel/kapitel*.tex kapitel/anhang*.tex
 
