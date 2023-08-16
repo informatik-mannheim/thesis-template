@@ -34,10 +34,10 @@
 \ifthenelse{\equal{\hsmaabgabe}{papier}}%
   {%
     \KOMAoptions{twoside=true}
-    \newcommand{\hsmafenster}{38.5mm} %ursprünglich
+    \newcommand{\hsmafenster}{45mm}
   }%
   {%
-    \KOMAoptions{twoside=true}
+    \KOMAoptions{twoside=false}
     \newcommand{\hsmafenster}{38.5mm}
   }%
 
@@ -276,9 +276,10 @@ maxbibnames=999, maxcitenames=2, mincitenames=1
 \newcommand{\dahe}[0]{d.\,h.}
 \newcommand{\ua}[0]{u.\,a.}
 
-% Flags für Veröffentlichung und Sperrvermerk
+% Flags für Veröffentlichung, Sperrvermerk und Genderhinweis
 \newboolean{hsmapublizieren}
 \newboolean{hsmasperrvermerk}
+\newboolean{genderhinweis}
 \newcommand{\hsmacc}{}
 
 % Tabellenzellen mit mehreren Zeilen

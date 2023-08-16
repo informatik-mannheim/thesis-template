@@ -483,18 +483,17 @@
 
 
 % Reihenfolge hängt von der Sprache ab
+\ifthenelse{\boolean{genderhinweis}}%
+{%
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {\hsmabibde \\ \vspace{0.5cm} \\ \hsmabiben
-  
-  %Genderhinweis: 
+
+  %Genderhinweis:
   \vspace*{\fill}
   Um die Lesbarkeit zu vereinfachen, wird auf die zusätzliche Formulierung der weiblichen Form bei Personenbezeichnungen verzichtet. Ich weise deshalb darauf hin, dass die Verwendung der männlichen Form explizit als geschlechtsunabhängig verstanden werden soll.
   }
   {\hsmabiben \\ \vspace{0.5cm} \\ \hsmabibde}
-  
-  
-
-  
+}%
 
 % Erklärung zur Eigenhändigkeit
 \clearpage\setcounter{page}{1}
