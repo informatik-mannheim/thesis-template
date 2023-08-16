@@ -49,6 +49,7 @@ Anpassen müssen Sie die folgenden Dateien
 
   * `thesis.tex` - Hauptdokument. Hier müssen Sie weitere Kapitel aus dem Ordner `kapitel` inkludieren.
   * `docinfo.tex` - Bibliografische Informationen zur Arbeit, müssen Sie mit Ihren Daten füllen
+  * `hma.cls` - Dokumentenklasse für die Abschlussarbeit
   * `kapitel/abkuerzungen.tex` - Liste der in der Arbeit verwendeten Abkürzungen
   * `kapitel/glossar.tex` - Einträge für ein Glossar
   * `kapitel/symbole.tex` - Einträge für ein Symbol und Einheitenverzeichnis
