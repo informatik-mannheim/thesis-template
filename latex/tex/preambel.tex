@@ -26,15 +26,15 @@
    \usepackage[pagebackref=false,english,breaklinks=true]{hyperref}       % Hyperlinks
    \newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
   }%
-  
-%Abgabeform ist nur noch digital daher Option gleichgesetzt und später entfernt.  
+
+%Abgabeform ist nur noch digital daher Option gleichgesetzt und später entfernt.
 
 % Setzen von Optionen abhängig von der Abgabeform. Die Abgabeform wird
 % in thesis.tex gesetzt.
 \ifthenelse{\equal{\hsmaabgabe}{papier}}%
   {%
     \KOMAoptions{twoside=true}
-    \newcommand{\hsmafenster}{38.5mm} %ursprünglich 
+    \newcommand{\hsmafenster}{38.5mm} %ursprünglich
   }%
   {%
     \KOMAoptions{twoside=true}
@@ -112,7 +112,7 @@
 
 \usepackage[backend=biber,
 isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
-sorting = none,  
+sorting = none,
 sortlocale=\hsmasortlocale,     % Sortierung der Einträge für Deutsch
 %      de_DE: für Deutsch
 %      en_US: für Englisch
@@ -173,7 +173,7 @@ maxbibnames=999, maxcitenames=2, mincitenames=1
     linkcolor=linkblue,  % Querverweise
     citecolor=linkblue,  % Literaturangaben
     filecolor=linkblue,  % Dateilinks
-    urlcolor=linkblue    % URLs   
+    urlcolor=linkblue    % URLs
 }
 
 % Einstellungen für Quelltexte
@@ -290,3 +290,6 @@ maxbibnames=999, maxcitenames=2, mincitenames=1
 % Checklisten mit zwei Ebenen
 \newlist{checklist}{itemize}{2}
 \setlist[checklist]{label=$\square$}
+
+% Glossar etc erzeugen
+\makeglossaries
