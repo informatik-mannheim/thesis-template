@@ -14,8 +14,14 @@
 \newcommand{\hsmaort}{Mannheim}          % Ort
 \newcommand{\hsmaautorvname}{Max}        % Vorname(n)
 \newcommand{\hsmaautornname}{Mustermann} % Nachname(n)
-\newcommand{\hsmadatum}{11.12.2022}      % Datum der Abgabe
-\newcommand{\hsmajahr}{2022}             % Jahr der Abgabe
+\DTMsavedate{Abgabe}{2023-08-24} % Datum der Abgabe
+
+\makeatletter
+\newcommand{\hsmajahr}{%
+	\@dtm@year
+}
+
+\newcommand{\hsmadatum}{\DTMusedate{Abgabe}}      
 \newcommand{\hsmafirma}{Paukenschlag GmbH, Mannheim} % Firma bei der die Arbeit durchgeführt wurde
 \newcommand{\hsmabetreuer}{Prof. Peter Mustermann, Hochschule Mannheim} % Betreuer an der Hochschule
 \newcommand{\hsmazweitkorrektor}{Erika Mustermann, Paukenschlag GmbH}   % Betreuer im Unternehmen oder Zweitkorrektor

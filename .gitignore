@@ -17,3 +17,16 @@
 *.synctex.gz
 */temp/*
 *-474.lyx
+latex/tex/thesis.acn
+latex/tex/thesis.acr
+latex/tex/thesis.alg
+latex/tex/thesis.bcf
+latex/tex/thesis.glg
+latex/tex/thesis.glo
+latex/tex/thesis.gls
+latex/tex/thesis.glsdefs
+latex/tex/thesis.mw
+latex/tex/thesis.pdf
+latex/tex/thesis.run.xml
+latex/tex/thesis.slg
+latex/tex/thesis.ist
