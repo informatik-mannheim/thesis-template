@@ -50,6 +50,8 @@ Anpassen müssen Sie die folgenden Dateien
   * `thesis.tex` - Hauptdokument. Hier müssen Sie weitere Kapitel aus dem Ordner `kapitel` inkludieren.
   * `docinfo.tex` - Bibliografische Informationen zur Arbeit, müssen Sie mit Ihren Daten füllen
   * `kapitel/abkuerzungen.tex` - Liste der in der Arbeit verwendeten Abkürzungen
+  * `kapitel/glossar.tex` - Einträge für ein Glossar
+  * `kapitel/symbole.tex` - Einträge für ein Symbol und Einheitenverzeichnis
   * `kapitel/kapitel1.tex` - Beispiel für ein Kapitel
   * `kapitel/kapitel2.tex` - Weiteres Beispiel für ein Kapitel
   * `kapitel/kapitel3.tex` - Weiteres Beispiel für ein Kapitel
@@ -76,6 +78,65 @@ Es gibt drei Ordner
 
 Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https://www.overleaf.com) - siehe nächstes Kapitel.
 
+## LaTeX-Projekt mit VSCode benutzen
+
+Wenn Sie dieses Projekt in [Visual Studio Code](https://code.visualstudio.com/) zusammen mit [LaTeX-Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) einsetzen wollen, müssen Sie ein paar Einstellungen machen. Fehlen diese, wird das Abkürzungsverzeichnis nicht korrekt gebaut.
+
+### Einstellungen anpassen
+
+  1. Installieren Sie LaTeX-Workshop
+  2. Öffnen Sie die Liste der Erweiterungen <img src="images/latex_1.png" style="width: 1em">
+  3. Suchen Sie nach "LaTex-Workshop" und klicken Sie auf das Zahnrad<br><img src="images/latex_2.png" style="width: 15em">
+  4. Wählen Sie in dem Menue "Extension Settings"
+  5. Scrollen Sie runter bis zum Eintrag "LaTeX: Recepies" und klicken Sie auf "Edit settings.json"<br><img src="images/latex_3.png" style="width: 50em">
+  6. Fügen Sie hinter `"latex-workshop.latex.recipes": [` ein neues Rezept ein:
+
+```json
+{
+  "name": "pdflatex -> biber -> makegloassaries -> pdflatex * 2",
+  "tools": [
+      "pdflatex",
+      "biber",
+      "makeglossaries",
+      "pdflatex",
+      "pdflatex"
+  ],
+},
+```
+
+Vor der letzten schließenden Klammer fügen Sie noch folgendes ein:
+
+```json
+"latex-workshop.latex.tools":[
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+              "%DOCFILE%"
+            ]
+          }
+    ]
+  ```
+
+Den vollständigen Abschnitt der Datei finden Sie hier: [settings.json](images/settings.json).
+
+### Änderungen testen
+
+  1. Schließen Sie VSCode und öffnen Sie es neu.
+  2. Öffnen Sie das LaTeX-Dokument und klicken Sie auf das Icon von LaTeX-Worksho <img src="images/latex_5.png" style="width: 2em">
+  3. Wenn Sie den Punkt "Build LaTeX projekt" aufklappen, sollte ein neuer Menueeintrag vorhanden sein.<br><img src="images/latex_6.png" style="width: 12em">
+  4. Durch Klicken auf diesen Punkt können Sie die Arbeit vollständig und korrekt bauen. Da er der erste Punkt ist, sollte er auch standardmäßig bei Änderungen am Projekt ausgeführt werden.
+
 
 ## LaTeX-Projekt unter Overleaf einrichten
 
@@ -83,10 +144,12 @@ Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https:/
  * Melden Sie sich bei [Overleaf](https://www.overleaf.com) an und loggen Sie sich ein.
  * Gehen Sie auf "New Project" und wählen Sie "Upload Project"
  * Laden Sie die ZIP-Datei hoch.
- * Sie werden jetzt Kompile-Fehler bekommen, aber keine Panik, dies liegt daran, dass Overleaf nicht weiß, welches das Hauptdokument ist
+ * Sie werden jetzt Compile-Fehler bekommen, aber keine Panik, dies liegt daran, dass Overleaf nicht weiß, welches das Hauptdokument ist
  * Wählen Sie das Overleaf Logo oben links, um das Einstellungsmenue aufzurufen und stellen Sie die Option "Main document" auf `thesis.tex`
  * Wählen Sie nun in der Dateiliste ebenfalls `thesis.tex`
  * Drücken Sie auf "Recompile" - das Projekt sollte jetzt bauen
+
+Overleaf Premium ermöglicht es mit den Funktionen ["Git-Bridge" und "GitHub Synchronization"](https://de.overleaf.com/learn/how-to/Using_Git_and_GitHub) Änderungen mit einem lokalen Repository oder einem Repository auf GitHub zu synchronisieren. Es ist aus technischen Gründen sinnvoll, das Overleaf-Projekt in einem eigenen Repository zu verwalten, das dann als [*Git Submodul*](https://git-scm.com/book/de/v2/Git-Tools-Submodule) zu einem anderen Repository hinzugefügt werden kann, welches zum Beispiel den Quellcode der Arbeit enthält.
 
 ## LaTeX-Projekt unter Texmaker einrichten
 
@@ -96,10 +159,11 @@ Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https:/
   * Gehen Sie auf "Options" -> "Define current document as 'Master Document'"
   * Gehen Sie auf "Options" -> "Configure Texmaker"
     * Tragen Sie unter "Commands" -> "Bib(la)tex" als Kommando `biber %` ein<br><img src="images/biber.png" width="400">
-    * Wählen Sie unter "Quick Build" die Option "PdfLaTeX + Bib(la)tex + BdfLaTeX (x2) + View Pdf<br><img src="images/quick_build.png" width="400">
-  * Wählen Sie in der Menuezeile "Quick Build" aus<br><img src="images/run.png" width="150">
+    * Tragen Sie unter "Commands" -> "Makeindex" als Kommando `makeindex -s %.ist -t %.alg -o %.acr %.acn` ein<br><img src="images/makeindex.png" width="400">
+    * Wählen Sie unter "Quick Build" die Option "User"<br><img src="images/user_settings.png" width="400"><br>Und tragen Sie den folgenden String dort ein:<br>`pdflatex -interaction=nonstopmode %.tex|biber %|makeindex -s %.ist -t %.alg -o %.acr %.acn|pdflatex -interaction=nonstopmode %.tex|pdflatex -interaction=nonstopmode %.tex`
+  * Wählen Sie in der Menuezeile "Quick Build" aus<br><img src="images/run.png" width="200">
   * Klicken Sie auf den Pfeil links von "Quick Build"
-  * Das Dokument sollte gebaut werden und rechts im Bildschirm erscheinen
+  * Um die aktuelle Version des Dokuments anzuzeigen, klicken Sie auf den Pfeil links von "View PDF".
 
 ## LaTeX-Projekt unter TeXnicCenter einrichten
 

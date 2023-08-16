@@ -10,6 +10,7 @@ pdflatex -output-directory="$OUTPUT_DIR" -synctex=1 -interaction=nonstopmode ${F
 cd $OUTPUT_DIR
 biber ${FILE}
 makeindex ${FILE}.idx
+makeglossaries ${FILE}
 cd ../tex
 pdflatex -output-directory="$OUTPUT_DIR" -synctex=1 -interaction=nonstopmode ${FILE}.tex
 pdflatex -output-directory="$OUTPUT_DIR" -synctex=2 -interaction=nonstopmode ${FILE}.tex

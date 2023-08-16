@@ -53,6 +53,7 @@
 \usepackage{booktabs}             % Korrekter Tabellensatz
 
 \usepackage[acronym,symbols, toc]{glossaries}
+
 \renewcommand*{\glspostdescription}{}
 
 \renewcommand{\glsnamefont}[1]{\textbf{#1}} % Fette Schrift für Abkürzungen
@@ -62,7 +63,6 @@
 
 \newglossary[slg]{symbolslist}{syi}{syg}{Symbolslist} % Erstellen  Symbolverzeichnis
 \glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
-
 
 \newglossarystyle{symbunitlong}{%
 	\setglossarystyle{long3col}% base this style on the list style
@@ -80,11 +80,6 @@
 		& \glsunit{##1}  \tabularnewline
 	}
 }
-
-
-
-\makeglossaries
-
 
 \usepackage{makeidx}              % Sachregister
 \usepackage{listings}             % Quelltexte
@@ -295,7 +290,3 @@ maxbibnames=999, maxcitenames=2, mincitenames=1
 % Checklisten mit zwei Ebenen
 \newlist{checklist}{itemize}{2}
 \setlist[checklist]{label=$\square$}
-
-
-
-

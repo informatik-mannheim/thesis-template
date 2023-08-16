@@ -43,15 +43,11 @@
 % direkt vor \usepackage{xcolor} einsetzen. Prinzipiell sollten Sie aber
 % das vorgeschlagene Format einfach so lassen.
 %
-% 5. Abkürzungen können in der Datei kapitel/abkuerzungen.tex angelegt werden 
-% und werden automatisch sortiert. Sie müssen jedoch das Dokument gesondert 
-% für die Abkürzungen kompilieren.
-%
-% 6. Unnötige Teile entfernen
+% 5. Unnötige Teile entfernen
 % Entfernen Sie die Teile, die Sie nicht brauchen, z.B. Anhänge,
 % Quelltextverzeichnis etc. Siehe unten
 %
-% 7. Silbentrennung
+% 6. Silbentrennung
 % LaTeX führt eine automatische Silbentrennung durch. Allerdings
 % werden Wörter, die bereits einen Bindestrich enthalten nicht
 % getrennt, z.B. Datenschutz-Grundverordnung. Wenn Sie Ihren Text auf
@@ -64,13 +60,13 @@
 % Trennstellen angeben. Dies geschieht durch "- als Zeichen, z.B.
 % Staats"-vertrag.
 %
-% 8. Nummerierung der Fußnoten
+% 7. Nummerierung der Fußnoten
 % LaTeX beginnt die Nummerierung der Fußnoten in jedem Kapitel wieder
 % bei 1. Manche Dozenten wollen aber eine durchlaufende Nummerierung
 % über die gesamte Arbeit. In diesem Fall gehen Sie in die preambel.tex
 % und kommentieren den Befehl \counterwithout{footnote}{chapter} ein.
 %
-% 9. Unterschrift
+% 8. Unterschrift
 % Bei einer Abgabe auf Papier unterschreiben Sie die Arbeit eigenhändig.
 % Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png
 % durch einen Scan Ihrer eigenen Unteschrift ersetzen - andernfalls
@@ -101,12 +97,12 @@
 
 % Anfang des Dokuments
 \begin{document}
-	
+
 %Laden der Abkürzungen, Glossar, Symbole
 \input{kapitel/abkuerzungen}
-\input{kapitel/glossar}		
-\input{kapitel/symbole}		
-	
+\input{kapitel/glossar}
+\input{kapitel/symbole}
+
 \frontmatter
 
 % Römische Ziffern für die "Front-Matter"
@@ -157,11 +153,12 @@
 \printglossary[type=\acronymtype, nonumberlist, title=\hsmaabbreviations,style=long]
 
 % Glossar ausgeben
-\printglossary[style=altlist, nonumberlist, title=Glossar]
+% Wenn Sie kein Glossar haben, kommentieren Sie die folgende Zeile aus
+\printglossary[style=altlist, nonumberlist, title=\hsmaglossary]
 
 % Symbolverzeichnis ausgeben
+% Wenn Sie kein Symbolverzeichnis haben, kommentieren Sie die folgende Zeile aus
 \printglossary[type=symbolslist,style=symbunitlong,title=\hsmalistofsymbols]
-
 
 % Tabellenverzeichnis erzeugen
 \cleardoublepage
