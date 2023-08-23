@@ -7,21 +7,21 @@
 \usepackage{graphicx}             % Bilder einbinden
 \usepackage[inline]{enumitem}     % Eigene Listen definieren können und diese auch innerhalb des Textes nutzen können
 \usepackage{setspace}             % Abstände korrigieren
-\usepackage{lastpage}
+% \usepackage{lastpage}           % totpages wird stattdessen über cc eingebunden.
 
 % Setzen von Optionen abhängig von der gewählten Sprache. Die Sprache wird
 % in thesis.tex gesetzt.
 \ifthenelse{\equal{\hsmasprache}{de}}%
   {%
-   \usepackage[main=ngerman, english]{babel}              % Deutsche Sprachunterstützung
+   %\usepackage[main=ngerman, english]{babel}             % Deutsche Sprachunterstützung (hier über Lyx)
    \usepackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
-   \usepackage[pagebackref=false,german]{hyperref}        % Hyperlinks
+   %\usepackage[pagebackref=false,german]{hyperref}       % Hyperlinks (hier über Lyx)
    \newcommand{\hsmasortlocale}{de_DE}                    % Sortierung der Literatur
   }%
   {%
-   \usepackage[main=english, ngerman]{babel}              % Englische Sprachunterstützung
+   %\usepackage[main=english, ngerman]{babel}              % Englische Sprachunterstützung
    \usepackage[autostyle=true,english=american]{csquotes} % Englische Anführungszeichen
-   \usepackage[pagebackref=false,english]{hyperref}       % Hyperlinks
+   %\usepackage[pagebackref=false,english]{hyperref}       % Hyperlinks
    \newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
   }%
 
@@ -101,13 +101,16 @@
 % beginnen sollen.
 %\counterwithout{footnote}{chapter}
 
-\setlength{\bibitemsep}{1em}      % Abstand zwischen den Literaturangaben
-\setlength{\bibhang}{2em}         % Einzug nach jeweils erster Zeile
+% Die nachfolgenden Angaben aus der TeX-Version führen zu Fehlern mit Lyx, da die
+% Parameter dort über Lyx-Einstellungen gesetzt werden.
+
+%\setlength{\bibitemsep}{1em}      % Abstand zwischen den Literaturangaben
+%\setlength{\bibhang}{2em}         % Einzug nach jeweils erster Zeile
 
 % Trennung von URLs im Literaturverzeichnis (große Werte [> 10000] verhindern die Trennung)
-\defcounter{biburlnumpenalty}{10} % Strafe für Trennung in URL nach Zahl
-\defcounter{biburlucpenalty}{500} % Strafe für Trennung in URL nach Großbuchstaben
-\defcounter{biburllcpenalty}{500} % Strafe für Trennung in URL nach Kleinbuchstaben
+%\defcounter{biburlnumpenalty}{10} % Strafe für Trennung in URL nach Zahl
+%\defcounter{biburlucpenalty}{500} % Strafe für Trennung in URL nach Großbuchstaben
+%\defcounter{biburllcpenalty}{500} % Strafe für Trennung in URL nach Kleinbuchstaben
 
 % Farben definieren
 \definecolor{linkblue}{RGB}{0, 0, 100}

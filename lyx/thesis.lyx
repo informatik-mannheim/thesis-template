@@ -6,7 +6,23 @@
 \origin unavailable
 \textclass scrreprt
 \begin_preamble
+% Sprache für das Dokument festlegen
+\newcommand{\hsmasprache}{de}     % de oder en für Deutsch oder Englisch
+
+% Abgabeform festlegen
+% Bei einer digitalen Abgabe, wird das Dokument einseitig erzeugt 
+% und der Titel wird zentriert.
+\newcommand{\hsmaabgabe}{digital} % Wie erfolgt die Abgabe: "papier" oder "digital"?
+
 \input{util/preambel}
+
+% "Creative Commons"-Lizenzen (https://creativecommons.org/)
+% wenn Zustimmung zur Veröffentlichung und kein Sperrvermerk
+% \renewcommand{\hsmacc}{by}
+\renewcommand{\hsmacc}{by-sa}
+% \renewcommand{\hsmacc}{by-nc-sa}
+
+\usepackage[type={CC},modifier={\hsmacc},version={4.0}]{doclicense}
 \end_preamble
 \options headings=small, headsepline=true
 \use_default_options true
@@ -59,9 +75,11 @@ logicalmkup
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine biblatex
+\cite_engine_type authoryear
 \biblio_style plain
+\biblatex_bibstyle numeric
+\biblatex_citestyle numeric
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -106,30 +124,15 @@ status open
 
 \size larger
 \SpecialChar LyX
--Vorlage für Abschlussarbeiten an der Hochschule Mannheim zur freien Verfügung.
+-Vorlage für Abschlussarbeiten an der Hochschule Mannheim zur freien Verfügung
 \end_layout
 
 \begin_layout Plain Layout
-Erstellt für Lyx-Version 2.2.3.
-\end_layout
-
-\begin_layout Plain Layout
-Autoren
-\end_layout
-
-\begin_layout Itemize
-Markus Gumbel (m.gumbel@hs-mannheim.de): Lyx-Vorlage basierend auf \SpecialChar LaTeX
--Vorlage.
-\end_layout
-
-\begin_layout Itemize
-Thomas Smits (t.smits@hs-mannheim.de): Erstellung der \SpecialChar LaTeX
--Vorlage
-\end_layout
-
-\begin_layout Itemize
-Karl-Frieder Saadi Hus-Hus (1212117@stud.hs-mannheim.de): Aktualisierung für
- das Jahr 2023
+Weitere Hinweise in 
+\family typewriter
+readme.md
+\family default
+.
 \end_layout
 
 \end_inset
@@ -142,24 +145,43 @@ Karl-Frieder Saadi Hus-Hus (1212117@stud.hs-mannheim.de): Aktualisierung für
 status open
 
 \begin_layout Plain Layout
-Elementare Angaben zur Abschlussarbeit im LaTex-Format.
+
+\size larger
+Elementare Angaben zur Abschlussarbeit im LaTex-Format
 \end_layout
 
 \begin_layout Plain Layout
-Wenn hier alles korrekt eingetragen wurde, wird das Titelblatt automatisch
- generiert.
+Im nachfolgenden LaTeX-Abschitt können die meisten Angaben definiert werden.
+ Lediglich weitere Sprachangaben, das Ausgabeformat (Papier oder digital)
+ und die Freigabe als Creative-Commons-Lizenz wird über die Lyx-Präambel
+ geändert (da diese Angaben in der Präambel selbst bereits vorliegen müssen).
+ Öffnen Sie dazu über das Menu 
+\emph on
+Dokument/Einstellungen
+\emph default
+ und gehen Sie zum Abschnitt 
+\emph on
+LaTeX-Vorspann
+\emph default
+ (ganz unten).
+ Folgen Sie den Anweisungen dort.
+\end_layout
+
+\begin_layout Plain Layout
+Wenn dort und im folgenden LaTeX-Abschitt alles korrekt eingetragen wurde,
+ wird das Titelblatt automatisch generiert.
  D.h.
  die Datei 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
+\family typewriter
 util/titelblatt.tex
-\end_layout
-
-\end_inset
-
+\family default
  muss nicht mehr angepasst werden.
+ Auch die Datei 
+\family typewriter
+util/preambel.tex
+\family default
+ braucht nicht editiert zu werden, es sei denn, Sie möchten weitere Pakete
+ oder Einstellungen dort vornehmen.
 \end_layout
 
 \end_inset
@@ -170,19 +192,6 @@ util/titelblatt.tex
 \begin_layout Standard
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand{
-\backslash
-hsmasprache}{de} % de oder en für Deutsch oder Englisch
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -260,7 +269,7 @@ hsmaautornname}{Mustermann} % Nachname(n)
 \backslash
 newcommand{
 \backslash
-hsmadatum}{11.11.2015} % Datum der Abgabe
+hsmadatum}{01.08.2023} % Datum der Abgabe
 \end_layout
 
 \begin_layout Plain Layout
@@ -269,7 +278,7 @@ hsmadatum}{11.11.2015} % Datum der Abgabe
 \backslash
 newcommand{
 \backslash
-hsmajahr}{2015} % Jahr der Abgabe
+hsmajahr}{2023} % Jahr der Abgabe
 \end_layout
 
 \begin_layout Plain Layout
@@ -317,7 +326,7 @@ hsmafakultaet}{I} % I für Informatik
 \backslash
 newcommand{
 \backslash
-hsmastudiengang}{IB} % IB IMB UIB IM MTB
+hsmastudiengang}{IB} % IB IMB UIB CSB IM MTB
 \end_layout
 
 \begin_layout Plain Layout

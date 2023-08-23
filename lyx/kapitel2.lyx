@@ -1,11 +1,19 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass scrreprt
 \begin_preamble
+% Sprache für das Dokument festlegen
+\newcommand{\hsmasprache}{de}     % de oder en für Deutsch oder Englisch
+
+% Abgabeform festlegen
+% Bei einer digitalen Abgabe, wird das Dokument einseitig erzeugt 
+% und der Titel wird zentriert.
+\newcommand{\hsmaabgabe}{digital} % Wie erfolgt die Abgabe: "papier" oder "digital"?
+
 \input{util/preambel}
 \end_preamble
 \use_default_options true
@@ -24,6 +32,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -53,15 +63,18 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine biblatex
+\cite_engine_type authoryear
 \biblio_style plain
+\biblatex_bibstyle numeric
+\biblatex_citestyle numeric
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -70,7 +83,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language german
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -294,6 +310,7 @@ Siehe
 LatexCommand cite
 after "S. 89"
 key "Willberg1999"
+literal "true"
 
 \end_inset
 
