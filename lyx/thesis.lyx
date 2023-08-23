@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -28,6 +28,8 @@ logicalmkup
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -66,6 +68,7 @@ logicalmkup
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \branch Einführung
 \selected 1
 \filename_suffix 0
@@ -79,7 +82,10 @@ logicalmkup
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language german
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle headings
@@ -104,7 +110,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-Erstellt für Lyx-Version 2.2.2.
+Erstellt für Lyx-Version 2.2.3.
 \end_layout
 
 \begin_layout Plain Layout
@@ -119,6 +125,11 @@ Markus Gumbel (m.gumbel@hs-mannheim.de): Lyx-Vorlage basierend auf \SpecialChar 
 \begin_layout Itemize
 Thomas Smits (t.smits@hs-mannheim.de): Erstellung der \SpecialChar LaTeX
 -Vorlage
+\end_layout
+
+\begin_layout Itemize
+Karl-Frieder Saadi Hus-Hus (1212117@stud.hs-mannheim.de): Aktualisierung für
+ das Jahr 2023
 \end_layout
 
 \end_inset
@@ -615,6 +626,8 @@ options "plainnat"
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "idx"
+name "Index"
+literal "true"
 
 \end_inset
 

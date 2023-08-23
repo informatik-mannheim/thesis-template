@@ -1,32 +1,113 @@
+
 % Pakete einbinden, die benötigt werden
-\usepackage{scrpage2}
+\usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
+\usepackage{scrlayer-scrpage}     % Erweiterte Einstellungen an scrbook zulassen
+\usepackage[utf8]{inputenc}       % Dateien in UTF-8 benutzen
+\usepackage[T1]{fontenc}          % Zeichenkodierung
 \usepackage{graphicx}             % Bilder einbinden
-\usepackage{xcolor}               % Color support
-\usepackage{amsmath}              % Matheamtische Formeln
-\usepackage{amsfonts}             % Mathematische Zeichensätze
-\usepackage{amssymb}              % Mathematische Symbole
-\usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
-\usepackage{booktabs}             % Korrekter Tabellensatz
-\usepackage[printonlyused]{acronym}  % Abkürzungsverzeichnis [nur verwendete Abkürzugen]
+\usepackage[inline]{enumitem}     % Eigene Listen definieren können und diese auch innerhalb des Textes nutzen können
+\usepackage{setspace}             % Abstände korrigieren
+\usepackage{lastpage}
+
+% Setzen von Optionen abhängig von der gewählten Sprache. Die Sprache wird
+% in thesis.tex gesetzt.
+\ifthenelse{\equal{\hsmasprache}{de}}%
+  {%
+   \usepackage[main=ngerman, english]{babel}              % Deutsche Sprachunterstützung
+   \usepackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
+   \usepackage[pagebackref=false,german]{hyperref}        % Hyperlinks
+   \newcommand{\hsmasortlocale}{de_DE}                    % Sortierung der Literatur
+  }%
+  {%
+   \usepackage[main=english, ngerman]{babel}              % Englische Sprachunterstützung
+   \usepackage[autostyle=true,english=american]{csquotes} % Englische Anführungszeichen
+   \usepackage[pagebackref=false,english]{hyperref}       % Hyperlinks
+   \newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
+  }%
+
+% Setzen von Optionen abhängig von der Abgabeform. Die Abgabeform wird
+% in thesis.tex gesetzt.
+\ifthenelse{\equal{\hsmaabgabe}{papier}}%
+  {%
+    \KOMAoptions{twoside=true}
+    \newcommand{\hsmafenster}{45mm}
+  }%
+  {%
+    \KOMAoptions{twoside=false}
+    \newcommand{\hsmafenster}{38.5mm}
+  }%
+
+\usepackage{morewrites}			                  % Verhindert Fehlermeldung: No more writes
+\usepackage[svgnames,dvipsnames]{xcolor}      % Unterstützung für Farben
+\usepackage{amsmath}                          % Mathematische Formeln
+\usepackage{amsfonts}                         % Mathematische Zeichensätze
+\usepackage{amssymb}                          % Mathematische Symbole
+\usepackage{siunitx}			                    % Darstellung von Einheiten
+\usepackage{float}                            % Fließende Objekte (Tabellen, Grafiken etc.)
+\usepackage{booktabs}                         % Korrekter Tabellensatz
+\usepackage[acronym,symbols, toc]{glossaries} % Glossar und Abkürzungsverzeichnis
+\renewcommand*{\glspostdescription}{}
+
+\renewcommand{\glsnamefont}[1]{\textbf{#1}} % Fette Schrift für Abkürzungen
+\setlength\LTleft{0pt} 						%Linksbündige Formatierung
+\setlength\LTright{0pt}
+\setlength\glsdescwidth{0.8\hsize}
+
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolslist} % Erstellen  Symbolverzeichnis
+\glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
+
+\newglossarystyle{symbunitlong}{%
+	\setglossarystyle{long3col}% base this style on the list style
+	\renewenvironment{theglossary}{% Change the table type --> 3 columns
+		\begin{longtable}{lp{0.6\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
+		{\end{longtable}}%
+	%
+	\renewcommand*{\glossaryheader}{%  Change the table header
+		\bfseries \hsmasymbsign & \bfseries \hsmasymbdescription & \bfseries \hsmasymbunit \\
+		\hline
+		\endhead}
+	\renewcommand*{\glossentry}[2]{%  Change the displayed items
+		\glstarget{##1}{\glossentryname{##1}} %
+		& \glossentrydesc{##1}% Description
+		& \glsunit{##1}  \tabularnewline
+	}
+}
+
 \usepackage{makeidx}              % Sachregister
-\usepackage{listings}             % Source Code listings
-\usepackage{listingsutf8}         % Listings in UTF8
+\usepackage{listings}             % Quelltexte
+\usepackage{listingsutf8}         % Quelltexte in UTF8
 \usepackage[hang,font={sf,footnotesize},labelfont={footnotesize,bf}]{caption} % Beschriftungen
 \usepackage[scaled]{helvet}       % Schrift Helvetia laden
-\usepackage[sf,bf,small]{titlesec} % Einstellungen für Überschriften
-\usepackage[absolute]{textpos}	  % Absolute Textpositionen (für Deckblatt)
+\usepackage[absolute]{textpos}    % Absolute Textpositionen (für Deckblatt)
 \usepackage{calc}                 % Berechnung von Positionen
 \usepackage{blindtext}            % Blindtexte
 \usepackage[bottom=40mm,left=35mm,right=35mm,top=30mm]{geometry} % Ränder ändern
-\usepackage{setspace}             % Abstände korrigieren
-\usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
-\usepackage{scrhack}              % Get rid of tocbasic warnings
-\usepackage{lastpage}			  % Anzahl Seiten; für Titelblattt
-%\usepackage[pagebackref=false]{hyperref}  % Hyperlinks
-%\usepackage{rotating}             % Seiten drehen
+\usepackage{scrhack}              % tocbasic Warnung entfernen
+\usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
+\usepackage{tabularx}             % Spezielle Tabellen
 
-%\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
-%\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
+\usepackage{rotating}             % Seiten drehen
+\usepackage{harveyballs}          % Harveyballs
+\usepackage{chngcntr}             % Counter (Zähler) ändern können - für Fußnotennummern
+\usepackage{longtable}            % Tabellen, die mehr als eine Seite umfassen
+\usepackage{pdfpages}             % PDFs inkludieren
+
+% Einstellungen zu den Fußnoten
+\renewcommand{\footnotesize}{\fontsize{9}{10}\selectfont} % Größe der Fußnoten
+\setlength{\footnotesep}{8pt} % Abstand zwischen den Fußnoten
+
+% Kommentieren Sie diese Zeile ein, wenn Sie eine "durchlaufende" Nummerierung bei den
+% Fußnoten wünschen, d.h. wenn die Fußnoten nicht bei jedem Kapitel wieder bei 1
+% beginnen sollen.
+%\counterwithout{footnote}{chapter}
+
+\setlength{\bibitemsep}{1em}      % Abstand zwischen den Literaturangaben
+\setlength{\bibhang}{2em}         % Einzug nach jeweils erster Zeile
+
+% Trennung von URLs im Literaturverzeichnis (große Werte [> 10000] verhindern die Trennung)
+\defcounter{biburlnumpenalty}{10} % Strafe für Trennung in URL nach Zahl
+\defcounter{biburlucpenalty}{500} % Strafe für Trennung in URL nach Großbuchstaben
+\defcounter{biburllcpenalty}{500} % Strafe für Trennung in URL nach Kleinbuchstaben
 
 % Farben definieren
 \definecolor{linkblue}{RGB}{0, 0, 100}
@@ -39,33 +120,33 @@
 
 % Einstellungen für das Hyperlink-Paket
 \hypersetup{
-    colorlinks=true,      % Farbige links verwenden       
+    colorlinks=true,      % Farbige links verwenden
 %    allcolors=linkblue,
     linktoc=all,          % Links im Inhaltsverzeichnis
     linkcolor=linkblack,  % Querverweise
     citecolor=linkblack,  % Literaturangaben
-	filecolor=linkblack,  % Dateilinks
-	urlcolor=linkblack    % URLs
+    filecolor=linkblack,  % Dateilinks
+    urlcolor=linkblack    % URLs
 }
 
 % Einstellungen für Quelltexte
-\lstset{     
-      xleftmargin=0.2cm,     
+\lstset{
+      xleftmargin=0.2cm,
       basicstyle=\footnotesize\ttfamily,
       keywordstyle=\color{darkgreen},
       identifierstyle=\color{darkblue},
-      commentstyle=\color{comment}, 
-      stringstyle=\color{darkred}, 
+      commentstyle=\color{comment},
+      stringstyle=\color{darkred},
       tabsize=2,
       lineskip={2pt},
       columns=flexible,
       inputencoding=utf8,
       captionpos=b,
       breakautoindent=true,
-	  breakindent=2em,
-	  breaklines=true,
-	  prebreak=,
-	  postbreak=,
+      breakindent=2em,
+      breaklines=true,
+      prebreak=,
+      postbreak=,
       numbers=none,
       numberstyle=\tiny,
       showspaces=false,      % Keine Leerzeichensymbole
@@ -77,21 +158,31 @@
 
 \urlstyle{same}
 
-\titlespacing{\paragraph}{0pt}{1ex}{2.0ex}
-\titlespacing{\subsubsection}{0pt}{3ex}{0.0ex}
-\titlespacing{\subsection}{0pt}{4ex}{0.2ex}
-\titlespacing{\section}{0pt}{7ex}{1ex}
-\titleformat*{\subsubsection}{\sffamily\itshape\bfseries\small}
-\titleformat*{\paragraph}{\sffamily\bfseries\small}
-
-
 % Einstellungen für Überschriften
-\renewcommand*{\chapterformat}{%
-  \Large\chapapp~\thechapter   % Große Schrift
-  \vspace{0.3cm}               % Abstand zum Titel des Kapitels
-}
+%\renewcommand*{\chapterformat}{%
+%  \Large\chapapp~\thechapter   % Große Schrift
+ % \vspace{0.3cm}               % Abstand zum Titel des Kapitels
+%}
 
 % Abstände für die Überschriften setzen
+\renewcommand{\chapterheadstartvskip}{\vspace*{2.6cm}}
+\renewcommand{\chapterheadendvskip}{\vspace*{1.5cm}}
+
+% Vertikale Abstände für die Überschriften etwas verkleinern
+\RedeclareSectionCommand[
+  beforeskip=-1.8\baselineskip,
+  afterskip=0.25\baselineskip]{section}
+
+\RedeclareSectionCommand[
+  beforeskip=-1.8\baselineskip,
+  afterskip=0.15\baselineskip]{subsection}
+
+\RedeclareSectionCommand[
+  beforeskip=-1.8\baselineskip,
+  afterskip=0.15\baselineskip]{subsubsection}
+  
+  
+
 
 % In der Kopfzeile nur die kurze Kapitelbezeichnung (ohne Kapitel davor)
 \renewcommand*\chaptermarkformat{\thechapter\autodot\enskip}
@@ -111,8 +202,7 @@
 \clubpenalty = 10000         % Keine "Schusterjungen"
 \widowpenalty = 10000        % Keine "Hurenkinder"
 \displaywidowpenalty = 10000 % Keine "Hurenkinder"
-\renewcommand{\footnotesize}{\fontsize{9}{10}\selectfont} % Größe der Fußnoten
-\setlength{\footnotesep}{8pt} % Abstand zwischen den Fußnoten
+                             % Siehe: https://de.wikipedia.org/wiki/Hurenkind_und_Schusterjunge
 
 % Index erzeugen
 \makeindex
@@ -121,9 +211,10 @@
 \newcommand{\changefont}[3]{
 \fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
 
-% Eigenes Makro für Bilder
+% Eigenes Makro für Bilder. Das label (für \ref) ist dann einfach
+% der Name der Bilddatei
 \newcommand{\bild}[3]{
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=#2]{#1}
   \caption{#3}
@@ -137,10 +228,24 @@
 \graphicspath{{bilder/}}
 
 % Makros für typographisch korrekte Abkürzungen
-\newcommand{\zb}[0]{z.\,B.\ }
-\newcommand{\dahe}[0]{d.\,h.\ }
-\newcommand{\ua}[0]{u.\,a.\ }
+\newcommand{\zb}[0]{z.\,B.}
+\newcommand{\dahe}[0]{d.\,h.}
+\newcommand{\ua}[0]{u.\,a.}
 
 % Flags für Veröffentlichung und Sperrvermerk
 \newboolean{hsmapublizieren}
 \newboolean{hsmasperrvermerk}
+\newcommand{\hsmacc}{}
+
+% Tabellenzellen mit mehreren Zeilen
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{b}{l}
+\newcolumntype{s}{>{\hsize=.3\hsize}l}
+\newcolumntype{F}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X}
+
+% Checklisten mit zwei Ebenen
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=$\square$}
+
+% Glossar etc erzeugen
+\makeglossaries
