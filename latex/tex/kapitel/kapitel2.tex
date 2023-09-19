@@ -69,7 +69,7 @@ Fußnoten werden einfach mit in den Text geschrieben, und zwar genau an die Stel
 
 Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalten werden durch einen entsprechenden Abstand voneinander getrennt.\footnote{Siehe \cite[S. 89]{Willberg1999}.} Zum Einsatz kommen ausschließlich horizontale Linien (siehe \autoref{Kap2:Kopplungsformen}).
 
-\begin{table}[h]
+\begin{table}[ht]
   \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
   \label{Kap2:Kopplungsformen}
   \renewcommand{\arraystretch}{1.2}
@@ -94,7 +94,7 @@ Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe \autoref{Kap
 
 Manchmal möchte man Tabellen, in denen der Text in der Tabellenspalte umbricht. Hierzu dient die Umgebung \texttt{tabularx}, wobei \texttt{L} eine Spalte mit Flattersatz und \texttt{X} eine mit Blocksatz definiert. Die Breite der Tabelle kann über den Faktor vor \verb+\textwidth+ angegeben werden.
 
-\begin{table}[h]
+\begin{table}[ht]
   \caption{Teildisziplinen der Informatik}
   \label{Kap2:Teildisziplinen}
   \renewcommand{\arraystretch}{1.2}
@@ -124,7 +124,7 @@ Manchmal kommt es vor, dass eine Tabelle so lang wird, dass sie sich über mehr 
     Harvey Balls sind kreisförmige Ideogramme, die dazu dienen, qualitative Daten anschaulich zu machen. Sie werden in Vergleichstabellen verwendet, um anzuzeigen, inwieweit ein Untersuchungsobjekt sich mit definierten Vergleichskriterien deckt. \parencite{Wikipedia_HarveyBalls}
 \end{quote}
 
-\begin{table}[h]
+\begin{table}[ht]
   \caption{Beispiel für Harvey Balls}
   \label{tab:harveyexample}
   \centering
@@ -168,3 +168,17 @@ Aufzählungen mit laufenden Nummern sind auch toll.
     \end{enumerate}
   \item Ein abschließender Punkt ohne Unterpunkte
 \end{enumerate}
+
+
+Aufzählungen mit eigenen Bezeichnern sind auch toll.
+\begin{enumerate}[label=RQ~\arabic*), leftmargin=1.75cm]
+	\item Ein wichtiger Punkt
+	\item Noch ein wichtiger Punkt
+	\item Ein Punkt mit Unterpunkten
+	\item Ein abschließender Punkt ohne Unterpunkte
+\end{enumerate}
+
+
+Auch die Auflistung im Fließtext ist sehr wertvoll: \begin{enumerate*}[label=\alph *)] \item wichtiger Punkt, \item zweiter wichtiger Punkt und \item der letzte Punkt. \end{enumerate*}
+
+

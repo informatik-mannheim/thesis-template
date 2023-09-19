@@ -1,8 +1,37 @@
 % -------------------------------------------------------
-% Daten für die Arbeit
-% Wenn hier alles korrekt eingetragen wurde, wird das Titelblatt
-% automatisch generiert. D.h. die Datei titelblatt.tex muss nicht mehr
-% angepasst werden.
+% Informationen und Einstellungen für Ihre Abschlussarbeit
+%
+
+% Sprache für das Dokument festlegen
+\newcommand{\hsmasprache}{de} %de für Deutsch oder en für Englisch
+
+
+% Abgabeform festlegen
+% Bei einer digitalen Abgabe, wird das Dokument einseitig erzeugt und der Titel wird
+% zentriert.
+\newcommand{\hsmaabgabe}{digital} % Abgabe erfolgt für Fakultät I digital. Optionen hier sind für anderen Fakultäten: "papier" oder "digital".
+
+
+% Flags für Veröffentlichung, Sperrvermerk und Genderhinweis
+\newcommand{\hsmapublizieren}{publizieren}   % Wird einer Veröffentlichung zugestimmt? ja=publizieren, nein=geschlossen
+
+\newcommand{\hsmasperrvermerk}{oeffentlich} % Hat die Arbeit einen Sperrvermerk? ja=vertraulich, nein=oeffentlich, Standard ist: oeffentlich
+
+
+\newcommand{\genderhinweis}{gender}     % Soll der Gender-Hinweis angezeigt werden? ja=gender, nein = nogender; Genderhinweis wird nur in deutscher Sprache angezeigt!
+
+
+\newcommand{\hsmaquellcode}{sourcecode} % Verwenden Sie Quellcode in Ihrer Arbeit? ja=sourcecode, nein= nosourcecode
+
+\newcommand{\hsmasymbole}{symbole} % Verwenden Sie viele Symbole in Ihrer Arbeit, welche in einem Symbolverzeichnis aufgeführt werden sollen? ja=symbole, nein= nosymbole
+
+
+\newcommand{\hsmaglossar}{glossar} % Verwenden Sie Begriffserklärungen nicht Abkürzungen in Ihrer Arbeit? ja=glossar, nein= noglossar
+
+\newcommand{\hsmatc}{tc} % Verwenden der Änderungsmarkierung. Änderungsmarkierung aktiv und eine Liste der Ändeurngen wird angezeigt = tc, Keine Änderungsmarkierung und keine Ausgabe der Änderungen = notc 
+
+
+
 
 % Titel der Arbeit auf Deutsch
 \newcommand{\hsmatitelde}{Einsatz eines Flux-Kompensators für Zeitreisen mit einer maximalen Höchstgeschwindigkeit von WARP~7}
@@ -14,41 +43,12 @@
 \newcommand{\hsmaort}{Mannheim}          % Ort
 \newcommand{\hsmaautorvname}{Max}        % Vorname(n)
 \newcommand{\hsmaautornname}{Mustermann} % Nachname(n)
-\DTMsavedate{Abgabe}{2023-08-24} % Datum der Abgabe
+\newcommand{\hsmaabgabedatum}{2023-08-24}% Datum der Abgabe in dem Format JJJJ-MM-TT
 
-\makeatletter
-\newcommand{\hsmajahr}{%
-	\@dtm@year
-}
-
-\newcommand{\hsmadatum}{\DTMusedate{Abgabe}}
 \newcommand{\hsmafirma}{Paukenschlag GmbH, Mannheim} % Firma bei der die Arbeit durchgeführt wurde
 \newcommand{\hsmabetreuer}{Prof. Peter Mustermann, Hochschule Mannheim} % Betreuer an der Hochschule
 \newcommand{\hsmazweitkorrektor}{Erika Mustermann, Paukenschlag GmbH}   % Betreuer im Unternehmen oder Zweitkorrektor
+
 \newcommand{\hsmafakultaet}{I}    % I für Informatik oder E, S, B, D, M, N, W, V
 \newcommand{\hsmastudiengang}{IB} % IB IMB UIB CSB IM MTB (weitere siehe titleblatt.tex)
 
-% Zustimmung zur Veröffentlichung
-\setboolean{hsmapublizieren}{true}   % Wird einer Veröffentlichung zugestimmt? false=nein, true=ja
-\setboolean{hsmasperrvermerk}{false} % Hat die Arbeit einen Sperrvermerk? false=nein, true=ja
-
-% Verwendung eines Gender-Hinweises
-\setboolean{genderhinweis}{true}     % Soll der Gender-Hinweis angezeigt werden? false=nein, true=ja
-
-% "Creative Commons"-Lizenzen (https://creativecommons.org/)
-% wenn Zustimmung zur Veröffentlichung und kein Sperrvermerk
-%\renewcommand{\hsmacc}{by}
-\renewcommand{\hsmacc}{by-sa}
-%\renewcommand{\hsmacc}{by-nc-sa}
-
-% -------------------------------------------------------
-% Abstract
-% Achtung: Wenn Sie im Abstrakt Anführungszeichen verwenden wollen, dann benutzen Sie
-%          nicht "` und "', sondern \enquote{}. "` und "' werden nicht richtig
-%          erkannt.
-
-% Kurze (maximal halbseitige) Beschreibung, worum es in der Arbeit geht auf Deutsch
-\newcommand{\hsmaabstractde}{Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. Wie ein Hund! sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. Es ist ein eigentümlicher Apparat, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohl bekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab. In den letzten Jahrzehnten ist das Interesse an Künstlern sehr zurückgegangen. Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht fortrühren.}
-
-% Kurze (maximal halbseitige) Beschreibung, worum es in der Arbeit geht auf Englisch
-\newcommand{\hsmaabstracten}{The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.}

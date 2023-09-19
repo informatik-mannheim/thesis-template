@@ -1,0 +1,301 @@
+% *******************************************************************
+% In dieser Datei sollten eigentlich keine Veränderungen
+% notwendig sein. Alle Einstellungen erfolgen in docinfo.tex und
+% der thesis.tex.
+% *******************************************************************
+
+
+
+% Kommando zur Erzeugung der Titelseite
+\def\titlepg{%
+	\thispagestyle{empty}
+
+	\begin{tikzpicture}[remember picture,overlay]
+	
+	%Logo
+	\node[inner sep=0pt, xshift=3cm, yshift=0cm] (logo) at (0,0) 
+	{\includegraphics[width=7cm]{hsma-logo.pdf}};
+	
+	
+	%Titel der Arbeit
+	\node[anchor=north, minimum width=128mm, text width=128mm, align=center, xshift=\hsmafenster] (title)
+	at ([yshift=-62mm]current page.north) {\Large\sffamily\textbf{\hsmatitel}\\[4mm]
+	};
+	
+	
+	%Autor der Arbeit
+	\node[anchor=north, minimum width=128mm, text width=128mm, align=center,xshift=\hsmafenster] (autor)
+	at ([yshift=-103mm]current page.north) {\large\sffamily{\hsmaautor}
+	};
+	
+	
+	% Art der Abschlussarbeit und akademischer Grad
+	\node[anchor=north, minimum width=\paperwidth, text width=\paperwidth, align=center] (thesis)
+	at ([yshift=-130mm]current page.north) {
+		\large\sffamily	\hsmatyp\\
+		{\small\hsmathesistype}\\
+		\vspace{2mm}
+		\hsmastudiengangname
+	};
+	
+	
+	%Fakultät
+	\node[anchor=north, minimum width=\paperwidth, text width=\paperwidth, align=center] (fak)
+	at ([yshift=-165mm]current page.north) {
+		\large\sffamily
+		\hsmafakultaetlang\\
+		\vspace{2mm}
+		\hsmakoerperschaft
+	};
+	
+	
+	%Datum der Abgabe
+	\node[anchor=north, minimum width=\paperwidth, text width=\paperwidth, align=center] (date)
+	at ([yshift=-190mm]current page.north) {
+		\large
+		\textsf{\hsmadatum}
+	};
+	
+	
+	% Firma - Option wird nicht ausgegeben.
+	\node[anchor=north, minimum width=\paperwidth, text width=\paperwidth, align=center] (date)
+	at ([yshift=-215mm]current page.north) {
+		\centering\large
+		%\textsf{Durchgeführt bei der Firma \hsmafirma}
+	};
+	
+	
+	%Betreuende der Arbeit
+	\node[anchor=north, minimum width=\paperwidth, text width=\paperwidth, align=center] (date)
+	at ([yshift=-240mm]current page.north) {
+		\large\sffamily
+		\hsmatutor \\
+		\vspace{2mm}
+		\hsmabetreuer\\
+		\vspace{2mm}
+		\hsmazweitkorrektor
+	};
+\end{tikzpicture}
+}		
+
+
+\def\bibinfo{% Bibliographische Informationen
+	\thispagestyle{empty}
+	
+	\newcommand{\hsmabibde}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelde \ / \hsmaautor. \ -- \\ \hsmatypde, \hsmaort : \hsmakoerperschaftde, \hsmajahr. \pageref{lastpage} Seiten.\end{small}}
+		
+	\newcommand{\hsmabiben}{\begin{small}\textbf{\hsmaautorbib}: \\ \hsmatitelen \ / \hsmaautor. \ -- \\ \hsmatypen, \hsmaort : \hsmakoerperschaften, \hsmajahr. \pageref{lastpage} pages. \end{small}}
+		
+	\noindent\hsmabibde \\ \vspace{0.5cm} \\ \hsmabiben
+	
+	\ifgender
+		\ifthenelse{\NOT \boolean{en}}{
+			\vspace*{\fill}
+			\noindent Um die Lesbarkeit zu vereinfachen, wird auf die zusätzliche Formulierung der weiblichen Form bei Personenbezeichnungen verzichtet. Ich weise deshalb darauf hin, dass die Verwendung der männlichen Form explizit als geschlechtsunabhängig verstanden werden soll.
+			}
+			{}
+	\fi%
+}
+
+
+
+\def\signaturepage{%
+	% Erklärung zur Eigenhändigkeit
+	\thispagestyle{empty}
+	\ifen
+	
+		\noindent\textsf{\LARGE\textbf{Erklärung / \textit{Declaration}}}
+		
+		\vspace{0.5cm}
+		Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+		
+		\vspace*{0.75cm}
+		\textit{I confirm that the submitted thesis is original work and was written by me without further assistance. Appropriate credit has been given where reference has been made to the work of others.}
+				
+	\else
+		\noindent\textsf{\LARGE\textbf{Erklärung}}
+		
+		\vspace{0.5cm}
+		Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+				
+	\fi%
+	
+	\vspace{0.75cm}
+	\noindent\hsmaort, \hsmadatum \\
+	
+	
+	
+	\ifpapier
+		% Papier - space
+		\vspace{1.2cm}
+	\else
+		% Digital - Unterschrift
+		\includegraphics[width=6cm]{bilder/unterschrift.png}
+	\fi%
+	
+	%Name des Authors
+	\hsmaautor
+	
+	
+	%%Lizenzvermerk oder Sperrvermerk
+	\ifen
+	\vspace*{\fill}
+		\ifveroeffentlichung
+			I agree that my work may be published, i.e. that the work may be stored electronically, converted into other formats, made publicly available on the servers of the \hsmakoerperschaften \ and distributed via the Internet.
+			\vspace{0.5cm}
+		
+			\doclicenseThis%
+			
+		\fi
+		
+		\ifsperrvermerk
+			This work is based on internal and confidential data of the \hsmafirma.
+			
+			This work may not be made available to third parties, with the exception of the supervising lecturers and authorized members of the examination board, without the express consent of the company and the author. Reproduction and publication of the work without express permission -- even in excerpts -- is not permitted.
+		\fi
+		
+	\else
+		\vspace*{\fill}
+		\ifveroeffentlichung
+			Ich bin damit einverstanden, dass meine Arbeit veröffentlicht wird, d.\,h. dass die Arbeit elektronisch gespeichert, in andere Formate konvertiert, auf den Servern der \hsmakoerperschaftde \ öffentlich zugänglich gemacht und über das Internet verbreitet werden darf.
+			\vspace{0.5cm}
+		
+			\doclicenseThis
+		\fi
+		
+		\ifsperrvermerk		
+			Diese Arbeit basiert auf internen und vertraulichen Daten des Unternehmens \hsmafirma.
+			
+			Diese Arbeit darf Dritten, mit Ausnahme der betreuenden Dozenten und befugten Mitglieder des Prüfungsausschusses, ohne ausdrückliche Zustimmung des Unternehmens und des Verfassers nicht zugänglich gemacht werden. Eine Vervielfältigung und Veröffentlichung der Arbeit ohne ausdrückliche Genehmigung -- auch in Auszügen -- ist nicht erlaubt.
+		\fi
+	\fi%
+}
+
+
+\def\abstractpage{%
+	\thispagestyle{empty}
+	% Abstract
+	
+	\ifen
+		\chapter*{\hsmaabstracttitleen}
+		\subsubsection*{\hsmatitelen}
+		\hsmaabstracten
+		
+		\vspace*{1.5cm}
+		\textsf{\LARGE\textbf{\hsmaabstracttitlede}}
+		\begin{otherlanguage}{ngerman}
+			\subsubsection*{\hsmatitelde}
+			\hsmaabstractde
+		\end{otherlanguage}
+	\else
+		\chapter*{\hsmaabstracttitlede}
+		\subsubsection*{\hsmatitelde}
+		\hsmaabstractde
+		
+		
+		\vspace*{1.5cm}
+		\textsf{\LARGE\textbf{\hsmaabstracttitleen}}
+		\begin{otherlanguage}{english}
+			\subsubsection*{\hsmatitelen}
+			\hsmaabstracten
+		\end{otherlanguage}
+	\fi
+
+}
+
+\def\sethyp{
+
+	% Daten für das fertige PDF-Dokument
+	\hypersetup{
+		pdftitle={\hsmatitel},                           % Titel des Dokuments
+		pdfauthor={\hsmaautor},                          % Autor
+		pdfsubject={\hsmatyp\ in\ \hsmastudienganglang}, % Thema
+		pdfkeywords={\hsmatitel}                         % Schlüsselworte
+	}
+}
+
+
+
+
+
+
+
+%		\node[fill=blue,anchor=north,minimum height=4cm, minimum width=\paperwidth] (names)
+%		at ([yshift=4cm]current page.south) {
+%			\begin{tabular}{r l}
+	%				A & B
+	%			\end{tabular}
+%		};
+%		
+%		
+%		\node[fill=red,anchor=south, minimum width=\paperwidth] (names)
+%		at ([yshift=8cm]current page.south) {
+%			\begin{tabular}{r l}
+	%				one & two
+	%			\end{tabular}
+%		};
+
+
+
+%	\definecolor{c1}{RGB}{62, 97, 127}
+%	\definecolor{c2}{RGB}{104, 182, 182}
+%	\definecolor{c3}{RGB}{107, 190, 190}
+%	\definecolor{c4}{RGB}{100, 172, 174}
+%	
+%	\begin{tikzpicture}[overlay,remember picture,font=\sffamily\bfseries]
+%		\draw[very thick,c4,name path=big arc] ([xshift=-2mm]current page.north) arc(150:285:11)
+%		coordinate[pos=0.225] (x0);
+%		\begin{scope}
+	%			\clip ([xshift=-2mm]current page.north) arc(150:285:11) --(current page.north
+	%			east);
+	%			\fill[c4!50,opacity=0.25] ([xshift=4.55cm]x0) circle (4.55);
+	%			\fill[c4!50,opacity=0.25] ([xshift=3.4cm]x0) circle (3.4);
+	%			\fill[c4!50,opacity=0.25] ([xshift=2.25cm]x0) circle (2.25);
+	%			\draw[very thick,c4!50] (x0) arc(-90:30:6.5);
+	%			\draw[very thick,c4] (x0) arc(90:-30:8.75);
+	%			\draw[very thick,c4!50,name path=arc1] (x0) arc(90:-90:4.675);
+	%			\draw[very thick,c4!50] (x0) arc(90:-90:2.875);
+	%			\path[name intersections={of=big arc and arc1,by=x1}];
+	%			\draw[very thick,c4,name path=arc2] (x1) arc(135:-20:4.75);
+	%			\draw[very thick,c4!50] (x1) arc(135:-20:8.75);
+	%			\path[name intersections={of=big arc and arc2,by={aux,x2}}];
+	%			\draw[very thick,c4!50] (x2) arc(180:50:2.25);
+	%		\end{scope} 
+%		\path[decoration={text along path,text color=c4,
+	%			raise = -2.8ex,
+	%			text  along path,
+	%			text = {|\sffamily\bfseries|02/18/2019},
+	%			text align = center,
+	%		},
+%		decorate
+%		] ([xshift=-2mm]current page.north) arc(150:245:11);
+%		%
+%		\begin{scope}
+	%			\path[clip,postaction={fill=c3}]
+	%			([xshift=2cm,yshift=-8cm]current page.center) rectangle ++ (4.2,7.7);
+	%			\fill[c2] ([xshift=0.5cm,yshift=-8cm]current page.center)
+	%			([xshift=0.5cm,yshift=-8cm]current page.center)  arc(180:60:2)
+	%			|- ++ (-3,6) --cycle;
+	%			\draw[very thick,c4] ([xshift=-1.5cm,yshift=-8cm]current page.center) 
+	%			arc(180:0:2);
+	%			\draw[very thick,c4] ([xshift=0.5cm,yshift=-8cm]current page.center) 
+	%			arc(180:0:2);
+	%			\draw[very thick,c4] ([xshift=2.5cm,yshift=-8cm]current page.center) 
+	%			arc(180:0:2);
+	%			\draw[very thick,c4] ([xshift=4.5cm,yshift=-8cm]current page.center) 
+	%			arc(180:0:2);
+	%			\fill[red] ([xshift=2.5cm,yshift=-8cm]current page.center) +(60:2) circle(1.5mm)
+	%			node[above right=2mm]{$\displaystyle\rho=\frac{1+\sqrt{-3}}{2}$};
+	%		\end{scope}
+%		%
+%		\fill[c1] ([xshift=2cm,yshift=-8cm]current page.center) rectangle ++ (-12.7,7.7);
+%		\node[text=white,anchor=west,scale=5,inner sep=0pt] at
+%		([xshift=-8cm,yshift=-3.25cm]current page.center) {Some text};
+%		\node[text=white,anchor=west,scale=2.5,inner sep=0pt] at
+%		([xshift=-8cm,yshift=-6cm]current page.center) {Some text};
+%		%
+%		\draw[gray,line width=5mm] 
+%		([xshift=2mm,yshift=-1mm]current page.south west) rectangle ([xshift=-2mm,yshift=1mm]current
+%		page.north east);
+%	\end{tikzpicture}
+

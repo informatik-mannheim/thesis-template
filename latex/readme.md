@@ -8,7 +8,7 @@ Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein [Issue](https://g
 
 Verbesserungen können Sie jederzeit als GitHub Pull-Request an uns senden.
 
-Diese Vorlage wurde entwickelt von [Prof. Thomas Smits](http://www.smits-net.de).
+Diese Vorlage wurde entwickelt von [Prof. Thomas Smits](http://www.smits-net.de) und Prof. Dr. Jessica Steinberger.
 
 Wenn Ihnen die Vorlage gefällt, können Sie diesem _Repo einen Stern geben_ - dann wissen wir, wer sie benutzt.
 
@@ -48,8 +48,7 @@ Die Vorlage enthält eine Reihe von Dateien, die Sie teilweise nach Ihren Bedür
 Anpassen müssen Sie die folgenden Dateien
 
   * `thesis.tex` - Hauptdokument. Hier müssen Sie weitere Kapitel aus dem Ordner `kapitel` inkludieren.
-  * `docinfo.tex` - Bibliografische Informationen zur Arbeit, müssen Sie mit Ihren Daten füllen
-  * `hma.cls` - Dokumentenklasse für die Abschlussarbeit
+  * `docinfo.tex` - Einstellungen und bibliografische Informationen zur Arbeit, müssen Sie mit Ihren Daten füllen
   * `kapitel/abkuerzungen.tex` - Liste der in der Arbeit verwendeten Abkürzungen
   * `kapitel/glossar.tex` - Einträge für ein Glossar
   * `kapitel/symbole.tex` - Einträge für ein Symbol und Einheitenverzeichnis
@@ -60,14 +59,15 @@ Anpassen müssen Sie die folgenden Dateien
   * `kapitel/anhang-a.tex` - Beispiel für einen Anhang
   * `kapitel/anhang-b.tex` - Beispiel für einen Anhang
   * `literatur.bib` - Literaturdatenbank im BibTeX-Format
-  * `unterschrift.png` - Gescannte Unterschrift für die digitale Abgabe
+  * `bilder/unterschrift.png` - Gescannte Unterschrift für die digitale Abgabe
 
 Weitere Kapitel können hinzugefügt werden und dann vom Hauptdokument `thesis.tex` inkludiert.
 
 Normalerweise nicht verändern müssen Sie
 
   * `preambel.tex` - Einstellungen zum Dokument.
-  * `titelblatt.tex` - Titelblatt der Arbeit
+  * `studiengaenge.tex` - Bezeichungen der Studiengänge, Fakultäten und Abschlüsse
+  * `hma.cls` - Dokumentenklasse für die Abschlussarbeit
 
 Die Vorlage ist für doppelseitigen Druck optimiert. Wenn Sie die Arbeit einseitig ausdrucken, sieht das Ergebnis seltsam aus, weil es unnötig viele leere Seiten enthält und die Seitenzahlen zwischen rechtem und linkem Rand springen. Für **einseitigen Druck** müssen sie die Datei `preambel.tex` ändern und `twoside=on` in `twoside=off` ändern.
 
@@ -76,6 +76,7 @@ Es gibt drei Ordner
   * `/kapitel` - Ablageort für die einzelnen Kapitel
   * `/bilder` - Ablageort für die verwendeten Bilder
   * `/src` - Ablageort für die verwendeten Quelltexte von Programmen, die in der Arbeit gezeigt werden sollen.
+  * `/pdfs` - Ablageort für die einzubindende PDF Dokumente
 
 Die Datei `thesis-overleaf.zip` dient dem einfachen Import in [Overleaf](https://www.overleaf.com) - siehe nächstes Kapitel.
 
