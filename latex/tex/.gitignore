@@ -18,7 +18,6 @@
 *.out
 *.aux
 *.glsdefs
-*.ist
 *.bbl
 *.blg
 *.ilg
