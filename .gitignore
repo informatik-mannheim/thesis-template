@@ -29,6 +29,5 @@
 *.pdf
 *.run.xml
 *.slg
-*.thesis.ist
 *.loc
 latex/tex/thesis.ist
