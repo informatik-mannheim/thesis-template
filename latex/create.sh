@@ -1,18 +1,17 @@
 #!/bin/sh
 RESULT_DIR="../result"
-OUTPUT_DIR="../temp"
 FILE="thesis"
+
+mkdir -p $RESULT_DIR
+
 cd tex
-mkdir $RESULT_DIR
-mkdir $OUTPUT_DIR
-cp literatur.bib $OUTPUT_DIR
-pdflatex -output-directory="$OUTPUT_DIR" -synctex=1 -interaction=nonstopmode ${FILE}.tex
-cd $OUTPUT_DIR
-biber ${FILE}
-makeindex ${FILE}.idx
-makeglossaries ${FILE}
-cd ../tex
-pdflatex -output-directory="$OUTPUT_DIR" -synctex=1 -interaction=nonstopmode ${FILE}.tex
-pdflatex -output-directory="$OUTPUT_DIR" -synctex=2 -interaction=nonstopmode ${FILE}.tex
-cat $OUTPUT_DIR/${FILE}.pdf > $RESULT_DIR/${FILE}.pdf
+pdflatex -synctex=1 -shell-escape --enable-write18 -draftmode $FILE
+makeindex -s $FILE.ist -t $FILE.alg -o  $FILE.acr $FILE.acn
+makeindex -s  $FILE.ist -t $FILE.glg -o  $FILE.gls $FILE.glo
+makeindex -s  $FILE.ist -t $FILE.slg -o  $FILE.syi $FILE.syg
+biber $FILE
+pdflatex -synctex=1 -shell-escape --enable-write18 -draftmode $FILE > /dev/null
+pdflatex -synctex=1 -shell-escape --enable-write18 -draftmode -interaction batchmode $FILE > /dev/null
+pdflatex -synctex=1 -shell-escape --enable-write18 -interaction batchmode $FILE
+cat ${FILE}.pdf > $RESULT_DIR/${FILE}.pdf
 cd ..
