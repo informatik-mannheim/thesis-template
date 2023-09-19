@@ -211,7 +211,6 @@
 
 
 \RequirePackage[backend=biber,
-isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
 sorting = none,
 %sortlocale=\hsmasortlocale,     % Sortierung der Einträge für Deutsch
 autocite=inline,                % regelt Aussehen für \autocite
@@ -249,6 +248,7 @@ mincitenames=1                  % Minimale Anzahl von Namen in einem Zitat
 \makeindex[%
 options={-g -s hmaindex.ist},%
 intoc=true]%
+
 
 
 \RequirePackage{array}			  
@@ -297,6 +297,9 @@ intoc=true]%
 		& \glsunit{##1}  \tabularnewline
 	}
 }
+
+\makeglossaries
+
 
 
 \RequirePackage{listings}             % Quelltexte
