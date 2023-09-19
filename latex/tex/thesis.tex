@@ -1,6 +1,7 @@
 %% !TeX program = lualatex
 
-% *******************************************************************
+%\listfiles	
+% **************************
 % STOP - Bitte zuerst lesen, bevor Sie weitermachen
 %
 % Einige Dinge müssen Sie an Ihre Bedürfnisse (und die Vorgaben Ihres
@@ -63,14 +64,13 @@
 %
 % 7. Nummerierung der Fußnoten
 % LaTeX beginnt die Nummerierung der Fußnoten in jedem Kapitel wieder
-% bei 1. Manche Dozenten wollen aber eine durchlaufende Nummerierung
-% über die gesamte Arbeit. In diesem Fall gehen Sie in die preambel.tex
-% und kommentieren den Befehl \counterwithout{footnote}{chapter} ein.
+% bei 1. In diesem Template wird die fortlaufende Nummerierung der Fußnoten 
+% über die gesamte Arbeit umgesetzt.  
 %
 % 8. Unterschrift
 % Bei einer Abgabe auf Papier unterschreiben Sie die Arbeit eigenhändig.
-% Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png in dem Ordner  
-% /bilder durch einen Scan Ihrer eigenen Unteschrift ersetzen - andernfalls
+% Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png in dem 
+% Ordner /bilder durch einen Scan Ihrer eigenen Unteschrift ersetzen - andernfalls
 % unterschreiben Sie als Max Mustermann ;-)
 % *******************************************************************
 
@@ -91,20 +91,19 @@
 
 
 % Anfang des Dokuments
-\begin{document}
-	
+\begin{document}	
+
+
 %Laden der Dateien mit Abkürzungen, Begriffserklärungen (Glossar), Symbole
 \input{kapitel/abkuerzungen}
 \input{kapitel/glossar}
 \input{kapitel/symbole}	
 	
 \pagestyle{headings}
-\frontmatter
-
 \tableofcontents
 
-\mainmatter
 
+\mainmatter
 
 %% Ihre Inhaltsdateien werden an dieser Stelle in das Dokument eingefügt
 \input{kapitel/kapitel1} % Externe Datei einbinden
@@ -115,7 +114,7 @@
 
 
 \label{lastpage}
-%Beginn des Anhangs. Befehl nicht entfernen auch wenn kein Anhang vorhanden ist!
+%Beginn des Anhangs. Befehl \appendix nicht entfernen auch wenn kein Anhang vorhanden ist!
 \appendix
 
 %Wenn Sie keinen Anhang haben, entfernen Sie ausschließlich die nachfolgenden beiden Dateien.

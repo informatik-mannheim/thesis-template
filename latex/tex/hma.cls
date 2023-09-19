@@ -82,6 +82,8 @@
 ]{scrbook}
 
 \RequirePackage{blindtext}
+\RequirePackage{xparse}
+
 
 
 %% Diese Option MUSS!! vor Geometry stehen, da sonst das Layout der Seitenränder durch KOMAOptions überschrieben wird!
@@ -137,6 +139,7 @@
 		
 \fi\fi
 
+\RequirePackage[headsepline]{scrlayer-scrpage}
 
 % Einstellungen für Schriftarten
 \setkomafont{pagehead}{\normalfont\sffamily}
@@ -168,6 +171,8 @@
 \RequirePackage{rotating}							% Seiten drehen
 \RequirePackage[inline]{enumitem}					% eigene Aufzählungen verwenden
 
+%% Graphiken als pdf einfügen
+\pdfoptionpdfminorversion=8
 
 
 \RequirePackage[dvipsnames,svgnames,hyperref,table]{xcolor}    % Unterstützung für Farben
@@ -246,6 +251,7 @@ options={-g -s hmaindex.ist},%
 intoc=true]%
 
 
+\RequirePackage{array}			  
 \RequirePackage{tabularx}             % Spezielle Tabellen
 \RequirePackage{longtable}            % Tabellen, die mehr als eine Seite umfassen
 \RequirePackage{booktabs}			  % Korrekter Tabellensatz
@@ -472,11 +478,13 @@ intoc=true]%
 
 \ifen
 	\RequirePackage[autostyle=true,english=american]{csquotes} % Englische Anführungszeichen
-	\RequirePackage[pagebackref=false,english,breaklinks=true,pdfproducer={},pdfcreator={}]{hyperref}       % Hyperlinks
+	\RequirePackage[english,breaklinks=true,pdfproducer={},pdfcreator={},plainpages=false,
+	pdfpagelabels]{hyperref}       % Hyperlinks
 	\newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
 \else
 	\RequirePackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
-	\RequirePackage[pagebackref=false, breaklinks=true,pdfproducer={},pdfcreator={}]{hyperref}        % Hyperlinks
+	\RequirePackage[breaklinks=true,pdfproducer={},pdfcreator={},plainpages=false,
+	pdfpagelabels]{hyperref}        % Hyperlinks
 	\newcommand{\hsmasortlocale}{de_DE} 
 \fi%
 
@@ -502,6 +510,61 @@ intoc=true]%
 }
 
 
+\ExplSyntaxOn
+\NewDocumentCommand{\printfilelist}{}
+{
+	\cleardoublepage
+	\section*{Used ~ packages}
+	\setlength{\LTleft}{0pt}
+	\footnotesize
+	\begin{longtable}{@{} >{\ttfamily}l l >{\raggedright}p{.6\textwidth} @{}}
+		\toprule
+		\multicolumn{1}{@{}l}{\bfseries File~name} &
+		\multicolumn{1}{c}{\bfseries Date} &
+		\bfseries File~info
+		\tabularnewline
+		\midrule
+		\endhead
+		\bottomrule
+		\endfoot
+		\nobbz_print_filelist:
+	\end{longtable}
+}
+
+\tl_new:N \l_nobbz_filelist_body_tl
+\tl_new:N \l_nobbz_fileinfo_tl
+
+\cs_new_protected:Npn \nobbz_print_filelist:
+{
+	\clist_map_inline:cn { @filelist }
+	{
+		\nobbz_print_fileinfo:n { ##1 }
+	}
+	\tl_use:N \l_nobbz_filelist_body_tl
+}
+
+\cs_new_protected:Npn \nobbz_print_fileinfo:n #1
+{
+	\regex_match:nnT { \.(sty|cls)\Z } { #1 }
+	{
+		\nobbz_print_pkginfo:n { #1 }
+	}
+}
+
+\cs_new_protected:Npn \nobbz_print_pkginfo:n #1
+{
+	\tl_set_eq:Nc \l_nobbz_fileinfo_tl { ver@#1 }
+	\tl_replace_once:Nnn \l_nobbz_fileinfo_tl { ~ } { & }
+	\tl_put_right:Nx \l_nobbz_filelist_body_tl
+	{
+		\exp_not:n { #1 }
+		&
+		\exp_not:V \l_nobbz_fileinfo_tl
+		\exp_not:N \tabularnewline
+	}
+}
+\ExplSyntaxOff
+
 
 
 
@@ -509,8 +572,12 @@ intoc=true]%
 \RequirePackage{titlepage}
 
 \AtBeginDocument{%
+	%Schreibe geladene .cls and .sty files in Dokument für Debugging
+	\listfiles
 	% Titelblatt, Vor-Text-Teil erzeugen
 	\input{studiengaenge}
+	\frontmatter
+		
 	\titlepg
 	\newpage
 	\bibinfo
@@ -545,7 +612,7 @@ intoc=true]%
 	\fi
 	
 	\ifsourcecode
-		%Literaturverzeichnis
+		%Sourcecode
 		\lstlistoflistings
 		%\IfFileExists{thesis.lol}{\lstlistoflistings}{}
 	\fi
@@ -556,6 +623,13 @@ intoc=true]%
 
 	
 	\printindex
+	
+%	\newwrite\loadedtexfiles
+%	\immediate\openout\loadedtexfiles=listTexFiles.txt
+%	\immediate\write\loadedtexfiles{\printfilelist}
+%	\immediate\closeout\loadedtexfiles
+%		
+%	\printfilelist
 }
 
 

@@ -9,7 +9,7 @@
 % Kommando zur Erzeugung der Titelseite
 \def\titlepg{%
 	\thispagestyle{empty}
-
+	
 	\begin{tikzpicture}[remember picture,overlay]
 	
 	%Logo
@@ -104,7 +104,7 @@
 	\thispagestyle{empty}
 	\ifen
 	
-		\noindent\textsf{\LARGE\textbf{Erklärung / \textit{Declaration}}}
+		\textsf{\LARGE\textbf{Erklärung / \textit{Declaration}}}
 		
 		\vspace{0.5cm}
 		Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
@@ -113,7 +113,7 @@
 		\textit{I confirm that the submitted thesis is original work and was written by me without further assistance. Appropriate credit has been given where reference has been made to the work of others.}
 				
 	\else
-		\noindent\textsf{\LARGE\textbf{Erklärung}}
+		\textsf{\LARGE\textbf{Erklärung}}
 		
 		\vspace{0.5cm}
 		Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
@@ -121,7 +121,7 @@
 	\fi%
 	
 	\vspace{0.75cm}
-	\noindent\hsmaort, \hsmadatum \\
+	\hsmaort, \hsmadatum \\
 	
 	
 	
@@ -175,36 +175,57 @@
 \def\abstractpage{%
 	\thispagestyle{empty}
 	% Abstract
-	
 	\ifen
-		\chapter*{\hsmaabstracttitleen}
-		\subsubsection*{\hsmatitelen}
+		\textsf{\LARGE\textbf{\hsmaabstracttitleen}}
+		
+		\vspace*{0.75cm}
+		\textsf{\textbf{\textit{\hsmatitelen}}}\\
+		
+		\vspace*{0.25cm}
+		
 		\hsmaabstracten
 		
 		\vspace*{1.5cm}
+		
 		\textsf{\LARGE\textbf{\hsmaabstracttitlede}}
+		
+		
 		\begin{otherlanguage}{ngerman}
-			\subsubsection*{\hsmatitelde}
+			\textsf{\textbf{\textit{\hsmatitelde}}}\\
+			
+			\vspace*{0.25cm}
 			\hsmaabstractde
 		\end{otherlanguage}
 	\else
-		\chapter*{\hsmaabstracttitlede}
-		\subsubsection*{\hsmatitelde}
+		
+		\textsf{\LARGE\textbf{\hsmaabstracttitlede}} 
+		
+		\vspace*{0.75cm}
+		\textsf{\textbf{\textit{\hsmatitelde}}}\\
+		
+		\vspace*{0.25cm}
+		
 		\hsmaabstractde
 		
 		
 		\vspace*{1.5cm}
+		
 		\textsf{\LARGE\textbf{\hsmaabstracttitleen}}
+		
+		\vspace*{0.75cm}
+		
+		
 		\begin{otherlanguage}{english}
-			\subsubsection*{\hsmatitelen}
+			\textsf{\textbf{\textit{\hsmatitelen}}}\\
+			
+			\vspace*{0.25cm}
 			\hsmaabstracten
 		\end{otherlanguage}
 	\fi
-
 }
 
-\def\sethyp{
 
+\def\sethyp{
 	% Daten für das fertige PDF-Dokument
 	\hypersetup{
 		pdftitle={\hsmatitel},                           % Titel des Dokuments
