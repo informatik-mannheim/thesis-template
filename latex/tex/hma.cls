@@ -114,6 +114,9 @@
 	\RequirePackage{morewrites}			% Verhindert Fehlermeldung: No more writes 
 	\RequirePackage[scaled]{helvet}     % Schrift Helvetia laden
 	\RequirePackage{amssymb}            % Mathematische Symbole  	
+
+	%% Graphiken als pdf einfügen
+	\pdfoptionpdfminorversion=8
 	
 \else\ifluatex
 	%LuaTex erwartet standardmäßig utf8 
@@ -171,8 +174,7 @@
 \RequirePackage{rotating}							% Seiten drehen
 \RequirePackage[inline]{enumitem}					% eigene Aufzählungen verwenden
 
-%% Graphiken als pdf einfügen
-\pdfoptionpdfminorversion=8
+
 
 
 \RequirePackage[dvipsnames,svgnames,hyperref,table]{xcolor}    % Unterstützung für Farben

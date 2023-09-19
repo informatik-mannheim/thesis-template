@@ -14,7 +14,9 @@ Wenn Sie Ihre Arbeit auf Deutsch verfassen, gehen Sie sparsam mit englischen Aus
 
 Wichtig ist das korrekte Zitieren von Quellen, wie es auch von \cite{Kornmeier2011} dargelegt wird. Interessant ist in diesem Zusammenhang auch der Artikel von \cite{Kramer2009}. Häufig werden die Zitate auch in Klammern gesetzt, wie bei \parencite{Kornmeier2011} und mit Seitenzahlen versehen \parencite[S. 22--24]{Kornmeier2011}.
 
-Bei Webseiten wird auch die URL und das Abrufdatum mit angegeben \parencite{Gao2017}. Wenn die URL nicht korrekt umgebrochen wird, lohnt es sich, an den Parametern \textit{biburl*penalty} in der \texttt{preambel.tex} zu drehen. Kleinere Werte erhöhen die Wahrscheinlichkeit, dass getrennt wird.
+Bei Webseiten wird auch die URL und das Abrufdatum mit angegeben \parencite{Gao2017}. Wenn die URL nicht korrekt umgebrochen wird, lohnt es sich, an den Parametern \textit{biburl*penalty} in der \texttt{preambel.tex} zu drehen. Kleinere Werte erhöhen die Wahrscheinlichkeit, dass getrennt wird. 
+
+Veröffentlichungen in Konferenzbänden werden in sogenannten Inbooks oder Inproceedings veröffentlicht und besitzen meist eine \gls{doi} (z.B. \cite{Lang2022}).
 
 \subsection{Zitierstile}
 
@@ -25,14 +27,14 @@ In der Informatik ist das Zitieren mit Kurzbelegen\index{Zitat!Kurzbeleg} im Tex
 Am einfachsten ist es, wenn Sie das \verb+\autocite{}+-Kommando verwenden. Bei diesem Kommando können Sie in der Datei \texttt{perambel.tex} festlegen, wie die Zitate generell aussehen sollen, \zb{} ob sie in Fußnoten erfolgen sollen oder nicht. Wollen Sie von dem globalen Zitierstil abweichen, können Sie weiterhin spezielle Kommandos benutzen:
 
 \begin{itemize}
-	\item \verb+\autocite{Willberg1999}+: \autocite{Willberg1999}
-	\item \verb+\cite{Willberg1999}+: \cite{Willberg1999}
-	\item \verb+\parencite{Willberg1999}+: \parencite{Willberg1999}
-	\item \verb+\footcite{Willberg1999}+: \footcite{Willberg1999}
-	\item \verb+\citeauthor{Willberg1999}+: \citeauthor{Willberg1999}
-	\item \verb+\citeauthor*{Willberg1999}+: \citeauthor*{Willberg1999}
-	\item \verb+\citetitle{Willberg1999}+: \citetitle{Willberg1999}
-	\item \verb+\fullcite{Willberg1999}+: \fullcite{Willberg1999}
+	\item \verb+\autocite{Willberg2021}+: \autocite{Willberg2021}
+	\item \verb+\cite{Willberg2021}+: \cite{Willberg2021}
+	\item \verb+\parencite{Willberg2021}+: \parencite{Willberg2021}
+	\item \verb+\footcite{Willberg2021}+: \footcite{Willberg2021}
+	\item \verb+\citeauthor{Willberg2021}+: \citeauthor{Willberg2021}
+	\item \verb+\citeauthor*{Willberg2021}+: \citeauthor*{Willberg2021}
+	\item \verb+\citetitle{Willberg2021}+: \citetitle{Willberg2021}
+	\item \verb+\fullcite{Willberg2021}+: \fullcite{Willberg2021}
 \end{itemize}
 
 Denken Sie daran, dass das Übernehmen einer fremden Textstelle ohne entsprechenden Hinweis auf die Herkunft in wissenschaftlichen Arbeiten nicht akzeptabel ist und dazu führen kann, dass die Arbeit nicht anerkannt wird. Plagiate\index{Plagiat!Bewertung} werden mit mangelhaft (5,0) bewertet und können weitere rechtliche Schritte nach sich ziehen.

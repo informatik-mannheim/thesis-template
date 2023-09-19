@@ -68,15 +68,15 @@ Fußnoten werden einfach mit in den Text geschrieben, und zwar genau an die Stel
 
 \section{Tabellen}
 
-Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalten werden durch einen entsprechenden Abstand voneinander getrennt.\footnote{Siehe \cite[S. 89]{Willberg1999}.} Zum Einsatz kommen ausschließlich horizontale Linien (siehe \autoref{Kap2:Kopplungsformen}).
+Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalten werden durch einen entsprechenden Abstand voneinander getrennt.\footnote{Siehe \cite[S. 89]{Willberg2021}.} Zum Einsatz kommen ausschließlich horizontale Linien (siehe \autoref{Kap2:Kopplungsformen}).
 
 \begin{table}[ht]
   \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
   \label{Kap2:Kopplungsformen}
   \renewcommand{\arraystretch}{1.2}
+  \small
   \centering
-  \sffamily
-  \begin{footnotesize}
+  \resizebox{\linewidth}{!}{ 
     \begin{tabular}{l l l}
     \toprule
     \textbf{Form der Kopplung} & \textbf{enge Kopplung} & \textbf{lose Kopplung}\\
@@ -87,8 +87,7 @@ Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalte
     Bindung	&	statisch		&	dynamisch\\
     \bottomrule
     \end{tabular}
-  \end{footnotesize}
-  \rmfamily
+	}
 \end{table}
 
 Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe \autoref{Kap2:Kopplungsformen}.
@@ -100,20 +99,17 @@ Manchmal möchte man Tabellen, in denen der Text in der Tabellenspalte umbricht.
   \label{Kap2:Teildisziplinen}
   \renewcommand{\arraystretch}{1.2}
   \centering
-  \sffamily
-  \begin{footnotesize}
-    \begin{tabularx}{0.9\textwidth}{l X L}
+  \small
+    \begin{tabularx}{0.95\textwidth}{l X L}
       \toprule
       \textbf{Gebiet} & \textbf{Definition} & \textbf{Beispiel}\\
-      \midrule
-      \emph{Praktische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Software-Komponenten befassen & Programmentwicklung, Compilerbau; im Aufbau von z.B. Informationssystemen und Netzwerken ergeben sich Überlappungen mit der technischen Informatik \\
-      \emph{Technische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Hardware-Komponenten befassen & Digitaltechnik, Mikroprozessortechnik \\
-      \emph{Theoretische Informatik} & Informatik-Disziplinen, welche sich mit der Entwicklung von Theorien und Modellen der Informatik befassen und dabei viel Substanz aus der Mathematik konsumieren & Relationenmodell, Objekt-Paradigmen, Komplexitätstheorie, Kalküle \\
+      \toprule
+      \emph{Praktische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Software-Komponenten befassen & Programmentwicklung, Compilerbau; im Aufbau von z.B. Informationssystemen und Netzwerken ergeben sich Überlappungen mit der technischen Informatik \\\midrule
+      \emph{Technische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Hardware-Komponenten befassen & Digitaltechnik, Mikroprozessortechnik \\\midrule
+      \emph{Theoretische Informatik} & Informatik-Disziplinen, welche sich mit der Entwicklung von Theorien und Modellen der Informatik befassen und dabei viel Substanz aus der Mathematik konsumieren & Relationenmodell, Objekt-Paradigmen, Komplexitätstheorie, Kalküle \\\midrule
       \emph{Angewandte Informatik} & Informatik als instrumentale Wissenschaft & Rechtsinformatik, Wirtschaftsinformatik, Geoinformatik \\
       \bottomrule
     \end{tabularx}
-  \end{footnotesize}
-  \rmfamily
 \end{table}
 
 Manchmal kommt es vor, dass eine Tabelle so lang wird, dass sie sich über mehr als eine Seite erstreckt. In diesem Fall können Sie das Paket \texttt{longtable} verwenden und die Tabelle mit \verb+\begin{longtable}[h]+ definieren. Die Tabelle wird dann \textit{nicht} in eine \texttt{table}-Umgebung eingeschlossen. Siehe hierzu \autoref{laendercodes} in \autoref{AnhangA}.
