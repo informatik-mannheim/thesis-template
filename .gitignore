@@ -26,7 +26,6 @@
 *.gls
 *.glsdefs
 *.mw
-*.pdf
 *.run.xml
 *.slg
 *.loc
