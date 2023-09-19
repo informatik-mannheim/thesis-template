@@ -25,4 +25,5 @@
 *.ind
 *.acr
 *.alg
-
+*.syi
+*.soc
