@@ -135,15 +135,17 @@
 	
 	%Name des Authors
 	\hsmaautor
-	
+
 	
 	%%Lizenzvermerk oder Sperrvermerk
 	\ifen
 	\vspace*{\fill}
-		\ifveroeffentlichung
+		\ifhslicense
 			I agree that my work may be published, i.e. that the work may be stored electronically, converted into other formats, made publicly available on the servers of the \hsmakoerperschaften \ and distributed via the Internet.
+			
+		\fi
+		\ifcclicense
 			\vspace{0.5cm}
-		
 			\doclicenseThis%
 			
 		\fi
@@ -156,10 +158,12 @@
 		
 	\else
 		\vspace*{\fill}
-		\ifveroeffentlichung
+		\ifhslicense
 			Ich bin damit einverstanden, dass meine Arbeit veröffentlicht wird, d.\,h. dass die Arbeit elektronisch gespeichert, in andere Formate konvertiert, auf den Servern der \hsmakoerperschaftde \ öffentlich zugänglich gemacht und über das Internet verbreitet werden darf.
+			
+		\fi
+			\ifcclicense
 			\vspace{0.5cm}
-		
 			\doclicenseThis
 		\fi
 		

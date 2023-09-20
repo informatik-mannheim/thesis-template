@@ -20,7 +20,9 @@
 \newif\ifpapier
 \newif\ifdigital
 \newif\ifen
-\newif\ifveroeffentlichung
+\newif\ifcclicense
+\newif\ifhslicense
+\newif\ifstudlicense
 \newif\ifsperrvermerk
 \newif\ifgender
 \newif\ifsourcecode
@@ -29,17 +31,18 @@
 \newif\iftc
 
 
+
 %\DeclareOption{papier}{\papiertrue\digitalfalse\@clearglobaloption{papier}}
 \DeclareOption{de}{\PassOptionsToPackage{english,main=ngerman}{babel}\enfalse} % Deutsche Sprachunterstützung
 \DeclareOption{en}{\PassOptionsToPackage{english}{babel}\entrue} % Englische Sprachunterstützung
 \DeclareOption{papier}{\papiertrue\digitalfalse}
 \DeclareOption{digital}{\digitaltrue\papierfalse}
-%Veröffentlichung
-\DeclareOption{publizieren}{\veroeffentlichungtrue}
-\DeclareOption{geschlossen}{\veroeffentlichungfalse}
-%Sperrvermerk
-\DeclareOption{vertraulich}{\sperrvermerktrue}
-\DeclareOption{oeffentlich}{\sperrvermerkfalse}
+%Veröffentlichung und Sperrvermerk
+\DeclareOption{opensource}{\cclicensetrue\hslicensetrue\sperrvermerkfalse}
+\DeclareOption{hs}{\cclicensefalse\hslicensetrue\sperrvermerkfalse}
+\DeclareOption{stud}{\cclicensefalse\hslicensefalse\sperrvermerkfalse}
+\DeclareOption{vertraulich}{\cclicensefalse\hslicensefalse\sperrvermerktrue}
+
 %Genderhinweis
 \DeclareOption{gender}{\gendertrue}
 \DeclareOption{nogender}{\genderfalse}
