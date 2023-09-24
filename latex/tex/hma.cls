@@ -90,9 +90,9 @@
 
 
 %% Diese Option MUSS!! vor Geometry stehen, da sonst das Layout der Seitenränder durch KOMAOptions überschrieben wird!
-%%Abgabe in Papier oder digital 
+%%Abgabe in Papier oder digital
 \ifpapier
-	\newcommand{\hsmafenster}{22.5mm}
+	\newcommand{\hsmafenster}{4mm}
 	\KOMAoptions{twoside=true}
 
 \else%
@@ -110,21 +110,21 @@
 \ifpdftex{% Unterstützung für PDFTeX
 	\RequirePackage{tgtermes}			% Tex Gyre Termes (qtm (Times) als Font für Fließtext)
 	\RequirePackage[utf8]{inputenc}		% Dateien in UTF-8 benutzen
-	\RequirePackage[T1]{fontenc}		% Zeichenkodierung  
-	
+	\RequirePackage[T1]{fontenc}		% Zeichenkodierung
 
-	
-	\RequirePackage{morewrites}			% Verhindert Fehlermeldung: No more writes 
+
+
+	\RequirePackage{morewrites}			% Verhindert Fehlermeldung: No more writes
 	\RequirePackage[scaled]{helvet}     % Schrift Helvetia laden
-	\RequirePackage{amssymb}            % Mathematische Symbole  	
+	\RequirePackage{amssymb}            % Mathematische Symbole
 
 	%% Graphiken als pdf einfügen
 	\pdfoptionpdfminorversion=8
-	
+
 \else\ifluatex
-	%LuaTex erwartet standardmäßig utf8 
-	\RequirePackage{fontspec} %Font Unterstützung für LuaTex, welche das Laden von  OpenType fonts erlaubt. Fonts müssen im OS verfügbar sein. 
-		\defaultfontfeatures{Ligatures=TeX} 
+	%LuaTex erwartet standardmäßig utf8
+	\RequirePackage{fontspec} %Font Unterstützung für LuaTex, welche das Laden von  OpenType fonts erlaubt. Fonts müssen im OS verfügbar sein.
+		\defaultfontfeatures{Ligatures=TeX}
 		\RequirePackage{unicode-math}
 		\setromanfont[
 			Extension=.otf,
@@ -133,7 +133,7 @@
 			ItalicFont={*-Italic},
 			BoldItalicFont={*-BoldItalic}
 		]{texgyretermes}
-		
+
 		\setsansfont[
 			Scale=MatchLowercase,% or MatchUppercase
 			Extension=.otf,
@@ -142,7 +142,7 @@
 			BoldFont=*-bold,
 			BoldItalicFont=*-bolditalic,
 		]{texgyreheros}
-		
+
 \fi\fi
 
 \RequirePackage[headsepline]{scrlayer-scrpage}
@@ -156,7 +156,7 @@
 \setkomafont{chapter}{\sffamily\bfseries\LARGE}
 
 % Wichtige Abstände
-\setlength\parindent{0pt} 
+\setlength\parindent{0pt}
 \clubpenalty = 10000         % Keine "Schusterjungen"
 \widowpenalty = 10000        % Keine "Hurenkinder"
 \displaywidowpenalty = 10000 % Keine "Hurenkinder"
@@ -256,7 +256,7 @@ intoc=true]%
 
 
 
-\RequirePackage{array}			  
+\RequirePackage{array}
 \RequirePackage{tabularx}             % Spezielle Tabellen
 \RequirePackage{longtable}            % Tabellen, die mehr als eine Seite umfassen
 \RequirePackage{booktabs}			  % Korrekter Tabellensatz
@@ -346,13 +346,13 @@ intoc=true]%
 
 \iftc
 	\RequirePackage[commandnameprefix=always,todonotes={textsize=tiny}]{changes}
-	
+
 	\definechangesauthor[name={Betreuer 1}, color=orange]{B1}
 	\definechangesauthor[name={Betreuer 2}, color=blue]{B2}
 	\definechangesauthor[name={Author}, color=green]{A}
 \else
 	\RequirePackage[commandnameprefix=always,todonotes={textsize=tiny}, final]{changes}
-	
+
 	\definechangesauthor[name={Betreuer 1}, color=orange]{B1}
 	\definechangesauthor[name={Betreuer 2}, color=blue]{B2}
 	\definechangesauthor[name={Author}, color=green]{A}
@@ -371,7 +371,7 @@ intoc=true]%
 \DTMsavedate{Abgabe}{\hsmaabgabedatum} %Umwandlung des Datums in DateTimeFormat
 \newcommand{\hsmadatum}{\DTMusedate{Abgabe}}
 
-       
+
 % Abschlüsse
 % *******************************************************************
 \newcommand{\hsmabsc}{Bachelor of Science (B.Sc.)}
@@ -392,7 +392,7 @@ intoc=true]%
 
 
 
-%%Sprachdefinitionen 
+%%Sprachdefinitionen
 \ifen
 	\newcommand{\hsmatyp}{\hsmatypen}%
 	\newcommand{\hsmathesistype}{for the acquisition of the academic degree \hsmagrad}%
@@ -493,7 +493,7 @@ intoc=true]%
 	\RequirePackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
 	\RequirePackage[breaklinks=true,pdfproducer={},pdfcreator={},plainpages=false,
 	pdfpagelabels]{hyperref}        % Hyperlinks
-	\newcommand{\hsmasortlocale}{de_DE} 
+	\newcommand{\hsmasortlocale}{de_DE}
 \fi%
 
 
@@ -585,7 +585,7 @@ intoc=true]%
 	% Titelblatt, Vor-Text-Teil erzeugen
 	\input{studiengaenge}
 	\frontmatter
-		
+
 	\titlepg
 	\newpage
 	\bibinfo
@@ -597,46 +597,46 @@ intoc=true]%
 }
 
 
-\AtEndDocument{	
+\AtEndDocument{
 	% Abkürzungsverzeichnis ausgeben
 	\printglossary[type=\acronymtype, nonumberlist, title=\hsmaabbreviations,style=long]
-	
+
 	\ifglossar
 		% Glossar ausgeben
 		\printglossary[style=altlist, nonumberlist, title=\hsmaglossary]
 	\fi
-	
+
 	% Abbildungsverzeichnis erzeugen
 	\listoffigures
-	
+
 	% Tabellenverzeichnis erzeugen
 	\listoftables
-	
+
 
 	\ifsymbols
 		% Symbolverzeichnis ausgeben
 		% Wenn Sie kein Symbolverzeichnis haben, kommentieren Sie die folgende Zeile aus
 		\printglossary[type=symbolslist,style=symbunitlong,title=\hsmalistofsymbols]
 	\fi
-	
+
 	\ifsourcecode
 		%Sourcecode
 		\lstlistoflistings
 		%\IfFileExists{thesis.lol}{\lstlistoflistings}{}
 	\fi
 
-	
+
 	% Literaturverzeichnis erzeugen
 	\printbibliography
 
-	
+
 	\printindex
-	
+
 %	\newwrite\loadedtexfiles
 %	\immediate\openout\loadedtexfiles=listTexFiles.txt
 %	\immediate\write\loadedtexfiles{\printfilelist}
 %	\immediate\closeout\loadedtexfiles
-%		
+%
 %	\printfilelist
 }
 
