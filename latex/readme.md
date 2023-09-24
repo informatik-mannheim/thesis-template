@@ -39,7 +39,7 @@ Achten Sie darauf, die Dokumente im UTF-8-Format abzulegen. Nur so ist eine plat
 
 ### Cloud-Dienste
 
-Diese Vorlage wurde bereits von Studierenden erfolgreich bei Cloud-Diensten eingesetzt, mit denen man LaTeX-Dokumente schreiben, kompilieren und verwalten kann. Positive Erfahrungsberichte liegen bisher mit [Overleaf](https://www.overleaf.com) vor. Eine Anleitung zu Overleaf finden Sie weiter unten.
+Diese Vorlage wurde bereits von Studierenden erfolgreich bei Cloud-Diensten eingesetzt, mit denen man LaTeX-Dokumente schreiben, kompilieren und verwalten kann. Positive Erfahrungsberichte liegen bisher mit [Overleaf](https://www.overleaf.com) vor. Eine Anleitung zu Overleaf finden Sie weiter unten, ohne diese werden Sie vermutlich einen Compile-Fehler bekommen.
 
 ## Aufbau der Vorlage
 
@@ -48,7 +48,8 @@ Die Vorlage enthält eine Reihe von Dateien, die Sie teilweise nach Ihren Bedür
 Anpassen müssen Sie die folgenden Dateien
 
   * `thesis.tex` - Hauptdokument. Hier müssen Sie weitere Kapitel aus dem Ordner `kapitel` inkludieren.
-  * `docinfo.tex` - Einstellungen und bibliografische Informationen zur Arbeit, müssen Sie mit Ihren Daten füllen
+  * `docinfo.tex` - Bibliografische Informationen zur Arbeit, müssen Sie mit Ihren Daten füllen
+  * `hma.cls` - Dokumentenklasse für die Abschlussarbeit
   * `kapitel/abkuerzungen.tex` - Liste der in der Arbeit verwendeten Abkürzungen
   * `kapitel/glossar.tex` - Einträge für ein Glossar
   * `kapitel/symbole.tex` - Einträge für ein Symbol und Einheitenverzeichnis
