@@ -1,303 +1,116 @@
-% Dokumententyp und benutzte Pakete
-\documentclass{HMA}
-
-
-% Pakete einbinden, die benötigt werden
-\usepackage{ifthen}               % Logische Bedingungen mit ifthenelse
-\usepackage{scrlayer-scrpage}     % Erweiterte Einstellungen an scrbook zulassen
-\usepackage[utf8]{inputenc}       % Dateien in UTF-8 benutzen
-\usepackage[T1]{fontenc}          % Zeichenkodierung
-\usepackage{graphicx}             % Bilder einbinden
-\usepackage[inline]{enumitem}     % Eigene Listen definieren können und diese auch innerhalb des Textes nutzen können
-\usepackage{setspace}             % Abstände korrigieren
-
-% Setzen von Optionen abhängig von der gewählten Sprache. Die Sprache wird
-% in thesis.tex gesetzt.
-\ifthenelse{\equal{\hsmasprache}{de}}%
-  {%
-   \usepackage[main=ngerman, english]{babel}              % Deutsche Sprachunterstützung
-   \usepackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
-   \usepackage[pagebackref=false,german, breaklinks=true]{hyperref}        % Hyperlinks
-   \newcommand{\hsmasortlocale}{de_DE}                    % Sortierung der Literatur
-  }%
-  {%
-   \usepackage[main=english, ngerman]{babel}              % Englische Sprachunterstützung
-   \usepackage[autostyle=true,english=american]{csquotes} % Englische Anführungszeichen
-   \usepackage[pagebackref=false,english,breaklinks=true]{hyperref}       % Hyperlinks
-   \newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
-  }%
-
-%Abgabeform ist nur noch digital daher Option gleichgesetzt und später entfernt.
-
-% Setzen von Optionen abhängig von der Abgabeform. Die Abgabeform wird
-% in thesis.tex gesetzt.
-\ifthenelse{\equal{\hsmaabgabe}{papier}}%
-  {%
-    \KOMAoptions{twoside=true}
-    \newcommand{\hsmafenster}{45mm}
-  }%
-  {%
-    \KOMAoptions{twoside=false}
-    \newcommand{\hsmafenster}{38.5mm}
-  }%
-
-\usepackage{morewrites}			  % Verhindert Fehlermeldung: No more writes
-\usepackage[useregional=numeric]{datetime2}
-
-\usepackage[svgnames,dvipsnames]{xcolor}               % Unterstützung für Farben
-\usepackage{amsmath}              % Mathematische Formeln
-\usepackage{amsfonts}             % Mathematische Zeichensätze
-\usepackage{amssymb}              % Mathematische Symbole
-\usepackage{siunitx}			  % Darstellung von Einheiten
-\usepackage{float}                % Fließende Objekte (Tabellen, Grafiken etc.)
-\usepackage{booktabs}             % Korrekter Tabellensatz
-
-\usepackage[acronym,symbols, toc]{glossaries}
-
-\renewcommand*{\glspostdescription}{}
-
-\renewcommand{\glsnamefont}[1]{\textbf{#1}} % Fette Schrift für Abkürzungen
-\setlength\LTleft{0pt} 						%Linksbündige Formatierung
-\setlength\LTright{0pt}
-\setlength\glsdescwidth{0.8\hsize}
-
-\newglossary[slg]{symbolslist}{syi}{syg}{Symbolslist} % Erstellen  Symbolverzeichnis
-\glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
-
-\newglossarystyle{symbunitlong}{%
-	\setglossarystyle{long3col}% base this style on the list style
-	\renewenvironment{theglossary}{% Change the table type --> 3 columns
-		\begin{longtable}{lp{0.6\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
-		{\end{longtable}}%
-	%
-	\renewcommand*{\glossaryheader}{%  Change the table header
-		\bfseries \hsmasymbsign & \bfseries \hsmasymbdescription & \bfseries \hsmasymbunit \\
-		\hline
-		\endhead}
-	\renewcommand*{\glossentry}[2]{%  Change the displayed items
-		\glstarget{##1}{\glossentryname{##1}} %
-		& \glossentrydesc{##1}% Description
-		& \glsunit{##1}  \tabularnewline
-	}
-}
-
-\usepackage{makeidx}              % Sachregister
-\usepackage{listings}             % Quelltexte
-\usepackage{listingsutf8}         % Quelltexte in UTF8
-\usepackage[hang,font={sf,footnotesize},labelfont={footnotesize,bf}]{caption} % Beschriftungen
-\usepackage[scaled]{helvet}       % Schrift Helvetia laden
-\usepackage[absolute]{textpos}    % Absolute Textpositionen (für Deckblatt)
-\usepackage{calc}                 % Berechnung von Positionen
-\usepackage{blindtext}            % Blindtexte
-
-
-\usepackage[bottom=40mm,left=30mm,right=30mm,top=30mm]{geometry} % Ränder ändern
-\usepackage{scrhack}              % tocbasic Warnung entfernen
-
-
-\usepackage[all]{hypcap}          % Korrekte Verlinkung von Floats
-\usepackage{tabularx}             % Spezielle Tabellen
-
-\usepackage{url}
-\usepackage{breakurl}
-
-\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
-	\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
-	\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
-	\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
-	\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
-	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
-	\do\Y\do\Z\do\/\do-}
-
-
-\usepackage[backend=biber,
-    isbn=false,                     % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
-    sorting = none,
-    sortlocale=\hsmasortlocale,     % Sortierung der Einträge für Deutsch
-    autocite=inline,                % regelt Aussehen für \autocite
-                                    %      inline: Zitat in Klammern (\parancite)
-                                    %      footnote: Zitat in Fußnoten (\footcite)
-                                    %      plain: Zitat direkt ohne Klammern (\cite)
-    style=numeric,         		      % Legt den Stil für die Angabe im Literaturverzeichnis fest
-                                    %      numeric: Quellen mit Zahlen [1]
-                                    %      ieee: Quellen mit Zahlen [1], nach IEEE-Regeln
-                                    %      alphabetic: Quellen als Kürzel und Jahr [Ein05]
-                                    %      authoryear: Quellen Author und Jahr [Einstein (1905)]
-    citestyle=numeric-comp,         % Legt den Stil für die Zitate im Text fest
-                                    %      numeric: Zitate mit Zahlen [1]
-                                    %      numeric-comp: Kompakte Variante von numeric. [1, 2, 3] wird zu [1-3]
-                                    %      ieee: Zitate mit Zahlen [1], nach IEEE-Regeln
-                                    %      alphabetic: Zitate als Kürzel und Jahr [Ein05]
-                                    %      authoryear: Zitate Author und Jahr [Einstein (1905)]
-    hyperref=true,                  % Hyperlinks für Zitate
-    maxbibnames=999,                % Maximale Anzahl der Autoren-Namen im Literaturverzeichnis
-    maxcitenames=2,                 % Maximale Anzahl von Namen in einem Zitat
-    mincitenames=1                  % Minimale Anzahl von Namen in einem Zitat
-]{biblatex}      % Literaturverwaltung mit BibLaTeX
-
-\usepackage{rotating}             % Seiten drehen
-\usepackage{harveyballs}          % Harveyballs
-\usepackage{chngcntr}             % Counter (Zähler) ändern können - für Fußnotennummern
-\usepackage{longtable}            % Tabellen, die mehr als eine Seite umfassen
-\usepackage{pdfpages}             % PDFs inkludieren
-
-% Einstellungen zu den Fußnoten
-\renewcommand{\footnotesize}{\fontsize{9}{10}\selectfont} % Größe der Fußnoten
-\setlength{\footnotesep}{8pt} % Abstand zwischen den Fußnoten
-
-% Kommentieren Sie diese Zeile ein, wenn Sie eine "durchlaufende" Nummerierung bei den
-% Fußnoten wünschen, d.h. wenn die Fußnoten nicht bei jedem Kapitel wieder bei 1
-% beginnen sollen.
-\counterwithout{footnote}{chapter}
-
-\setlength{\bibitemsep}{1em}      % Abstand zwischen den Literaturangaben
-\setlength{\bibhang}{2em}         % Einzug nach jeweils erster Zeile
-
-% Trennung von URLs im Literaturverzeichnis (große Werte [> 10000] verhindern die Trennung)
-\defcounter{biburlnumpenalty}{10} % Strafe für Trennung in URL nach Zahl
-\defcounter{biburlucpenalty}{500} % Strafe für Trennung in URL nach Großbuchstaben
-\defcounter{biburllcpenalty}{500} % Strafe für Trennung in URL nach Kleinbuchstaben
-
-% Farben definieren
-\definecolor{linkblue}{RGB}{0, 0, 100}
-\definecolor{linkblack}{RGB}{0, 0, 0}
-\definecolor{comment}{RGB}{63, 127, 95}
-\definecolor{darkgreen}{RGB}{14, 144, 102}
-\definecolor{darkblue}{RGB}{0,0,168}
-\definecolor{darkred}{RGB}{128,0,0}
-\definecolor{javadoccomment}{RGB}{0,0,240}
-
-% Einstellungen für das Hyperlink-Paket
-\hypersetup{
-    colorlinks=true,      % Farbige links verwenden
-%    allcolors=linkblue,
-    linktoc=all,          % Links im Inhaltsverzeichnis
-%    linkcolor=linkblack,  % Querverweise
-%    citecolor=linkblack,  % Literaturangaben
-%    filecolor=linkblack,  % Dateilinks
-%    urlcolor=linkblack    % URLs
-    %Highlight Links in Dokument
-    linkcolor=linkblue,  % Querverweise
-    citecolor=linkblue,  % Literaturangaben
-    filecolor=linkblue,  % Dateilinks
-    urlcolor=linkblue    % URLs
-}
-
-% Einstellungen für Quelltexte
-\lstset{
-      xleftmargin=0.2cm,
-      basicstyle=\footnotesize\ttfamily,
-      keywordstyle=\color{darkgreen},
-      identifierstyle=\color{darkblue},
-      commentstyle=\color{comment},
-      stringstyle=\color{darkred},
-      tabsize=2,
-      lineskip={2pt},
-      columns=flexible,
-      inputencoding=utf8,
-      captionpos=b,
-      breakautoindent=true,
-      breakindent=2em,
-      breaklines=true,
-      prebreak=,
-      postbreak=,
-      numbers=none,
-      numberstyle=\tiny,
-      showspaces=false,      % Keine Leerzeichensymbole
-      showtabs=false,        % Keine Tabsymbole
-      showstringspaces=false,% Leerzeichen in Strings
-      morecomment=[s][\color{javadoccomment}]{/**}{*/},
-      literate={Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
-}
-
-\urlstyle{same}
-
-% Einstellungen für Überschriften
-\renewcommand*{\chapterformat}{%
-  \Large\chapapp~\thechapter   % Große Schrift
-  \vspace{0.3cm}               % Abstand zum Titel des Kapitels
-}
-
-% Abstände für die Überschriften setzen
-\renewcommand{\chapterheadstartvskip}{\vspace*{2.6cm}}
-\renewcommand{\chapterheadendvskip}{\vspace*{1.5cm}}
-
-% Vertikale Abstände für die Überschriften etwas verkleinern
-\RedeclareSectionCommand[
-  beforeskip=-1.8\baselineskip,
-  afterskip=0.25\baselineskip]{section}
-
-\RedeclareSectionCommand[
-  beforeskip=-1.8\baselineskip,
-  afterskip=0.15\baselineskip]{subsection}
-
-\RedeclareSectionCommand[
-  beforeskip=-1.8\baselineskip,
-  afterskip=0.15\baselineskip]{subsubsection}
-
-% In der Kopfzeile nur die kurze Kapitelbezeichnung (ohne Kapitel davor)
-\renewcommand*\chaptermarkformat{\thechapter\autodot\enskip}
-\automark[chapter]{chapter}
-
-% Einstellungen für Schriftarten
-\setkomafont{pagehead}{\normalfont\sffamily}
-\setkomafont{pagenumber}{\normalfont\sffamily}
-\setkomafont{paragraph}{\sffamily\bfseries\small}
-\setkomafont{subsubsection}{\sffamily\itshape\bfseries\small}
-\addtokomafont{footnote}{\footnotesize}
-\setkomafont{chapter}{\LARGE\selectfont\bfseries}
-
-% Wichtige Abstände
-\setlength{\parskip}{0.2cm}  % 2mm Abstand zwischen zwei Absätzen
-\setlength{\parindent}{0mm}  % Absätze nicht einziehen
-\clubpenalty = 10000         % Keine "Schusterjungen"
-\widowpenalty = 10000        % Keine "Hurenkinder"
-\displaywidowpenalty = 10000 % Keine "Hurenkinder"
-                             % Siehe: https://de.wikipedia.org/wiki/Hurenkind_und_Schusterjunge
-
-% Index erzeugen
-\makeindex
-
-% Einfacher Font-Wechsel über dieses Makro
-\newcommand{\changefont}[3]{
-\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
-
-% Eigenes Makro für Bilder. Das label (für \ref) ist dann einfach
-% der Name der Bilddatei
-\newcommand{\bild}[3]{
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=#2]{#1}
-  \caption{#3}
-  \label{#1}
-\end{figure}}
-
-% Wo liegt Sourcecode?
-\newcommand{\srcloc}{src/}
+% Dokumententyp, benutzte Pakete und deren Einstellungen
+\documentclass[	\hsmasprache,%
+				\hsmaabgabe,%
+				\hsmapublizieren,%
+				\genderhinweis,
+				\hsmaquellcode,
+				\hsmasymbole,
+				\hsmaglossar,
+				\hsmatc]{HMA}
 
 % Wo sind die Bilder?
 \graphicspath{{bilder/}}
 
-% Makros für typographisch korrekte Abkürzungen
-\newcommand{\zb}[0]{z.\,B.}
-\newcommand{\dahe}[0]{d.\,h.}
-\newcommand{\ua}[0]{u.\,a.}
 
-% Flags für Veröffentlichung, Sperrvermerk und Genderhinweis
-\newboolean{hsmapublizieren}
-\newboolean{hsmasperrvermerk}
-\newboolean{genderhinweis}
-\newcommand{\hsmacc}{}
+% Wo liegt Sourcecode?
+\newcommand{\srcloc}{src/}
 
-% Tabellenzellen mit mehreren Zeilen
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{b}{l}
-\newcolumntype{s}{>{\hsize=.3\hsize}l}
-\newcolumntype{F}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X}
 
 % Checklisten mit zwei Ebenen
 \newlist{checklist}{itemize}{2}
 \setlist[checklist]{label=$\square$}
 
-% Glossar etc erzeugen
-\makeglossaries
+
+
+% Befehl zum Erstellen eigener Makros. In diesem Fall ist es ein Makro für das Einbinden von Bildern. Das label (für \ref) ist dann der Name der Bilddatei
+\newcommand{\bild}[3]{
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=#2]{#1}
+		\caption{#3}
+		\label{#1}
+\end{figure}}
+
+
+
+
+							
+
+
+
+\newcommand{\snowcard}[9]{
+	\begin{table}[ht!]
+		\caption{\hsmasnowcardanforderung\ #1 -- #4}\label{#1}
+		\renewcommand{\arraystretch}{1.2}
+		\centering
+		\sffamily
+		\begin{footnotesize}
+			
+			\begin{tabularx}{\linewidth}{sssssl}
+				\toprule
+				\textbf{\hsmasnowcardno} & #1 & \textbf{\hsmasnowcardart} & #2 & \textbf{\hsmasnowcardprio} & #3 \\
+				\midrule
+				\multicolumn{2}{l}{\textbf{\hsmasnowcardtitel}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#4}} \\
+				\ifx&#5&%
+				\else
+				\multicolumn{2}{l}{\textbf{\hsmasnowcardherkunft}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#5}} \\
+				\fi
+				\ifx&#6&%
+				\else
+				\multicolumn{2}{l}{\textbf{\hsmasnowcardkonflikt}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#6}} \\
+				\fi
+				\addlinespace
+				\multicolumn{6}{l}{\textbf{\hsmasnowcardbeschreibung}} \\
+				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#7}} \\
+				\ifx&#8&%
+				\else
+				\addlinespace
+				\multicolumn{6}{l}{\textbf{\hsmasnowcardfitkriterium}} \\
+				\multicolumn{6}{l}{\parbox{13.5cm}{#8}} \\
+				\fi
+				\ifx&#9&%
+				
+				\else
+				\addlinespace
+				\multicolumn{6}{l}{\textbf{\hsmasnowcardmaterial}} \\
+				\multicolumn{6}{l}{\parbox{13.5cm}{#9}} \\
+				\fi
+				\bottomrule
+			\end{tabularx}
+		\end{footnotesize}
+	\end{table}
+}
+
+
+
+% Quality Attribute Scenario
+\newcommand{\qas}[9]{
+	\begin{table}[ht!]
+		\caption{\hsmaqasanforderung\ #1 -- #3}\label{#1}
+		\renewcommand{\arraystretch}{1.2}
+		\centering
+		\sffamily
+		\begin{footnotesize}
+			
+			\begin{tabularx}{\linewidth}{sssssl}
+				\toprule
+				\textbf{\hsmaqasno} & #1 & \textbf{\hsmaqasart} & QAS & \textbf{\hsmaqasprio} & #2 \\
+				\midrule
+				\multicolumn{2}{l}{\textbf{\hsmaqastitel}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#3}} \\
+				\multicolumn{2}{l}{\textbf{\hsmaqasquelle}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#4}} \\
+				\multicolumn{2}{l}{\textbf{\hsmaqasstimulus}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#5}} \\
+				\multicolumn{2}{l}{\textbf{\hsmaqasartefakt}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#6}} \\
+				\addlinespace
+				\multicolumn{6}{l}{\textbf{\hsmaqasumgebung}} \\
+				\multicolumn{6}{l}{\parbox{13.5cm}{#7}} \\
+				\addlinespace
+				\multicolumn{6}{l}{\textbf{\hsmaqasantwort}} \\
+				\multicolumn{6}{l}{\parbox{13.5cm}{#8}} \\
+				\addlinespace
+				\multicolumn{6}{l}{\textbf{\hsmaqasmass}} \\
+				\multicolumn{6}{l}{\parbox{13.5cm}{#9}} \\
+				\bottomrule
+			\end{tabularx}
+		\end{footnotesize}
+	\end{table}
+}

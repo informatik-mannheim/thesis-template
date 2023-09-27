@@ -1,8 +1,11 @@
-% *******************************************************************
+%% !TeX program = lualatex
+
+%\listfiles	
+% **************************
 % STOP - Bitte zuerst lesen, bevor Sie weitermachen
 %
 % Einige Dinge müssen Sie an Ihre Bedürfnisse (und die Vorgaben Ihres
-% Betreuers anpassen).
+% Betreuers anpassen. Editieren Sie dazu die Datei docinfo.tex).
 %
 % 1. Sprache
 % Das Template unterstützt Deutsch und Englisch, Standard ist Deutsch.
@@ -44,8 +47,7 @@
 % das vorgeschlagene Format einfach so lassen.
 %
 % 5. Unnötige Teile entfernen
-% Entfernen Sie die Teile, die Sie nicht brauchen, z.B. Anhänge,
-% Quelltextverzeichnis etc. Siehe unten
+% Entfernen Sie die Teile, die Sie nicht brauchen, z.B. Anhänge
 %
 % 6. Silbentrennung
 % LaTeX führt eine automatische Silbentrennung durch. Allerdings
@@ -62,143 +64,63 @@
 %
 % 7. Nummerierung der Fußnoten
 % LaTeX beginnt die Nummerierung der Fußnoten in jedem Kapitel wieder
-% bei 1. Manche Dozenten wollen aber eine durchlaufende Nummerierung
-% über die gesamte Arbeit. In diesem Fall gehen Sie in die preambel.tex
-% und kommentieren den Befehl \counterwithout{footnote}{chapter} ein.
+% bei 1. In diesem Template wird die fortlaufende Nummerierung der Fußnoten 
+% über die gesamte Arbeit umgesetzt.  
 %
 % 8. Unterschrift
 % Bei einer Abgabe auf Papier unterschreiben Sie die Arbeit eigenhändig.
-% Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png
-% durch einen Scan Ihrer eigenen Unteschrift ersetzen - andernfalls
+% Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png in dem 
+% Ordner /bilder durch einen Scan Ihrer eigenen Unteschrift ersetzen - andernfalls
 % unterschreiben Sie als Max Mustermann ;-)
 % *******************************************************************
 
-% Sprache für das Dokument festlegen
-\newcommand{\hsmasprache}{de}     % de oder en für Deutsch oder Englisch
 
-% Abgabeform festlegen
-% Bei einer digitalen Abgabe, wird das Dokument einseitig erzeugt und der Titel wird
-% zentriert.
-\newcommand{\hsmaabgabe}{digital} % Abgabe erfolgt für Fakultät I digital. Optionen hier sind für anderen Fakultäten: "papier" oder "digital".
-
-% Preambel mit Einstellungen importieren
-\input{preambel}
-
-% Dokumenteninfos importieren
+% Dokumenteneinstellungen und Infos importieren
 \input{docinfo}
 
-\usepackage[type={CC},modifier={\hsmacc},version={4.0}]{doclicense}
-% Richtige Titel für das Quellcodeverzeichnis
-\renewcommand\lstlistingname{\hsmalistingcaption}
-\renewcommand\lstlistlistingname{\hsmalistings}
+% Preambel importieren
+\input{preambel}
+
+
+%Abstrakt Ihrer Abschlussarbeit
+\input{abstrakt}
+
 
 % Literatur-Datenbank
 \addbibresource{literatur.bib}   % BibLaTeX-Datei mit Literaturquellen einbinden
 
-% Anfang des Dokuments
-\begin{document}
 
-%Laden der Abkürzungen, Glossar, Symbole
+% Anfang des Dokuments
+\begin{document}	
+
+
+%Laden der Dateien mit Abkürzungen, Begriffserklärungen (Glossar), Symbole
 \input{kapitel/abkuerzungen}
 \input{kapitel/glossar}
-\input{kapitel/symbole}
-
-\frontmatter
-
-% Römische Ziffern für die "Front-Matter"
-\setcounter{page}{0}
-\changefont{ptm}{m}{n}  % Times New Roman für den Fließtext
-\renewcommand{\rmdefault}{ptm}
-
-% Titelblatt
-\input{titelblatt}
-
-% Inhaltsverzeichnis erzeugen
-\cleardoublepage
-\pdfbookmark{\contentsname}{Contents}
+\input{kapitel/symbole}	
+	
+\pagestyle{headings}
 \tableofcontents
 
-% Korrigiert Nummerierung bei mehrseitigem Inhaltsverzeichnis
-\cleardoublepage
-\newcounter{frontmatterpage}
-\setcounter{frontmatterpage}{\value{page}}
 
-% Arabische Zahlen für den Hauptteil
 \mainmatter
 
-% Den Hauptteil mit vergrößertem Zeilenabstand setzen
-\onehalfspacing
-
-% ------------------------------------------------------------------
-% Hauptteil der Arbeit
+%% Ihre Inhaltsdateien werden an dieser Stelle in das Dokument eingefügt
 \input{kapitel/kapitel1} % Externe Datei einbinden
 \input{kapitel/kapitel2} % Externe Datei einbinden
 \input{kapitel/kapitel3} % Externe Datei einbinden
 \input{kapitel/kapitel4} % Externe Datei einbinden
-% ------------------------------------------------------------------
+
+
 
 \label{lastpage}
-
-% Neue Seite
-\cleardoublepage
-
-% Backmatter mit normalem Zeilenabstand setzen
-\singlespacing
-
-% Römische Ziffern für die "Back-Matter", fortlaufend mit "Front-Matter"
-\pagenumbering{roman}
-\setcounter{page}{\value{frontmatterpage}}
-
-% Abkürzungsverzeichnis ausgeben
-\printglossary[type=\acronymtype, nonumberlist, title=\hsmaabbreviations,style=long]
-
-% Glossar ausgeben
-% Wenn Sie kein Glossar haben, kommentieren Sie die folgende Zeile aus
-\printglossary[style=altlist, nonumberlist, title=\hsmaglossary]
-
-% Symbolverzeichnis ausgeben
-% Wenn Sie kein Symbolverzeichnis haben, kommentieren Sie die folgende Zeile aus
-\printglossary[type=symbolslist,style=symbunitlong,title=\hsmalistofsymbols]
-
-% Tabellenverzeichnis erzeugen
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\hsmalistoftables}
-\listoftables
-
-% Abbildungsverzeichnis erzeugen
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\hsmalistoffigures}
-\listoffigures
-
-% Listingverzeichnis erzeugen. Wenn Sie keine Listings haben,
-% entfernen Sie einfach diesen Teil.
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\hsmalistings}
-\lstlistoflistings
-
-% Literaturverzeichnis erzeugen
-\begingroup
-\cleardoublepage
-\begin{flushleft}
-\let\clearpage\relax % Fix für leere Seiten (issue #25)
-\printbibliography
-\end{flushleft}
-\endgroup
-
-% Index ausgeben. Wenn Sie keinen Index haben, entfernen Sie einfach
-% diesen Teil. Die meisten Abschlussarbeiten haben *keinen* Index.
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\hsmaindex}
-\printindex
-
-% Anhang. Wenn Sie keinen Anhang haben, entfernen Sie einfach
-% diesen Teil.
+%Beginn des Anhangs. Befehl \appendix nicht entfernen auch wenn kein Anhang vorhanden ist!
 \appendix
+
+%Wenn Sie keinen Anhang haben, entfernen Sie ausschließlich die nachfolgenden beiden Dateien.
 \input{kapitel/anhang-a}
 \input{kapitel/anhang-b}
 
+
 \end{document}
+

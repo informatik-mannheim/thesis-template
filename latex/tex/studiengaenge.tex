@@ -1,0 +1,291 @@
+% Fakultäten der HS-Mannheim
+% *******************************************************************
+\ifthenelse{\equal{\hsmafakultaet}{I}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Informatik}%
+	\newcommand{\hsmafakultaetlangen}{Department of Computer Science}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{E}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Elektrotechnik}%
+	\newcommand{\hsmafakultaetlangen}{Department of Electrical Engineering}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{S}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Sozialwesen}%
+	\newcommand{\hsmafakultaetlangen}{Department of Social Work}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{B}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Biotechnologie}%
+	\newcommand{\hsmafakultaetlangen}{Department of Biotechnology}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{D}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Gestaltung}%
+	\newcommand{\hsmafakultaetlangen}{Department of Design}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{M}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Maschinenbau}%
+	\newcommand{\hsmafakultaetlangen}{Department of Mechanical Engineering}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{N}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Informationstechnik}%
+	\newcommand{\hsmafakultaetlangen}{Department of Information Technology}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{W}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Wirtschaftsingenieurwesen}%
+	\newcommand{\hsmafakultaetlangen}{Department of Engineering and Management}}{}
+
+\ifthenelse{\equal{\hsmafakultaet}{V}}%
+{\newcommand{\hsmafakultaetlangde}{Fakultät für Verfahrens- und Chemietechnik}%
+	\newcommand{\hsmafakultaetlangen}{Department of Chemical Process Engineering}}{}
+
+% Studiengänge der HS-Mannheim
+% *******************************************************************
+\ifthenelse{\equal{\hsmastudiengang}{IB}}%
+{\newcommand{\hsmastudienganglangde}{Informatik}%
+	\newcommand{\hsmastudienganglangen}{Computer Science}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{IMB}}%
+{\newcommand{\hsmastudienganglangde}{Medizinische Informatik}%
+	\newcommand{\hsmastudienganglangen}{Medical Informatics}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{UIB}}%
+{\newcommand{\hsmastudienganglangde}{Unternehmens- und Wirtschaftsinformatik}%
+	\newcommand{\hsmastudienganglangen}{Enterprise Computing}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{CSB}}%
+{\newcommand{\hsmastudienganglangde}{Cyber Security}%
+	\newcommand{\hsmastudienganglangen}{Cyber Security}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{IM}}%
+{\newcommand{\hsmastudienganglangde}{Informatik}%
+	\newcommand{\hsmastudienganglangen}{Computer Science}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{MEB}}%
+{\newcommand{\hsmastudienganglangde}{Mechatronik}%
+	\newcommand{\hsmastudienganglangen}{Mechatronic}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{UB}}%
+{\newcommand{\hsmastudienganglangde}{Automatisierungstechnik}%
+	\newcommand{\hsmastudienganglangen}{Automation Technology}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{ELB}}%
+{\newcommand{\hsmastudienganglangde}{Elektro- und Informationstechnik/Ingenieurpädagogik}%
+	\newcommand{\hsmastudienganglangen}{Elektro- und Informationstechnik/Ingenieurpädagogik}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{EBE}}%
+{\newcommand{\hsmastudienganglangde}{Energietechnik und erneuerbare Energien}%
+	\newcommand{\hsmastudienganglangen}{Power Engineering ans Renewable Energies}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{TS}}%
+{\newcommand{\hsmastudienganglangde}{Translation Studies}%
+	\newcommand{\hsmastudienganglangen}{Translation Studies}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{EM}}%
+{\newcommand{\hsmastudienganglangde}{Automatisierungs- und Energiesysteme}%
+	\newcommand{\hsmastudienganglangen}{Automation and Energy Systems}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{ELM}}%
+{\newcommand{\hsmastudienganglangde}{Lehramt Ingenieurpädagogik}%
+	\newcommand{\hsmastudienganglangen}{Lectureship Educational Engineering}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{SAB}}%
+{\newcommand{\hsmastudienganglangde}{Soziale Arbeit}%
+	\newcommand{\hsmastudienganglangen}{Social Labour}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmaba}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{SAM}}%
+{\newcommand{\hsmastudienganglangde}{Soziale Arbeit}%
+	\newcommand{\hsmastudienganglangen}{Social Labour}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamastera}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{BB}}%
+{\newcommand{\hsmastudienganglangde}{Biotechnology}%
+	\newcommand{\hsmastudienganglangen}{Biotechnology}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{BCB}}%
+{\newcommand{\hsmastudienganglangde}{Biologische Chemie}%
+	\newcommand{\hsmastudienganglangen}{Biological Chemics}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{BMEBST}}%
+{\newcommand{\hsmastudienganglangde}{Biotechnology - Biomedical Science and Technology}%
+	\newcommand{\hsmastudienganglangen}{Biotechnology - Biomedical Science and Technology}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{BMEBPD}}%
+{\newcommand{\hsmastudienganglangde}{Biotechnology - Bioprocess Development}%
+	\newcommand{\hsmastudienganglangen}{Biotechnology - Bioprocess Development}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{BLSM}}%
+{\newcommand{\hsmastudienganglangde}{Life Science Management}%
+	\newcommand{\hsmastudienganglangen}{Life Science Management}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{KDB}}%
+{\newcommand{\hsmastudienganglangde}{Kommunikationsdesign}%
+	\newcommand{\hsmastudienganglangen}{Communication Design}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmaba}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{KDM}}%
+{\newcommand{\hsmastudienganglangde}{Kommunikationsdesign}%
+	\newcommand{\hsmastudienganglangen}{Communication Design}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamastera}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{MB}}%
+{\newcommand{\hsmastudienganglangde}{Maschinenbau}%
+	\newcommand{\hsmastudienganglangen}{Mechanical Engineering}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{MM}}%
+{\newcommand{\hsmastudienganglangde}{Maschinenbau}%
+	\newcommand{\hsmastudienganglangen}{Mechanical Engineering}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{NEB}}%
+{\newcommand{\hsmastudienganglangde}{Elektronik}%
+	\newcommand{\hsmastudienganglangen}{Electronics}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{TIB}}%
+{\newcommand{\hsmastudienganglangde}{Technische Informatik}%
+	\newcommand{\hsmastudienganglangen}{Technical Information Technology}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{MTB}}%
+{\newcommand{\hsmastudienganglangde}{Medizintechnik}%
+	\newcommand{\hsmastudienganglangen}{Medical Technology}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{MTM}}%
+{\newcommand{\hsmastudienganglangde}{Medizintechnik}%
+	\newcommand{\hsmastudienganglangen}{Medical Technology}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{NM}}%
+{\newcommand{\hsmastudienganglangde}{Informationstechnik}%
+	\newcommand{\hsmastudienganglangen}{Informationstechnik}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WB}}%
+{\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
+	\newcommand{\hsmastudienganglangen}{Engineering and Management}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WM}}%
+{\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
+	\newcommand{\hsmastudienganglangen}{Engineering and Management}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMI}}%
+{\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen}%
+	\newcommand{\hsmastudienganglangen}{Engineering and Management}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMB}}%
+{\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen mit den\\ ingenieurwissenschaftlichen Fachrichtungen Maschinenbau und Elektrotechnik}%
+	\newcommand{\hsmastudienganglangen}{Engineering and Management\\ with focus on Mechanical and Electrical Engineering}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{WMW}}%
+{\newcommand{\hsmastudienganglangde}{Wirtschaftsingenieurwesen mit\\ ingenieurwissenschaftlicher Vertiefung des Maschinenbaus}%
+	\newcommand{\hsmastudienganglangen}{Engineering and Management\\ deepening the engineering aspects of Mechanical Engineering}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{VB}}%
+{\newcommand{\hsmastudienganglangde}{Verfahrenstechnik}%
+	\newcommand{\hsmastudienganglangen}{Process Engineering}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{CB}}%
+{\newcommand{\hsmastudienganglangde}{Chemische Technik}%
+	\newcommand{\hsmastudienganglangen}{Chemical Engineering}%
+	\newcommand{\hsmatypde}{Bachelor-Thesis}%
+	\newcommand{\hsmatypen}{Bachelor Thesis}%
+	\newcommand{\hsmagrad}{\hsmabsc}}{}
+
+\ifthenelse{\equal{\hsmastudiengang}{CM}}%
+{\newcommand{\hsmastudienganglangde}{Chemieingenieurwesen}%
+	\newcommand{\hsmastudienganglangen}{Chemical Engineering}%
+	\newcommand{\hsmatypde}{Master-Thesis}%
+	\newcommand{\hsmatypen}{Master Thesis}%
+	\newcommand{\hsmagrad}{\hsmamaster}}{}
