@@ -17,7 +17,8 @@ Um sich diesen Ärger zu sparen, biete sich die Verwendung des Paketes \textit{c
 
 \section{Silbentrennung}
 \index{Silbentrennung}
-\LaTeX{} führt eine automatische Silbentrennung durch, sodass Sie sich eigentlich um nichts kümmern müssen. Allerdings werden Wörter, die bereits einen Bindestrich enthalten nicht getrennt, z.\,B. Datenschutz-Grundverordnung. Wenn Sie Ihren Text auf Deutsch schreiben, können Sie dann alternativ \verb+"=+ für den Bindestrich im Wort verwenden, z.\,B. \verb+Datenschutz"=Grundverordnung+, damit \LaTeX{}  weiterhin richtig trennt.
+\LaTeX{} führt eine automatische Silbentrennung durch, sodass Sie sich eigentlich um nichts kümmern müssen. Allerdings werden Wörter, die bereits einen Bindestrich enthalten nicht getrennt, z.\,B. Datenschutz-Grundverordnung. Wenn Sie Ihren Text auf Deutsch schreiben, können Sie dann alternativ \verb+"=+ für den Bindestrich im Wort verwenden, z.\,B. \\
+\verb+Datenschutz"=Grundverordnung+, damit \LaTeX{}  weiterhin richtig trennt.
 
 Ist die Silbentrennung aus einem anderen Grund nicht erfolgt, z.\,B. weil das Wort nur aus Großbuchstaben besteht, sodass die Zeile über den rechten Rand hinaussteht (Sie bekommen eine \textit{overfull hbox}-Warnung), können Sie \LaTeX{} helfen, indem Sie weitere Trennstellen angeben. Dies geschieht durch \verb+"-+ als Zeichen, z.\,B. \verb+Staats"-ver"-trag+.
 
@@ -67,15 +68,15 @@ Fußnoten werden einfach mit in den Text geschrieben, und zwar genau an die Stel
 
 \section{Tabellen}
 
-Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalten werden durch einen entsprechenden Abstand voneinander getrennt.\footnote{Siehe \cite[S. 89]{Willberg1999}.} Zum Einsatz kommen ausschließlich horizontale Linien (siehe \autoref{Kap2:Kopplungsformen}).
+Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalten werden durch einen entsprechenden Abstand voneinander getrennt.\footnote{Siehe \cite[S. 89]{Willberg2021}.} Zum Einsatz kommen ausschließlich horizontale Linien (siehe \autoref{Kap2:Kopplungsformen}).
 
-\begin{table}[h]
+\begin{table}[ht]
   \caption{Ebenen der Kopplung und Beispiele für enge und lose Kopplung}
   \label{Kap2:Kopplungsformen}
   \renewcommand{\arraystretch}{1.2}
+  \small
   \centering
-  \sffamily
-  \begin{footnotesize}
+  \resizebox{\linewidth}{!}{ 
     \begin{tabular}{l l l}
     \toprule
     \textbf{Form der Kopplung} & \textbf{enge Kopplung} & \textbf{lose Kopplung}\\
@@ -86,33 +87,29 @@ Tabellen werden normalerweise ohne vertikale Striche gesetzt, sondern die Spalte
     Bindung	&	statisch		&	dynamisch\\
     \bottomrule
     \end{tabular}
-  \end{footnotesize}
-  \rmfamily
+	}
 \end{table}
 
 Eine Tabelle fließt genauso, wie auch Bilder durch den Text. Siehe \autoref{Kap2:Kopplungsformen}.
 
 Manchmal möchte man Tabellen, in denen der Text in der Tabellenspalte umbricht. Hierzu dient die Umgebung \texttt{tabularx}, wobei \texttt{L} eine Spalte mit Flattersatz und \texttt{X} eine mit Blocksatz definiert. Die Breite der Tabelle kann über den Faktor vor \verb+\textwidth+ angegeben werden.
 
-\begin{table}[h]
+\begin{table}[ht]
   \caption{Teildisziplinen der Informatik}
   \label{Kap2:Teildisziplinen}
   \renewcommand{\arraystretch}{1.2}
   \centering
-  \sffamily
-  \begin{footnotesize}
-    \begin{tabularx}{0.9\textwidth}{l X L}
+  \small
+    \begin{tabularx}{0.95\textwidth}{l X L}
       \toprule
       \textbf{Gebiet} & \textbf{Definition} & \textbf{Beispiel}\\
-      \midrule
-      \emph{Praktische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Software-Komponenten befassen & Programmentwicklung, Compilerbau; im Aufbau von z.B. Informationssystemen und Netzwerken ergeben sich Überlappungen mit der technischen Informatik \\
-      \emph{Technische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Hardware-Komponenten befassen & Digitaltechnik, Mikroprozessortechnik \\
-      \emph{Theoretische Informatik} & Informatik-Disziplinen, welche sich mit der Entwicklung von Theorien und Modellen der Informatik befassen und dabei viel Substanz aus der Mathematik konsumieren & Relationenmodell, Objekt-Paradigmen, Komplexitätstheorie, Kalküle \\
+      \toprule
+      \emph{Praktische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Software-Komponenten befassen & Programmentwicklung, Compilerbau; im Aufbau von z.B. Informationssystemen und Netzwerken ergeben sich Überlappungen mit der technischen Informatik \\\midrule
+      \emph{Technische Informatik} & Informatik-Disziplinen, welche sich vorwiegend mit der Entwicklung und Anwendung der Hardware-Komponenten befassen & Digitaltechnik, Mikroprozessortechnik \\\midrule
+      \emph{Theoretische Informatik} & Informatik-Disziplinen, welche sich mit der Entwicklung von Theorien und Modellen der Informatik befassen und dabei viel Substanz aus der Mathematik konsumieren & Relationenmodell, Objekt-Paradigmen, Komplexitätstheorie, Kalküle \\\midrule
       \emph{Angewandte Informatik} & Informatik als instrumentale Wissenschaft & Rechtsinformatik, Wirtschaftsinformatik, Geoinformatik \\
       \bottomrule
     \end{tabularx}
-  \end{footnotesize}
-  \rmfamily
 \end{table}
 
 Manchmal kommt es vor, dass eine Tabelle so lang wird, dass sie sich über mehr als eine Seite erstreckt. In diesem Fall können Sie das Paket \texttt{longtable} verwenden und die Tabelle mit \verb+\begin{longtable}[h]+ definieren. Die Tabelle wird dann \textit{nicht} in eine \texttt{table}-Umgebung eingeschlossen. Siehe hierzu \autoref{laendercodes} in \autoref{AnhangA}.
@@ -124,7 +121,7 @@ Manchmal kommt es vor, dass eine Tabelle so lang wird, dass sie sich über mehr 
     Harvey Balls sind kreisförmige Ideogramme, die dazu dienen, qualitative Daten anschaulich zu machen. Sie werden in Vergleichstabellen verwendet, um anzuzeigen, inwieweit ein Untersuchungsobjekt sich mit definierten Vergleichskriterien deckt. \parencite{Wikipedia_HarveyBalls}
 \end{quote}
 
-\begin{table}[h]
+\begin{table}[ht]
   \caption{Beispiel für Harvey Balls}
   \label{tab:harveyexample}
   \centering
@@ -168,3 +165,17 @@ Aufzählungen mit laufenden Nummern sind auch toll.
     \end{enumerate}
   \item Ein abschließender Punkt ohne Unterpunkte
 \end{enumerate}
+
+
+Aufzählungen mit eigenen Bezeichnern sind auch toll.
+\begin{enumerate}[label=RQ~\arabic*), leftmargin=1.75cm]
+	\item Ein wichtiger Punkt
+	\item Noch ein wichtiger Punkt
+	\item Ein Punkt mit Unterpunkten
+	\item Ein abschließender Punkt ohne Unterpunkte
+\end{enumerate}
+
+
+Auch die Auflistung im Fließtext ist sehr wertvoll: \begin{enumerate*}[label=\alph *)] \item wichtiger Punkt, \item zweiter wichtiger Punkt und \item der letzte Punkt. \end{enumerate*}
+
+
