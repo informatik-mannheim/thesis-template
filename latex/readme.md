@@ -136,7 +136,7 @@ Den vollständigen Abschnitt der Datei finden Sie hier: [settings.json](images/s
 ### Änderungen testen
 
   1. Schließen Sie VSCode und öffnen Sie es neu.
-  2. Öffnen Sie das LaTeX-Dokument und klicken Sie auf das Icon von LaTeX-Worksho <img src="images/latex_5.png" style="width: 2em">
+  2. Öffnen Sie das LaTeX-Dokument und klicken Sie auf das Icon von LaTeX-Workshop <img src="images/latex_5.png" style="width: 2em">
   3. Wenn Sie den Punkt "Build LaTeX projekt" aufklappen, sollte ein neuer Menueeintrag vorhanden sein.<br><img src="images/latex_6.png" style="width: 12em">
   4. Durch Klicken auf diesen Punkt können Sie die Arbeit vollständig und korrekt bauen. Da er der erste Punkt ist, sollte er auch standardmäßig bei Änderungen am Projekt ausgeführt werden.
 
