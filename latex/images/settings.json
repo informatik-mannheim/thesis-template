@@ -88,4 +88,6 @@
               "%DOCFILE%"
             ]
           }
-    ]
+    ],
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+    "latex-workshop.latex.rootFile.indicator": "\\begin{document}",
