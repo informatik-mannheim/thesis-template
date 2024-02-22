@@ -127,7 +127,14 @@ Vor der letzten schließenden Klammer fügen Sie noch folgendes ein:
             "args": [
               "%DOCFILE%"
             ]
-          }
+          },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
     ]
   ```
 
