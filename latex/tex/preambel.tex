@@ -37,7 +37,6 @@
 							
 
 
-
 \newcommand{\snowcard}[9]{
 	\begin{table}[ht!]
 		\caption{\hsmasnowcardanforderung\ #1 -- #4}\label{#1}
@@ -45,7 +44,7 @@
 		\centering
 		\sffamily
 		\begin{footnotesize}
-			
+
 			\begin{tabularx}{\linewidth}{sssssl}
 				\toprule
 				\textbf{\hsmasnowcardno} & #1 & \textbf{\hsmasnowcardart} & #2 & \textbf{\hsmasnowcardprio} & #3 \\
@@ -61,19 +60,19 @@
 				\fi
 				\addlinespace
 				\multicolumn{6}{l}{\textbf{\hsmasnowcardbeschreibung}} \\
-				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#7}} \\
+				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#7\strut}} \\
 				\ifx&#8&%
 				\else
 				\addlinespace
 				\multicolumn{6}{l}{\textbf{\hsmasnowcardfitkriterium}} \\
-				\multicolumn{6}{l}{\parbox{13.5cm}{#8}} \\
+				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#8\strut}} \\
 				\fi
 				\ifx&#9&%
-				
+
 				\else
 				\addlinespace
 				\multicolumn{6}{l}{\textbf{\hsmasnowcardmaterial}} \\
-				\multicolumn{6}{l}{\parbox{13.5cm}{#9}} \\
+				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#9\strut}} \\
 				\fi
 				\bottomrule
 			\end{tabularx}
@@ -91,7 +90,7 @@
 		\centering
 		\sffamily
 		\begin{footnotesize}
-			
+
 			\begin{tabularx}{\linewidth}{sssssl}
 				\toprule
 				\textbf{\hsmaqasno} & #1 & \textbf{\hsmaqasart} & QAS & \textbf{\hsmaqasprio} & #2 \\
@@ -102,15 +101,16 @@
 				\multicolumn{2}{l}{\textbf{\hsmaqasartefakt}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#6}} \\
 				\addlinespace
 				\multicolumn{6}{l}{\textbf{\hsmaqasumgebung}} \\
-				\multicolumn{6}{l}{\parbox{13.5cm}{#7}} \\
+				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#7\strut}} \\
 				\addlinespace
 				\multicolumn{6}{l}{\textbf{\hsmaqasantwort}} \\
-				\multicolumn{6}{l}{\parbox{13.5cm}{#8}} \\
+				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#8\strut}} \\
 				\addlinespace
 				\multicolumn{6}{l}{\textbf{\hsmaqasmass}} \\
-				\multicolumn{6}{l}{\parbox{13.5cm}{#9}} \\
+				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#9\strut}} \\
 				\bottomrule
 			\end{tabularx}
 		\end{footnotesize}
 	\end{table}
 }
+
