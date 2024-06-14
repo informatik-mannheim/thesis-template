@@ -107,7 +107,7 @@
 
 % Schriftarten für PDFLaTeX und LuaTex
 \RequirePackage{iftex}
-\ifpdftex{% Unterstützung für PDFTeX
+\ifpdftex% Unterstützung für PDFTeX
 	\RequirePackage{tgtermes}			% Tex Gyre Termes (qtm (Times) als Font für Fließtext)
 	\RequirePackage[utf8]{inputenc}		% Dateien in UTF-8 benutzen
 	\RequirePackage[T1]{fontenc}		% Zeichenkodierung
