@@ -140,6 +140,14 @@ Vor der letzten schließenden Klammer fügen Sie noch folgendes ein:
 
 Den vollständigen Abschnitt der Datei finden Sie hier: [settings.json](images/settings.json).
 
+### Preambel anpassen
+
+Damit VSCode die thesis.tex als Hauptdatei erkennt, müssen Sie folgende Zeile an den Anfang in `preambel.tex` und `thesis.tex` einfügen:
+
+```
+% !TEX root = ./thesis.tex
+```
+
 ### Änderungen testen
 
   1. Schließen Sie VSCode und öffnen Sie es neu.
