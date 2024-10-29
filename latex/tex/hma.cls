@@ -104,6 +104,7 @@
 
 \RequirePackage[bottom=40mm,left=30mm,right=30mm,top=30mm]{geometry} % Ränder ändern
 \RequirePackage{babel}
+\RequirePackage[hang,font={sf,footnotesize},labelfont={footnotesize,bf}]{caption} % Beschriftungen
 
 % Schriftarten für PDFLaTeX und LuaTex
 \RequirePackage{iftex}
@@ -580,6 +581,7 @@ intoc=true]%
 \RequirePackage{titlepage}
 
 \AtBeginDocument{%
+	\setstretch{1.2}
 	%Schreibe geladene .cls and .sty files in Dokument für Debugging
 	\listfiles
 	% Titelblatt, Vor-Text-Teil erzeugen
