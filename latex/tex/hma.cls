@@ -381,7 +381,7 @@ intoc=true]%
 \newcommand{\hsmamastera}{Master of Arts (M.A.)}
 \newcommand{\hsmamasterba}{Master of Business Administration (MBA)}
 \newcommand{\hsmakoerperschaften}{University of Applied Sciences Mannheim}
-\newcommand{\hsmakoerperschaftde}{Hochschule Mannheim}
+\newcommand{\hsmakoerperschaftde}{Technische Hochschule Mannheim}
 
 
 %%Dokumentinformationen
