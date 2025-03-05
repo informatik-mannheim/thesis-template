@@ -9,7 +9,7 @@ It is of limited use for people outside the respective university.
 
 ## Zweck
 
-Dieses Repository enthält Vorlagen für Bachelor- und Master-Arbeiten, sowohl für LaTeX als auch LyX. Sie richten sich an Studierende der Fakultät für Informatik an der Hochschule Mannheim. Das Template ist so gestaltet, dass auch andere Studiengänge die Vorlage benutzen können.
+Dieses Repository enthält Vorlagen für Bachelor- und Master-Arbeiten, sowohl für LaTeX als auch LyX. Sie richten sich an Studierende der Fakultät für Informatik an der Technischen Hochschule Mannheim. Das Template ist so gestaltet, dass auch andere Studiengänge die Vorlage benutzen können.
 
 Für Personen außerhalb der Hochschule ist die Vorlage möglicherweise nur von begrenztem Wert.
 
