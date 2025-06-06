@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {
+        dockerContainer
             image 'blang/latex:ctanfull'
             args '-u root'
         }
