@@ -1,116 +1,102 @@
-% Dokumententyp, benutzte Pakete und deren Einstellungen
-\documentclass[	\hsmasprache,%
-				\hsmaabgabe,%
-				\hsmapublizieren,%
-				\genderhinweis,
-				\hsmaquellcode,
-				\hsmasymbole,
-				\hsmaglossar,
-				\hsmatc]{HMA}
+% Hie muss normalerweise nichts angepasst werden
+\usepackage[pdftex]{graphicx}
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.jpg,.png}
+\usepackage[cmex10]{amsmath}
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{dblfloatfix}
+\usepackage{url}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage[backend=biber,
+            sorting=none,   % Keine Sortierung
+            doi=true,       % DOI anzeigen
+            isbn=false,     % ISBN nicht anzeigen
+            url=true,       % URLs anzeigen
+            maxnames=6,     % Ab 6 Autoren et al. verwenden
+            minnames=1,     % und nur den ersten Autor angeben
+            style=ieee,]{biblatex}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{listings}             % Source Code listings
+\usepackage[printonlyused]{acronym}
+\usepackage{fancyvrb}
+\usepackage{tocloft} % Schönere Inhaltsverzeichnisse
 
-% Wo sind die Bilder?
-\graphicspath{{bilder/}}
+% Farben definieren
+\definecolor{linkblue}{RGB}{0, 0, 100}
+\definecolor{linkblack}{RGB}{0, 0, 0}
+\definecolor{darkgreen}{RGB}{14, 144, 102}
+\definecolor{darkblue}{RGB}{0,0,168}
+\definecolor{darkred}{RGB}{128,0,0}
+\definecolor{comment}{RGB}{63, 127, 95}
+\definecolor{javadoccomment}{RGB}{63, 95, 191}
+\definecolor{keyword}{RGB}{108, 0, 67}
+\definecolor{type}{RGB}{0, 0, 0}
+\definecolor{method}{RGB}{0, 0, 0}
+\definecolor{variable}{RGB}{0, 0, 0}
+\definecolor{literal}{RGB}{31,0, 255}
+\definecolor{operator}{RGB}{0, 0, 0}
 
+\usepackage[ngerman]{betababel}
+
+\DefineBibliographyStrings{ngerman}{
+    andothers = {{et al\adddot}},  % Immer et al. sagen, auch bei Deutsch als Sprache
+}
+\usepackage[
+      unicode=true,
+      hypertexnames=false,
+      colorlinks=true,
+      colorlinks=false,
+      linkcolor=darkblue,
+      citecolor=darkblue,
+      urlcolor=darkblue,
+      pdftex
+   ]{hyperref}
+%	 \PrerenderUnicode{ü}
+
+
+% Einstellungen für Quelltexte
+\lstset{
+    xleftmargin=0.1cm,
+    basicstyle=\scriptsize\ttfamily,
+    keywordstyle=\color{keyword},
+    identifierstyle=\color{variable},
+    commentstyle=\color{comment},
+    stringstyle=\color{literal},
+    tabsize=2,
+    lineskip={2pt},
+    columns=flexible,
+    inputencoding=utf8,
+    captionpos=b,
+    breakautoindent=true,
+    breakindent=2em,
+    breaklines=true,
+    prebreak=,
+    postbreak=,
+    numbers=none,
+    numberstyle=\tiny,
+    showspaces=false,      % Keine Leerzeichensymbole
+    showtabs=false,        % Keine Tabsymbole
+    showstringspaces=false,% Leerzeichen in Strings
+    morecomment=[s][\color{javadoccomment}]{/**}{*/},
+    literate={Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
+}
+
+\hypersetup{
+    pdftitle={\dokumententitel},
+    pdfauthor={\autoren},
+    pdfdisplaydoctitle=true,
+    hidelinks
+}
+
+% Makros für typographisch korrekte Abkürzungen
+\newcommand{\zb}[0]{z.\,B.}
+\newcommand{\dahe}[0]{d.\,h.}
+\newcommand{\ua}[0]{u.\,a.}
 
 % Wo liegt Sourcecode?
 \newcommand{\srcloc}{src/}
 
-
-% Checklisten mit zwei Ebenen
-\newlist{checklist}{itemize}{2}
-\setlist[checklist]{label=$\square$}
-
-
-
-% Befehl zum Erstellen eigener Makros. In diesem Fall ist es ein Makro für das Einbinden von Bildern. Das label (für \ref) ist dann der Name der Bilddatei
-\newcommand{\bild}[3]{
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[width=#2]{#1}
-		\caption{#3}
-		\label{#1}
-\end{figure}}
-
-
-
-
-							
-
-
-\newcommand{\snowcard}[9]{
-	\begin{table}[ht!]
-		\caption{\hsmasnowcardanforderung\ #1 -- #4}\label{#1}
-		\renewcommand{\arraystretch}{1.2}
-		\centering
-		\sffamily
-		\begin{footnotesize}
-
-			\begin{tabularx}{\linewidth}{sssssl}
-				\toprule
-				\textbf{\hsmasnowcardno} & #1 & \textbf{\hsmasnowcardart} & #2 & \textbf{\hsmasnowcardprio} & #3 \\
-				\midrule
-				\multicolumn{2}{l}{\textbf{\hsmasnowcardtitel}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#4}} \\
-				\ifx&#5&%
-				\else
-				\multicolumn{2}{l}{\textbf{\hsmasnowcardherkunft}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#5}} \\
-				\fi
-				\ifx&#6&%
-				\else
-				\multicolumn{2}{l}{\textbf{\hsmasnowcardkonflikt}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#6}} \\
-				\fi
-				\addlinespace
-				\multicolumn{6}{l}{\textbf{\hsmasnowcardbeschreibung}} \\
-				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#7\strut}} \\
-				\ifx&#8&%
-				\else
-				\addlinespace
-				\multicolumn{6}{l}{\textbf{\hsmasnowcardfitkriterium}} \\
-				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#8\strut}} \\
-				\fi
-				\ifx&#9&%
-
-				\else
-				\addlinespace
-				\multicolumn{6}{l}{\textbf{\hsmasnowcardmaterial}} \\
-				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#9\strut}} \\
-				\fi
-				\bottomrule
-			\end{tabularx}
-		\end{footnotesize}
-	\end{table}
-}
-
-
-
-% Quality Attribute Scenario
-\newcommand{\qas}[9]{
-	\begin{table}[ht!]
-		\caption{\hsmaqasanforderung\ #1 -- #3}\label{#1}
-		\renewcommand{\arraystretch}{1.2}
-		\centering
-		\sffamily
-		\begin{footnotesize}
-
-			\begin{tabularx}{\linewidth}{sssssl}
-				\toprule
-				\textbf{\hsmaqasno} & #1 & \textbf{\hsmaqasart} & QAS & \textbf{\hsmaqasprio} & #2 \\
-				\midrule
-				\multicolumn{2}{l}{\textbf{\hsmaqastitel}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#3}} \\
-				\multicolumn{2}{l}{\textbf{\hsmaqasquelle}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#4}} \\
-				\multicolumn{2}{l}{\textbf{\hsmaqasstimulus}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#5}} \\
-				\multicolumn{2}{l}{\textbf{\hsmaqasartefakt}} & \multicolumn{4}{l}{\parbox[t]{11.8cm}{#6}} \\
-				\addlinespace
-				\multicolumn{6}{l}{\textbf{\hsmaqasumgebung}} \\
-				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#7\strut}} \\
-				\addlinespace
-				\multicolumn{6}{l}{\textbf{\hsmaqasantwort}} \\
-				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#8\strut}} \\
-				\addlinespace
-				\multicolumn{6}{l}{\textbf{\hsmaqasmass}} \\
-				\multicolumn{6}{l}{\parbox[t]{13.5cm}{#9\strut}} \\
-				\bottomrule
-			\end{tabularx}
-		\end{footnotesize}
-	\end{table}
-}
-
+% Literatur einbinden
+\addbibresource{literatur.bib}

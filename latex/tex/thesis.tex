@@ -1,126 +1,99 @@
-%% !TeX program = lualatex
+\documentclass[conference,compsoc,final,a4paper]{IEEEtran}
+\usepackage[utf8]{inputenx}
 
-%\listfiles	
-% **************************
-% STOP - Bitte zuerst lesen, bevor Sie weitermachen
-%
-% Einige Dinge müssen Sie an Ihre Bedürfnisse (und die Vorgaben Ihres
-% Betreuers anpassen. Editieren Sie dazu die Datei docinfo.tex).
-%
-% 1. Sprache
-% Das Template unterstützt Deutsch und Englisch, Standard ist Deutsch.
-% Wenn Sie Englisch verwenden wollen, ändern Sie bitte direkt am Anfang
-% dieser Datei den Eintrag
-%    \newcommand{\hsmasprache}{de}
-% auf
-%    \newcommand{\hsmasprache}{en}
-%
-% 2. Form der Abgabe
-% Das Template unterstützt sowohl eine digitale Abgabe, als auch eine Abgabe
-% auf Papier. Bei einer Papierabgabe wird ein doppelseitiger Druck vorbereitet
-% und der Titel wird so platziert, dass er in das Fenster des offiziellen
-% Umschlages der Technischen Hochschule passt.
-% Bei einer digitalen Abgabe (als PDF) wird der Titel zentriert und als
-% Format wird einseitig gewählt. Außerdem wird die Datei unterschrift.png
-% auf dem Blatt mit der Erklärung zur Eigenständigkeit eingebunden.
-%
-% 3. Zitierstil
-% Abhängig von dem gewünschten Zitierstil passen Sie bitte in
-% hma.cls die Einstellungen bei \RequirePackage[backend=biber...
-% an. Wie ist dort genau erklärt.
-% Achtung: Wenn Sie als Zitierstil Fußnoten wählen bzw. generell
-% -------  mit Fußnoten arbeiten, dann beachten Sie bitte, dass
-%          Fußnoten in Bildunterschriften und Tabellenüberschriften
-%          nicht funktionieren.
-%          Siehe hierzu https://texfaq.org/FAQ-ftncapt
-%          und https://texfaq.org/FAQ-footintab
-%          Sinnvollerweise verzichten Sie auf Fußnoten an diesen
-%          Stellen und fügen Quellen einfach per \parancite ein.
-%
-% 4. Doppelseitiger oder einseitiger Druck
-% Das Template bestimmt, ob einseitig oder doppelseitig gedruckt wird
-% anhand der Abgabeform (papier / digital). Wollen sie dies übersteuern,
-% müssen Sie in der Datei preambel.tex folgende Zeile
-% \KOMAoptions{twoside=true} für doppelsetigen Druck
-% \KOMAoptions{twoside=false} für einsetigen Druck
-% direkt vor \usepackage{xcolor} einsetzen. Prinzipiell sollten Sie aber
-% das vorgeschlagene Format einfach so lassen.
-%
-% 5. Unnötige Teile entfernen
-% Entfernen Sie die Teile, die Sie nicht brauchen, z.B. Anhänge
-%
-% 6. Silbentrennung
-% LaTeX führt eine automatische Silbentrennung durch. Allerdings
-% werden Wörter, die bereits einen Bindestrich enthalten nicht
-% getrennt, z.B. Datenschutz-Grundverordnung. Wenn Sie Ihren Text auf
-% Deutsch schreiben, können Sie dann alternativ "= für den Bindestrich
-% im Wort verwenden, z.B. Datenschutz"=Grundverordnung, damit LaTeX
-% weiterhin richtig trennt.
-% Ist die Silbentrennung aus einem anderen Grund nicht erfolgt, sodass
-% das Wort über den rechten Rand hinaussteht oder wenn Sie eine weitere
-% Trennstelle wollen, können Sie LaTeX helfen, indem Sie weitere
-% Trennstellen angeben. Dies geschieht durch "- als Zeichen, z.B.
-% Staats"-vertrag.
-%
-% 7. Nummerierung der Fußnoten
-% LaTeX beginnt die Nummerierung der Fußnoten in jedem Kapitel wieder
-% bei 1. In diesem Template wird die fortlaufende Nummerierung der Fußnoten 
-% über die gesamte Arbeit umgesetzt.  
-%
-% 8. Unterschrift
-% Bei einer Abgabe auf Papier unterschreiben Sie die Arbeit eigenhändig.
-% Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png in dem 
-% Ordner /bilder durch einen Scan Ihrer eigenen Unteschrift ersetzen - andernfalls
-% unterschreiben Sie als Max Mustermann ;-)
-% *******************************************************************
+%% Bitte legen Sie hier den Titel und den Autor der Arbeit fest
+\newcommand{\autoren}[0]{Hammond, Gregory}
+\newcommand{\dokumententitel}[0]{Modularisierung von Jenkins-Pipelines: Konzepte und Strategien für Microservice-Projekte im privaten Umfeld}
 
+\input{preambel} % Weitere Einstellungen aus einer anderen Datei lesen
 
-% Dokumenteneinstellungen und Infos importieren
-\input{docinfo}
+\begin{document}
 
-% Preambel importieren
-\input{preambel}
+% Titel des Dokuments
+\title{\dokumententitel}
 
+% Namen der Autoren
+\author{
+  \IEEEauthorblockN{\autoren}
+  \IEEEauthorblockA{
+    Technische Hochschule Mannheim\\
+    Fakultät für Informatik\\
+    Paul-Wittsack-Str. 10,
+    68163 Mannheim
+    }
+}
 
-%Abstrakt Ihrer Abschlussarbeit
-\input{abstrakt}
+% Titel erzeugen
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
 
+% Eigentliches Dokument beginnt hier
+% ----------------------------------------------------------------------------------------------------------
 
-% Literatur-Datenbank
-\addbibresource{literatur.bib}   % BibLaTeX-Datei mit Literaturquellen einbinden
+% Kurze Zusammenfassung des Dokuments
+\begin{abstract}
+An dieser Stelle steht eine kurze Zusammenfassung des Inhaltes des Dokuments. Der Abstrakt ist vollkommen eigenständig und hat weder Querverweise zu anderen Teilen dieser Arbeit noch Referenzen zu Quellen.
 
+Schreiben Sie die Zusammenfassung im sogenannten faktenzentrierten Stil, d.\,h. beschreiben Sie nicht das Dokument, sondern die Fakten und Informationen, die das Dokument liefert. Zum Beispiel schreiben Sie \textit{nicht} \enquote{Dieses Dokument stellt die besondere Bedeutung des Flux-Kompensators für Zeitreisen im Film \enquote{Zurück in die Zukunft} dar.}, sondern schreiben Sie \enquote{Ohne den Flux-Kompensator wären die Zeitreisen im Film \enquote{Zurück in die Zukunft} nicht möglich.}
 
-% Anfang des Dokuments
-\begin{document}	
+Den Abstract schreibt man als letztes.
+\end{abstract}
 
+% Inhaltsverzeichnis erzeugen
+{\small\tableofcontents}
 
-%Laden der Dateien mit Abkürzungen, Begriffserklärungen (Glossar), Symbole
-\input{kapitel/abkuerzungen}
-\input{kapitel/glossar}
-\input{kapitel/symbole}	
-	
-\pagestyle{headings}
-\tableofcontents
+% --------------------------------------------------------------------
+\section{Einleitung}
+\subsection{Motivation und Problemstellung}
+\subsection{Zielsetzung und Fragestellung}
+\subsection{Aufbau der Arbeit}
 
+\section{Grundlagen}
+\subsection{Continuous Integration und Continuous Deployment}
+\subsection{Überblick über Jenkins und seine Pipeline-Architektur}
+\subsection{Declarative vs. Scripted Pipelines}
+\subsection{Modularisierung und Wiederverwendbarkeit in CI/CD}
 
-\mainmatter
+\section{Analyse}
+\subsection{Kriterien für modulare Pipelines im Microservice-Kontext}
+\subsection{Vergleich verschiedener Modularisierungsansätze in Jenkins}
+\subsection{Sicherheits- und Wartbarkeitsaspekte}
 
-%% Ihre Inhaltsdateien werden an dieser Stelle in das Dokument eingefügt
-\input{kapitel/kapitel1} % Externe Datei einbinden
-\input{kapitel/kapitel2} % Externe Datei einbinden
-\input{kapitel/kapitel3} % Externe Datei einbinden
-\input{kapitel/kapitel4} % Externe Datei einbinden
+\section{Konzeptioneller Vorschlag}
+\subsection{Pipeline-Design für ein hypothetisches D\&D-Charaktertool}
+\subsection{Stufenstruktur (Build, Test, Deployment)}
+\subsection{Reflexion von Herausforderungen und Grenzen}
 
+\section{Diskussion}
+\subsection{Übertragbarkeit auf andere Projekte}
+\subsection{Abgrenzung zu professionellen CI/CD-Setups}
 
+\section{Fazit}
+\subsection{Zusammenfassung zentraler Erkenntnisse}
+\subsection{Beantwortung der Fragestellung}
+\subsection{Ausblick}
+% --------------------------------------------------------------------
+\section*{Abkürzungen}
+\addcontentsline{toc}{section}{Abkürzungen}
 
-\label{lastpage}
-%Beginn des Anhangs. Befehl \appendix nicht entfernen auch wenn kein Anhang vorhanden ist!
-\appendix
+% Die längste Abkürzung wird in die eckigen Klammern
+% bei \begin{acronym} geschrieben, um einen hässlichen
+% Umbruch zu verhindern
+% Sie müssen die Abkürzungen selbst alphabetisch sortieren!
+\begin{acronym}[IEEE]
+\acro{A2A}{Application-to-Application}
+\acro{ABK}{Abkürzung}
+\acro{ACL}{Acess Control List}
+\acro{ACM}{Association of Computing Machinery}
+\acro{AES}{Advanced Encryption Standard}
+\acro{IEEE}{Institute of Electrical and Electronics Engineers}
+\acro{ISO}{International Organization for Standardization}
+\acro{PDF}{Portable Document Format}
+\end{acronym}
 
-%Wenn Sie keinen Anhang haben, entfernen Sie ausschließlich die nachfolgenden beiden Dateien.
-\input{kapitel/anhang-a}
-\input{kapitel/anhang-b}
-
+% Literaturverzeichnis
+\addcontentsline{toc}{section}{Literatur}
+\printbibliography
 
 \end{document}
-
