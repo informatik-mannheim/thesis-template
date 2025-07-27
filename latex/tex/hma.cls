@@ -595,25 +595,19 @@ intoc=true]%
 	\signaturepage
 	\newpage
 	\abstractpage
-	\sethyp
-}
+	\newpage
+	\tableofcontents
+	\newpage
 
-
-\AtEndDocument{
 	% Abkürzungsverzeichnis ausgeben
 	\printglossary[type=\acronymtype, nonumberlist, title=\hsmaabbreviations,style=long]
-
-	\ifglossar
-		% Glossar ausgeben
-		\printglossary[style=altlist, nonumberlist, title=\hsmaglossary]
-	\fi
+	\newpage
 
 	% Abbildungsverzeichnis erzeugen
 	\listoffigures
 
 	% Tabellenverzeichnis erzeugen
 	\listoftables
-
 
 	\ifsymbols
 		% Symbolverzeichnis ausgeben
@@ -627,12 +621,15 @@ intoc=true]%
 		%\IfFileExists{thesis.lol}{\lstlistoflistings}{}
 	\fi
 
+	\newpage
+	\newcounter{frontmatterpage}
+	\setcounter{frontmatterpage}{\value{page}}
+	\sethyp
+}
 
-	% Literaturverzeichnis erzeugen
-	\printbibliography
 
+\AtEndDocument{
 
-	\printindex
 
 %	\newwrite\loadedtexfiles
 %	\immediate\openout\loadedtexfiles=listTexFiles.txt

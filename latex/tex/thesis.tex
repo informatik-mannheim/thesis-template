@@ -1,6 +1,6 @@
 %% !TeX program = lualatex
 
-%\listfiles	
+%\listfiles
 % **************************
 % STOP - Bitte zuerst lesen, bevor Sie weitermachen
 %
@@ -64,12 +64,12 @@
 %
 % 7. Nummerierung der Fußnoten
 % LaTeX beginnt die Nummerierung der Fußnoten in jedem Kapitel wieder
-% bei 1. In diesem Template wird die fortlaufende Nummerierung der Fußnoten 
-% über die gesamte Arbeit umgesetzt.  
+% bei 1. In diesem Template wird die fortlaufende Nummerierung der Fußnoten
+% über die gesamte Arbeit umgesetzt.
 %
 % 8. Unterschrift
 % Bei einer Abgabe auf Papier unterschreiben Sie die Arbeit eigenhändig.
-% Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png in dem 
+% Geben Sie allerdings digital ab, sollten Sie die Datei unterschrift.png in dem
 % Ordner /bilder durch einen Scan Ihrer eigenen Unteschrift ersetzen - andernfalls
 % unterschreiben Sie als Max Mustermann ;-)
 % *******************************************************************
@@ -91,17 +91,15 @@
 
 
 % Anfang des Dokuments
-\begin{document}	
+\begin{document}
 
 
 %Laden der Dateien mit Abkürzungen, Begriffserklärungen (Glossar), Symbole
 \input{kapitel/abkuerzungen}
 \input{kapitel/glossar}
-\input{kapitel/symbole}	
-	
-\pagestyle{headings}
-\tableofcontents
+\input{kapitel/symbole}
 
+\pagestyle{headings}
 
 \mainmatter
 
@@ -110,17 +108,29 @@
 \input{kapitel/kapitel2} % Externe Datei einbinden
 \input{kapitel/kapitel3} % Externe Datei einbinden
 \input{kapitel/kapitel4} % Externe Datei einbinden
-
-
+\newpage
 
 \label{lastpage}
 %Beginn des Anhangs. Befehl \appendix nicht entfernen auch wenn kein Anhang vorhanden ist!
 \appendix
 
-%Wenn Sie keinen Anhang haben, entfernen Sie ausschließlich die nachfolgenden beiden Dateien.
+% Römische Seitenzahlen im "backmatter"
+\pagenumbering{roman}
+\setcounter{page}{\value{frontmatterpage}}
+
+\ifglossar
+  % Glossar ausgeben
+  \printglossary[style=altlist, nonumberlist, title=\hsmaglossary]
+\fi
+
+% Literaturverzeichnis erzeugen
+\printbibliography
+
+% Index drucken
+\printindex
+
+% Wenn Sie keinen Anhang haben, entfernen Sie ausschließlich die nachfolgenden beiden Dateien.
 \input{kapitel/anhang-a}
 \input{kapitel/anhang-b}
 
-
 \end{document}
-
