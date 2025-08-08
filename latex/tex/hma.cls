@@ -105,6 +105,7 @@
 \RequirePackage[bottom=40mm,left=30mm,right=30mm,top=30mm]{geometry} % Ränder ändern
 \RequirePackage{babel}
 \RequirePackage[hang,font={sf,footnotesize},labelfont={footnotesize,bf}]{caption} % Beschriftungen
+\RequirePackage{zref-totpages}
 
 % Schriftarten für PDFLaTeX und LuaTex
 \RequirePackage{iftex}
