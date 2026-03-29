@@ -519,6 +519,7 @@ intoc=true]%
 	urlcolor=HMA-linkblue    % URLs
 }
 
+\RequirePackage[atend]{bookmark}
 
 \ExplSyntaxOn
 \NewDocumentCommand{\printfilelist}{}
