@@ -4,7 +4,7 @@ Diese Vorlage ist für Abschlussarbeiten mit LaTeX an der Technischen Hochschule
 
 **Der Titel auf der ersten Seite ist absichtlich nicht zentriert! Er ist so platziert, dass er bei dem [offiziellen Papierumschlag](https://www.tbl.hs-mannheim.de/fileadmin/user_upload/einrichtungen/tbl/1-Dokumente/Deckblatt_Einband_HS_Mannheim.pdf) der Hochschule korrekt in dem Fenster erscheint.** Wenn Sie die Arbeit rein digital abgeben, können Sie durch Setzen der entsprechenden Option in der Datei `thesis.tex` eine digitale Abgabe konfigurieren; dann ist auch der Titel zentriert.
 
-Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein [Issue](https://github.com/informatik-mannheim/thesis-template/issues). Lesen Sie aber vorher diese Anleitung und die [Erklärungen in der Hauptdatei](https://github.com/informatik-mannheim/thesis-template/blob/master/latex/tex/thesis.tex#L1) bis zum Ende, denn vielleicht klärt sich Ihre Frage dann von selbst.
+Wenn Sie Probleme haben oder Fehler entdecken, öffnen Sie ein [Issue](https://github.com/informatik-mannheim/thesis-template/issues). Lesen Sie aber vorher diese Anleitung und die [Erklärungen in der Hauptdatei](https://github.com/informatik-mannheim/thesis-template/blob/main/latex/tex/thesis.tex#L1) bis zum Ende, denn vielleicht klärt sich Ihre Frage dann von selbst.
 
 Verbesserungen können Sie jederzeit als GitHub Pull-Request an uns senden.
 
@@ -158,7 +158,7 @@ Damit VSCode die thesis.tex als Hauptdatei erkennt, müssen Sie folgende Zeile a
 
 ## LaTeX-Projekt unter Overleaf einrichten
 
- * Laden Sie die ZIP-Version des Projektes [hier](https://github.com/informatik-mannheim/thesis-template/raw/master/latex/thesis-overleaf.zip) herunter.
+ * Laden Sie die ZIP-Version des Projektes [hier](https://github.com/informatik-mannheim/thesis-template/raw/main/latex/thesis-overleaf.zip) herunter.
  * Melden Sie sich bei [Overleaf](https://www.overleaf.com) an und loggen Sie sich ein.
  * Gehen Sie auf "New Project" und wählen Sie "Upload Project"
  * Laden Sie die ZIP-Datei hoch.
