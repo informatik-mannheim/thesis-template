@@ -159,6 +159,7 @@
 
 % Wichtige Abstände
 \setlength\parindent{0pt}
+\setlength\parskip{1ex}
 \clubpenalty = 10000         % Keine "Schusterjungen"
 \widowpenalty = 10000        % Keine "Hurenkinder"
 \displaywidowpenalty = 10000 % Keine "Hurenkinder"
