@@ -132,6 +132,23 @@
   set quote(block: true)
   show quote: set pad(x: 3em, top: -2em)
 
+  // Enable line numbers for code blocks. Numbers sit in an unfilled left
+  // column, the code in a gray-filled column.
+  show raw.where(block: true): code => {
+    set text(size: 9pt)
+    grid(
+      columns: (auto, 1fr),
+      align: (right + horizon, left + horizon),
+      column-gutter: 0.4em,
+      inset: (x: 0.4em, y: 0.3em),
+      fill: (col, _) => if col == 1 { luma(97%) },
+      ..code.lines.map(line => (
+        text(size: 0.55em, fill: black, stroke: 0.1pt)[#line.number],
+        line.body,
+      )).flatten()
+    )
+  }
+
   // The cover page.
   page(
     margin: (right: 9.5%, top: 7.9%, left: 9.5%, bottom: 7.9%),
