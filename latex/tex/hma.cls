@@ -198,7 +198,7 @@
 
 \RequirePackage{amsmath}              % Mathematische Formeln
 \RequirePackage{amsfonts}             % Mathematische Zeichensätze
-\RequirePackage{siunitx}			  % Darstellung von Einheiten
+\RequirePackage{siunitx}              % Darstellung von Einheiten
 
 \RequirePackage[inline]{enumitem} 	  % Eigene Listen definieren können und diese auch innerhalb des Textes nutzen können
 
@@ -492,11 +492,13 @@ intoc=true]%
 	\RequirePackage[english,breaklinks=true,pdfproducer={},pdfcreator={},plainpages=false,
 	pdfpagelabels]{hyperref}       % Hyperlinks
 	\newcommand{\hsmasortlocale}{en_US}                    % Sortierung der Literatur
+  \sisetup{locale = US}
 \else
 	\RequirePackage[autostyle=true,german=quotes]{csquotes}    % Deutsche Anführungszeichen
 	\RequirePackage[breaklinks=true,pdfproducer={},pdfcreator={},plainpages=false,
 	pdfpagelabels]{hyperref}        % Hyperlinks
 	\newcommand{\hsmasortlocale}{de_DE}
+  \sisetup{locale = DE}
 \fi%
 
 
